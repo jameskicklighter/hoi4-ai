@@ -1,0 +1,16 @@
+version="1.0"
+tags={
+	"Balance"
+	"Fixes"
+	"Gameplay"
+	"Utilities"
+	"Lag"
+	"Multiplayer"
+	"Forced Pause"
+	"Forced Slowdown"
+}
+name="No PauseSlowdown for MP Lag"
+picture="thumbnail.png"
+supported_version="1.9.*"
+path="D:/SteamLibrary/steamapps/workshop/content/394360/2108723759"
+remote_file_id="2108723759"
