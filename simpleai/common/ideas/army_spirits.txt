@@ -13,10 +13,6 @@ ideas = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
 				}
-				modifier = {
-					factor = 0
-					NOT = { has_dlc = "No Step Back" }
-				}
 			}
 		}
 		tenacious_defense_spirit = {
@@ -30,21 +26,6 @@ ideas = {
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
-				}
-				modifier = {
-					OR = {
-						tag = CHI
-						tag = PRC
-						tag = GXC
-						tag = SHX
-						tag = SIK
-						tag = XSM
-						tag = YUN
-
-						tag = SOV
-					}
-					
-					factor = 10
 				}
 			}
 		}
@@ -139,10 +120,6 @@ ideas = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
 				}
-				#modifier = {
-				#	tag = JAP
-				#	factor = 10
-				#}
 			}
 		}
 		mobile_warfare_academy_spirit = {
@@ -192,10 +169,6 @@ ideas = {
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
-				}
-				modifier = {
-					tag = ITA
-					factor = 10
 				}
 			}
 		}
@@ -264,21 +237,6 @@ ideas = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
 				}
-				modifier = {
-					OR = {
-						tag = CHI
-						tag = PRC
-						tag = GXC
-						tag = SHX
-						tag = SIK
-						tag = XSM
-						tag = YUN
-
-						tag = SOV
-					}
-					
-					factor = 10
-				}
 			}
 		}
 
@@ -294,15 +252,6 @@ ideas = {
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
-				}
-				modifier = {
-					OR = {
-						tag = GER
-						tag = ITA
-						#tag = JAP
-					}
-
-					factor = 5
 				}
 			}
 		}
@@ -335,14 +284,6 @@ ideas = {
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
-				}
-				modifier = {
-					AND = {
-						has_government = communism
-						is_major = no
-					}
-					
-					factor = 5
 				}
 			}
 		}
@@ -548,14 +489,6 @@ ideas = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
 				}
-				modifier = {
-					OR = {
-						tag = CHI
-						tag = PRC
-					}
-					
-					factor = 5
-				}
 			}
 		}
 
@@ -571,10 +504,6 @@ ideas = {
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
-				}
-				modifier = {
-					tag = GER
-					factor = 10
 				}
 			}
 		}
@@ -610,13 +539,6 @@ ideas = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
 				}
-				modifier = {
-					OR = {
-						tag = ITA
-						#tag = JAP
-					}
-					factor = 10
-				}
 			}
 		}
 
@@ -632,10 +554,6 @@ ideas = {
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
-				}
-				modifier = {
-					tag = SOV
-					factor = 10
 				}
 			}
 		}

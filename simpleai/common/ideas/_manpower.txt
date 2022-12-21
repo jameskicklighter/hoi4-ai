@@ -272,6 +272,21 @@ ideas = {
 				}
 
 				modifier = {
+					add = 100
+
+					OR = {
+						AND = {
+							original_tag = GER
+							date > 1938.1.1
+						}
+						AND = {
+							original_tag = ITA
+							date > 1938.1.1
+						}
+					}
+				}
+
+				modifier = {
 					factor = 0
 					NOT = { has_idea = limited_conscription }
 				}
@@ -393,10 +408,18 @@ ideas = {
 				}
 
 				modifier = { # germany needs this before russia, badly
-					factor = 10
+					add = 100
 
-					original_tag = GER
-					has_manpower < 1000000
+					OR = {
+						AND = {
+							original_tag = GER
+							date > 1940.1.1
+						}
+						AND = {
+							original_tag = ITA
+							date > 1940.1.1
+						}
+					}
 				}
 
 				modifier = {

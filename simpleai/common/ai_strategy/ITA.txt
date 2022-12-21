@@ -470,30 +470,32 @@ portugal_ally = {
 	}
 }
 
-#ITA_keep_your_nose_clean_for_a_bit
-#{
-#	enable = {
-#		tag = ITA
-#		date < 1940.5.1
-#	}
-#
-#	ai_strategy = {
- #       type = dont_join_wars_with
-  #      id = GER
-  #      value = 1000000
-  #  }
- #   ai_strategy = {
-#        type = dont_join_wars_with
-#        id = SLO
-#        value = 1000000
-#    }
-#    ai_strategy = {
-#    	type = diplo_action_desire
-#    	target = join_allies
-#    	id = SLO
-#    	value = -1000
-#    }
-#}
+ITA_small_africa_front_if_possible = {
+	enable = {
+		original_tag = ITA
+		AOI = { is_subject_of = ITA }
+		# TODO add state check
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = diplo_action_desire
+		id = AOI
+		target = call_allies
+		value = -99999
+	}
+	ai_strategy = {
+		type = diplo_action_acceptance
+		id = AOI
+		target = join_allies
+		value = -99999
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "AOI"
+		value = 100
+	}
+}
 
 ITA_template_design_1 = {
 	allowed = {
@@ -621,53 +623,53 @@ ITA_template_design_2 = {
 
 
 # extra scaryness around italy, this together with sufficient enemy superiority will make ai avoid transports around its coast
-italy_be_careful_transporting_through_the_med = {
-	allowed = {
-		original_tag = ITA
-	}
-	enable = {
-		date < 1942.1.1
-		has_war = yes
-		enemies_naval_strength_ratio > 1
-	}
-	abort = {
-		OR = {
-			date > 1942.1.1
-			has_war = no
-			enemies_naval_strength_ratio < 1
-		}
-	}
-
-	ai_strategy = {
-		type = naval_avoid_region
-		id = 68
-		value = 50
-	}
-
-	ai_strategy = {
-		type = naval_avoid_region
-		id = 169
-		value = 50
-	}
-
-	ai_strategy = {
-		type = naval_avoid_region
-		id = 29
-		value = 50
-	}
-
-	ai_strategy = {
-		type = naval_avoid_region
-		id = 168
-		value = 50
-	}
-
-	ai_strategy = {
-		type = naval_avoid_region
-		id = 69
-		value = 50
-	}
-}
+#italy_be_careful_transporting_through_the_med = {
+#	allowed = {
+#		original_tag = ITA
+#	}
+#	enable = {
+#		date < 1942.1.1
+#		has_war = yes
+#		enemies_naval_strength_ratio > 1
+#	}
+#	abort = {
+#		OR = {
+#			date > 1942.1.1
+#			has_war = no
+#			enemies_naval_strength_ratio < 1
+#		}
+#	}
+#
+#	ai_strategy = {
+#		type = naval_avoid_region
+#		id = 68
+#		value = 50
+#	}
+#
+#	ai_strategy = {
+#		type = naval_avoid_region
+#		id = 169
+#		value = 50
+#	}
+#
+#	ai_strategy = {
+#		type = naval_avoid_region
+#		id = 29
+#		value = 50
+#	}
+#
+#	ai_strategy = {
+#		type = naval_avoid_region
+#		id = 168
+#		value = 50
+#	}
+#
+#	ai_strategy = {
+#		type = naval_avoid_region
+#		id = 69
+#		value = 50
+#	}
+#}
 
 dont_take_claims_on_yug = {
 	allowed = {
@@ -839,6 +841,12 @@ spain_scw_support_ITA_resistance = {
 		id = "SPA"
 		value = 100
 	}
+	ai_strategy = {
+		type = diplo_action_desire
+		id = "SPA"
+		target = send_attache
+		value = 100
+	}
 }
 
 ITA_stockpile_less_early_game = {
@@ -857,16 +865,24 @@ ITA_stockpile_less_early_game = {
 	}
 }
 
-ITA_please_help_me_buget_this_my_country_is_dieing = {
+ITA_wants_civ = {
 	allowed = {
 		original_tag = ITA
 	}
 	enable = {
-		has_government = fascism
-		date < 1939.6.1
+		date < 1939.1.1
+		OR = {
+			has_war = no
+			NOT = {
+				any_other_country = {
+					NOT = { original_tag = ETH }
+					has_war_with = ROOT
+				}
+			}
+		}
 	}
-
 	abort_when_not_enabled = yes
+
 	ai_strategy = {
 		type = building_target
 		id = industrial_complex
@@ -876,6 +892,43 @@ ITA_please_help_me_buget_this_my_country_is_dieing = {
 		type = equipment_production_min_factories
 		id = artillery
 		value = 2
+	}
+}
+
+ITA_have_some_train_production = {
+	allowed = {
+		original_tag = ITA
+	}
+	enable = {
+		always = yes
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = train
+		value = 1
+	}
+}
+
+ITA_wants_docks = {
+	allowed = {
+		original_tag = ITA
+	}
+	enable = {
+		NOT = {
+			any_home_area_neighbor_country = {
+				has_war_with = ROOT
+			}
+		}
+		date > 1940.1.1
+		num_of_military_factories > 80
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = dockyard
+		value = 40
 	}
 }
 
@@ -1016,10 +1069,6 @@ ITA_commit_to_ethiopian_theatre = {
 		value = 100
 	}
 
-
-
-
-
 }
 
 ITA_prepare_ethiopian_theatre = {
@@ -1101,14 +1150,21 @@ ITA_attack_north = {
 
 		state = 841 # assault Begemder
 
-		ratio = 0.2
+		ratio = 0.5
 
 		priority = 100
 		ordertype = front
 		execution_type = rush
 		execute_order = yes
 	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = ETH
+		value = 300 # lets put more units, should be safe
+	}
 }
+
 ITA_attack_south = {
 	allowed = {
 		original_tag = ITA
@@ -1125,12 +1181,18 @@ ITA_attack_south = {
 
 		state = 837 # assault Sidamo
 
-		ratio = 0.2
+		ratio = 0.5
 
 		priority = 100
 		ordertype = front
 		execution_type = rush
 		execute_order = yes
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = ETH
+		value = 300 # lets put more units, should be safe
 	}
 }
 
@@ -1150,14 +1212,21 @@ ITA_attack_addis = {
 
 		state = 271 # assault Addis
 
-		ratio = 0.2
+		ratio = 0.5
 
 		priority = 100
 		ordertype = front
 		execution_type = rush
 		execute_order = yes
 	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = ETH
+		value = 300 # lets put more units, should be safe
+	}
 }
+
 ITA_attack_harar = {
 	allowed = {
 		original_tag = ITA
@@ -1174,12 +1243,18 @@ ITA_attack_harar = {
 
 		state = 835 # assault Hararghe
 
-		ratio = 0.2
+		ratio = 0.5
 
 		priority = 100
 		ordertype = front
 		execution_type = rush
 		execute_order = yes
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = ETH
+		value = 300 # lets put more units, should be safe
 	}
 }
 
@@ -1322,8 +1397,7 @@ ITA_invasion_buffer = {
 		original_tag = ITA
 	}
 	enable = {
-		is_historical_focus_on = yes
-		date > 1943.1.1
+		has_war = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -1337,7 +1411,9 @@ ITA_invasion_buffer = {
 			2
 			162
 			161
-			### Oh no we forgot sicily! What could possibly go wrong.
+			115
+			114
+			44
 		}
 		ratio = 0.20
 		area = italy

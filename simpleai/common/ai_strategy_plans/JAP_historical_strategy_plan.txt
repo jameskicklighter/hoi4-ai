@@ -105,9 +105,9 @@ JAP_historical_plan = {
 		head_of_intelligence = 50
 
 		# Army Spirits
-		inventive_leadership_spirit = 10
-		quick_improvisation_spirit = 5
-		logistical_focus_spirit = 10
+		inventive_leadership_spirit = 100
+		quick_improvisation_spirit = 50
+		logistical_focus_spirit = 100
 	}
 
 	traits = {

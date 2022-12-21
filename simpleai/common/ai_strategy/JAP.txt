@@ -1219,7 +1219,7 @@ jap_early_invasions_are_risky_and_best_wait_for_later = {
 		original_tag = JAP
 	}
 	enable = {
-		date < 1937.12.1
+		date < 1937.8.1
 		CHI = { is_ai = yes }
 	}
 

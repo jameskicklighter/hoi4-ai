@@ -313,43 +313,48 @@ ideas = {
 				}
 			}
 			ai_will_do = {
-   				factor = 3
+				factor = 99
 
+				# Japan gets this free upgrade with Purge/Support the Kodoha Faction paths.
 				modifier = {
 					factor = 0
-					tag = JAP
-					# Japan typically gets these for free...
-				}
-
-				modifier = {
-					#High prio on production
-					factor = 20
-					manpower_per_military_factory >  1000
-				}
-
-				modifier = {
-					# If we CAN go for total mobilization and have enough manpower for it, skip war economy, it's only a waste of PP
-					factor = 0
-
-					manpower_per_military_factory > 15000
-					has_war = yes
-					has_war_support > 0.8
-					any_enemy_country = {
-						ic_ratio = {
-							tag = ROOT
-							ratio > 0.5
+					AND = {
+						original_tag = JAP
+						NOT = {
+							OR = {
+								has_completed_focus = JAP_the_unthinkable_option
+								has_completed_focus = JAP_strengthen_civilian_government
+							}
 						}
 					}
 				}
 
-				modifier = {
-					add = 1800
+				#modifier = {
+				#	#High prio on production
+				#	factor = 20
+				#	manpower_per_military_factory >  1000
+				#}
 
-					# revert from closed_economy if we have large allies
-					has_idea = closed_economy
-					has_large_ally_not_pick_closed_economy = yes
+				#modifier = {
+				#	# If we CAN go for total mobilization and have enough manpower for it, skip war economy, it's only a waste of PP
+				#	factor = 0
+				#
+				#	manpower_per_military_factory > 15000
+				#	has_war = yes
+				#	has_war_support > 0.8
+				#	any_enemy_country = {
+				#		ic_ratio = {
+				#			tag = ROOT
+				#			ratio > 0.5
+				#		}
+				#	}
+				#}
+
+				modifier = {
+					factor = 0
+					has_idea = tot_economic_mobilisation
 				}
-   			}
+			}
 		}
 
 		tot_economic_mobilisation = {
@@ -405,7 +410,7 @@ ideas = {
 				}
 			}
 			ai_will_do = {
-				factor = 50
+				factor = 200
 
 				#modifier = {
 				#	factor = 50
@@ -413,9 +418,18 @@ ideas = {
 				#	manpower_per_military_factory > 15000
 				#}
 
+				# Japan gets this free upgrade with Purge/Support the Kodoha Faction paths.
 				modifier = {
 					factor = 0
-					tag = JAP # Japan typically gets these for free...
+					AND = {
+						original_tag = JAP
+						NOT = {
+							OR = {
+								has_completed_focus = JAP_the_unthinkable_option
+								has_completed_focus = JAP_strengthen_civilian_government
+							}
+						}
+					}
 				}
 
 				#modifier = {
@@ -643,8 +657,7 @@ ideas = {
 				modifier = {
 					factor = 100
 
-					tag = SOV
-					date < 1941.1.1
+					original_tag = SOV
 				}
 
    				modifier = {

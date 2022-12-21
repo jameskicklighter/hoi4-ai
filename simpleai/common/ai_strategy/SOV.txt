@@ -457,6 +457,12 @@ spanish_civil_war_SOV_resistance = {
 		id = "SPD"
 		value = 100
 	}
+	ai_strategy = {
+		type = diplo_action_desire
+		id = "SPD"
+		target = send_attache
+		value = 100
+	}
 }
 
 SOV_template_design_1 = {
@@ -823,7 +829,7 @@ SOV_dont_send_volunteers_that_early_to_china = {
 
 	abort = {
 		CHI = {
-			surrender_progress > 0.8
+			surrender_progress > 0.6
 		}
 		OR = {
 			#Soviet focus plans are set so that they support a Chinese tag in 39-40
@@ -840,6 +846,10 @@ SOV_dont_send_volunteers_that_early_to_china = {
 			AND = {
 				has_completed_focus = SOV_support_the_kuomintang
 				country_exists = CHI
+				CHI = { has_war_with = JAP }
+			}
+			AND = {
+				CHI = { has_completed_focus = CHI_rapprochement_with_soviet_union }
 				CHI = { has_war_with = JAP }
 			}
 		}

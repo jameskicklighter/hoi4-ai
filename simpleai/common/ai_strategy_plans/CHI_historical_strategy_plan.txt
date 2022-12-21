@@ -47,20 +47,19 @@ CHI_nationalist_historical_plan = {
 		CHI_rural_reconstruction_movement
 		CHI_financial_policy
 		CHI_military_affairs_commission
+		CHI_army_reform
 		CHI_fortify_shanghai
-		CHI_the_chinese_hindenburg_line
 		# Japan now comes knocking...
 
 		# Get as soon as we have 75 factories.
 		CHI_chemical_research_institute
 
-		CHI_army_reform
+		CHI_the_chinese_hindenburg_line
 		CHI_mining_commission
 		CHI_develop_the_hanyan_arsenal
 		CHI_price_controls
 		CHI_grain_tax
 		CHI_reform_the_national_bank
-		CHI_forced_loans
 
 		CHI_three_principles_of_the_people
 		CHI_nationalism
@@ -71,10 +70,6 @@ CHI_nationalist_historical_plan = {
 		CHI_war_of_national_liberation
 		CHI_war_of_anti_imperialism
 		CHI_scorched_earth_tactics
-		CHI_forced_conscription
-		CHI_dare_to_die_corps
-		CHI_democracy
-		CHI_executive_yuan
 
 		# Beg and hope we get guns...
 		CHI_mission_to_the_soviet_union
@@ -85,6 +80,12 @@ CHI_nationalist_historical_plan = {
 		CHI_experimental_mechanised_unit
 		CHI_combined_arms_warfare
 		CHI_renegotiate_the_unequal_treaties
+
+		CHI_forced_conscription
+		CHI_dare_to_die_corps
+		CHI_democracy
+		CHI_executive_yuan
+		CHI_forced_loans
 
 		# To be taken only if Japan is defeated.
 		CHI_one_china_policy
@@ -111,9 +112,15 @@ CHI_nationalist_historical_plan = {
 	}
 
 	ideas = {
+		# Political Advisors
 		CHI_chiang_ching_kuo = 100		# Silent Workhorse
 		CHI_t_v_soong = 75				# Financial Expert
 		CHI_lin_sen = 10				# Popular Figurehead
+
+		# Army Spirits
+		tenacious_defense_spirit = 50
+		quick_improvisation_spirit = 50
+		static_warfare_spirit = 100
 	}
 
 	# Keep small, as it is used as a factor for some things (such as research needs)

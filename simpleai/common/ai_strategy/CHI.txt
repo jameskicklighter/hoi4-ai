@@ -160,7 +160,6 @@ CHI_japan_is_coming_need_guns = {
 		}
 		date < 1939.1.1 # Build Mils for 3 years...
 	}
-
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -176,7 +175,10 @@ CHI_and_friends_really_need_guns = {
 	}
 
 	enable = {
-		date < 1940.1.1
+		OR = {
+			has_war_with = JAP
+			date < 1940.1.1
+		}
 	}
 
 	abort_when_not_enabled = yes
@@ -207,6 +209,7 @@ CHI_let_japan_get_lost_in_the_desert = {
 	enable = {
 		is_in_faction_with = SHX
 		is_in_faction_with = XSM
+		has_war_with = JAP
 	}
 	abort = {
 		OR = {
@@ -353,5 +356,37 @@ CHI_you_should_be_prepared_for_war = {
 	ai_strategy = {
 		type = force_build_armies
 		value = 100
+	}
+}
+
+CHI_coastal_buffer = {
+	allowed = {
+		original_tag = CHI
+	}
+	enable = {
+		JAP = { has_completed_focus = JAP_intervene_in_china }
+		has_war_with = JAP
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		states = {
+			597
+			743
+			613
+			596
+			595
+		}
+		ratio = 0.20
+		area = asia
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = yes
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 10
 	}
 }

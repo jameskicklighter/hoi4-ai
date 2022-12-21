@@ -37,20 +37,25 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20 
+			factor = 20
 			modifier = {
 				not = {
 					has_army_experience > 120
 				}
 				factor = 0.8
 			}
-			# These minor Chinese warlords seem to have been taking Mobile Warfare doctrines...
+			# Maybe persuade minors starting with no default tree unlocked.
+			# Ideal because of the extra recruitable population at the end of the tree.
 			modifier = {
-				factor = 0
-				OR = {
-					tag = SHX
-					tag = SIK
+				NOT = {
+					OR = {
+						has_tech = mobile_warfare
+						has_tech = trench_warfare
+						has_tech = mass_assault
+					}
 				}
+ 
+				factor = 20
 			}
 		}
 		
@@ -222,7 +227,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
+			factor = 100
 			modifier = {
 				not = {
 					has_army_experience > 120
@@ -407,7 +412,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
+			factor = 15
 			modifier = {
 				not = {
 					has_army_experience > 120
@@ -421,10 +426,6 @@ technologies = {
 			modifier = {
 				not = { ai_air_doctrine_tier_2_trigger = yes }
 				factor = 0.75
-			}
-			modifier = {
-				tag = GER
-				factor = 3
 			}
 		}
 		
@@ -811,7 +812,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
+			factor = 100
 			modifier = {
 				not = {
 					has_army_experience > 120
@@ -825,10 +826,6 @@ technologies = {
 			modifier = {
 				not = { ai_air_doctrine_tier_2_trigger = yes }
 				factor = 0.5
-			}
-			modifier = {
-				tag = GER
-				factor = 3
 			}
 		}
 		
@@ -954,19 +951,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 20
-
-			# Maybe persuade minors starting with no default tree unlocked.
-			modifier = {
-				NOT = {
-					OR = {
-						has_tech = mobile_warfare
-						has_tech = trench_warfare
-						has_tech = mass_assault
-					}
-				}
-
-				factor = 20
-			}
 
 			modifier = {
 				not = {
@@ -1816,6 +1800,10 @@ technologies = {
 				}
 				factor = 0.8
 			}
+			modifier = {
+				original_tag = ITA
+				factor = 0
+			}
 			factor = 20
 		}
 		
@@ -1860,6 +1848,11 @@ technologies = {
 					has_army_experience > 120
 				}
 				factor = 0.8
+			}
+
+			modifier = {
+				original_tag = ITA
+				factor = 0
 			}
 
 			modifier = {
@@ -2342,7 +2335,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
+			factor = 50
 			modifier = {
 				not = {
 					has_army_experience > 120

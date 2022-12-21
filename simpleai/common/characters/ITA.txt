@@ -173,7 +173,7 @@ characters = {
 				grand_battle_plan_expert
 			}
 			ai_will_do = {
-				base = 50.000
+				factor = 50.000
 			}
 		}
 
@@ -209,7 +209,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}
 
@@ -244,7 +244,7 @@ characters = {
 			}
 			cost = 50
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}
 		
@@ -291,7 +291,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}
 		
@@ -371,7 +371,7 @@ characters = {
 			}
 			cost = 50
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}
 		
@@ -489,7 +489,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				base = 0
+				factor = 0
 			}
 		}
 		
@@ -532,7 +532,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				base = 2.000
+				factor = 2.000
 			}
 		}
 		
@@ -959,7 +959,7 @@ characters = {
 			}
 			cost = 50
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}
 		
@@ -995,7 +995,7 @@ characters = {
 			}
 			cost = 50
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}
 		
@@ -1087,7 +1087,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}
 		
@@ -1313,7 +1313,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}
 	}
@@ -1342,7 +1342,7 @@ characters = {
 			}
 			cost = 50
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}
 	}
@@ -1369,7 +1369,7 @@ characters = {
 			}
 			cost = 50
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}
 	}
@@ -1396,7 +1396,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}
 	}
@@ -1425,7 +1425,7 @@ characters = {
 			}
 			cost = 50
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}
 	}
@@ -1449,7 +1449,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}		
 	}
@@ -1473,7 +1473,7 @@ characters = {
 			}
 			cost = 50
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}
 	}
@@ -1520,7 +1520,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}
 	}
@@ -1548,7 +1548,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}		
 	}
@@ -1576,7 +1576,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}
 	}
@@ -1604,7 +1604,7 @@ characters = {
 			}
 			cost = 50
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}
 	}
@@ -1637,7 +1637,7 @@ characters = {
 			}
 			cost = 50
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}
 	}
@@ -1689,7 +1689,7 @@ characters = {
 				}
 			}
 			ai_will_do = {
-				base = 0.3
+				factor = 0.3
 				modifier = {
 					factor = 0
 					OR = {
@@ -1751,7 +1751,7 @@ characters = {
 				}
 			}
 			ai_will_do = {
-				base = 0.3
+				factor = 0.3
 				modifier = {
 					factor = 0
 					OR = {
@@ -1802,7 +1802,7 @@ characters = {
 				}
 			}
 			ai_will_do = {
-				base = 0.300
+				factor = 0.300
 				modifier = {
 					factor = 0
 					OR = {
@@ -1854,7 +1854,7 @@ characters = {
 				}
 			}
 			ai_will_do = {
-				base = 0.300
+				factor = 0.300
 				modifier = {
 					factor = 0
 					OR = {
@@ -1895,7 +1895,7 @@ characters = {
 			}
 			cost = 50
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}
 		advisor = {
@@ -1913,7 +1913,7 @@ characters = {
 				head_of_intelligence 
 			}
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 				modifier = {
 					factor = 0
 					OR = {
@@ -1959,7 +1959,7 @@ characters = {
 				prince_of_terror
 			}
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 				modifier = {
 					factor = 0
 					OR = {
@@ -1992,7 +1992,7 @@ characters = {
 				war_industrialist 
 			}
 			ai_will_do = {
-				base = 25.000
+				factor = 40.000
 				modifier = {
 					factor = 0
 					OR = {
@@ -2028,7 +2028,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 0.300
+				factor = 0.300
 				modifier = {
 					factor = 0
 					OR = {
@@ -2064,7 +2064,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 0.300
+				factor = 0.300
 				modifier = {
 					factor = 0
 					OR = {
@@ -2109,7 +2109,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 50.000
+				factor = 90.000
 				modifier = {
 					factor = 0
 					OR = {
@@ -2150,7 +2150,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 0.300
+				factor = 0.300
 				modifier = {
 					factor = 0
 					OR = {
@@ -2187,7 +2187,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 100.000
+				factor = 100.000
 				modifier = {
 					factor = 0
 					OR = {
@@ -2235,7 +2235,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 0.300
+				factor = 0.300
 				modifier = {
 					factor = 0
 					OR = {
@@ -2271,7 +2271,7 @@ characters = {
 			on_add = {
 			}
 			ai_will_do = {
-				base = 0.500
+				factor = 0.500
 				modifier = {
 					factor = 0
 					OR = {
@@ -2305,7 +2305,7 @@ characters = {
 				backroom_backstabber 
 			}
 			ai_will_do = {
-				base = 0.000
+				factor = 0.000
 				modifier = {
 					factor = 0
 					OR = {
@@ -2353,7 +2353,7 @@ characters = {
 				}
 			}
 			ai_will_do = {
-				base = 0.000
+				factor = 0.000
 				modifier = {
 					factor = 0
 					OR = {
@@ -2435,7 +2435,7 @@ characters = {
 			}
 			cost = 100
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 			}
 		}
 		
@@ -2543,7 +2543,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 0.100
+				factor = 0.100
 			}
 		}
 	}
@@ -2578,7 +2578,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 0.300
+				factor = 0.300
 				modifier = {
 					factor = 0.5
 					OR = {
@@ -2617,7 +2617,7 @@ characters = {
 			on_add = {
 			}
 			ai_will_do = {
-				base = 3.000
+				factor = 3.000
 			}
 		}
 	}
@@ -2646,7 +2646,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 0
+				factor = 0
 				modifier = {
 					add = 100
 					OR = {
@@ -2684,7 +2684,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 0.300
+				factor = 0.300
 			}
 		}
 	}
@@ -2731,7 +2731,7 @@ characters = {
 				}
 			}
 			ai_will_do = {
-				base = 0.000
+				factor = 0.000
 				modifier = {
 					factor = 0
 					ITA_is_socialist_ai = no
@@ -2791,7 +2791,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 0
+				factor = 0
 				modifier = {
 					add = 0.1
 					ITA_is_socialist_ai = yes
@@ -2829,7 +2829,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 0.300
+				factor = 0.300
 				modifier = {
 					factor = 0
 					ITA_is_communist_ai = yes
@@ -2868,7 +2868,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 0.300
+				factor = 0.300
 				modifier = {
 					factor = 0
 					ITA_is_communist_ai = yes
@@ -2900,7 +2900,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 0.300
+				factor = 0.300
 			}
 		}
 	}
@@ -2931,7 +2931,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 0.300
+				factor = 0.300
 			}
 		}		
 	}	
@@ -3094,7 +3094,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 0.300
+				factor = 0.300
 			}
 		}
 
@@ -3153,7 +3153,7 @@ characters = {
 				}
 			}
 			ai_will_do = {
-				base = 0.000
+				factor = 0.000
 			}
 		}
 	}
@@ -3193,7 +3193,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 0.800
+				factor = 0.800
 				modifier = {
 					factor = 0.1
 					ITA_is_socialist_ai = yes
@@ -3258,7 +3258,7 @@ characters = {
 			}
 			
 			ai_will_do = {
-				base = 0.100
+				factor = 0.100
 				modifier = {
 					factor = 10
 					has_stability < 0.3
@@ -3314,7 +3314,7 @@ characters = {
 			}
 			
 			ai_will_do = {
-				base = 1.000
+				factor = 1.000
 				modifier = {
 					factor = 0
 					ITA_is_socialist_ai = yes
@@ -3352,7 +3352,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 0.300
+				factor = 0.300
 			}
 		}
 	}
@@ -3386,7 +3386,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 0.300
+				factor = 0.300
 			}
 		}
 	}
@@ -3414,7 +3414,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 0.300
+				factor = 0.300
 			}
 		}
 	}
@@ -3445,7 +3445,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				base = 0.300
+				factor = 0.300
 				modifier = {
 					factor = 0
 					ITA_is_socialist_ai = yes
