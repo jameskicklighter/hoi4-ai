@@ -83,20 +83,16 @@ German_alternate_kaiser = {
 	}
 
 	research = {
-		infantry_weapons = 50.0
-		infantry_tech = 15.0
-		artillery = 8.0
-		support_tech = 6.5
+
 	}
 
 	ideas = {
-		hjalmar_schacht = 10
-		heinrich_himmler = 0
-		martin_bormann = 0
+		# Army Spirits. Only available to Neutral/Fascist.
+		political_loyalty_spirit = 75
 	}
 
 	traits = {
-		captain_of_industry = 5
+
 	}
 
 	# Keep small, as it is used as a factor for some things (such as research needs)
@@ -181,20 +177,15 @@ German_alternate_democratic = {
 	}
 
 	research = {
-		infantry_weapons = 50.0
-		infantry_tech = 15.0
-		artillery = 8.0
-		support_tech = 6.5
+
 	}
 
 	ideas = {
-		hjalmar_schacht = 10
-		heinrich_himmler = 0
-		martin_bormann = 0
+
 	}
 
 	traits = {
-		captain_of_industry = 5
+
 	}
 
 	# Keep small, as it is used as a factor for some things (such as research needs)
@@ -207,7 +198,7 @@ German_alternate_democratic = {
 	}
 
 	focus_factors = {
-		
+
 	}
 
 }

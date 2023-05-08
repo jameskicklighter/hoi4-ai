@@ -135,7 +135,7 @@ CHI_unit_production = {
 		id = armor
 		value = 0
 	}
-	
+
 	ai_strategy = {
 		type = ignore_army_incompetence
 		value = 50
@@ -169,39 +169,6 @@ CHI_japan_is_coming_need_guns = {
 	}
 }
 
-CHI_and_friends_really_need_guns = {
-	allowed = {
-		is_literally_china = yes
-	}
-
-	enable = {
-		OR = {
-			has_war_with = JAP
-			date < 1940.1.1
-		}
-	}
-
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = production_upgrade_desire_offset
-		id = infantry_equipment_1
-		value = -100
-	}
-
-	ai_strategy = {
-		type = production_upgrade_desire_offset
-		id = infantry_equipment_2
-		value = -100
-	}
-
-	ai_strategy = {
-		type = production_upgrade_desire_offset
-		id = infantry_equipment_3
-		value = -100
-	}
-}
-
 CHI_let_japan_get_lost_in_the_desert = {
 	allowed = {
 		original_tag = CHI
@@ -220,7 +187,7 @@ CHI_let_japan_get_lost_in_the_desert = {
 					has_completed_focus = JAP_support_the_kodoha_faction
 				}
 			}
-			date > 1940.1.1
+			#date > 1940.1.1
 		}
 	}
 
@@ -277,10 +244,10 @@ CHI_armored_production = {
 CHI_highered_armored_production = {
 	allowed = { original_tag = CHI }
 	enable = {
-		num_of_military_factories > 109
+		num_of_military_factories > 64
 	}
 	abort = {
-		num_of_military_factories < 110
+		num_of_military_factories < 65
 	}
 
 	ai_strategy = {
@@ -295,28 +262,25 @@ CHI_prio_military_even_at_peace = {
 	enable = {
 		always = yes
 	}
-	
+
 	ai_strategy = {
 		type = added_military_to_civilian_factory_ratio
 		value = 50
 	}
-	
 }
-	
-CHI_dont_mess_with_the_soviets = {
 
+CHI_dont_mess_with_the_soviets = {
 	allowed = { original_tag = CHI }
 	enable = {	
 		NOT = { has_war_with = SOV }
 	}
-	
 	abort = {
 		has_war_with = SOV
 	}
 
 	ai_strategy = {
 		type = contain
-		id = "SOV"			
+		id = "SOV"
 		value = -200
 	}
 }
@@ -349,10 +313,13 @@ CHI_you_should_be_prepared_for_war = {
 		is_literally_china = yes
 	}
 	enable = {
-		always = yes
+		OR = {
+			date < 1940.1.1
+			has_war_with = JAP
+		}
 	}
 	abort_when_not_enabled = yes
-	
+
 	ai_strategy = {
 		type = force_build_armies
 		value = 100
@@ -364,8 +331,16 @@ CHI_coastal_buffer = {
 		original_tag = CHI
 	}
 	enable = {
-		JAP = { has_completed_focus = JAP_intervene_in_china }
-		has_war_with = JAP
+		OR = {
+			JAP = {
+				focus_progress = {
+					focus = JAP_intervene_in_china
+					progress > 0.01
+				}
+			}
+			#JAP = { has_completed_focus = JAP_intervene_in_china }
+			has_war_with = JAP
+		}
 	}
 	abort_when_not_enabled = yes
 
@@ -388,5 +363,275 @@ CHI_coastal_buffer = {
 		type = role_ratio
 		id = garrison
 		value = 10
+	}
+}
+
+# Force China to not declare so many wars at once...
+CHI_take_on_yunnan_only = {
+	allowed = {
+		original_tag = CHI
+	}
+	enable = {
+		OR = {
+			has_completed_focus = CHI_subjugate_the_warlords
+			has_completed_focus = CHI_one_china_policy
+		}
+		YUN = {
+			NOT = { is_puppet_of = CHI }
+			exists = yes
+			has_capitulated = no
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = declare_war
+		id = "GXC"
+		value = -2000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "SHX"
+		value = -2000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "XSM"
+		value = -2000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "SIK"
+		value = -2000
+	}
+	ai_strategy = {
+		type = front_control
+		tag = YUN
+
+		ratio = 1.0
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+}
+
+CHI_take_on_guangxi_clique_only = {
+	allowed = {
+		original_tag = CHI
+	}
+	enable = {
+		OR = {
+			has_completed_focus = CHI_subjugate_the_warlords
+			has_completed_focus = CHI_one_china_policy
+		}
+		YUN = {
+			OR = {
+				is_puppet_of = CHI
+				exists = no
+				has_capitulated = yes
+			}
+		}
+		GXC = {
+			NOT = { is_puppet_of = CHI }
+			exists = yes
+			has_capitulated = no
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = declare_war
+		id = "SHX"
+		value = -2000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "XSM"
+		value = -2000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "SIK"
+		value = -2000
+	}
+	ai_strategy = {
+		type = front_control
+		tag = GXC
+
+		ratio = 1.0
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+}
+
+CHI_take_on_xibei_san_ma_only = {
+	allowed = {
+		original_tag = CHI
+	}
+	enable = {
+		OR = {
+			has_completed_focus = CHI_subjugate_the_warlords
+			has_completed_focus = CHI_one_china_policy
+		}
+		YUN = {
+			OR = {
+				is_puppet_of = CHI
+				exists = no
+				has_capitulated = yes
+			}
+		}
+		GXC = {
+			OR = {
+				is_puppet_of = CHI
+				exists = no
+				has_capitulated = yes
+			}
+		}
+		XSM = {
+			NOT = { is_puppet_of = CHI }
+			exists = yes
+			has_capitulated = no
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = declare_war
+		id = "SHX"
+		value = -2000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "SIK"
+		value = -2000
+	}
+	ai_strategy = {
+		type = front_control
+		tag = XSM
+
+		ratio = 1.0
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+}
+
+CHI_take_on_sikiang_only = {
+	allowed = {
+		original_tag = CHI
+	}
+	enable = {
+		OR = {
+			has_completed_focus = CHI_subjugate_the_warlords
+			has_completed_focus = CHI_one_china_policy
+		}
+		YUN = {
+			OR = {
+				is_puppet_of = CHI
+				exists = no
+				has_capitulated = yes
+			}
+		}
+		GXC = {
+			OR = {
+				is_puppet_of = CHI
+				exists = no
+				has_capitulated = yes
+			}
+		}
+		XSM = {
+			OR = {
+				is_puppet_of = CHI
+				exists = no
+				has_capitulated = yes
+			}
+		}
+		SIK = {
+			NOT = { is_puppet_of = CHI }
+			exists = yes
+			has_capitulated = no
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = declare_war
+		id = "SHX"
+		value = -2000
+	}
+	ai_strategy = {
+		type = front_control
+		tag = SIK
+
+		ratio = 1.0
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+}
+
+CHI_subdue_warlords_then_communists = {
+	allowed = { 
+		original_tag = CHI
+	}
+	enable = {
+		has_subdued_warlords = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = declare_war
+		id = "PRC"
+		value = -2000
+	}
+}
+
+CHI_subdue_communists_then_manchuria = {
+	allowed = { 
+		original_tag = CHI
+	}
+	enable = {
+		PRC = {
+			NOT = { is_puppet_of = CHI }
+			exists = yes
+			has_capitulated = no
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = declare_war
+		id = "MAN"
+		value = -2000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "JAP"
+		value = -2000
+	}
+}
+
+SOV_dont_get_directly_involved_in_china = {
+	allowed = {
+		original_tag = SOV
+	}
+	enable = {
+		date < 1943.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = PRC
+		value = -200
 	}
 }

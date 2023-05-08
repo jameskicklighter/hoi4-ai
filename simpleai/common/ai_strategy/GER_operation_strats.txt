@@ -2,7 +2,6 @@ GER_collaboration_on_SOV = {
 	allowed = {
 		tag = GER
 	}
-
 	enable = {
 		tag = GER
 		OR = {
@@ -29,14 +28,13 @@ GER_collaboration_on_SOV = {
 			NOT = { is_ally_with = GER }
 		}
 
-		# do at most two times
+		# do at most three times
 		num_finished_operations = {
 			operation = operation_collaboration_government
 			target = SOV
-			value < 2
+			value < 3
 		}
 	}
-
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -45,7 +43,6 @@ GER_collaboration_on_SOV = {
 		value = 9999
 		operation_target = SOV
 	}
-
 	ai_strategy = {
 		type = operative_mission
 		mission = build_intel_network

@@ -25,41 +25,8 @@ German_historical = {
 		}
 	}
 	abort = {
-		OR = {
-			SWE = {
-				has_government = communism #prio 1, crush Sweden
-			}
-			SOV = {
-				NOT = {
-					has_government = communism
-				}
-			}
-			ENG = {
-				NOT = {
-					has_government = democratic
-				}
-			}
-			any_country_with_original_tag = {
-				original_tag_to_check = HUN
-				has_completed_focus = HUN_invite_the_habsburg_prince
-			}
-			any_country_with_original_tag = {
-				original_tag_to_check = FRA
-				OR = {
-					has_completed_focus = FRA_utilize_the_leagues
-					has_completed_focus = FRA_invite_communist_ministers
-					has_completed_focus = FRA_leftist_rhetoric
-					has_completed_focus = FRA_right_wing_rhetoric
-				}
-			}
-			any_country_with_original_tag = {
-				original_tag_to_check = USA
-				OR = {
-					has_completed_focus = USA_war_plan_red
-					has_completed_focus = USA_war_plan_white
-				}
-			}
-		}
+		# Let's test with no abort conditions. If something is not possible, such as Anschluss,
+		# then we might be a bit stuck in the tree but it's ok. Peaceful Hitler.
 	}
 
 	ai_national_focuses = {
@@ -117,19 +84,12 @@ German_historical = {
 	}
 
 	research = {
-		infantry_weapons = 50.0
-		infantry_tech = 15.0
-		artillery = 8.0
-		support_tech = 6.5
+
 	}
 
 	ideas = {
-		#tot_economic_mobilisation = 1000
-
-		# Army Spirits
-		political_loyalty_spirit = 50
-		quick_improvisation_spirit = 100
-		flexible_organization_spirit = 50
+		# Army Spirits. Only available to Neutral/Fascist.
+		political_loyalty_spirit = 75
 	}
 
 	# Keep small, as it is used as a factor for some things (such as research needs)
@@ -141,14 +101,56 @@ German_historical = {
 		}
 	}
 
+	focus_factors = {
+		GER_rhineland = 1.0
+	}
+}
+
+GER_default_strategy = {
+	name = "German default strategy values."
+	desc = "Default values that all versions of Germany need."
+
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+	}
+	abort = {
+		always = no
+	}
+
+	focus_factors = {
+
+	}
+
+	research = {
+		infantry_weapons = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	ideas = {
+		# Army Spirits that are are always available for us.
+		# We always have Mobile Warfare Doctrine.
+		quick_improvisation_spirit = 100
+		maneuver_warfare_spirit = 50
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	# For some reason, it seems Germany fails to produce Medium Tank divisions without this.
 	ai_strategy = {
 		type = template_prio
 		id = medium_armor
 		value = 111
-	}
-
-	focus_factors = {
-		GER_rhineland = 1.0
 	}
 }
 

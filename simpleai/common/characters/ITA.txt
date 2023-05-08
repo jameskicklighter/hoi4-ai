@@ -1992,7 +1992,7 @@ characters = {
 				war_industrialist 
 			}
 			ai_will_do = {
-				factor = 40.000
+				factor = 0.300
 				modifier = {
 					factor = 0
 					OR = {
@@ -2109,7 +2109,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				factor = 90.000
+				factor = 0.500
 				modifier = {
 					factor = 0
 					OR = {
@@ -2187,7 +2187,7 @@ characters = {
 			}
 
 			ai_will_do = {
-				factor = 100.000
+				factor = 2.000
 				modifier = {
 					factor = 0
 					OR = {
@@ -3020,7 +3020,7 @@ characters = {
 		}
 		
 		corps_commander = {
-			traits = { militias_officer organizer cautious } #Partisan
+			traits = { militias_officer organizer trait_cautious } #Partisan
 			skill = 2
 			attack_skill = 1
 			defense_skill = 2

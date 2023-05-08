@@ -14,6 +14,167 @@
 # building_target
 
 
+# ==================================================
+#   Industry
+# ==================================================
+
+GER_industry_we_are_the_baddies = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date > 1937.8.1
+	}
+	abort={
+		date > 1940.1.1
+	}
+
+	ai_strategy = {
+		type = added_military_to_civilian_factory_ratio
+		value = 50
+	}
+	ai_strategy = {
+		type = air_factory_balance
+		value = 100
+	}
+}
+
+GER_industry_we_are_the_baddies_2 = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date > 1940.1.1
+	}
+
+	ai_strategy = {
+		type = added_military_to_civilian_factory_ratio
+		value = 20
+	}
+}
+
+GER_industry_we_are_the_baddies_but_not_yet = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date < 1937.8.1
+	}
+	abort={
+		date > 1937.8.1
+	}
+
+	ai_strategy = {
+		type = air_factory_balance
+		value = 110
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = -50 #because doctrine this = 3
+	}
+}
+
+GER_wants_civ = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date < 1937.8.1
+		has_war = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = industrial_complex
+		value = 90
+	}
+}
+
+GER_wants_synth = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date > 1937.10.20
+		has_war = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = synthetic_refinery
+		value = 8
+	}
+}
+
+GER_wants_docks = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		NOT = {
+			any_home_area_neighbor_country = {
+				has_war_with = ROOT
+			}
+		}
+		NOT = { has_war_with = SOV }
+		date > 1940.1.1
+		num_of_military_factories > 99
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = dockyard
+		value = 50
+	}
+}
+
+GER_wants_docks_again = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		NOT = {
+			any_home_area_neighbor_country = {
+				has_war_with = ROOT
+			}
+		}
+		NOT = { has_war_with = SOV }
+		date > 1942.1.1
+		num_of_military_factories > 199
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = dockyard
+		value = 100
+	}
+}
+
+GER_we_are_bad_at_espionage_because_it_is_expensive_and_not_gigachad_industry = {
+	allowed = {
+		original_tag = GER
+		has_dlc = "La Resistance"
+	}
+	enable = {
+		num_of_military_factories < 99
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = intelligence_agency_usable_factories
+		value = -20
+	}
+}
+
+# ==================================================
+#   Military Production
+# ==================================================
+
 GER_unit_production = {
 	allowed = {
 		original_tag = GER
@@ -139,16 +300,19 @@ GER_unit_production = {
 		id = armor
 		value = -10
 	}
+
 	ai_strategy = {
 		type = equipment_production_factor
 		id = motorized
 		value = -10
 	}
+
 	ai_strategy = {
 		type = equipment_production_min_factories #Build these up over time, don't stall
 		id = anti_air
 		value = 2
 	}
+
 	ai_strategy = {
 		type = equipment_production_min_factories
 		id = artillery
@@ -938,45 +1102,6 @@ tfv_protect_fascist_south_africa = {
 	}
 }
 
-less_naval_focused_nation = {
-	allowed = {
-		original_tag = GER
-		not = {
-			has_dlc = "Man the Guns"
-		}
-	}
-	enable = {
-		date > "1936.1.1" #Don't Germany, just dont
-	}
-	abort = {
-		date > "1943.1.1" #Don't Germany, just dont, if you haven't already won
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = capital_ship
-		value = -3
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = submarine
-		value = -3
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = screen_ship
-		value = -3
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = convoy
-		value = -3
-	}
-}
-
 GER_naval_role_ratios_historical = {
 	allowed = {
 		original_tag = GER
@@ -1481,7 +1606,7 @@ axis_stay_away_from_the_royal_navy = {
 	enable = {
 		has_war_with = ENG
 		date < 1942.1.1
-		FRA = { has_capitulated = no }
+		#FRA = { has_capitulated = no }
 
 		OR = {
 			GER = {
@@ -1551,63 +1676,6 @@ dont_take_claims_on_POL_we_got_focus = {
 	}
 }
 
-GER_industry_we_are_the_baddies = {
-	allowed = {
-		original_tag = GER
-	}
-	enable = {
-		date > 1937.8.1
-	}
-	abort={
-		date > 1940.1.1
-	}
-
-	ai_strategy = {
-		type = added_military_to_civilian_factory_ratio
-		value = 50
-	}
-	ai_strategy = {
-		type = air_factory_balance
-		value = 100
-	}
-}
-
-GER_industry_we_are_the_baddies_2 = {
-	allowed = {
-		original_tag = GER
-	}
-	enable = {
-		date > 1940.1.1
-	}
-
-	ai_strategy = {
-		type = added_military_to_civilian_factory_ratio
-		value = 20
-	}
-}
-
-GER_industry_we_are_the_baddies_but_not_yet = {
-	allowed = {
-		original_tag = GER
-	}
-	enable = {
-		date < 1937.8.1
-	}
-	abort={
-		date > 1937.8.1
-	}
-
-	ai_strategy = {
-		type = air_factory_balance
-		value = 110
-	}
-	ai_strategy = {
-		type = role_ratio
-		id = armor
-		value = -50 #because doctrine this = 3
-	}
-}
-
 Baddies_care_less_about_making_friends = {
 	enable = {
 		OR = {
@@ -1621,131 +1689,60 @@ Baddies_care_less_about_making_friends = {
 	ai_strategy = {
 		type = pp_spend_priority
 		id = relation
-		value = -9999
+		value = -100
 	}
 }
 
-GER_wants_civ = {
+GER_dont_upgrade_to_weapons_3_too_early = {
 	allowed = {
-		original_tag = GER
-	}
-	enable = {
-		date < 1938.6.1
-		has_war = no
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = building_target
-		id = industrial_complex
-		value = 90
-	}
-}
-
-GER_wants_synth = {
-	allowed = {
-		original_tag = GER
-	}
-	enable = {
-		date > 1937.10.20
-		has_war = no
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = building_target
-		id = synthetic_refinery
-		value = 8
-	}
-}
-
-GER_wants_docks = {
-	allowed = {
-		original_tag = GER
-	}
-	enable = {
-		NOT = {
-			any_home_area_neighbor_country = {
-				has_war_with = ROOT
-			}
+		OR = {
+			original_tag = GER
+			original_tag = ITA
+			original_tag = JAP
 		}
-		NOT = { has_war_with = SOV }
-		date > 1940.1.1
-		num_of_military_factories > 99
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = building_target
-		id = dockyard
-		value = 50
-	}
-}
-
-GER_wants_docks_again = {
-	allowed = {
-		original_tag = GER
 	}
 	enable = {
-		NOT = {
-			any_home_area_neighbor_country = {
-				has_war_with = ROOT
-			}
-		}
-		NOT = { has_war_with = SOV }
-		date > 1942.1.1
-		num_of_military_factories > 199
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = building_target
-		id = dockyard
-		value = 100
-	}
-}
-
-GER_share_borders_with_ITA_against_SOV = {
-	allowed = {
-		original_tag = GER
-	}
-	enable = {
-		is_in_faction_with = ITA
-		going_war_with_SOV = yes
-
-		GER_should_split_SOV_front_with_ITA = yes
+		has_equipment = { infantry_equipment < 50000 }
 	}
 	abort = {
-		not = {
-			is_in_faction_with = ITA
-			going_war_with_SOV = yes
-			GER_should_continue_split_SOV_front_with_ITA = yes
+		has_equipment = { infantry_equipment > 60000 }
+	}
+
+	ai_strategy = {
+		type = production_upgrade_desire_offset
+		id = infantry_equipment_2
+		value = -100
+	}
+	ai_strategy = {
+		type = production_upgrade_desire_offset
+		id = infantry_equipment_3
+		value = -100
+	}
+}
+
+GER_prepare_for_war_with_SOV = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		going_war_with_SOV = yes
+	}
+	abort = {
+		OR = {
+			surrender_progress > 0.15
+			going_war_with_SOV = no
+			SOV = { has_capitulated = yes }
 		}
 	}
 
 	ai_strategy = {
-		type = dont_defend_ally_borders
-		id = "CRO"
-		value = 100
-	}
-	ai_strategy = { #Romania tends to eat the land up.
-		type = dont_defend_ally_borders
-		id = "ROM"
+		type = prepare_for_war
+		id = SOV
 		value = 100
 	}
 	ai_strategy = {
-		type = dont_defend_ally_borders
-		id = "HUN"
-		value = 100
-	}
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		id = "SLO"
-		value = 100
-	}
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		id = "ITA"
+		type = front_unit_request
+		tag = SOV
 		value = 100
 	}
 }
@@ -1828,77 +1825,114 @@ spain_scw_support_GER_resistance = {
 		value = 100
 	}
 	ai_strategy = {
-		type = send_volunteers_desire
+		type = send_lend_lease_desire
 		id = SPA
 		value = 100
 	}
 	ai_strategy = {
-		type = diplo_action_desire
+		type = send_volunteers_desire
 		id = SPA
-		target = send_attache
 		value = 100
 	}
 }
 
-axis_majors_ignore_asia = {
+axis_dont_mess_with_volunteers = {
 	allowed = {
 		OR = {
 			original_tag = GER
 			original_tag = ITA
 		}
-		has_dlc = "La Resistance"
 	}
-
 	enable = {
-		is_historical_focus_on = yes
-		has_government = fascism
+		date < 1941.6.1
 	}
-
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = support
-		id = JAP
-		value = -999
+	abort = {
+		date > 1941.6.1
 	}
 
 	ai_strategy = {
 		type = send_volunteers_desire
 		id = JAP
-		value = -999
+		value = -500
 	}
-
 	ai_strategy = {
-		type = support
-		id = CHI
-		value = -999
+		type = send_volunteers_desire
+		id = MAN
+		value = -500
 	}
-
 	ai_strategy = {
 		type = send_volunteers_desire
 		id = CHI
-		value = -999
+		value = -500 #sorry buds
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = YUN
+		value = -500 #sorry buds
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = SHX
+		value = -500 #sorry buds
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = XSM
+		value = -500 #sorry buds
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = SIK
+		value = -500 #sorry buds
 	}
 }
 
-GER_we_are_bad_at_espionage_because_it_is_expensive_and_not_tanks = {
+GER_my_precisioussss = {
 	allowed = {
 		original_tag = GER
-		has_dlc = "La Resistance"
 	}
 	enable = {
-		has_government = fascism
-		num_of_civilian_factories < 90
-		num_of_civilian_factories > 30
-	}
-	abort = {
 		OR = {
-			num_of_civilian_factories > 90
+			date < 1944.6.1
+			has_war = yes
 		}
 	}
+	abort_when_not_enabled = yes
+
 	ai_strategy = {
-		type = intelligence_agency_usable_factories
-		value = -20
+		type = send_lend_lease_desire
+		id = SLO
+		value = -999
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = MAN
+		value = -999
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = CHI
+		value = -999
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = YUN
+		value = -999
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = SHX
+		value = -999
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = XSM
+		value = -999
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = SIK
+		value = -999
 	}
 }
 
@@ -2164,7 +2198,7 @@ GER_have_some_train_production = {
 	ai_strategy = {
 		type = equipment_production_min_factories
 		id = train
-		value = 3
+		value = 1
 	}
 }
 
@@ -2252,27 +2286,6 @@ GER_vichy_has_served_its_purpose = {
 		type = prepare_for_war
 		id = VIC
 		value = 100
-	}
-}
-
-GER_dont_upgrade_to_weapons_3_too_early = {
-	allowed = {
-		OR = {
-			original_tag = GER
-			original_tag = ITA
-			original_tag = JAP
-		}
-	}
-	enable = {
-		date < 1942.1.1
-	}
-
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = equipment_production_min_factories
-		id = infantry_equipment_1
-		value = 20
 	}
 }
 
@@ -2415,7 +2428,6 @@ GER_blitz_belgium_with_kaiser  = {
 	allowed = {
 		original_tag = GER
 	}
-
 	enable = {
 		OR = {
 			AND = {
@@ -2431,7 +2443,6 @@ GER_blitz_belgium_with_kaiser  = {
 			}
 		}
 	}
-
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -2446,29 +2457,22 @@ GER_blitz_belgium_with_kaiser  = {
 		execution_type = rush
 		execute_order = yes
 	}
-
 	ai_strategy = {
 		type = front_unit_request
 		tag = BEL
 		value = 100 # lets put more units, should be safe
 	}
-
-
-
 }
 
 GER_blitz_france_with_kaiser = {
-
 	allowed = {
 		original_tag = GER
 	}
-
 	enable = {
 		BEL = { has_capitulated = yes }
 		has_war_with = FRA
 		has_completed_focus = GER_break_the_anglo_french_colonial_hegemony
 	}
-
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -2476,7 +2480,6 @@ GER_blitz_france_with_kaiser = {
 		id = "FRA"
 		value = 25
 	}
-
 	ai_strategy = {
 		type = front_control
 
@@ -2489,21 +2492,17 @@ GER_blitz_france_with_kaiser = {
 		execution_type = rush_weak
 		execute_order = yes
 	}
-
 	ai_strategy = {
 		type = front_unit_request
 		tag = FRA
 		value = 100 # lets put more units, should be safe
 	}
-
 }
-
 
 GER_tanks_in_the_snow = {
 	allowed = {
 		original_tag = GER
 	}
-
 	enable = {
 		OR = {
 			focus_progress = {
@@ -2513,7 +2512,6 @@ GER_tanks_in_the_snow = {
 			has_completed_focus = GER_ussr_war_goal
 		}
 	}
-
 	abort = {
 		surrender_progress > 0.15 #Bring our metal bawkses home
 	}
@@ -2523,15 +2521,11 @@ GER_tanks_in_the_snow = {
 		id = "SOV"
 		value = 100
 	}
-
 	ai_strategy = {
 		type = front_unit_request
-
 		tag = SOV
-
 		value = 60
 	}
-
 }
 
 GER_tanks_against_france = {
@@ -2903,21 +2897,21 @@ GER_pause_in_SOV = { #We got this far but our home is under siege
 
 }
 
-GER_we_dont_believe_in_mountain_tanks = {
-	enable = { always = yes }
-
-	ai_strategy = {
-		type = front_armor_score
-		id = "GRE"
-		value = -100
-	}
-
-	ai_strategy = {
-		type = front_armor_score
-		id = "YUG"
-		value = -100
-	}
-}
+#GER_we_dont_believe_in_mountain_tanks = {
+#	enable = { always = yes }
+#
+#	ai_strategy = {
+#		type = front_armor_score
+#		id = "GRE"
+#		value = -100
+#	}
+#
+#	ai_strategy = {
+#		type = front_armor_score
+#		id = "YUG"
+#		value = -100
+#	}
+#}
 
 GER_make_some_radar_1 = {
 	allowed = {
@@ -2930,6 +2924,7 @@ GER_make_some_radar_1 = {
 				has_capitulated = yes
 			}
 		}
+		date > 1940.6.1
 	}
 
 	abort = {
@@ -2949,6 +2944,7 @@ GER_make_some_radar_2 = {
 	}
 	enable = {
 		has_tech = radio_detection
+		date > 1940.6.1
 	}
 
 	abort = {
@@ -2968,6 +2964,7 @@ GER_make_some_radar_3 = {
 	}
 	enable = {
 		has_tech = decimetric_radar
+		date > 1940.6.1
 	}
 
 	abort = {
@@ -2994,6 +2991,7 @@ GER_make_some_radar_4 = {
 				include_locked = yes
 			}
 		}
+		date > 1940.6.1
 	}
 	abort_when_not_enabled = yes
 
@@ -3018,6 +3016,7 @@ GER_make_some_radar_5 = {
 				include_locked = yes
 			}
 		}
+		date > 1940.6.1
 	}
 	abort_when_not_enabled = yes
 
@@ -3042,6 +3041,7 @@ GER_make_some_radar_6 = {
 				include_locked = yes
 			}
 		}
+		date > 1940.6.1
 	}
 	abort_when_not_enabled = yes
 
@@ -3066,6 +3066,7 @@ GER_make_some_radar_7 = {
 				include_locked = yes
 			}
 		}
+		date > 1940.6.1
 	}
 	abort_when_not_enabled = yes
 

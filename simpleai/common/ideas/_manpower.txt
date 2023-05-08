@@ -390,38 +390,47 @@ ideas = {
 			}
 
 			ai_will_do = {
-   				factor = 1
+				factor = 1
 				modifier = {
 					#Prio if low on manpower
 					factor = 20
-					manpower_per_military_factory <  700
+					manpower_per_military_factory < 700
 				}
 				modifier = {
-					#Lower chance if has decent amount
+					# Lower chance if has decent amount
 					factor = 0.5
-					manpower_per_military_factory >  1000
+					manpower_per_military_factory > 1000
 				}
 				modifier = {
-					#Block has plenty manpower
+					# Block
 					factor = 0
+					NOT = {
+						OR = {
+							original_tag = GER
+							original_tag = ITA
+						}
+					}
 					manpower_per_military_factory > 3000
 				}
-
-				modifier = { # germany needs this before russia, badly
-					add = 100
+				# Germany needs this going into Barbarossa, as they lose manpower quickly.
+				# Italy also loses a lot of manpower all the time, so it would be nice to help them out too.
+				modifier = { 
+					factor = 1000
 
 					OR = {
 						AND = {
 							original_tag = GER
-							date > 1940.1.1
+							has_government = fascism
+							date > 1941.1.1
 						}
 						AND = {
 							original_tag = ITA
-							date > 1940.1.1
+							has_manpower < 1000000
+							date > 1941.1.1
 						}
 					}
 				}
-
+				# Don't jump the gun.
 				modifier = {
 					factor = 0
 					NOT = { has_idea = extensive_conscription }

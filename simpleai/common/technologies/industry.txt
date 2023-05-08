@@ -1354,20 +1354,27 @@ technologies = {
 					tag = ITA
 				}
 				has_war = yes
-				factor = 15
+				factor = 5
+			}
+			modifier = {
+				tag = GER
+				factor = 10
 			}
 			modifier = {
 				factor = 0.5
 				rubber > 10
+				NOT = { tag = GER }
 			}
 			modifier = {
 				factor = 0.5
 				rubber > 20
+				NOT = { tag = GER }
 			}	
 			modifier = {
 				factor = 0.5
 				rubber > 30
-			}			
+				NOT = { tag = GER }
+			}
 		}
 		
 		ai_research_weights = {
@@ -1414,20 +1421,27 @@ technologies = {
 					tag = ITA
 				}
 				has_war = yes
-				factor = 15
+				factor = 5
+			}
+			modifier = {
+				tag = GER
+				factor = 4
 			}
 			modifier = {
 				factor = 0.5
 				rubber > 10
+				NOT = { tag = GER }
 			}
 			modifier = {
 				factor = 0.5
 				rubber > 20
+				NOT = { tag = GER }
 			}	
 			modifier = {
 				factor = 0.5
 				rubber > 30
-			}			
+				NOT = { tag = GER }
+			}
 		}
 		
 		ai_research_weights = {
@@ -1474,20 +1488,27 @@ technologies = {
 					tag = ITA
 				}
 				has_war = yes
-				factor = 15
+				factor = 5
+			}
+			modifier = {
+				tag = GER
+				factor = 3
 			}
 			modifier = {
 				factor = 0.5
 				rubber > 10
+				NOT = { tag = GER }
 			}
 			modifier = {
 				factor = 0.5
 				rubber > 20
+				NOT = { tag = GER }
 			}	
 			modifier = {
 				factor = 0.5
 				rubber > 30
-			}			
+				NOT = { tag = GER }
+			}
 		}
 		
 		ai_research_weights = {
@@ -1522,19 +1543,34 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 0.5
+			factor = 1
+			modifier = {
+				OR = {
+					tag = GER
+					tag = ITA
+				}
+				has_war = yes
+				factor = 5
+			}
+			modifier = {
+				tag = GER
+				factor = 2
+			}
 			modifier = {
 				factor = 0.5
 				rubber > 10
+				NOT = { tag = GER }
 			}
 			modifier = {
 				factor = 0.5
 				rubber > 20
-			}	
+				NOT = { tag = GER }
+			}
 			modifier = {
 				factor = 0.5
 				rubber > 30
-			}			
+				NOT = { tag = GER }
+			}
 		}
 		
 		ai_research_weights = {

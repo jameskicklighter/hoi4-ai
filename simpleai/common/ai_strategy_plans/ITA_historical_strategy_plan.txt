@@ -28,7 +28,7 @@ ITA_historical_plan = {
 	}
 
 	ai_national_focuses = {
-		#-----1937-----
+		#-----1936-----
 		ITA_ethiopian_war_logistics_bba			# February 5, 1936 -- 35 days
 		ITA_italian_highways_bba				# March 11, 1936 -- 35 days
 		ITA_railway_innovations					# May 20, 1936
@@ -133,8 +133,8 @@ ITA_historical_plan = {
 
 	ideas = {
 		# Army Spirits
-		meticulous_preparation_spirit = 50
-		state_serves_the_military_spirit = 500
+		meticulous_preparation_spirit = 75
+		grand_battleplan_army_spirit = 100
 		static_warfare_spirit = 50
 	}
 

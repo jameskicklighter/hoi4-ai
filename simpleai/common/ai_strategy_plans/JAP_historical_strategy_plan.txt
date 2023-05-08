@@ -28,72 +28,75 @@ JAP_historical_plan = {
 		}
 	}
 	abort = {
-		MAN = {
-			has_completed_focus = MAN_assertiveness
-		}
+
 	}
 
 	ai_national_focuses = {
-		JAP_purge_the_kodoha_faction #March 10 1936	
-		JAP_guide_the_zaibatsus #May 20 1936	
-		JAP_national_mobilization_law #July 30 1936	
-		JAP_national_research_policy #October 10 1936	
-		JAP_nationalize_war_industry #December 20 1936	
+		#-----1936-----
+		JAP_army_expansion_law							# March 11, 1936
+		JAP_purge_the_kodoha_faction					# May 20, 1936
+		JAP_guide_the_zaibatsus							# July 29, 1936
+		JAP_national_mobilization_law					# October 7, 1936
+		JAP_nationalize_war_industry					# December 16, 1936
 
-		#1937
-		JAP_liaison_conference #February 30 1937	
-		JAP_greater_east_asian_co_prosperity_sphere #May 10 1937	
-		JAP_intervene_in_china #July 20 1937	
-		JAP_coal_liquification #March 10 1943	
-		JAP_secure_china #July 30 1943	
-		JAP_national_defense_state #September 30 1937	
+		#-----1937-----
+		JAP_liaison_conference							# February 24, 1937
+		JAP_greater_east_asian_co_prosperity_sphere		# May 5, 1937
+		JAP_intervene_in_china							# July 14, 1937 (Historically occurred July 7, 1937.)
+		JAP_secure_china								# (Typically bypassed after completing escalate war decisions.
+														#  Ignore for date calculations. Allows Ichi-go.)
+		JAP_national_research_policy					# September 22, 1937
+		JAP_new_naval_estimates							# December 1, 1937
 
-		#1938
-		JAP_spiritual_mobilization #December 10 1937	
-		JAP_army_expansion_law #April 30 1938	
-		JAP_army_expansion #July 10 1938	
-		JAP_supremacy_of_will #February 20 1938	
-		JAP_new_naval_estimates #February 20 1938	
+		#-----1938-----
+		JAP_army_expansion								# February 9, 1938
+		JAP_supremacy_of_will							# April 20, 1938
+		JAP_coal_liquification							# June 29, 1938
+		JAP_national_defense_state						# September 7, 1938
+		JAP_spiritual_mobilization						# November 16, 1938
 
-		#1939
-		JAP_the_manchurian_project #August 10 1942
-		JAP_expand_manchurian_railways #September 20 1938
-		JAP_light_industry_development #June 30 1939
-		JAP_heavy_industry_development
-		JAP_japanese_settlement #April 10 1940
+		#-----1939-----
+		JAP_carrier_warfare_experiments					# January 25, 1939
+		JAP_the_manchurian_project						# April 5, 1939
+		JAP_expand_manchurian_railways					# June 14, 1939
+		JAP_light_industry_development					# August 23, 1939
+		JAP_heavy_industry_development					# November 1, 1939
 
-		#1940
-		JAP_expand_the_showa_steel_works #January 30 1940
-		JAP_strike_south_doctrine #November 20 1939
-		JAP_carrier_warfare_experiments #June 20 1940
-		JAP_fighter_modernization #November 30 1938
-		JAP_small_arms_modernization #February 10 1939
+		#-----1940-----
+		JAP_japanese_settlement							# January 10, 1940
+		JAP_expand_the_showa_steel_works				# March 20, 1940
+		JAP_strike_south_doctrine						# May 29, 1940
+		JAP_fighter_modernization						# August 7, 1940
+		JAP_sign_tripartite_pact						# October 16, 1940 (Historically occurred September 27, 1940.)
+		JAP_small_arms_modernization					# December 25, 1940
 
-		#1941
-		JAP_sign_tripartite_pact #August 30 1940	
-		JAP_first_air_fleet #September 10 1939
-		JAP_non_aggression_pact_with_the_soviet_union #March 30 1941
-		JAP_agility_focus #November 10 1940
-		JAP_the_zero #January 20 1941
-		JAP_secure_the_philippines #August 20 1941
-		JAP_strike_on_the_southern_resource_area #October 30 1941
+		#-----1941-----
+		JAP_first_air_fleet								# March 5, 1941
+		JAP_non_aggression_pact_with_the_soviet_union	# May 14, 1941 (Historically occurred April 13, 1941.)
+		JAP_secure_the_philippines						# July 23, 1941 (Historically occurred December 8, 1941.
+		JAP_agility_focus								# October 1, 1941
+														# Start early so the AI can hopefully capitulate and prepare for East Indies.)
+		JAP_alliance_with_siam							# December 10, 1941 (Historically occurred December 8, 1941 after Japan briefly
+														# invaded Siam. Let's hope Siam is happy to join us for historical purposes.)
 
-		#1942
-		JAP_cruiser_modernization #March 20 1942
-		JAP_exploit_the_southern_resource_area #May 20 1943	
-		JAP_alliance_with_siam #January 10
-		JAP_warrior_spirit #December 30 1942
-		JAP_strengthen_the_divine_wind
-		JAP_long_lance_torpedoes #May 30 1942
+		#-----1942-----
+		JAP_strike_on_the_southern_resource_area		# February 18, 1942 (Historically occurred January 10, 1942, for the East Indies.)
+		JAP_the_zero									# April 29, 1942
+		JAP_cruiser_modernization						# July 8, 1942
+		JAP_exploit_the_southern_resource_area			# September 16, 1942
+		JAP_warrior_spirit								# November 25, 1942
 
-		#1943
-		JAP_torpedo_cruisers
-		JAP_bomber_modernization
-		JAP_range_focus
-		JAP_strategic_bomber_effort
-		JAP_modern_escorts
-		JAP_jet_prototypes
+		#-----1943-----
+		JAP_strengthen_the_divine_wind					# February 3, 1943
+		JAP_long_lance_torpedoes						# April 14, 1943
+		JAP_torpedo_cruisers							# June 23, 1943
+		JAP_bomber_modernization						# September 1, 1943
+		JAP_range_focus									# November 10, 1943
 
+		#-----1944-----
+		JAP_strategic_bomber_effort						# January 19, 1944
+		JAP_modern_escorts								# March 29, 1944
+		JAP_jet_prototypes								# June 7, 1944
 	}
 
 	research = {
@@ -105,9 +108,9 @@ JAP_historical_plan = {
 		head_of_intelligence = 50
 
 		# Army Spirits
-		inventive_leadership_spirit = 100
-		quick_improvisation_spirit = 50
-		logistical_focus_spirit = 100
+		inventive_leadership_spirit = 75
+		state_serves_the_military_spirit = 200
+		logistical_focus_spirit = 50
 	}
 
 	traits = {

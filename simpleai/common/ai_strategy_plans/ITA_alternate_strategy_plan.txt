@@ -825,11 +825,13 @@ ITA_democratic_plan = {
 		ITA_ethiopian_war_logistics_bba 			#35
 		ITA_triumph_in_africa_bba 					#35	(as soon as possible)
 		ITA_unite_the_opposition					#35
-		ITA_organize_strikes_in_the_north			#35
+		ITA_the_southern_farmlands					#35
 		ITA_servizio_informazione_militare 					
 		ITA_italian_highways_bba					#35
 		ITA_railway_innovations
 		ITA_army_primacy_bba						#35
+		ITA_investments_in_edison
+		ITA_expand_national_universities
 		
 		#1937
 		ITA_defy_the_duce							#35
@@ -840,14 +842,12 @@ ITA_democratic_plan = {
 		ITA_aid_for_the_spanish_republic			#35 (as soon as possible)
 		ITA_the_republics_leadership				#35 (as soon as possible)
 		ITA_cooperate_with_the_mafia				#35
-		ITA_investments_in_edison
 
 		#1938
 		ITA_the_ethiopian_question					#35
 		ITA_new_colonial_policies					#35
 		ITA_negotiations_with_albania				#35
 		ITA_the_italian_confederation
-		ITA_expand_national_universities
 		ITA_empower_the_unions
 		ITA_ministry_of_italian_africa 				#35
 

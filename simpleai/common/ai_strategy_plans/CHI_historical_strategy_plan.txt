@@ -27,16 +27,7 @@ CHI_nationalist_historical_plan = {
 				has_completed_focus = JAP_strengthen_civilian_government
 				has_completed_focus = JAP_the_unthinkable_option
 				has_completed_focus = JAP_support_the_kodoha_faction
-				is_in_faction_with = ENG 
-				is_in_faction_with = USA 
 			}
-		}
-		has_game_rule = {
-			rule = CHI_ai_behavior
-			option = ALTERNATE
-		}
-		MAN = {
-			is_subject = no
 		}
 	}
 
@@ -48,38 +39,47 @@ CHI_nationalist_historical_plan = {
 		CHI_financial_policy
 		CHI_military_affairs_commission
 		CHI_army_reform
-		CHI_fortify_shanghai
+		CHI_three_principles_of_the_people
 		# Japan now comes knocking...
 
 		# Get as soon as we have 75 factories.
 		CHI_chemical_research_institute
 
-		CHI_the_chinese_hindenburg_line
+		CHI_nationalism
+		CHI_foreign_threats
+		# United Front bypassed...
+		# Pick a Fight With Japan bypassed...
 		CHI_mining_commission
 		CHI_develop_the_hanyan_arsenal
 		CHI_price_controls
 		CHI_grain_tax
 		CHI_reform_the_national_bank
 
-		CHI_three_principles_of_the_people
-		CHI_nationalism
-		CHI_foreign_threats
-		# United Front bypassed...
-		# Pick a Fight With Japan bypassed...
+		CHI_british_cooperation
+		CHI_mission_to_the_us
+		CHI_mission_to_the_soviet_union
+		CHI_hire_chennault
+		CHI_rapprochement_with_soviet_union
+		CHI_invite_soviet_advisers
+		CHI_the_soviet_volunteer_group
+		CHI_burma_road
+		CHI_fighter_purchases
+		CHI_camco
+		CHI_purchase_tanks
+		CHI_experimental_mechanised_unit
+		CHI_invite_the_flying_tigers
+		CHI_the_hump
+		CHI_chinese_expeditionary_force
+		CHI_sino_american_cooperative_organization
+		CHI_ledo_road
+		CHI_the_chu_x_po
+		CHI_modern_logistics
+		CHI_renegotiate_the_unequal_treaties
+
 		CHI_war_of_resistance
 		CHI_war_of_national_liberation
 		CHI_war_of_anti_imperialism
 		CHI_scorched_earth_tactics
-
-		# Beg and hope we get guns...
-		CHI_mission_to_the_soviet_union
-		CHI_rapprochement_with_soviet_union
-		CHI_invite_soviet_advisers
-		CHI_the_soviet_volunteer_group
-		CHI_purchase_tanks
-		CHI_experimental_mechanised_unit
-		CHI_combined_arms_warfare
-		CHI_renegotiate_the_unequal_treaties
 
 		CHI_forced_conscription
 		CHI_dare_to_die_corps
@@ -113,9 +113,8 @@ CHI_nationalist_historical_plan = {
 
 	ideas = {
 		# Political Advisors
-		CHI_chiang_ching_kuo = 100		# Silent Workhorse
-		CHI_t_v_soong = 75				# Financial Expert
-		CHI_lin_sen = 10				# Popular Figurehead
+		CHI_t_v_soong = 125				# Financial Expert
+		CHI_lin_sen = 75				# Popular Figurehead
 
 		# Army Spirits
 		tenacious_defense_spirit = 50

@@ -1,0 +1,349 @@
+JAP_manchukuo_player_historical_plan = {
+	name = "Historical Japan Plan for Player manchukuo"
+	desc = "Build up manchukuo to help out, otherwise historical"
+
+	allowed = {
+		original_tag = JAP
+	}
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				OR = {
+					not = { has_dlc = "Waking the Tiger" }
+					has_game_rule = {
+						rule = JAP_ai_behavior
+						option = DEFAULT
+					}
+				}
+			}
+			has_game_rule = {
+				rule = JAP_ai_behavior
+				option = FASCIST
+			}
+			has_country_flag = JAP_AI_RANDOM_FASCIST
+		}
+		MAN = {
+			is_ai = no
+		}
+	}
+	abort = {
+		MAN = {
+			NOT = { is_subject_of = JAP }
+			NOT = { is_in_faction_with = JAP }
+		}
+	}
+
+	ai_national_focuses = {
+		#-----1936-----
+		JAP_purge_the_kodoha_faction					# March 11, 1936
+		JAP_the_manchurian_project						# May 20, 1936
+		JAP_expand_manchurian_railways					# July 29, 1936
+		JAP_light_industry_development					# October 7, 1936
+		JAP_heavy_industry_development					# December 16, 1936
+
+		#-----1937-----
+		JAP_liaison_conference							# February 24, 1937
+		JAP_greater_east_asian_co_prosperity_sphere		# May 5, 1937
+		JAP_intervene_in_china							# July 14, 1937 (Historically occurred July 7, 1937.)
+		JAP_secure_china								# (Typically bypassed after completing escalate war decisions.
+														#  Ignore for date calculations. Allows Ichi-go.)
+		JAP_japanese_settlement							# September 22, 1937
+		JAP_expand_the_showa_steel_works				# December 1, 1937
+
+		#-----1938-----
+		JAP_guide_the_zaibatsus							# February 9, 1938
+		JAP_national_mobilization_law					# April 20, 1938
+		JAP_national_research_policy					# June 29, 1938
+		JAP_nationalize_war_industry					# September 7, 1938
+		JAP_coal_liquification							# November 16, 1938
+
+		#-----1939-----
+		JAP_national_defense_state						# January 25, 1939
+		JAP_spiritual_mobilization						# April 5, 1939
+		JAP_army_expansion_law							# June 14, 1939
+		JAP_army_expansion								# August 23, 1939
+		JAP_supremacy_of_will							# November 1, 1939
+
+		#-----1940-----
+		JAP_new_naval_estimates							# January 10, 1940
+		JAP_strike_south_doctrine						# March 20, 1940
+		JAP_carrier_warfare_experiments					# May 29, 1940
+		JAP_fighter_modernization						# August 7, 1940
+		JAP_sign_tripartite_pact						# October 16, 1940 (Historically occurred September 27, 1940.)
+		JAP_small_arms_modernization					# December 25, 1940
+
+		#-----1941-----
+		JAP_first_air_fleet								# March 5, 1941
+		JAP_non_aggression_pact_with_the_soviet_union	# May 14, 1941 (Historically occurred April 13, 1941.)
+		JAP_agility_focus								# July 23, 1941
+		JAP_secure_the_philippines						# October 1, 1941 (Historically occurred December 8, 1941.
+														# Start early so the AI can hopefully capitulate and prepare for East Indies.)
+		JAP_alliance_with_siam							# December 10, 1941 (Historically occurred December 8, 1941 after Japan briefly
+														# invaded Thailand. Let's hope Siam is happy to join us for historical purposes.)
+
+		#-----1942-----
+		JAP_strike_on_the_southern_resource_area		# February 18, 1942 (Historically occurred January 10, 1942, for the East Indies.)
+		JAP_the_zero									# April 29, 1942
+		JAP_cruiser_modernization						# July 8, 1942
+		JAP_exploit_the_southern_resource_area			# September 16, 1942
+		JAP_warrior_spirit								# November 25, 1942
+
+		#-----1943-----
+		JAP_strengthen_the_divine_wind					# February 3, 1943
+		JAP_long_lance_torpedoes						# April 14, 1943
+		JAP_torpedo_cruisers							# June 23, 1943
+		JAP_bomber_modernization						# September 1, 1943
+		JAP_range_focus									# November 10, 1943
+
+		#-----1944-----
+		JAP_strategic_bomber_effort						# January 19, 1944
+		JAP_modern_escorts								# March 29, 1944
+		JAP_jet_prototypes								# June 7, 1944
+	}
+
+	ideas = {
+		# Political Advisors
+		head_of_intelligence = 50
+
+		# Army Spirits
+		inventive_leadership_spirit = 75
+		state_serves_the_military_spirit = 200
+		logistical_focus_spirit = 50
+	}
+
+	ai_strategy = {
+		type = support
+		id = "MAN"
+		value = 200
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+JAP_alternate_plan_communist = {
+	name = "Communist Japan Plan"
+	desc = "A red sun rises"
+
+	allowed = {
+		original_tag = JAP
+	}
+	enable = {
+		OR = {
+			has_country_flag = JAP_AI_RANDOM_COMMUNIST
+			has_game_rule = {
+				rule = JAP_ai_behavior
+				option = COMMUNIST
+			}
+		}
+	}
+	abort = {
+
+	}
+
+	ai_national_focuses = {
+		JAP_the_unthinkable_option
+		JAP_approach_the_young_officers
+		JAP_exchange_the_exiles
+		JAP_open_up_the_universities
+		JAP_army_expansion_law
+		JAP_cast_the_die
+		JAP_nationalize_the_zaibatsus
+		JAP_red_brigades
+		JAP_public_works
+		JAP_the_fate_of_the_imperial_family
+		JAP_reeducation_campaign
+		JAP_rebuild_the_civil_service
+		JAP_people_owned_mines
+		JAP_small_arms_modernization
+		JAP_army_expansion
+		JAP_supremacy_of_technology
+		JAP_fighter_modernization
+		JAP_agility_focus
+		JAP_new_naval_estimates
+		JAP_communist_volunteers
+		JAP_tokyo_aluminum_plant
+		JAP_carrier_warfare_experiments
+		JAP_first_air_fleet
+		JAP_the_zero
+		JAP_unified_fighter_development
+		JAP_expand_the_snlf
+		JAP_finish_the_fight
+		JAP_asian_communist_solidarity
+		JAP_cruiser_modernization
+		JAP_long_lance_torpedoes
+		JAP_torpedo_cruisers
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+JAP_alternate_plan_strike_north = {
+	name = "Neutrality Japan Plan"
+	desc = "Japan pushes north"
+
+	allowed = {
+		original_tag = JAP
+	}
+	enable = {
+		OR = {
+			has_country_flag = JAP_AI_RANDOM_NEUTRALITY
+			has_game_rule = {
+				rule = JAP_ai_behavior
+				option = NEUTRALITY
+			}
+		}
+	}
+	abort = {
+
+	}
+
+	ai_national_focuses = {
+		#-----1936-----
+		JAP_support_the_kodoha_faction					# February 5, 1936 -- 35 days
+		JAP_showa_restoration							# April 15, 1936
+		JAP_challenge_the_zaibatsus						# June 24, 1936
+		JAP_national_mobilization_law					# September 2, 1936
+		JAP_national_research_policy					# November 11, 1936
+
+		#-----1937-----
+		JAP_imperial_arsenals							# January 20, 1937
+		JAP_army_expansion_law							# March 31, 1937
+		JAP_national_defense_state						# June 9, 1937
+		JAP_spiritual_mobilization						# August 18, 1937
+		JAP_army_expansion								# October 27, 1937
+
+		#-----1938-----
+		JAP_supremacy_of_will							# January 5, 1938
+		JAP_new_naval_estimates							# March 16, 1938
+		JAP_the_manchurian_project						# May 25, 1938
+		JAP_expand_manchurian_railways					# August 3, 1938
+		JAP_light_industry_development					# October 12, 1938
+		JAP_heavy_industry_development					# December 21, 1938
+
+		#-----1939-----
+		JAP_expand_the_showa_steel_works				# March 1, 1939
+		JAP_japanese_settlement							# May 10, 1939
+		JAP_fortify_the_border							# July 19, 1939
+		JAP_prepare_for_war_with_the_soviet_union		# September 27, 1939
+		JAP_join_the_london_naval_treaty				# (Typically bypassed. Ignore for date calculations.)
+		JAP_build_up_the_manchurian_army				# December 6, 1939
+
+		#-----1940-----
+		JAP_non_aggression_pact_with_china				# February 14, 1940
+		JAP_create_a_manchurian_imperial_air_force		# April 24, 1940
+		JAP_technological_exchange						# July 3, 1940 (Joins Axis.)
+		JAP_small_arms_modernization					# September 11, 1940
+		JAP_fighter_modernization						# November 20, 1940
+
+		#-----1941-----
+		JAP_carrier_warfare_experiments					# January 29, 1941
+		JAP_first_air_fleet								# April 9, 1941
+		JAP_agility_focus								# June 18, 1941
+		JAP_the_zero									# August 27, 1941
+		JAP_preemptive_war								# (Typically bypassed if the German AI is playing historically.)
+		JAP_german_rocketry								# November 5, 1941
+
+		#-----1942-----
+		JAP_warrior_spirit								# January 14, 1942
+	}
+
+	ideas = {
+		# Political Advisors
+		head_of_intelligence = 50
+
+		# Army Spirits
+		inventive_leadership_spirit = 100
+		elevated_engineering_corps_spirit = 50
+		logistical_focus_spirit = 75
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+JAP_alternate_plan_democratic = {
+	name = "Democracy Japan Plan"
+	desc = "Japan goes democratic"
+
+	allowed = {
+		original_tag = JAP
+	}
+	enable = {
+		OR = {
+			has_country_flag = JAP_AI_RANDOM_DEMOCRATIC
+			has_game_rule = {
+				rule = JAP_ai_behavior
+				option = DEMOCRATIC
+			}
+		}
+	}
+	abort = {
+
+	}
+
+	ai_national_focuses = {
+		JAP_strengthen_civilian_government
+		JAP_research_spending
+		JAP_ally_with_the_zaibatsus
+		JAP_purge_the_militarists
+		JAP_pre_emptive_coup
+		#1937
+		JAP_the_showa_constitution
+		JAP_army_expansion_law
+		JAP_new_naval_estimates
+		JAP_rekindle_the_old_alliance
+		JAP_west_pacific_treaty_organization #backup if Britain non-democratic
+		JAP_cruiser_modernization
+		#1938
+		JAP_carrier_warfare_experiments
+		JAP_small_arms_modernization
+		JAP_supremacy_of_technology
+		JAP_first_air_fleet
+		JAP_fighter_modernization
+		#1939
+		JAP_range_focus
+		JAP_bomber_modernization
+		JAP_strategic_bomber_effort
+		JAP_pacific_guardian
+		JAP_the_korean_question
+		#1940
+		JAP_modern_artillery
+		JAP_armored_divisions
+		JAP_liberate_manchuria
+		JAP_anti_communist_bulwark
+		JAP_anti_communist_volunteers
+		#1941
+		JAP_ultimate_deterrence
+		JAP_modern_escorts
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}

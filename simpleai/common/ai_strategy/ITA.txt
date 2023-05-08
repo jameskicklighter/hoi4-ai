@@ -259,6 +259,47 @@ ita_shore_up_against_france = {
 
 }
 
+ITA_slow_going_against_france = {
+	allowed = { original_tag = ITA }
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = FRA
+		date < 1940.4.1
+		FRA = {
+			has_capitulated = no
+			surrender_progress < 0.45
+		}
+		GER = { surrender_progress < 0.1 } 
+	}
+	
+	ai_strategy = {
+		type = front_control
+
+		tag = FRA
+
+		ratio = 0.60
+
+		priority = 100
+		ordertype = front
+		execution_type = careful
+		execute_order = no
+		manual_attack = no
+	}
+	
+	ai_strategy = {
+		type = front_control
+
+		tag = FRA
+
+		ratio = 0.60
+
+		priority = 100
+		ordertype = invasion
+		execute_order = no
+	}
+	
+}
+
 anti_uk_war_goals = {
 	allowed = {
 		original_tag = ITA
@@ -470,33 +511,6 @@ portugal_ally = {
 	}
 }
 
-ITA_small_africa_front_if_possible = {
-	enable = {
-		original_tag = ITA
-		AOI = { is_subject_of = ITA }
-		# TODO add state check
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = diplo_action_desire
-		id = AOI
-		target = call_allies
-		value = -99999
-	}
-	ai_strategy = {
-		type = diplo_action_acceptance
-		id = AOI
-		target = join_allies
-		value = -99999
-	}
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		id = "AOI"
-		value = 100
-	}
-}
-
 ITA_template_design_1 = {
 	allowed = {
 		original_tag = ITA
@@ -621,55 +635,54 @@ ITA_template_design_2 = {
 	}
 }
 
-
 # extra scaryness around italy, this together with sufficient enemy superiority will make ai avoid transports around its coast
-#italy_be_careful_transporting_through_the_med = {
-#	allowed = {
-#		original_tag = ITA
-#	}
-#	enable = {
-#		date < 1942.1.1
-#		has_war = yes
-#		enemies_naval_strength_ratio > 1
-#	}
-#	abort = {
-#		OR = {
-#			date > 1942.1.1
-#			has_war = no
-#			enemies_naval_strength_ratio < 1
-#		}
-#	}
-#
-#	ai_strategy = {
-#		type = naval_avoid_region
-#		id = 68
-#		value = 50
-#	}
-#
-#	ai_strategy = {
-#		type = naval_avoid_region
-#		id = 169
-#		value = 50
-#	}
-#
-#	ai_strategy = {
-#		type = naval_avoid_region
-#		id = 29
-#		value = 50
-#	}
-#
-#	ai_strategy = {
-#		type = naval_avoid_region
-#		id = 168
-#		value = 50
-#	}
-#
-#	ai_strategy = {
-#		type = naval_avoid_region
-#		id = 69
-#		value = 50
-#	}
-#}
+italy_be_careful_transporting_through_the_med = {
+	allowed = {
+		original_tag = ITA
+	}
+	enable = {
+		date < 1942.1.1
+		has_war = yes
+		enemies_naval_strength_ratio > 1
+	}
+	abort = {
+		OR = {
+			date > 1942.1.1
+			has_war = no
+			enemies_naval_strength_ratio < 1
+		}
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 68
+		value = 50
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 169
+		value = 50
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 29
+		value = 50
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 168
+		value = 50
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 69
+		value = 50
+	}
+}
 
 dont_take_claims_on_yug = {
 	allowed = {
@@ -774,6 +787,7 @@ ITA_share_borders_with_GER_against_SOV = {
 		is_in_faction_with = GER
 		GER = {
 			going_war_with_SOV = yes
+			is_ai = no # Let the humans work.
 		}
 
 		GER_should_split_SOV_front_with_ITA = yes
@@ -833,18 +847,17 @@ spain_scw_support_ITA_resistance = {
 
 	ai_strategy = {
 		type = support
-		id = "SPA"
+		id = SPA
+		value = 100
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = SPA
 		value = 100
 	}
 	ai_strategy = {
 		type = send_volunteers_desire
-		id = "SPA"
-		value = 100
-	}
-	ai_strategy = {
-		type = diplo_action_desire
-		id = "SPA"
-		target = send_attache
+		id = SPA
 		value = 100
 	}
 }
@@ -853,7 +866,6 @@ ITA_stockpile_less_early_game = {
 	allowed = {
 		original_tag = ITA
 	}
-
 	enable = {
 		date < 1939.1.1
 	}
@@ -870,7 +882,7 @@ ITA_wants_civ = {
 		original_tag = ITA
 	}
 	enable = {
-		date < 1939.1.1
+		date < 1937.8.1
 		OR = {
 			has_war = no
 			NOT = {
@@ -892,21 +904,6 @@ ITA_wants_civ = {
 		type = equipment_production_min_factories
 		id = artillery
 		value = 2
-	}
-}
-
-ITA_have_some_train_production = {
-	allowed = {
-		original_tag = ITA
-	}
-	enable = {
-		always = yes
-	}
-
-	ai_strategy = {
-		type = equipment_production_min_factories
-		id = train
-		value = 1
 	}
 }
 
@@ -1133,7 +1130,6 @@ ITA_prepare_losing_ethiopian_theatre = {
 	}
 }
 
-
 ITA_attack_north = {
 	allowed = {
 		original_tag = ITA
@@ -1311,6 +1307,33 @@ ITA_communists_downplay_ethiopian_theatre = {
 	}
 }
 
+# Mussolini's version of Italy has a new tag.
+ITA_mussolini_downplay_civil_war_communist_socialist = {
+	allowed = {
+		original_tag = ITA
+	}
+	enable = {
+		NOT = { tag = ITA }
+		NOT = { tag = RDS }
+		has_war_with = ITA
+		ITA = { has_completed_focus = ITA_defy_the_duce }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		tag = ITA
+
+		ratio = 0.3
+
+		# Grind our units to dust.
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+		manual_attack = no
+	}
+}
 
 ITA_prepare_yugoslavian_invasion = {
 	allowed = {
@@ -1353,21 +1376,21 @@ ITA_prepare_yugoslavian_invasion = {
 	}
 
 	ai_strategy = {
-	    type = front_unit_request
-	    tag = YUG
-	    value = 300
+		type = front_unit_request
+		tag = YUG
+		value = 300
 	}
 
 	ai_strategy = { #Pull troops from the FRA border in order to be able to invade YUG, mainly from Africa
-	    type = front_unit_request
-	    tag = FRA
-	    value = -70
+		type = front_unit_request
+		tag = FRA
+		value = -70
 	}
 
 	ai_strategy = { #Pull troops from the ENG border in order to be able to invade YUG, mainly from africa
-	    type = front_unit_request
-	    tag = ENG
-	    value = -70
+		type = front_unit_request
+		tag = ENG
+		value = -70
 	}
 }
 

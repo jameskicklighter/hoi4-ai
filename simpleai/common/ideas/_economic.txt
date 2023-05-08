@@ -231,14 +231,20 @@ ideas = {
 				}
 			}
 			ai_will_do = {
-   				factor = 2
+				factor = 2
 
-   				modifier = {
+				modifier = {
 					factor = 20
-
-					is_major = yes
+					OR = {
+						is_major = yes
+						num_of_factories > 50
+					}
 				}
-   			}
+				modifier = {
+					has_war_support > 0.50
+					factor = 0 # Don't even look at it if you could be taking War Economy.
+				}
+			}
 		}
 
 		war_economy = {
@@ -313,7 +319,7 @@ ideas = {
 				}
 			}
 			ai_will_do = {
-				factor = 99
+				factor = 150
 
 				# Japan gets this free upgrade with Purge/Support the Kodoha Faction paths.
 				modifier = {
@@ -328,27 +334,6 @@ ideas = {
 						}
 					}
 				}
-
-				#modifier = {
-				#	#High prio on production
-				#	factor = 20
-				#	manpower_per_military_factory >  1000
-				#}
-
-				#modifier = {
-				#	# If we CAN go for total mobilization and have enough manpower for it, skip war economy, it's only a waste of PP
-				#	factor = 0
-				#
-				#	manpower_per_military_factory > 15000
-				#	has_war = yes
-				#	has_war_support > 0.8
-				#	any_enemy_country = {
-				#		ic_ratio = {
-				#			tag = ROOT
-				#			ratio > 0.5
-				#		}
-				#	}
-				#}
 
 				modifier = {
 					factor = 0
@@ -412,12 +397,6 @@ ideas = {
 			ai_will_do = {
 				factor = 200
 
-				#modifier = {
-				#	factor = 50
-				#	#Prio this if nation has a lot of manpower compared to MIC
-				#	manpower_per_military_factory > 15000
-				#}
-
 				# Japan gets this free upgrade with Purge/Support the Kodoha Faction paths.
 				modifier = {
 					factor = 0
@@ -431,12 +410,6 @@ ideas = {
 						}
 					}
 				}
-
-				#modifier = {
-				#	#Block  unless nation has a lot of manpower
-				#	factor = 0
-				#	manpower_per_military_factory <  10000
-				#}
 
 				modifier = {
 					# never take this if we are on low conscription laws for safety

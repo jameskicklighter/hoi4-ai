@@ -44,19 +44,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			# Maybe persuade minors starting with no default tree unlocked.
-			# Ideal because of the extra recruitable population at the end of the tree.
-			modifier = {
-				NOT = {
-					OR = {
-						has_tech = mobile_warfare
-						has_tech = trench_warfare
-						has_tech = mass_assault
-					}
-				}
- 
-				factor = 20
-			}
 		}
 		
 		ai_research_weights = {
@@ -234,14 +221,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.5
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.75
-			}
 		}
 		
 		ai_research_weights = {
@@ -286,14 +265,6 @@ technologies = {
 					has_army_experience > 120
 				}
 				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.5
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.75
 			}
 		}
 		
@@ -358,14 +329,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.5
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.75
-			}
 		}
 		
 		ai_research_weights = {
@@ -419,14 +382,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.5
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.75
-			}
 		}
 		
 		ai_research_weights = {
@@ -474,14 +429,6 @@ technologies = {
 					has_army_experience > 120
 				}
 				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.5
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.75
 			}
 		}
 		
@@ -548,14 +495,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.5
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.75
-			}
 		}
 		
 		ai_research_weights = {
@@ -608,14 +547,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.15
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
-			}
 		}
 		
 		ai_research_weights = {
@@ -662,20 +593,12 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
+			factor = 0		# Pick the other branch.
 			modifier = {
 				not = {
 					has_army_experience > 120
 				}
 				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.15
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
 			}
 		}
 		
@@ -712,14 +635,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 20
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.15
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
-			}
 		}
 		
 		ai_research_weights = {
@@ -766,14 +681,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.15
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
-			}
 		}
 		
 		ai_research_weights = {
@@ -813,20 +720,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 100
-			modifier = {
-				not = {
-					has_army_experience > 120
-				}
-				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.15
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
-			}
 		}
 		
 		ai_research_weights = {
@@ -860,15 +753,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.15
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
-			}
+			factor = 100
 		}
 		
 		ai_research_weights = {
@@ -901,14 +786,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 20
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.15
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
-			}
 		}
 		
 		ai_research_weights = {
@@ -957,6 +834,17 @@ technologies = {
 					has_army_experience > 120
 				}
 				factor = 0.8
+			}
+			# Persuade minors starting with no default tree unlocked.
+			modifier = {
+				NOT = {
+					OR = {
+						has_tech = mobile_warfare
+						has_tech = trench_warfare
+						has_tech = mass_assault
+					}
+				}
+				factor = 20
 			}
 		}
 		
@@ -1096,15 +984,7 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.5
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.75
-			}
-			factor = 20
+			factor = 0		# Pick the other branch.
 		}
 		
 		ai_research_weights = {
@@ -1149,14 +1029,6 @@ technologies = {
 				factor = 0.8
 			}
 			factor = 20
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.5
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.75
-			}
 		}
 		
 		ai_research_weights = {
@@ -1203,14 +1075,6 @@ technologies = {
 				factor = 0.8
 			}
 			factor = 20
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.5
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.75
-			}
 		}
 		
 		ai_research_weights = {
@@ -1255,14 +1119,6 @@ technologies = {
 				factor = 0.8
 			}
 			factor = 20
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.5
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.75
-			}
 		}
 		
 		ai_research_weights = {
@@ -1313,14 +1169,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.25
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
-			}
 		}
 		
 		ai_research_weights = {
@@ -1360,20 +1208,12 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
+			factor = 0		# Pick the other branch.
 			modifier = {
 				not = {
 					has_army_experience > 120
 				}
 				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.25
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
 			}
 		}
 		
@@ -1421,14 +1261,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.15
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
-			}
 		}
 		
 		ai_research_weights = {
@@ -1471,14 +1303,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.15
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
-			}
 		}
 		
 		ai_research_weights = {
@@ -1517,14 +1341,6 @@ technologies = {
 					has_army_experience > 120
 				}
 				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.15
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
 			}
 		}
 		
@@ -1574,14 +1390,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.25
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
-			}
 		}
 		
 		ai_research_weights = {
@@ -1625,14 +1433,6 @@ technologies = {
 					has_army_experience > 120
 				}
 				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.15
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
 			}
 		}
 		
@@ -1691,14 +1491,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.15
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
-			}
 		}
 		
 		ai_research_weights = {
@@ -1745,14 +1537,6 @@ technologies = {
 					has_army_experience > 120
 				}
 				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.15
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
 			}
 		}
 		
@@ -1955,14 +1739,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.5
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.75
-			}
 		}
 		
 		ai_research_weights = {
@@ -2022,14 +1798,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.35
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.65
-			}
 		}
 		
 		ai_research_weights = {
@@ -2072,14 +1840,6 @@ technologies = {
 					has_army_experience > 120
 				}
 				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.3
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.6
 			}
 		}
 		
@@ -2131,14 +1891,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.25
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.55
-			}
 		}
 		
 		ai_research_weights = {
@@ -2184,14 +1936,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.2
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
-			}
 		}
 		
 		ai_research_weights = {
@@ -2233,14 +1977,6 @@ technologies = {
 					has_army_experience > 120
 				}
 				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.15
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.45
 			}
 		}
 		
@@ -2285,14 +2021,6 @@ technologies = {
 					has_army_experience > 120
 				}
 				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.1
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.4
 			}
 		}
 		
@@ -2341,14 +2069,6 @@ technologies = {
 					has_army_experience > 120
 				}
 				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.35
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.65
 			}
 		}
 		
@@ -2403,14 +2123,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.3
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.6
-			}
 		}
 		
 		ai_research_weights = {
@@ -2452,14 +2164,6 @@ technologies = {
 					has_army_experience > 120
 				}
 				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.25
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.55
 			}
 		}
 		
@@ -2504,14 +2208,6 @@ technologies = {
 					has_army_experience > 120
 				}
 				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.2
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
 			}
 		}
 		
@@ -2561,14 +2257,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.15
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.45
-			}
 		}
 		
 		ai_research_weights = {
@@ -2607,14 +2295,6 @@ technologies = {
 					has_army_experience > 120
 				}
 				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.1
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.4
 			}
 		}
 		
@@ -2825,14 +2505,6 @@ technologies = {
 					tag = YUN
 				}
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.5
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.75
-			}
 		}
 		
 		ai_research_weights = {
@@ -2880,14 +2552,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.5
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.75
-			}
 		}
 		
 		ai_research_weights = {
@@ -2929,14 +2593,6 @@ technologies = {
 					has_army_experience > 120
 				}
 				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.35
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.65
 			}
 		}
 		
@@ -2983,14 +2639,6 @@ technologies = {
 					has_army_experience > 120
 				}
 				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.35
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.65
 			}
 		}
 		
@@ -3043,14 +2691,6 @@ technologies = {
 					has_army_experience > 120
 				}
 				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.25
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
 			}
 		}
 		
@@ -3113,14 +2753,6 @@ technologies = {
 				}
 				factor = 0.8
 			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.15
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
-			}
 		}
 		
 		ai_research_weights = {
@@ -3158,14 +2790,6 @@ technologies = {
 					has_army_experience > 120
 				}
 				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.1
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.35
 			}
 		}
 		
@@ -3217,14 +2841,6 @@ technologies = {
 					has_army_experience > 120
 				}
 				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.5
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.75
 			}
 			modifier = {
 				factor = 0.6
