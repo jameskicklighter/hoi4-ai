@@ -166,29 +166,19 @@ less_trucks_4_u_JAP = {
 	ai_strategy = {
 		type = role_ratio
 		id = garrison
-		value = 12
+		value = 0
 	}
 	ai_strategy = {
 		type = role_ratio
 		id = marines
-		value = 10
+		value = 5
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 15
 	}
 
-	ai_strategy = {
-		type = template_prio
-		id = motorized
-		value = -80
-	}
-	ai_strategy = {
-		type = template_prio
-		id = cavalry
-		value = -80
-	}
-	ai_strategy = {
-		type = template_prio
-		id = mountaineers
-		value = -80
-	}
 	ai_strategy = {
 		type = template_prio
 		id = infantry
@@ -196,8 +186,8 @@ less_trucks_4_u_JAP = {
 	}
 	ai_strategy = {
 		type = template_prio
-		id = marines
-		value = 10
+		id = light_armor
+		value = 100
 	}
 
 	ai_strategy = {
@@ -228,10 +218,11 @@ JAP_glorious_nippon_steel_has_triumphed = {
 		original_tag = JAP
 	}
 	enable = {
-		OR = {
-			num_of_military_factories > 50
-			CHI = { is_subject_of = JAP }
-		}
+		date > 1939.1.1
+		#OR = {
+		#	num_of_military_factories > 50
+		#	CHI = { is_subject_of = JAP }
+		#}
 	}
 	abort = {
 	}
@@ -239,7 +230,7 @@ JAP_glorious_nippon_steel_has_triumphed = {
 	ai_strategy = {
 		type = role_ratio
 		id = infantry
-		value = 80
+		value = 60
 	}
 	ai_strategy = {
 		type = role_ratio
@@ -249,33 +240,33 @@ JAP_glorious_nippon_steel_has_triumphed = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 1
+		value = 15
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 15
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = motorized
+		value = 0
 	}
 
 	ai_strategy = {
 		type = template_prio
-		id = armor
-		value = 5
-	}
-	ai_strategy = {
-		type = template_prio
-		id = cavalry
-		value = -80
-	}
-	ai_strategy = {
-		type = template_prio
-		id = mountaineers
-		value = -80
-	}
-	ai_strategy = {
-		type = template_prio
 		id = infantry
+		value = 50
+	}
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
 		value = 100
 	}
 	ai_strategy = {
 		type = template_prio
 		id = marines
-		value = 10
+		value = 20
 	}
 
 	ai_strategy = {
@@ -305,23 +296,23 @@ JAP_glorious_nippon_steel_has_triumphed = {
 	}
 }
 
-JAP_you_should_be_prepared_for_war = {
-	allowed = { 
-		original_tag = JAP
-	}
-	enable = {
-		OR = {
-			date < 1940.1.1
-			has_war_with = CHI
-		}
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = force_build_armies
-		value = 100
-	}
-}
+#JAP_you_should_be_prepared_for_war = {
+#	allowed = { 
+#		original_tag = JAP
+#	}
+#	enable = {
+#		OR = {
+#			date < 1940.1.1
+#			has_war_with = CHI
+#		}
+#	}
+#	abort_when_not_enabled = yes
+#
+#	ai_strategy = {
+#		type = force_build_armies
+#		value = 100
+#	}
+#}
 
 JAP_template_design = {
 	allowed = {
@@ -331,51 +322,6 @@ JAP_template_design = {
 		date > 1940.1.1
 	}
 
-	ai_strategy = {
-		type = template_prio
-		id = infantry
-		value = -10
-	}
-	ai_strategy = {
-		type = template_prio
-		id = motorized
-		value = 10
-	}
-	ai_strategy = {
-		type = template_prio
-		id = cavalry
-		value = -100
-	}
-	ai_strategy = {
-		type = template_prio
-		id = light_armor
-		value = -10
-	}
-	ai_strategy = {
-		type = template_prio
-		id = medium_armor
-		value = 40
-	}
-	ai_strategy = {
-		type = template_prio
-		id = modern_armor
-		value = 50
-	}
-	ai_strategy = {
-		type = template_prio
-		id = heavy_armor
-		value = -100
-	}
-	ai_strategy = {
-		type = template_prio
-		id = paratroopers
-		value = -10
-	}
-	ai_strategy = {
-		type = template_prio
-		id = mechanized
-		value = 10
-	}
 	ai_strategy = {
 		type = equipment_variant_production_factor
 		id = light_tank_chassis
@@ -1079,6 +1025,39 @@ JAP_consider_china_weak = {
 	}
 }
 
+JAP_ally_SIA = {
+	allowed = {
+		original_tag = JAP
+	}
+	enable = {
+		has_completed_focus = JAP_alliance_with_siam
+	}
+	ai_strategy = {
+		type = alliance
+		id = "SIA"
+		value = 200
+	}
+	ai_strategy = {
+		type = protect
+		id = "SIA"
+		value = 200
+	}
+}
+
+SIA_ally_JAP = {
+	allowed = {
+		original_tag = SIA
+	}
+	enable = {
+		JAP = { has_completed_focus = JAP_alliance_with_siam }
+	}
+	ai_strategy = {
+		type = alliance
+		id = "JAP"
+		value = 200
+	}
+}
+
 
 # ==================================================
 #   Military Strategy
@@ -1167,22 +1146,98 @@ JAP_USA_we_love_islands = {
 	}
 }
 
-JAP_delay_naval_invasions_in_china = {
+JAP_reasonable_assault = {
 	allowed = {
-		original_tag = JAP
+		OR = {
+			tag = JAP
+			tag = MAN
+			tag = MEN
+		}
 	}
 	enable = {
-		date < 1939.1.1
-		CHI = { is_ai = yes }
+		has_war_with = CHI
+		OR = {
+			check_variable = { EAI_fielded_eq_ratio < 0.75 }
+			surrender_progress > 0.2 # Save our home islands.
+		}
+		NOT = { CHI = { surrender_progress < 0.2 } } # Push them first.
 	}
+
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = invade
-		id = "CHI"
-		value = -500
+		type = front_control
+		priority = 6
+		state_trigger = {
+			NOT = { is_coastal = yes }
+			CONTROLLER = {
+				OR = {
+					tag = CHI
+					has_war_together_with = CHI
+				}
+			}
+		}
+		ordertype = front
+		execute_order = no
 	}
 }
+
+EAI_JAP_offensive_vs_CHI_coast_assignments = {
+	allowed = { tag = JAP }
+	enable = {
+		has_war_with = CHI
+	}
+	abort = {
+		NOT = { 
+			AND = {
+				has_war_with = CHI
+			}
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	# push invasion regions
+	ai_strategy = { type = strategic_air_importance id = 248 value = 50000 }
+	ai_strategy = { type = strategic_air_importance id = 164 value = 50000 }
+	ai_strategy = { type = strategic_air_importance id = 247 value = 50000 }
+	ai_strategy = {
+		type = front_unit_request
+		state_trigger = {
+			is_coastal = yes
+			OR = {
+				region = 248
+				region = 164
+				region = 247
+				region = 143
+			}
+			NOT = { 
+				state = 608
+				state = 609
+				state = 615
+				state = 611
+			}
+		}
+		value = 50
+	}
+}
+
+#JAP_delay_naval_invasions_in_china = {
+#	allowed = {
+#		original_tag = JAP
+#	}
+#	enable = {
+#		date < 1939.1.1
+#		CHI = { is_ai = yes }
+#	}
+#	abort_when_not_enabled = yes
+#
+#	ai_strategy = {
+#		type = invade
+#		id = "CHI"
+#		value = -500
+#	}
+#}
 
 # Also, these invasions sometimes seem to glitch? Very strange...
 # When using human_ai to observe, they sometimes ignore this order...
@@ -1364,11 +1419,11 @@ JAP_garrison_east_indies = {
 		subtract_invasions_from_need = yes
 		subtract_fronts_from_need = yes
 	}
-	ai_strategy = {
-		type = role_ratio
-		id = garrison
-		value = 10
-	}
+	#ai_strategy = {
+	#	type = role_ratio
+	#	id = garrison
+	#	value = 10
+	#}
 }
 
 
@@ -1388,11 +1443,11 @@ JAP_collaboration_on_CHI = {
 			has_capitulated = no
 			NOT = { is_ally_with = GER }
 		}
-		# do at most three times
+		# do at most one time
 		num_finished_operations = {
 			operation = operation_collaboration_government
 			target = CHI
-			value < 3
+			value < 1
 		}
 	}
 	abort_when_not_enabled = yes
@@ -1408,10 +1463,6 @@ JAP_collaboration_on_CHI = {
 		operation = operation_collaboration_government
 		value = 9999
 		operation_target = CHI
-	}
-	ai_strategy = {
-		type = intelligence_agency_usable_factories
-		value = 30
 	}
 }
 

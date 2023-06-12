@@ -3,4 +3,4 @@ tags={
 	"Utilities"
 }
 name="Simple AI"
-supported_version="1.12.12"
+supported_version="1.12.14"

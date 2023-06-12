@@ -1,6 +1,5 @@
 
 infantry_CHI = {
-
 	available_for = {
 		CHI
 		PRC 
@@ -12,178 +11,130 @@ infantry_CHI = {
 		MEN
 		MAN
 	}
-
-	roles = {
-		infantry
-	}
-	
+	roles = { infantry }
 	upgrade_prio = {
-		factor = 2
-
-		modifier = {
-			factor = 5
-		}
+		base = 1
 	}
 
-	match_to_count = 0.10
-	
-	infantry_default_CHI = {
-	
-		upgrade_prio = {
-			factor = 2
+	match_to_count = 0.5
 
-			modifier = {
-				factor = 1
-			}
-		}
+	CHI_infantry_default = {
+		production_prio = { base = 0.01 }
+		upgrade_prio = { base = 0.01 }
 		
-		target_width = 21.0
+		target_width = 12.0
 		width_weight = 1.0
-		column_swap_factor = 0.5
-		
-		stat_weights = {
-			0.00 #-- default_morale
-			0.00 #-- defense
-			1.00 #-- breakthrough
-			0.00 #-- hardness
-			4.00 #-- soft_attack
-			0.00 #-- hard_attack
-			0.00 #-- recon
-			1.00 #-- entrenchment
-			0.00 #-- initiative
-			0.00 #-- casualty_trickleback
-			0.00 #-- supply_consumption_factor
-			0.00 #-- supply_consumption
-			0.00 #-- suppression
-			0.00 #-- suppression_factor
-			0.00 #-- experience_loss_factor
-			0.00 #-- equipment_capture_factor
-			0.00 #-- fuel_capacity
-			#-- Air Values
-			0.00 #-- air_attack
-			#-- Common Values
-			0.60 #-- max_organisation
-			0.40 #-- max_strength
-			0.00 #-- maximum_speed
-			0.00 #-- armor_value
-			0.20 #-- ap_attack
-			0.00 #-- reliability
-			0.00 #-- reliability_factor
-			0.00 #-- weight
-			0.00 #-- fuel_consumption
-			0.00 #-- fuel_consumption_factor
-			0.00 #-- strat_attack
-			0.00 #-- carrier_size
-			0.00 #-- acc_hot_gain
-			0.00 #-- acc_cold_gain
-			0.00 #-- build_cost_ic
-		}
+		column_swap_factor = 1.5
 		
 		target_template = {
-			weight = 0.9
-			match_value = 3000.0
-			
+			weight = 0.1
+			match_value = 1000.0
 			support = {
-				engineer = 1
-				artillery = 1
+				
 			}
-			
 			regiments = {
-				infantry = 9
-				artillery = 1
+				infantry = 6
 			}
 		}
 		
 		allowed_types = {
-			infantry		
-			engineer
-			recon
-			field_hospital
-			logistics_company
-			anti_tank
+			# Support
+			
+			# Regiments
+			infantry
+		}
+
+		replace_at_match = 0.1
+		replace_with = CHI_infantry_1
+		target_min_match = 0.5
+	}
+
+	CHI_infantry_1 = {
+		production_prio = { base = 5 modifier = { add = 95 date < 1939.1.2 } }
+		upgrade_prio = { base = 5 modifier = { add = 95 date < 1939.1.2 } }
+
+		target_width = 18.0
+		width_weight = 1.0
+		column_swap_factor = 1.5
+
+		target_template = {
+			weight = 0.7
+			match_value = 3000.0
+			support = {
+				artillery = 1
+			}
+			regiments = {
+				infantry = 9
+			}
+		}
+
+		allowed_types = {
+			# support
 			artillery
-			rocket_artillery
+			# regiments
+			infantry
+		}
+	}
+
+	CHI_infantry_2 = {
+		production_prio = { base = 0 modifier = { add = 10 date > 1939.1.1 } }
+		upgrade_prio = { base = 0 modifier = { add = 10 date > 1939.1.1 } }
+
+		target_width = 21.0
+		width_weight = 1.0
+		column_swap_factor = 1.5
+
+		target_template = {
+			weight = 0.9
+			match_value = 5000.0
+			support = {
+				artillery = 1
+				engineer = 1
+			}
+			regiments = {
+				infantry = 9
+				artillery_brigade = 1
+			}
+		}
+
+		allowed_types = {
+			# support
+			artillery
+			engineer
+			# regiments
+			infantry
 			artillery_brigade
 		}
 	}
 
-	infantry_2_CHI = {
-	
-		upgrade_prio = {
-			factor = 2
+	CHI_infantry_2_big = {
+		enable = { OR = { has_tech = vast_offensives has_tech = human_wave_offensive } }
+		production_prio = { base = 0 modifier = { add = 20 date > 1939.1.1 } }
+		upgrade_prio = { base = 0 modifier = { add = 20 date > 1939.1.1 } }
 
-			modifier = {
-				factor = 0
-				NOT = { has_tech = human_wave_offensive }
-			}
-		}
-		
 		target_width = 21.0
 		width_weight = 1.0
-		column_swap_factor = 0.5
-		
-		stat_weights = {
-			0.00 #-- default_morale
-			0.00 #-- defense
-			1.00 #-- breakthrough
-			0.00 #-- hardness
-			4.00 #-- soft_attack
-			0.00 #-- hard_attack
-			0.00 #-- recon
-			1.00 #-- entrenchment
-			0.00 #-- initiative
-			0.00 #-- casualty_trickleback
-			0.00 #-- supply_consumption_factor
-			0.00 #-- supply_consumption
-			0.00 #-- suppression
-			0.00 #-- suppression_factor
-			0.00 #-- experience_loss_factor
-			0.00 #-- equipment_capture_factor
-			0.00 #-- fuel_capacity
-			#-- Air Values
-			0.00 #-- air_attack
-			#-- Common Values
-			0.60 #-- max_organisation
-			0.40 #-- max_strength
-			0.00 #-- maximum_speed
-			0.00 #-- armor_value
-			0.20 #-- ap_attack
-			0.00 #-- reliability
-			0.00 #-- reliability_factor
-			0.00 #-- weight
-			0.00 #-- fuel_consumption
-			0.00 #-- fuel_consumption_factor
-			0.00 #-- strat_attack
-			0.00 #-- carrier_size
-			0.00 #-- acc_hot_gain
-			0.00 #-- acc_cold_gain
-			0.00 #-- build_cost_ic
-		}
-		
+		column_swap_factor = 1.5
+
 		target_template = {
-			weight = 0.9
-			match_value = 5000.0
-			
+			weight = 0.95
+			match_value = 7000.0
 			support = {
-				engineer = 1
 				artillery = 1
+				engineer = 1
 			}
-			
 			regiments = {
-				infantry = 11
+				infantry = 13
 				artillery_brigade = 1
 			}
 		}
-		
+
 		allowed_types = {
-			infantry		
-			engineer
-			recon
-			field_hospital
-			logistics_company
-			anti_tank
+			# support
 			artillery
-			rocket_artillery
+			engineer
+			# regiments
+			infantry
 			artillery_brigade
 		}
 	}

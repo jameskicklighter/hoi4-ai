@@ -89,7 +89,7 @@ German_historical = {
 
 	ideas = {
 		# Army Spirits. Only available to Neutral/Fascist.
-		political_loyalty_spirit = 75
+		bold_attack_spirit = 75
 	}
 
 	# Keep small, as it is used as a factor for some things (such as research needs)

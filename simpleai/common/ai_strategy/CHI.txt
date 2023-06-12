@@ -22,7 +22,7 @@ CHI_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = garrison
-		value = 0
+		value = 5
 	}
 
 	ai_strategy = {
@@ -52,7 +52,7 @@ CHI_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = infantry
-		value = 100
+		value = 95
 	}
 	
 	#Air unit factors
@@ -118,23 +118,23 @@ CHI_unit_production = {
 		value = 20
 	}
 	
-	ai_strategy = {
-		type = equipment_production_factor
-		id = infantry
-		value = 35
-	}
+	#ai_strategy = {
+	#	type = equipment_production_factor
+	#	id = infantry
+	#	value = 35
+	#}
 	
-	ai_strategy = {
-		type = equipment_production_factor
-		id = artillery
-		value = 25
-	}
+	#ai_strategy = {
+	#	type = equipment_production_factor
+	#	id = artillery
+	#	value = 25
+	#}
 	
-	ai_strategy = {
-		type = equipment_production_factor
-		id = armor
-		value = 0
-	}
+	#ai_strategy = {
+	#	type = equipment_production_factor
+	#	id = armor
+	#	value = 0
+	#}
 
 	ai_strategy = {
 		type = ignore_army_incompetence
@@ -176,19 +176,8 @@ CHI_let_japan_get_lost_in_the_desert = {
 	enable = {
 		is_in_faction_with = SHX
 		is_in_faction_with = XSM
+		# JAP = { has_completed_focus = JAP_purge_the_kodoha_faction }
 		has_war_with = JAP
-	}
-	abort = {
-		OR = {
-			JAP = {
-				OR = {
-					has_completed_focus = JAP_strengthen_civilian_government
-					has_completed_focus = JAP_the_unthinkable_option
-					has_completed_focus = JAP_support_the_kodoha_faction
-				}
-			}
-			#date > 1940.1.1
-		}
 	}
 
 	ai_strategy = {
@@ -200,6 +189,44 @@ CHI_let_japan_get_lost_in_the_desert = {
 		type = dont_defend_ally_borders
 		id = "XSM"
 		value = 100
+	}
+}
+
+EAI_CHI_defensive_vs_JAP_careful_north = {
+	allowed = {
+		OR = {
+			tag = CHI
+			tag = XSM 
+			tag = PRC 
+			tag = YUN 
+			tag = GXC 
+			tag = SHX 
+		}
+	}
+	enable = {
+		has_war_with = JAP
+		has_defensive_war = yes
+		surrender_progress > 0
+		NOT = { JAP = { surrender_progress > 0.2 } }
+		check_variable = { EAI_fielded_eq_ratio < 0.9 }
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		priority = 6
+		state_trigger = {
+			NOT = { is_coastal = yes }
+			CONTROLLER = {
+				OR = {
+					tag = JAP
+					has_war_together_with = JAP
+				}
+			}
+		}
+		ordertype = front
+		execute_order = no
 	}
 }
 
@@ -225,35 +252,60 @@ CHI_dont_waste_on_offensive_air_early = {
 	}
 }
 
-CHI_armored_production = {
-	allowed = { original_tag = CHI }
-	enable = {
-		ai_wants_divisions > 0 #Decreasing the amount of tanks the AI wants
-	}
-	abort = {
-		ai_wants_divisions < 1 #Decreasing the amount of tanks the AI wants
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = armor
-		value = 0
-	}
-}
-
 CHI_highered_armored_production = {
 	allowed = { original_tag = CHI }
 	enable = {
-		num_of_military_factories > 64
+		num_of_military_factories > 40
 	}
 	abort = {
-		num_of_military_factories < 65
+		num_of_military_factories < 41
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 0
+		value = 15
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = -15
+	}
+}
+
+CHI_dont_waste_XP_on_tanks = {
+	allowed = {
+		OR = {
+			original_tag = CHI
+			original_tag = PRC
+			original_tag = GXC
+			original_tag = YUN
+			original_tag = SHX
+			original_tag = XSM
+			original_tag = SIK
+			original_tag = MEN
+			original_tag = MAN
+		}
+	}
+	enable = {
+		num_of_military_factories < 41
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = template_prio
+		id = light_armor
+		value = -100
+	}
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = -100
+	}
+	ai_strategy = {
+		type = template_prio
+		id = heavy_armor
+		value = -100
 	}
 }
 
@@ -331,16 +383,7 @@ CHI_coastal_buffer = {
 		original_tag = CHI
 	}
 	enable = {
-		OR = {
-			JAP = {
-				focus_progress = {
-					focus = JAP_intervene_in_china
-					progress > 0.01
-				}
-			}
-			#JAP = { has_completed_focus = JAP_intervene_in_china }
-			has_war_with = JAP
-		}
+		has_war_with = JAP
 	}
 	abort_when_not_enabled = yes
 
@@ -353,16 +396,10 @@ CHI_coastal_buffer = {
 			596
 			595
 		}
-		ratio = 0.20
+		ratio = 0.10
 		area = asia
 		subtract_invasions_from_need = no
-		subtract_fronts_from_need = yes
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = garrison
-		value = 10
+		subtract_fronts_from_need = no
 	}
 }
 

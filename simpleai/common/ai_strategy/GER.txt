@@ -189,7 +189,7 @@ GER_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = garrison
-		value = 4
+		value = 5
 	}
 
 	ai_strategy = {
@@ -201,7 +201,7 @@ GER_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = mountaineers
-		value = 2
+		value = 0
 	}
 
 	ai_strategy = {
@@ -213,31 +213,31 @@ GER_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = cavalry
-		value = -100
+		value = 0
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = motorized
-		value = 0 #because doctrine this = 2
+		value = 10 #because doctrine this = 2
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = mechanized
-		value = -5 #because doctrine this = 0
+		value = 0 #because doctrine this = 0
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = -17 #because doctrine this = 3
+		value = 20 #because doctrine this = 3
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = infantry
-		value = 75 #88 to 70
+		value = 65 #88 to 70
 	}
 
 	# Naval unit factors
@@ -326,51 +326,51 @@ GER_unit_production = {
 
 }
 
-GER_anti_armor = {
-	allowed = {
-		original_tag = GER
-	}
-	enable = {
-		ai_wants_divisions > 5 #Decreasing the amount of motorized the AI wants
+#GER_anti_armor = {
+#	allowed = {
+#		original_tag = GER
+#	}
+#	enable = {
+#		ai_wants_divisions > 5 #Decreasing the amount of motorized the AI wants
+#
+#		any_enemy_country = {
+#			ROOT = {
+#				estimated_intel_max_armor = {
+#					tag = PREV
+#					value > 25
+#				}
+#			}
+#		}
+#	}
+#	abort = {
+#		ai_wants_divisions < 6 #Decreasing the amount of motorized the AI wants
+#	}
+#
+#	ai_strategy = {
+#		type = role_ratio
+#		id = motorized
+#		value = 15
+#	}
+#}
 
-		any_enemy_country = {
-			ROOT = {
-				estimated_intel_max_armor = {
-					tag = PREV
-					value > 25
-				}
-			}
-		}
-	}
-	abort = {
-		ai_wants_divisions < 6 #Decreasing the amount of motorized the AI wants
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = motorized
-		value = 15
-	}
-}
-
-GER_armored_production = {
-	allowed = {
-		original_tag = GER
-	}
-	enable = {
-		date > 1938.8.1
-		ai_wants_divisions > 10 #Decreasing the amount of tanks the AI wants
-	}
-	abort = {
-		ai_wants_divisions < 10 #Decreasing the amount of tanks the AI wants
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = armor
-		value = 4
-	}
-}
+#GER_armored_production = {
+#	allowed = {
+#		original_tag = GER
+#	}
+#	enable = {
+#		date > 1938.8.1
+#		ai_wants_divisions > 10 #Decreasing the amount of tanks the AI wants
+#	}
+#	abort = {
+#		ai_wants_divisions < 10 #Decreasing the amount of tanks the AI wants
+#	}
+#
+#	ai_strategy = {
+#		type = role_ratio
+#		id = armor
+#		value = 4
+#	}
+#}
 
 GER_halt_light_armor_production_in_transitioning = {
 	allowed = {
@@ -411,23 +411,23 @@ GER_stockpile_less_early_game = {
 }
 
 
-GER_highered_armored_production = {
-	allowed = {
-		original_tag = GER
-	}
-	enable = {
-		num_of_military_factories > 109
-	}
-	abort = {
-		num_of_military_factories < 110
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = armor
-		value = 10
-	}
-}
+#GER_highered_armored_production = {
+#	allowed = {
+#		original_tag = GER
+#	}
+#	enable = {
+#		num_of_military_factories > 109
+#	}
+#	abort = {
+#		num_of_military_factories < 110
+#	}
+#
+#	ai_strategy = {
+#		type = role_ratio
+#		id = armor
+#		value = 10
+#	}
+#}
 
 GER_dont_waste_xp_until_medium_armor = {
 	allowed = {
@@ -2705,11 +2705,11 @@ GER_normandy_buffer = {
 		subtract_fronts_from_need = yes
 	}
 
-	ai_strategy = {
-		type = role_ratio
-		id = garrison
-		value = 10
-	}
+	#ai_strategy = {
+	#	type = role_ratio
+	#	id = garrison
+	#	value = 10
+	#}
 }
 
 GER_invasion_buffer = {
@@ -2739,11 +2739,12 @@ GER_invasion_buffer = {
 		subtract_invasions_from_need = no
 		subtract_fronts_from_need = yes
 	}
-	ai_strategy = {
-		type = role_ratio
-		id = garrison
-		value = 10
-	}
+
+	#ai_strategy = {
+	#	type = role_ratio
+	#	id = garrison
+	#	value = 10
+	#}
 }
 
 GER_build_more_cas_to_invade_russia = {
