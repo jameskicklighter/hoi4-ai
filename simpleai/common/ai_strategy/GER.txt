@@ -97,7 +97,7 @@ GER_wants_synth = {
 		original_tag = GER
 	}
 	enable = {
-		date > 1937.10.20
+		date > 1938.6.1
 		has_war = no
 	}
 	abort_when_not_enabled = yes
@@ -105,7 +105,7 @@ GER_wants_synth = {
 	ai_strategy = {
 		type = building_target
 		id = synthetic_refinery
-		value = 8
+		value = 12
 	}
 }
 
@@ -429,165 +429,181 @@ GER_stockpile_less_early_game = {
 #	}
 #}
 
-GER_dont_waste_xp_until_medium_armor = {
+# GER_dont_waste_xp_until_medium_armor = {
+# 	allowed = {
+# 		original_tag = GER
+# 	}
+# 	enable = {
+# 		always = yes
+# 	}
+# 	abort = {
+# 		has_template_majority_unit = medium_armor
+# 	}
+
+# 	ai_strategy = {
+# 		type = template_prio
+# 		id = paratrooper
+# 		value = -100
+# 	}
+
+# 	ai_strategy = {
+# 		type = template_prio
+# 		id = mountaineers
+# 		value = -100
+# 	}
+# }
+
+# GER_super_boost_light_for_med_armor = {
+# 	allowed = {
+# 		original_tag = GER
+# 	}
+# 	enable = {
+# 		OR = {
+# 			has_tech = basic_medium_tank
+# 			has_tech = basic_medium_tank_chassis
+# 		}
+# 		NOT = { has_template_ai_majority_unit = medium_armor }
+# 	}
+
+# 	abort = {
+# 		has_template_ai_majority_unit = medium_armor
+# 	}
+
+# 	# lets do changes more often during this period too
+# 	ai_strategy = {
+# 		type = land_xp_spend_priority
+# 		id = division_template
+# 		value = 100
+# 	}
+
+# 	# this is gateway
+# 	ai_strategy = {
+# 		type = template_prio
+# 		id = light_armor
+# 		value = 100
+# 	}
+
+# 	ai_strategy = {
+# 		type = template_prio
+# 		id = medium_armor
+# 		value = 150
+# 	}
+
+# 	# Germany is set up to change their SS division into medium armor.
+# 	ai_strategy = {
+# 		type = template_prio
+# 		id = motorized
+# 		value = 200
+# 	}
+# }
+
+# GER_super_boost_light_for_modern_armor = {
+# 	allowed = {
+# 		original_tag = GER
+# 	}
+# 	enable = {
+# 		OR = {
+# 			has_tech = main_battle_tank
+# 			has_tech = main_battle_tank_chassis
+# 		}
+# 		NOT = { has_template_ai_majority_unit = modern_armor }
+# 	}
+
+# 	abort = {
+# 		has_template_ai_majority_unit = modern_armor
+# 	}
+
+# 	# lets do changes more often during this period too
+# 	ai_strategy = {
+# 		type = land_xp_spend_priority
+# 		id = division_template
+# 		value = 100
+# 	}
+
+# 	# this is gateway
+# 	ai_strategy = {
+# 		type = template_prio
+# 		id = medium_armor
+# 		value = 100
+# 	}
+
+# 	ai_strategy = {
+# 		type = template_prio
+# 		id = modern_armor
+# 		value = 150
+# 	}
+# }
+
+GER_how_about_some_more_transport_planes = {
 	allowed = {
 		original_tag = GER
 	}
 	enable = {
-		always = yes
+		num_of_military_factories > 50
 	}
-	abort = {
-		has_template_majority_unit = medium_armor
-	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = template_prio
-		id = paratrooper
-		value = -100
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = mountaineers
-		value = -100
-	}
-}
-
-GER_super_boost_light_for_med_armor = {
-	allowed = {
-		original_tag = GER
-	}
-	enable = {
-		OR = {
-			has_tech = basic_medium_tank
-			has_tech = basic_medium_tank_chassis
-		}
-		NOT = { has_template_ai_majority_unit = medium_armor }
-	}
-
-	abort = {
-		has_template_ai_majority_unit = medium_armor
-	}
-
-	# lets do changes more often during this period too
-	ai_strategy = {
-		type = land_xp_spend_priority
-		id = division_template
-		value = 100
-	}
-
-	# this is gateway
-	ai_strategy = {
-		type = template_prio
-		id = light_armor
-		value = 100
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = medium_armor
-		value = 150
-	}
-
-	# Germany is set up to change their SS division into medium armor.
-	ai_strategy = {
-		type = template_prio
-		id = motorized
-		value = 200
-	}
-}
-
-GER_super_boost_light_for_modern_armor = {
-	allowed = {
-		original_tag = GER
-	}
-	enable = {
-		OR = {
-			has_tech = main_battle_tank
-			has_tech = main_battle_tank_chassis
-		}
-		NOT = { has_template_ai_majority_unit = modern_armor }
-	}
-
-	abort = {
-		has_template_ai_majority_unit = modern_armor
-	}
-
-	# lets do changes more often during this period too
-	ai_strategy = {
-		type = land_xp_spend_priority
-		id = division_template
-		value = 100
-	}
-
-	# this is gateway
-	ai_strategy = {
-		type = template_prio
-		id = medium_armor
-		value = 100
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = modern_armor
-		value = 150
+		type = equipment_production_min_factories
+		id = air_transport
+		value = 1
 	}
 }
 
 
-GER_template_design = {
-	allowed = {
-		original_tag = GER
-	}
-	enable = {
-		date < 1940.1.1
-	}
-	abort = {
-		date > 1940.1.1
-	}
+# GER_template_design = {
+# 	allowed = {
+# 		original_tag = GER
+# 	}
+# 	enable = {
+# 		date < 1940.1.1
+# 	}
+# 	abort = {
+# 		date > 1940.1.1
+# 	}
 
-	ai_strategy = {
-		type = template_prio
-		id = infantry
-		value = 20
-	}
+# 	ai_strategy = {
+# 		type = template_prio
+# 		id = infantry
+# 		value = 20
+# 	}
 
-	ai_strategy = {
-		type = template_prio
-		id = artillery
-		value = 20
-	}
+# 	ai_strategy = {
+# 		type = template_prio
+# 		id = artillery
+# 		value = 20
+# 	}
 
-	ai_strategy = {
-		type = template_prio
-		id = motorized
-		value = -50
-	}
+# 	ai_strategy = {
+# 		type = template_prio
+# 		id = motorized
+# 		value = -50
+# 	}
 
-	ai_strategy = {
-		type = template_prio
-		id = cavalry
-		value = -100
-	}
+# 	ai_strategy = {
+# 		type = template_prio
+# 		id = cavalry
+# 		value = -100
+# 	}
 
-	ai_strategy = {
-		type = template_prio
-		id = light_armor
-		value = 30
-	}
+# 	ai_strategy = {
+# 		type = template_prio
+# 		id = light_armor
+# 		value = 30
+# 	}
 
-	ai_strategy = {
-		type = template_prio
-		id = heavy_armor
-		value = -50
-	}
+# 	ai_strategy = {
+# 		type = template_prio
+# 		id = heavy_armor
+# 		value = -50
+# 	}
 
-	ai_strategy = {
-		type = template_prio
-		id = paratroopers
-		value = -50
-	}
-}
+# 	ai_strategy = {
+# 		type = template_prio
+# 		id = paratroopers
+# 		value = -50
+# 	}
+# }
 
 war_with_poland = {
 	allowed = {
@@ -1110,6 +1126,7 @@ GER_naval_role_ratios_historical = {
 	enable = {
 		not = { GER_naval_interest_trigger = yes }
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = role_ratio
@@ -1179,6 +1196,7 @@ GER_naval_role_ratios_ahistorical = {
 	enable = {
 		GER_naval_interest_trigger = yes
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = role_ratio
@@ -1243,6 +1261,7 @@ GER_naval_role_ratios_maximum_kaiser = {
 	enable = {
 		has_completed_focus = GER_rebuild_the_high_seas_fleet
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = role_ratio
@@ -1306,6 +1325,7 @@ GER_area_priority = {
 	enable = {
 		always = yes
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = area_priority
@@ -1507,6 +1527,16 @@ worry_about_barbarossa_before_africa = {
 	ai_strategy = {
 		type = front_unit_request
 		area = horn_of_africa
+		value = -50
+	}
+	ai_strategy = {
+		type = area_priority
+		id = belgian_congo
+		value = -200
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		area = belgian_congo
 		value = -50
 	}
 }
@@ -1800,6 +1830,127 @@ GER_we_dont_fight_pathetic_sweden_on_historical = { # :O
 		type = protect
 		id = SWE
 		value = 50 #keep the iron coming and no one gets hurt
+	}
+}
+
+GER_trade_with_sweden = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		# if we're not communist and they're not communist
+		NOT = { has_government = communism }
+		NOT = { SWE = { has_government = communism } }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_market_trade_desire
+		id = SWE
+		value = 60
+	}
+}
+
+GER_trade_with_italy = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		has_government = fascism
+		ITA = { has_government = fascism }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_market_trade_desire
+		id = ITA
+		value = 40
+	}
+}
+
+GER_market_management_after_anschluss = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		has_government = fascism
+		has_completed_focus = GER_anschluss
+	}
+	abort_when_not_enabled = yes
+
+	# Time to start buffer for war
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = infantry
+		value = 10000
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = support
+		value = 500
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = artillery
+		value = 500
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = armor
+		value = 500
+	}
+}
+
+GER_market_management_after_sudetenland = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		has_government = fascism
+		has_completed_focus = GER_demand_sudetenland
+	}
+	abort_when_not_enabled = yes
+
+	# Oh nein, we're not gonna sell this, we're... "saving" it...
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = infantry
+		value = 20000
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = support
+		value = 1500
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = artillery
+		value = 1500
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = anti_air
+		value = 1500
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = anti_tank
+		value = 1500
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = armor
+		value = 1000
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = motorized
+		value = 2000
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = train
+		value = 200
 	}
 }
 
@@ -2202,28 +2353,6 @@ GER_have_some_train_production = {
 	}
 }
 
-GER_stock_up_on_trains_before_barbarossa = {
-	allowed = {
-		original_tag = GER
-	}
-
-	enable = {
-		#date > 1940.7.1
-		#date < 1943.1.1
-		#has_war = yes
-		always = no
-	}
-	abort = {
-		has_war_with = SOV # Barbarossa has started, let wartime prioritization do its thing
-		date > 1943.1.1
-	}
-
-	ai_strategy = {
-		type = min_wanted_supply_trains
-		value = 300
-	}
-}
-
 GER_xp_upgrade_spending_land = {
 	allowed = {
 		original_tag = GER
@@ -2281,6 +2410,7 @@ GER_vichy_has_served_its_purpose = {
 			}
 		}
 	}
+	abort = { always = no }
 
 	ai_strategy = {
 		type = prepare_for_war
@@ -2519,7 +2649,7 @@ GER_tanks_in_the_snow = {
 	ai_strategy = {
 		type = front_armor_score
 		id = "SOV"
-		value = 100
+		value = 200
 	}
 	ai_strategy = {
 		type = front_unit_request
@@ -2898,22 +3028,6 @@ GER_pause_in_SOV = { #We got this far but our home is under siege
 
 }
 
-#GER_we_dont_believe_in_mountain_tanks = {
-#	enable = { always = yes }
-#
-#	ai_strategy = {
-#		type = front_armor_score
-#		id = "GRE"
-#		value = -100
-#	}
-#
-#	ai_strategy = {
-#		type = front_armor_score
-#		id = "YUG"
-#		value = -100
-#	}
-#}
-
 GER_make_some_radar_1 = {
 	allowed = {
 		original_tag = GER
@@ -2986,6 +3100,7 @@ GER_make_some_radar_4 = {
 	enable = {
 		has_tech = radio_detection
 		90 = {
+			is_controlled_by = FROM
 			free_building_slots = {
 				building = radar_station
 				size > 0
@@ -3011,6 +3126,7 @@ GER_make_some_radar_5 = {
 	enable = {
 		has_tech = radio_detection
 		763 = {
+			is_controlled_by = FROM
 			free_building_slots = {
 				building = radar_station
 				size > 0
@@ -3036,6 +3152,7 @@ GER_make_some_radar_6 = {
 	enable = {
 		has_tech = radio_detection
 		36 = {
+			is_controlled_by = FROM
 			free_building_slots = {
 				building = radar_station
 				size > 0
@@ -3061,6 +3178,7 @@ GER_make_some_radar_7 = {
 	enable = {
 		has_tech = radio_detection
 		42 = {
+			is_controlled_by = FROM
 			free_building_slots = {
 				building = radar_station
 				size > 0
@@ -3169,7 +3287,7 @@ bba_air_prod_1 = {
 
 	abort_when_not_enabled = yes
 
-	#Air unit factors
+	# Air unit factors
 	ai_strategy = {
 		type = unit_ratio
 		id = fighter
@@ -3185,7 +3303,7 @@ bba_air_prod_1 = {
 	ai_strategy = {
 		type = equipment_production_min_factories
 		id = fighter
-		value = 6
+		value = 6  # Germany needs a minimum production of fighters
 	}
 
 	ai_strategy = {
@@ -3203,7 +3321,7 @@ bba_air_prod_1 = {
 	ai_strategy = {
 		type = equipment_production_min_factories
 		id = cas
-		value = 3
+		value = 3  # Germany needs a minimum production of CAS planes
 	}
 
 	ai_strategy = {
@@ -3262,6 +3380,7 @@ bba_air_prod_2 = {
 	enable = {
 		date > 1940.1.1
 	}
+	abort_when_not_enabled = yes
 
 	#Air unit factors
 	ai_strategy = {
@@ -3348,4 +3467,169 @@ bba_air_prod_2 = {
 		value = 3
 	}
 
+}
+
+GER_dont_act_on_danzig_if_things_went_south = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		has_war_with = CZE
+		date < 1940.6.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = declare_war
+		id = "POL"
+		value = -2000
+	}
+}
+
+GER_protect_swedish_ore = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		NOT = { has_war_with = SWE }
+		SWE = { has_capitulated = no }
+		
+ 		142 = { is_fully_controlled_by = ROOT }
+ 		110 = { is_fully_controlled_by = ROOT }
+ 		143 = { is_fully_controlled_by = ROOT }
+ 		144 = { is_fully_controlled_by = ROOT }
+	}
+	abort_when_not_enabled = yes
+
+	 ai_strategy = {
+	 	type = put_unit_buffers
+
+		# ratio of total armeis in country to be buffered
+	 	ratio = 0.05
+
+		# you can specify an order id. ratio of same orders ids will be share same ratio
+	 	order_id = 1
+
+	 	# states to put garrison orders (if no state is friendly, strat is invalid)
+	 	states = {
+	 		142
+	 		110
+	 		143
+	 		144
+	 	} 
+
+		# ai areas that the orders will use these buffers in
+	 	area = europe
+	 }
+	
+}
+
+TEMP_avoid_sweden = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		country_exists = SWE
+		is_historical_focus_on = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = conquer
+		id = "SWE"
+		value = -999
+	}
+}
+
+SWE_nils_flyg_is_in_charge_and_he_is_a_weird_communist_that_does_not_like_stalin_so_we_like_him = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		country_exists = SWE
+		SWE = {
+			has_country_leader = {
+				ruling_only = yes 
+				character = SWE_nils_flyg 
+			}
+			has_government = communism
+		}
+	}
+	abort = {
+		SWE = {
+			NOT = {
+				has_government = communism
+				has_country_leader = {
+					ruling_only = yes 
+					character = SWE_nils_flyg 
+				}
+			}
+		}
+	}	
+
+	ai_strategy = {
+		type = avoid_starting_wars
+		id = "SWE"
+		value = 200
+	}
+
+	ai_strategy = {
+		type = befriend
+		id = "SWE"
+		value = 200
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "SWE"
+		value = 1000
+	}
+}
+
+Sweden_was_a_puppet_and_broke_free_so_now_we_are_angry = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		has_country_flag = sweden_was_a_puppet_and_has_broken_free
+	}
+
+	abort = {
+		NOT = { has_country_flag = sweden_was_a_puppet_and_has_broken_free }
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "SWE"
+		value = 200
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "SWE"
+		value = 200
+	}
+}
+
+Sweden_joined_our_pact_so_we_are_kinda_happy = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		SWE = { has_completed_focus = SWE_join_the_anti_soviet_pact }
+	}
+
+	abort = {
+		SWE = { has_war_with = GER }
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "SWE"
+		value = 50
+	}
+	ai_strategy = {
+		type = protect
+		id = "SWE"
+		value = 70
+	}
 }

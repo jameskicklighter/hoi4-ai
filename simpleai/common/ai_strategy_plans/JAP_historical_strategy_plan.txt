@@ -33,11 +33,11 @@ JAP_historical_plan = {
 
 	ai_national_focuses = {
 		#-----1936-----
-		JAP_army_expansion_law							# March 11, 1936
-		JAP_purge_the_kodoha_faction					# May 20, 1936
-		JAP_guide_the_zaibatsus							# July 29, 1936
-		JAP_national_mobilization_law					# October 7, 1936
-		JAP_nationalize_war_industry					# December 16, 1936
+		JAP_new_naval_estimates							# March 11, 1936
+		JAP_army_expansion_law							# May 20, 1936
+		JAP_purge_the_kodoha_faction					# July 29, 1936
+		JAP_guide_the_zaibatsus							# October 7, 1936
+		JAP_national_mobilization_law					# December 16, 1936
 
 		#-----1937-----
 		JAP_liaison_conference							# February 24, 1937
@@ -46,7 +46,7 @@ JAP_historical_plan = {
 		JAP_secure_china								# (Typically bypassed after completing escalate war decisions.
 														#  Ignore for date calculations. Allows Ichi-go.)
 		JAP_national_research_policy					# September 22, 1937
-		JAP_new_naval_estimates							# December 1, 1937
+		JAP_nationalize_war_industry					# December 1, 1937
 
 		#-----1938-----
 		JAP_army_expansion								# February 9, 1938
@@ -56,47 +56,47 @@ JAP_historical_plan = {
 		JAP_spiritual_mobilization						# November 16, 1938
 
 		#-----1939-----
-		JAP_carrier_warfare_experiments					# January 25, 1939
-		JAP_the_manchurian_project						# April 5, 1939
-		JAP_expand_manchurian_railways					# June 14, 1939
-		JAP_light_industry_development					# August 23, 1939
-		JAP_heavy_industry_development					# November 1, 1939
+		JAP_cruiser_modernization						# January 25, 1939
+		JAP_carrier_warfare_experiments					# April 5, 1939
+		JAP_fighter_modernization						# June 14, 1939
+		JAP_agility_focus								# August 23, 1939
+		JAP_first_air_fleet								# November 1, 1939
 
 		#-----1940-----
-		JAP_japanese_settlement							# January 10, 1940
-		JAP_expand_the_showa_steel_works				# March 20, 1940
+		JAP_the_zero									# January 10, 1940
+		JAP_small_arms_modernization					# March 20, 1940
 		JAP_strike_south_doctrine						# May 29, 1940
-		JAP_fighter_modernization						# August 7, 1940
+		JAP_unified_fighter_development					# August 7, 1940
 		JAP_sign_tripartite_pact						# October 16, 1940 (Historically occurred September 27, 1940.)
-		JAP_small_arms_modernization					# December 25, 1940
+		JAP_bomber_modernization						# December 25, 1940
 
 		#-----1941-----
-		JAP_first_air_fleet								# March 5, 1941
+		JAP_long_lance_torpedoes						# March 5, 1941
 		JAP_non_aggression_pact_with_the_soviet_union	# May 14, 1941 (Historically occurred April 13, 1941.)
 		JAP_secure_the_philippines						# July 23, 1941 (Historically occurred December 8, 1941.
-		JAP_agility_focus								# October 1, 1941
 														# Start early so the AI can hopefully capitulate and prepare for East Indies.)
+		JAP_warrior_spirit								# October 1, 1941
 		JAP_alliance_with_siam							# December 10, 1941 (Historically occurred December 8, 1941 after Japan briefly
 														# invaded Siam. Let's hope Siam is happy to join us for historical purposes.)
 
 		#-----1942-----
 		JAP_strike_on_the_southern_resource_area		# February 18, 1942 (Historically occurred January 10, 1942, for the East Indies.)
-		JAP_the_zero									# April 29, 1942
-		JAP_cruiser_modernization						# July 8, 1942
-		JAP_exploit_the_southern_resource_area			# September 16, 1942
-		JAP_warrior_spirit								# November 25, 1942
+		JAP_strengthen_the_divine_wind					# April 29, 1942
+		JAP_exploit_the_southern_resource_area			# July 8, 1942
+		JAP_modern_escorts								# September 16, 1942
+		JAP_jet_prototypes								# November 25, 1942
 
 		#-----1943-----
-		JAP_strengthen_the_divine_wind					# February 3, 1943
-		JAP_long_lance_torpedoes						# April 14, 1943
-		JAP_torpedo_cruisers							# June 23, 1943
-		JAP_bomber_modernization						# September 1, 1943
-		JAP_range_focus									# November 10, 1943
+														# February 3, 1943
+														# April 14, 1943
+														# June 23, 1943
+														# September 1, 1943
+														# November 10, 1943
 
 		#-----1944-----
-		JAP_strategic_bomber_effort						# January 19, 1944
-		JAP_modern_escorts								# March 29, 1944
-		JAP_jet_prototypes								# June 7, 1944
+														# January 19, 1944
+														# March 29, 1944
+														# June 7, 1944
 	}
 
 	research = {

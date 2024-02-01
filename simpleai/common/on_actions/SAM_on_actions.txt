@@ -1,0 +1,25 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			random_country = {
+				SAM_startup_effects = yes
+			}
+		}
+	}
+	# on_daily = {
+	# 	effect = {
+	# 		SAM_daily_update = yes
+	# 	}
+	# }
+	on_weekly = {
+		effect = {
+			SAM_daily_update = yes
+		}
+	}
+	# on_monthly = {
+	# 	effect = {
+
+	# 		EAI_monthly_update = yes
+	# 	}
+	# }
+}

@@ -53,7 +53,7 @@ ITA_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 3
+		value = 8
 	}
 
 	ai_strategy = {
@@ -149,6 +149,41 @@ ITA_unit_production = {
 	}
 }
 
+ITA_trade_with_sweden = {
+	allowed = {
+		original_tag = ITA
+	}
+	enable = {
+		# if we're not communist and they're not communist
+		NOT = { has_government = communism }
+		NOT = { SWE = { has_government = communism } }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_market_trade_desire
+		id = SWE
+		value = 60
+	}
+}
+
+ITA_trade_with_germany = {
+	allowed = {
+		original_tag = ITA
+	}
+	enable = {
+		has_government = fascism
+		GER = { has_government = fascism }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_market_trade_desire
+		id = GER
+		value = 40
+	}
+}
+
 stresa_front_ita = {
 	allowed = {
 		original_tag = ITA
@@ -156,8 +191,7 @@ stresa_front_ita = {
 	enable = {
 		has_completed_focus = ITA_ratify_the_stresa_front
 	}
-	abort = {
-	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = alliance
@@ -184,6 +218,7 @@ stresa_front_eng_fra = {
 		}
 	}
 	abort = {
+		always = no
 	}
 
 	ai_strategy = {
@@ -271,6 +306,7 @@ ITA_slow_going_against_france = {
 		}
 		GER = { surrender_progress < 0.1 } 
 	}
+	abort_when_not_enabled = yes
 	
 	ai_strategy = {
 		type = front_control
@@ -579,6 +615,7 @@ ITA_template_design_2 = {
 	enable = {
 		date > 1940.1.1
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = template_prio
@@ -723,6 +760,7 @@ ITA_naval_role_ratios_historical = {
 	enable = {
 		always = yes
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = role_ratio
@@ -917,8 +955,8 @@ ITA_wants_docks = {
 				has_war_with = ROOT
 			}
 		}
-		date > 1940.1.1
-		num_of_military_factories > 80
+		date > 1938.1.1
+		num_of_military_factories > 40
 	}
 	abort_when_not_enabled = yes
 
@@ -1342,6 +1380,7 @@ ITA_prepare_yugoslavian_invasion = {
 	enable = {
 		country_exists = YUG
 		NOT = {
+			has_global_flag = second_italo_ethiopian_war_flag #Don't attack YUG if you can't handle ETH
 			OR = {
 				YUG = { is_subject_of = ROOT }
 				is_in_faction_with = YUG

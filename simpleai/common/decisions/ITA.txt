@@ -1272,6 +1272,17 @@ ITA_missiolinis = {
 					}
 				}
 			}
+			934 = { #SHKÖDER
+				OR = {
+					is_fully_controlled_by = ROOT
+					controller = {
+						is_subject_of = ROOT
+						hidden_trigger = { #To prevent unnecessary overcrowding
+							has_full_control_of_state = PREV
+						}
+					}
+				}
+			}
 		}
 
 		activation = {
@@ -3547,7 +3558,7 @@ ITA_balance_of_power_category = {
 		}
 
 		modifier = {
-			consumer_goods_factor = -0.03
+			consumer_goods_factor = -0.10
 		}
 
 		ai_will_do = {
@@ -3785,7 +3796,7 @@ ETH_italian_occupation_category = {
 		cost = 25
 
 		modifier = {
-			consumer_goods_factor = 0.05
+			consumer_goods_factor = 0.10
 		}
 
 		complete_effect = {
@@ -5370,7 +5381,7 @@ ITA_naval_cooperation_programs_dec_cat = {
 				navy_experience = 50
 				add_doctrine_cost_reduction = {
 					name = ITA_joint_maneuvers_with_country_doctrine_bonus
-					cost_reduction = 0.75
+					cost_reduction = 0.50
 					uses = 1
 					category = naval_doctrine
 				}
@@ -5378,7 +5389,7 @@ ITA_naval_cooperation_programs_dec_cat = {
 					navy_experience = 50
 					add_doctrine_cost_reduction = {
 						name = ITA_joint_maneuvers_with_country_doctrine_bonus
-						cost_reduction = 0.75
+						cost_reduction = 0.50
 						uses = 1
 						category = naval_doctrine
 					}
@@ -5608,7 +5619,7 @@ ITA_naval_cooperation_programs_dec_cat = {
 		days_remove = ITA_export_midget_submarines_days
 
 		modifier = {
-			consumer_goods_factor = -0.01
+			consumer_goods_factor = -0.05
 			industrial_capacity_dockyard = -0.05
 		}
 
@@ -5812,6 +5823,7 @@ ITA_diplomacy_balkan_decision_category = {
 						is_major = yes
 					}
 				}
+				has_global_flag = second_italo_ethiopian_war_flag #Don't attack YUG if you can't handle ETH
 			}
 		}
 
@@ -6155,6 +6167,9 @@ ITA_diplomacy_balkan_decision_category = {
 			805 = {
 				is_controlled_by = ITA
 			}
+			934 = {
+				is_controlled_by = ITA
+			}
 		}
 
 		visible = {
@@ -6178,6 +6193,7 @@ ITA_diplomacy_balkan_decision_category = {
 			ALB = {
 				transfer_state = 44
 				transfer_state = 805
+				transfer_state = 934
 				IF = {
 					limit = {
 						802 = {

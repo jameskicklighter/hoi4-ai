@@ -38,7 +38,7 @@ JAP_intervene_in_china = {
 			}
 			JAP_intervene_in_china_level_down = yes
 			hidden_effect = {
-				set_country_flag = { flag = JAP_slow_down_in_china value = 1 days = 100 }
+				set_country_flag = { flag = JAP_slow_down_in_china value = 1 days = 50 }
 			}
 		}
 	}
@@ -154,7 +154,14 @@ JAP_interservice_rivalry = {
 		fire_only_once = yes
 		days_remove = -1
 		ai_will_do = {
-			factor = 9999
+			factor = 1
+			modifier = {
+				OR = {
+					CHI = { is_ai = no }
+					MAN = { is_ai = no }
+				}
+				factor = 999999
+			}
 		}
 		complete_effect = {
 			random_owned_state = {
@@ -217,7 +224,12 @@ JAP_interservice_rivalry = {
 		fire_only_once = yes
 		days_remove = -1
 		ai_will_do = {
-			factor = 0
+			factor = 1
+			modifier = {
+				CHI = { is_ai = yes }
+				MAN = { is_ai = yes }
+				factor = 999999
+			}
 		}
 		complete_effect = {
 			random_owned_state = {
@@ -280,11 +292,7 @@ JAP_interservice_rivalry = {
 		fire_only_once = yes
 		days_remove = -1
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				date < 1938.9.1
-			}
+			factor = 0
 		}
 		complete_effect = {
 			set_country_flag = { flag = JAP_war_conferences_cd value = 1 days = 180 }
@@ -314,11 +322,7 @@ JAP_interservice_rivalry = {
 		fire_only_once = yes
 		days_remove = -1
 		ai_will_do = {
-			factor = 2
-			modifier = {
-				factor = 0
-				date < 1938.9.1
-			}
+			factor = 9999
 		}
 		complete_effect = {
 			set_country_flag = { flag = JAP_war_conferences_cd value = 1 days = 180 }
@@ -380,11 +384,7 @@ JAP_interservice_rivalry = {
 		days_remove = -1
 		fire_only_once = yes
 		ai_will_do = {
-			factor = 50
-			#modifier = {
-			#	factor = 0
-			#	date < 1939.1.1
-			#}
+			factor = 99999
 		}
 		modifier = {
 			industrial_capacity_factory = 0.05
@@ -453,11 +453,7 @@ JAP_interservice_rivalry = {
 		fire_only_once = yes
 		days_remove = -1
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				date < 1939.1.1
-			}
+			factor = 999
 		}
 		modifier = {
 			special_forces_attack_factor = 0.05 
@@ -520,7 +516,7 @@ JAP_interservice_rivalry = {
 		cost = 30
 		fire_only_once = yes
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 		
 		complete_effect = {
@@ -579,7 +575,7 @@ JAP_interservice_rivalry = {
 		cost = 30
 		fire_only_once = yes
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 		
 		complete_effect = {
@@ -737,7 +733,7 @@ foreign_politics = {
 		fire_only_once = yes
 
 		ai_will_do = {
-			base = 10
+			base = 400
 			modifier = {
 				factor = 0
 				casualties_inflicted_by = {
@@ -1048,6 +1044,7 @@ JAP_pacific_guardian = {
 		available = {
 			HOL = {
 				#has_capitulated = yes
+				NOT =  { has_war_with = ROOT}
 			}
 			"INS" = {
 				is_puppet_of = HOL
@@ -1082,6 +1079,7 @@ JAP_pacific_guardian = {
 		available = {
 			ENG = {
 				#has_capitulated = yes
+				NOT =  { has_war_with = ROOT}
 			}
 			MAL = {
 				is_puppet_of = ENG
@@ -1116,6 +1114,7 @@ JAP_pacific_guardian = {
 		available = {
 			FRA = {
 				#has_capitulated = yes
+				NOT =  { has_war_with = ROOT}
 				OR = {
 					has_full_control_of_state = 670
 					has_full_control_of_state = 671
@@ -1506,19 +1505,20 @@ operations = {
 		
 		fire_only_once = yes
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				is_historical_focus_on = yes
-				date < 1939.1.1
-				factor = 0
-			}
-			modifier = { # We won't do this if we are supporting the opposition
-				OR = {
-					SOV = { has_country_flag = SOV_CSW_transfer_vladivostok_flag }
-					SOV = { has_country_flag = SOV_CSW_transfer_sakhalin_flag }
-				}
-				factor = 0
-			}
+			factor = 0 # SAM - Messes up the troops in China.
+			# factor = 1
+			# modifier = {
+			# 	is_historical_focus_on = yes
+			# 	date < 1939.1.1
+			# 	factor = 0
+			# }
+			# modifier = { # We won't do this if we are supporting the opposition
+			# 	OR = {
+			# 		SOV = { has_country_flag = SOV_CSW_transfer_vladivostok_flag }
+			# 		SOV = { has_country_flag = SOV_CSW_transfer_sakhalin_flag }
+			# 	}
+			# 	factor = 0
+			# }
 		}
 		cost = 50
 		days_remove = 30
@@ -1724,11 +1724,12 @@ operations = {
 		}
 
 		ai_will_do = {
-			base = 10
-			modifier = { 
-				has_war = no
-				factor = 10
-			}
+			factor = 0 # SAI - Messes up the troops in China.
+			# base = 10
+			# modifier = { 
+			# 	has_war = no
+			# 	factor = 10
+			# }
 		}
 
 		fire_only_once = yes #Reactivation handled in effect
@@ -2133,7 +2134,7 @@ prospect_for_resources = {
 		}
 
 		ai_will_do = {
-			factor = 10
+			factor = 9999 # SAM - Get that oil!
 		}
 
 		complete_effect = {

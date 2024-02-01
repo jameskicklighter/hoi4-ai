@@ -40,14 +40,14 @@ German_historical = {
 		#-----1937-----
 		GER_kdf_wagen					# February 24, 1937
 		GER_extra_tech_slot				# May 5, 1937
-		GER_army_innovation				# July 14, 1937
-		GER_soviet_treaty				# September 22, 1937
-		GER_coal_liquidization			# December 1, 1937
+		GER_autobahn					# July 14, 1937
+		GER_army_innovation				# September 22, 1937
+		GER_soviet_treaty				# December 1, 1937
 
 		#-----1938-----
 		GER_anschluss					# February 9, 1938
-		GER_synthetic_rubber			# April 20, 1938
-		GER_army_innovation_2			# June 29, 1938
+		GER_coal_liquidization			# April 20, 1938
+		GER_synthetic_rubber			# June 29, 1938
 		GER_demand_sudetenland			# September 7, 1938
 		GER_first_vienna_award			# November 16, 1938
 
@@ -62,25 +62,29 @@ German_historical = {
 		GER_air_innovation				# December 27, 1939
 
 		#-----1940-----
-		GER_autobahn					# March 6, 1940
+		GER_tactical_air_effort			# March 6, 1940
 		GER_second_vienna_award			# May 15, 1940
-		GER_german_war_economy			# July 24, 1940
-		GER_tactical_air_effort			# April 30, 1941
-		GER_italy_ally					# (Typically bypassed. Ignore for date calculations.)
-		GER_japan_friend				# December 11, 1940
+		GER_army_innovation_2			# July 24, 1940
+		GER_german_war_economy			# -----, 1940
+		GER_naval_rearmament			# December 11, 1940
 
 		#-----1941-----
-		GER_naval_air_effort			# February 19, 1941
-		GER_air_innovation_2			# September 17, 1941
+		GER_naval_effort				# February 19, 1941
+		GER_naval_effort2				# September 17, 1941
 		GER_ussr_war_goal				# July 9, 1941 (Historically occurred June 22, 1941.)
-		GER_rocketry_focus				# October 2, 1940
-		GER_naval_rearmament			# November 26, 1941
+		GER_u_boat_effort				# October 2, 1940
+		GER_trade_interdiction			# November 26, 1941
 
 		#-----1942-----
-		GER_naval_effort				# February 4, 1942
-		GER_west_wall					# April 15, 1942 (Pointless now, but prerequisite for Atlantic Wall.)
-		GER_atlantikwall				# June 24, 1942
-		GER_wunderwaffe					# September 2, 1942
+		GER_modular_construction		# February 4, 1942
+		GER_naval_air_effort			# April 15, 1942
+		GER_air_innovation_2			# June 24, 1942
+		GER_rocketry_focus				# September 2, 1942
+		GER_wunderwaffe
+
+		#-----1943-----
+		GER_crossing_the_atlantic		# Conditional
+		GER_improve_national_spirit		# Conditional
 	}
 
 	research = {
@@ -88,7 +92,6 @@ German_historical = {
 	}
 
 	ideas = {
-		# Army Spirits. Only available to Neutral/Fascist.
 		bold_attack_spirit = 75
 	}
 
@@ -102,7 +105,11 @@ German_historical = {
 	}
 
 	focus_factors = {
-		GER_rhineland = 1.0
+		GER_west_wall = 0
+		GER_grosraumwirtschaft = 0
+		GER_form_the_reichskommissariats = 0
+		GER_italy_ally = 0
+		GER_demand_slovenia = 0
 	}
 }
 
@@ -147,11 +154,11 @@ GER_default_strategy = {
 	}
 
 	# For some reason, it seems Germany fails to produce Medium Tank divisions without this.
-	ai_strategy = {
-		type = template_prio
-		id = medium_armor
-		value = 111
-	}
+	# ai_strategy = {
+	# 	type = template_prio
+	# 	id = medium_armor
+	# 	value = 111
+	# }
 }
 
 GER_minor_allies = { #used to make minor European nations like Axis more

@@ -15,68 +15,37 @@
 #   Industry
 # ==================================================
 
+# Japan needs a decent Civilian Factory base to sustain its wars.
 JAP_build_civs = {
 	allowed = {
 		original_tag = JAP
 	}
 	enable = {
-		NOT = { has_government = fascism }
-	}
-	abort = {
-		date > 1938.1.1
-	}
-
-	ai_strategy = {
-		type = building_target
-		id = industrial_complex
-		value = 100
-	}
-}
-
-JAP_build_mils = {
-	allowed = {
-		original_tag = JAP
-	}
-	enable = {
-		has_government = fascism
+		date < 1938.1.1
 	}
 	abort = {
 		OR = {
-			num_of_military_factories > 50
-			CHI = {
-				OR = {
-					has_capitulated = yes
-					exists = no
-					is_subject_of = JAP
-				}
+			date > 1938.1.1
+			# We need to give human China more of a challenge.
+			AND = {
+				date > 1937.1.1
+				CHI = { is_ai = no }
+				has_government = fascism
+			}
+			# We need to give human Manchukuo more of a challenge,
+			# or material support if they don't rebel against us.
+			AND = {
+				date > 1937.1.1
+				MAN = { is_ai = no }
+				has_government = fascism
 			}
 		}
 	}
 
 	ai_strategy = {
 		type = building_target
-		id = arms_factory
-		value = 50
-	}
-}
-
-JAP_build_civs_for_spying = {
-	allowed = {
-		original_tag = JAP
-	}
-	# Wait until we have enough military industry to support the fight.
-	enable = {
-		has_government = fascism
-		num_of_military_factories > 40
-	}
-	abort = {
-		num_of_civilian_factories > 40
-	}
-
-	ai_strategy = {
-		type = building_target
 		id = industrial_complex
-		value = 40
+		value = 100
 	}
 }
 
@@ -92,7 +61,7 @@ JAP_build_docks = {
 	ai_strategy = {
 		type = building_target
 		id = dockyard
-		value = 75
+		value = 50
 	}
 }
 
@@ -132,20 +101,20 @@ JAP_stockpile_less_early_game = {
 	}
 }
 
-JAP_stock_up_on_trains_before_china = {
-	allowed = {
-		original_tag = JAP
-	}
-	enable = {
-		has_war = no
-	}
-	abort_when_not_enabled = yes
+# JAP_stock_up_on_trains_before_china = {
+# 	allowed = {
+# 		original_tag = JAP
+# 	}
+# 	enable = {
+# 		has_war = no
+# 	}
+# 	abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = min_wanted_supply_trains
-		value = 100
-	}
-}
+# 	ai_strategy = {
+# 		type = min_wanted_supply_trains
+# 		value = 100
+# 	}
+# }
 
 less_trucks_4_u_JAP = {
 	allowed = {
@@ -179,16 +148,16 @@ less_trucks_4_u_JAP = {
 		value = 15
 	}
 
-	ai_strategy = {
-		type = template_prio
-		id = infantry
-		value = 100
-	}
-	ai_strategy = {
-		type = template_prio
-		id = light_armor
-		value = 100
-	}
+	# ai_strategy = {
+	# 	type = template_prio
+	# 	id = infantry
+	# 	value = 100
+	# }
+	# ai_strategy = {
+	# 	type = template_prio
+	# 	id = light_armor
+	# 	value = 100
+	# }
 
 	ai_strategy = {
 		type = equipment_production_factor
@@ -253,21 +222,21 @@ JAP_glorious_nippon_steel_has_triumphed = {
 		value = 0
 	}
 
-	ai_strategy = {
-		type = template_prio
-		id = infantry
-		value = 50
-	}
-	ai_strategy = {
-		type = template_prio
-		id = medium_armor
-		value = 100
-	}
-	ai_strategy = {
-		type = template_prio
-		id = marines
-		value = 20
-	}
+	# ai_strategy = {
+	# 	type = template_prio
+	# 	id = infantry
+	# 	value = 50
+	# }
+	# ai_strategy = {
+	# 	type = template_prio
+	# 	id = medium_armor
+	# 	value = 100
+	# }
+	# ai_strategy = {
+	# 	type = template_prio
+	# 	id = marines
+	# 	value = 20
+	# }
 
 	ai_strategy = {
 		type = equipment_production_factor
@@ -296,23 +265,23 @@ JAP_glorious_nippon_steel_has_triumphed = {
 	}
 }
 
-#JAP_you_should_be_prepared_for_war = {
-#	allowed = { 
-#		original_tag = JAP
-#	}
-#	enable = {
-#		OR = {
-#			date < 1940.1.1
-#			has_war_with = CHI
-#		}
-#	}
-#	abort_when_not_enabled = yes
-#
-#	ai_strategy = {
-#		type = force_build_armies
-#		value = 100
-#	}
-#}
+JAP_you_should_be_prepared_for_war = {
+	allowed = { 
+		original_tag = JAP
+	}
+	enable = {
+		OR = {
+			date < 1940.1.1
+			has_war_with = CHI
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = force_build_armies
+		value = 100
+	}
+}
 
 JAP_template_design = {
 	allowed = {
@@ -1146,98 +1115,123 @@ JAP_USA_we_love_islands = {
 	}
 }
 
-JAP_reasonable_assault = {
+# JAP_ignore_shanxi = {
+# 	allowed = {
+# 		original_tag = JAP
+# 	}
+# 	enable = {
+# 		has_war_with = SHX
+# 		date < 1940.1.1
+# 	}
+# 	abort_when_not_enabled = yes
+
+# 	ai_strategy = {
+# 		type = front_control
+# 		tag = SHX
+# 		priority = 100
+# 		ordertype = front
+# 		execution_type = careful
+# 		execute_order = no
+# 	}
+# }
+
+# JAP_reasonable_assault = {
+# 	allowed = {
+# 		OR = {
+# 			tag = JAP
+# 			tag = MAN
+# 			tag = MEN
+# 		}
+# 	}
+# 	enable = {
+# 		has_war_with = CHI
+# 		OR = {
+# 			check_variable = { EAI_fielded_eq_ratio < 0.75 }
+# 			surrender_progress > 0.2 # Save our home islands.
+# 		}
+# 		NOT = { CHI = { surrender_progress < 0.2 } } # Push them first.
+# 	}
+
+# 	abort_when_not_enabled = yes
+
+# 	ai_strategy = {
+# 		type = front_control
+# 		priority = 6
+# 		state_trigger = {
+# 			NOT = { is_coastal = yes }
+# 			CONTROLLER = {
+# 				OR = {
+# 					tag = CHI
+# 					has_war_together_with = CHI
+# 				}
+# 			}
+# 		}
+# 		ordertype = front
+# 		execute_order = no
+# 	}
+# }
+
+# EAI_JAP_offensive_vs_CHI_coast_assignments = {
+# 	allowed = { tag = JAP }
+# 	enable = {
+# 		has_war_with = CHI
+# 	}
+# 	abort = {
+# 		NOT = { 
+# 			AND = {
+# 				has_war_with = CHI
+# 			}
+# 		}
+# 	}
+
+# 	abort_when_not_enabled = yes
+
+# 	# push invasion regions
+# 	ai_strategy = { type = strategic_air_importance id = 248 value = 50000 }
+# 	ai_strategy = { type = strategic_air_importance id = 164 value = 50000 }
+# 	ai_strategy = { type = strategic_air_importance id = 247 value = 50000 }
+# 	ai_strategy = {
+# 		type = front_unit_request
+# 		state_trigger = {
+# 			is_coastal = yes
+# 			OR = {
+# 				region = 248
+# 				region = 164
+# 				region = 247
+# 				region = 143
+# 			}
+# 			NOT = { 
+# 				state = 608
+# 				state = 609
+# 				state = 615
+# 				state = 611
+# 			}
+# 		}
+# 		value = 50
+# 	}
+# }
+
+JAP_delay_naval_invasions_in_china = {
 	allowed = {
-		OR = {
-			tag = JAP
-			tag = MAN
-			tag = MEN
-		}
+		original_tag = JAP
 	}
 	enable = {
-		has_war_with = CHI
 		OR = {
-			check_variable = { EAI_fielded_eq_ratio < 0.75 }
-			surrender_progress > 0.2 # Save our home islands.
+			AND ={
+				date < 1938.6.1
+				CHI = { is_ai = yes }
+			}
+			has_army_manpower = { size < 500000 }
 		}
-		NOT = { CHI = { surrender_progress < 0.2 } } # Push them first.
 	}
-
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = front_control
-		priority = 6
-		state_trigger = {
-			NOT = { is_coastal = yes }
-			CONTROLLER = {
-				OR = {
-					tag = CHI
-					has_war_together_with = CHI
-				}
-			}
-		}
-		ordertype = front
-		execute_order = no
+		type = invade
+		id = "CHI"
+		value = -500
 	}
 }
-
-EAI_JAP_offensive_vs_CHI_coast_assignments = {
-	allowed = { tag = JAP }
-	enable = {
-		has_war_with = CHI
-	}
-	abort = {
-		NOT = { 
-			AND = {
-				has_war_with = CHI
-			}
-		}
-	}
-
-	abort_when_not_enabled = yes
-
-	# push invasion regions
-	ai_strategy = { type = strategic_air_importance id = 248 value = 50000 }
-	ai_strategy = { type = strategic_air_importance id = 164 value = 50000 }
-	ai_strategy = { type = strategic_air_importance id = 247 value = 50000 }
-	ai_strategy = {
-		type = front_unit_request
-		state_trigger = {
-			is_coastal = yes
-			OR = {
-				region = 248
-				region = 164
-				region = 247
-				region = 143
-			}
-			NOT = { 
-				state = 608
-				state = 609
-				state = 615
-				state = 611
-			}
-		}
-		value = 50
-	}
-}
-
-#JAP_delay_naval_invasions_in_china = {
-#	allowed = {
-#		original_tag = JAP
-#	}
-#	enable = {
-#		date < 1939.1.1
-#		CHI = { is_ai = yes }
-#	}
-#	abort_when_not_enabled = yes
-#
-#	ai_strategy = {
-#		type = invade
-#		id = "CHI"
-#		value = -500
-#	}
-#}
 
 # Also, these invasions sometimes seem to glitch? Very strange...
 # When using human_ai to observe, they sometimes ignore this order...

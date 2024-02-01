@@ -166,7 +166,7 @@ CHI_war_measures = {
 	research = {
 		infantry_weapons = 15.0
 		artillery = 15.0
-		air_equipment = 0
+		# air_equipment = 0
 	}
 
 	ideas = {

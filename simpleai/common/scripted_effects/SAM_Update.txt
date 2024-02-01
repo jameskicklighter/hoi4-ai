@@ -1,0 +1,6 @@
+SAM_daily_update = {
+	if = { limit = { is_ai = yes }
+		SAM_General_Idea_Priority = yes
+		SAM_JAP_Fascist_Idea_Priority = yes
+	}
+}

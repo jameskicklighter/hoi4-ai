@@ -49,12 +49,12 @@ is_state_japan_wants = {
 		state = 591 # Hainan
 		state = 597 # Shandong
 		state = 614 # Hebei
-		state = 598 # Jiangsu
-		state = 613 # Shanghai
-		state = 596 # Zhejiang
-		state = 595 # Fujian
-		state = 593 # Guangdong
-		state = 592 # Guangzhou
-		state = 594 # Nanning
+		#state = 598 # Jiangsu
+		#state = 613 # Shanghai
+		#state = 596 # Zhejiang
+		#state = 595 # Fujian
+		#state = 593 # Guangdong
+		#state = 592 # Guangzhou
+		#state = 594 # Nanning
 	}
 }
