@@ -1,0 +1,868 @@
+# =========================
+# = = = = = = = = = = = = =
+#  Default Unit Templates
+# = = = = = = = = = = = = =
+# =========================
+
+
+# =========================
+#         Infantry
+# =========================
+
+INFANTRY_GENERIC = {
+	blocked_for = {
+		GER
+		JAP
+		ENG
+		USA
+		ITA
+		SOV
+		CHI
+		PRC
+		GXC
+		YUN
+		SHX
+		XSM
+		SIK
+		MEN
+		MAN
+	}
+	roles = { infantry }
+	upgrade_prio = {
+		base = 1 
+		modifier = {
+			factor = 999
+			date < 1939.1.1
+		}
+		modifier = {
+			factor = 100
+			date > 1939.1.1
+		}
+	}
+	match_to_count = 0.5
+
+	INFANTRY_GENERIC_1A = {
+		# Weights
+		upgrade_prio = { base = 10 }
+		target_width = 14.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = {
+				engineer = 1
+				artillery = 1
+			}
+			regiments = {
+				infantry = 7
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			# Line Battalion
+			infantry
+		}
+	}
+
+	INFANTRY_GENERIC_1B = {
+		# Weights
+		upgrade_prio = { base = 15 }
+		target_width = 16.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		enable = { OR = { has_tech = vast_offensives has_tech = human_wave_offensive } }
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = {
+				engineer = 1
+				artillery = 1
+			}
+			regiments = {
+				infantry = 10
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			# Line Battalion
+			infantry
+		}
+	}
+
+	INFANTRY_GENERIC_2A = {
+		# Weights
+		upgrade_prio = { base = 20 }
+		target_width = 17.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		enable = { num_of_military_factories > 15 }
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = {
+				engineer = 1
+				artillery = 1
+			}
+			regiments = {
+				infantry = 7
+				artillery_brigade = 1
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			# Line Battalion
+			infantry
+			artillery_brigade
+		}
+	}
+
+	INFANTRY_GENERIC_2B = {
+		# Weights
+		upgrade_prio = { base = 25 }
+		target_width = 19.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		enable = { num_of_military_factories > 15 OR = { has_tech = vast_offensives has_tech = human_wave_offensive } }
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = {
+				engineer = 1
+				artillery = 1
+			}
+			regiments = {
+				infantry = 10
+				artillery_brigade = 1
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			# Line Battalion
+			infantry
+			artillery_brigade
+		}
+	}
+
+	INFANTRY_GENERIC_3A = {
+		# Weights
+		upgrade_prio = { base = 30 }
+		target_width = 18.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		enable = { num_of_military_factories > 25 }
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+			}
+			regiments = {
+				infantry = 7
+				artillery_brigade = 1
+				anti_air_brigade = 1
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			anti_air
+			# Line Battalion
+			infantry
+			artillery_brigade
+			anti_air_brigade
+		}
+	}
+
+	INFANTRY_GENERIC_3B = {
+		# Weights
+		upgrade_prio = { base = 35 }
+		target_width = 19.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		enable = { num_of_military_factories > 25 OR = { has_tech = vast_offensives has_tech = human_wave_offensive } }
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+			}
+			regiments = {
+				infantry = 10
+				artillery_brigade = 1
+				anti_air_brigade = 1
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			anti_air
+			# Line Battalion
+			infantry
+			artillery_brigade
+			anti_air_brigade
+		}
+	}
+}
+
+
+# =========================
+#          Armor
+# =========================
+
+ARMOR_GENERIC = {
+	blocked_for = {
+		GER
+		# JAP
+		# ENG
+		# USA
+		# ITA
+		# SOV
+	}
+	roles = { armor }
+	upgrade_prio = {
+		base = 0
+		modifier = {
+			add = 25
+			date > 1937.1.1
+		}
+		modifier = {
+			add = 25
+			date > 1938.1.1
+		}
+		modifier = {
+			add = 450
+			date > 1939.1.1
+		}
+		modifier = {
+			factor = 0
+			DAI_should_build_tanks = no
+		}
+	}
+	match_to_count = 0.50
+
+	# ARMOR_LIGHT_GENERIC_1 = {
+	# 	# Weights
+	# 	upgrade_prio = { factor = 10 }
+	# 	target_width = 18.0
+	# 	width_weight = 1.0
+	# 	column_swap_factor = 1.0
+	# 	# Design
+	# 	target_template = {
+	# 		weight = 100.0
+	# 		match_value = 100.0
+	# 		support = {
+	# 			engineer = 1
+	# 			artillery = 1
+	# 		}
+	# 		regiments = {
+	# 			light_armor = 5
+	# 			motorized = 4
+	# 		}
+	# 	}
+	# 	allowed_types = {
+	# 		# Support Battalion
+	# 		engineer
+	# 		artillery
+	# 		# Line Battalion
+	# 		light_armor
+	# 		motorized
+	# 	}
+	# 	# replace_at_match = 0.4
+	# 	# replace_with = ARMOR_MEDIUM_GENERIC_1
+	# 	# target_min_match = 0.5
+	# }
+
+	ARMOR_MEDIUM_GENERIC_1 = {
+		# Weights
+		upgrade_prio = { factor = 15 }
+		target_width = 18.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		enable = { date > 1938.1.1 }
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 100.0
+			support = {
+				engineer = 1
+				artillery = 1
+			}
+			regiments = {
+				medium_armor = 6
+				motorized = 4
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			# Line Battalion
+			medium_armor
+			motorized
+		}
+
+		# replace_at_match = 0.8
+		# replace_with = ARMOR_MEDIUM_GENERIC_2
+		# target_min_match = 0.5
+	}
+
+	ARMOR_MEDIUM_GENERIC_2 = { #2 armored 2 default
+		# Weights
+		upgrade_prio = { factor = 20 }
+		target_width = 24.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		enable = { OR = { date > 1941.1.1 } num_of_military_factories > 35 }
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 100.0
+			support = {
+				engineer = 1
+				artillery = 1
+				maintenance_company = 1
+			}
+			regiments = {
+				medium_armor = 6
+				motorized = 6
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			maintenance_company
+			# Line Battalion
+			medium_armor
+			motorized
+		}
+
+		# replace_at_match = 0.8
+		# replace_with = ARMOR_MODERN_GENERIC_1
+		# target_min_match = 0.5
+	}
+
+	ARMOR_MODERN_GENERIC_1 = {
+		upgrade_prio = { factor = 25 }
+		target_width = 24.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		enable = {
+			has_tech = mechanised_infantry
+			OR = {
+				has_tech = main_battle_tank
+				has_tech = main_battle_tank_chassis
+			}
+		}
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 100.0
+			support = {
+				engineer = 1
+				artillery = 1
+				maintenance_company = 1
+			}
+			regiments = {
+				modern_armor = 6
+				mechanized =  6
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			maintenance_company
+			# Line Battalion
+			modern_armor
+			mechanized
+		}
+	}
+}
+
+
+# =========================
+#        Motorized
+# =========================
+
+MOTORIZED_GENERIC = {
+	roles = { motorized }
+	upgrade_prio = { base = 0 }
+	match_to_count = 0.45
+
+	MOTORIZED_GENERIC_default = {
+		# Weights
+		upgrade_prio = { base = 0 }
+		target_width = 18.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 100.0
+			support = {
+				engineer = 1
+				artillery = 1
+			}
+			regiments = {
+				motorized = 9
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			# Line Battalion
+			motorized
+		}
+	}
+}
+
+
+# =========================
+#       Mountaineers
+# =========================
+
+MOUNTAINEERS_GENERIC = {
+	roles = { mountaineers }
+	upgrade_prio = {
+		factor = 10
+		modifier = {
+			factor = 0
+			OR = {
+				NOT = { has_tech = tech_mountaineers }
+				date < 1939.1.1 # Prioritize other things first.
+			}
+		}
+	}
+	match_to_count = 0.5
+
+	MOUNTAINEERS_GENERIC_1 = {
+		# Weights
+		upgrade_prio = { factor = 10 }
+		target_width = 14.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = {
+				engineer = 1
+				artillery = 1
+			}
+			regiments = {
+				mountaineers = 7
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			# Line Battalion
+			mountaineers
+		}
+	}
+
+	MOUNTAINEERS_GENERIC_2 = {
+		# Weights
+		upgrade_prio = { factor = 20 }
+		target_width = 24.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		enable = { num_of_military_factories > 25 }
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+				anti_tank = 1
+				logistics_company = 1
+			}
+			regiments = {
+				mountaineers = 8
+				artillery_brigade = 2
+				anti_air_brigade = 1
+				anti_tank_brigade = 1
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			anti_air
+			anti_tank
+			logistics_company
+			# Line Battalion
+			mountaineers
+			artillery_brigade
+			anti_air_brigade
+			anti_tank_brigade
+		}
+	}
+}
+
+
+# =========================
+#         Marines
+# =========================
+
+MARINES_GENERIC = {
+	roles = { marines }
+	upgrade_prio = {
+		factor = 10
+		modifier = {
+			factor = 0
+			OR = {
+				NOT = { has_tech = marines }
+				date < 1939.1.1 # Prioritize other things first.
+			}
+		}
+	}
+	match_to_count = 0.5
+
+	MARINES_GENERIC_1 = {
+		# Weights
+		upgrade_prio = { base = 10 }
+		target_width = 14.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 100.0
+			support = {
+				engineer = 1
+			}
+			regiments = {
+				marine = 7
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			# Line Battalion
+			marine
+		}
+	}
+
+	MARINES_GENERIC_2 = {
+		# Weights
+		upgrade_prio = { base = 20 }
+		target_width = 14.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		enable = { num_of_military_factories > 25 }
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 100.0
+			support = {
+				engineer = 1
+				recon = 1
+				artillery = 1
+				logistics_company = 1
+			}
+			regiments = {
+				marine = 9
+				artillery_brigade = 3
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			recon
+			artillery
+			logistics_company
+			# Line Battalion
+			marine
+			artillery_brigade
+		}
+	}
+}
+
+
+# =========================
+#         Garrison
+# =========================
+
+GARRISON_GENERIC = {
+	roles = { garrison }
+	upgrade_prio = {
+		factor = 5
+		modifier = {
+			factor = 0
+			date < 1939.1.1
+		}
+	}
+	match_to_count = 0.5
+
+	GARRISON_GENERIC_1A = {
+		# Weights
+		reinforce_prio = 0
+		custom_icon = 7
+		upgrade_prio = { factor = 5 }
+		target_width = 10.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = { 
+				engineer = 1
+			}
+			regiments = {
+				infantry = 5
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			# Line Battalion
+			infantry
+		}
+	}
+
+	GARRISON_GENERIC_1B = {
+		# Weights
+		reinforce_prio = 0
+		custom_icon = 7
+		upgrade_prio = { factor = 10 }
+		target_width = 12.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		enable = { OR = { has_tech = vast_offensives has_tech = human_wave_offensive } }
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = { 
+				engineer = 1
+			}
+			regiments = {
+				infantry = 7
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			# Line Battalion
+			infantry
+		}
+	}
+
+	GARRISON_GENERIC_2A = {
+		# Weights
+		reinforce_prio = 0
+		custom_icon = 7
+		upgrade_prio = { factor = 15 }
+		target_width = 12.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		enable = { 
+			has_manpower > 500000
+			has_equipment = { artillery_equipment > 500 }
+		}
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = { 
+				engineer = 1
+				artillery = 1
+			}
+			regiments = {
+				infantry = 6
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			# Line Battalion
+			infantry
+		}
+	}
+
+	GARRISON_GENERIC_2B = {
+		# Weights
+		reinforce_prio = 0
+		custom_icon = 7
+		upgrade_prio = { factor = 20 }
+		target_width = 12.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		enable = { 
+			has_manpower > 500000
+			has_equipment = { artillery_equipment > 500 }
+			OR = { has_tech = vast_offensives has_tech = human_wave_offensive }
+		}
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 1.0
+			support = { 
+				engineer = 1
+				artillery = 1
+			}
+			regiments = {
+				infantry = 7
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			artillery
+			# Line Battalion
+			infantry
+		}
+	}
+}
+
+
+# =========================
+#        Suppression
+# =========================
+
+SUPPRESSION_GENERIC = {
+	roles = { suppression }
+	upgrade_prio = {
+		factor = 10
+		modifier = {
+			factor = 0
+			date < 1939.1.1
+		}
+		modifier = {
+			factor = 5
+			has_war = yes
+		}
+	}
+	match_to_count = 0.50
+
+	SUPPRESSION_GENERIC_default = {
+		# Weights
+		reinforce_prio = 0
+		custom_icon = 13
+		upgrade_prio = { factor = 10 }
+		target_width = 12.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		# Design
+		target_template = {
+			weight = 0.9
+			match_value = 3000.0
+			support = { 
+				military_police = 1
+			}
+			regiments = {
+				cavalry = 6
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			military_police
+			# Line Battalion
+			cavalry
+		}
+	}
+}
+
+
+# =========================
+#       Paratroopers
+# =========================
+
+PARATROOPERS_GENERIC = {
+	roles = { paratrooper }
+	upgrade_prio = { factor = 0 }
+	match_to_count = 0.1
+	
+	PARATROOPER_default = {
+		# Weights
+		upgrade_prio = { factor = 0 }
+		target_width = 12.0
+		width_weight = 1.0
+		column_swap_factor = 1.0
+		# Design
+		target_template = {
+			weight = 100.0
+			match_value = 100.0
+			support = {
+				engineer = 1
+			}
+			regiments = {
+				paratrooper= 6
+			}
+		}
+		allowed_types = {
+			# Support Battalion
+			engineer
+			# Line Battalion
+			paratrooper
+		}
+	}
+}
+
+
+# REGIMENTS:
+#infantry
+#light_armor
+#super_heavy_armor
+#modern_armor
+#heavy_armor
+#medium_armor
+#light_armor
+#anti_tank
+#cavalry
+#motorized
+#mechanized
+#marine
+#mountaineers
+#paratrooper
+#rocket_artillery
+#light_tank_destroyer
+#medium_tank_destroyer_brigade
+#heavy_tank_destroyer_brigade
+#super_heavy_tank_destroyer_brigade
+#modern_tank_destroyer_brigade
+#anti_air
+#artillery
+
+# SUPPORT:
+#engineer
+#recon
+#signal_company
+#maintenance_company
+#anti_tank_brigade
+#anti_air_brigade
+#artillery_brigade
+#field_hospital
+#logistics_company
+#military_police
+#light_sp_anti_air_brigade
+#light_sp_artillery_brigade

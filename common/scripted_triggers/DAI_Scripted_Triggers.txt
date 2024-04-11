@@ -1,0 +1,70 @@
+# It seems that major status can fluctuate in some cases?
+# Hard define it for other purposes.
+# DAI_is_major = {
+# 	OR = {
+# 		# original_tag = CHI
+# 		# original_tag = ENG
+# 		# original_tag = FRA
+# 		# original_tag = GER
+# 		# original_tag = ITA
+# 		original_tag = JAP
+# 		# original_tag = SOV
+# 		# original_tag = USA
+# 	}
+# }
+
+DAI_should_build_planes = {
+	OR = {
+		num_of_military_factories > 30
+		# Always Produce Planes
+		original_tag = ENG
+		original_tag = FRA
+		original_tag = GER
+		original_tag = ITA
+		original_tag = JAP
+		original_tag = SOV
+		original_tag = USA
+		# Good Air Producers for Historical
+		AND = {
+			is_historical_focus_on = yes
+			OR = {
+				original_tag = CAN
+				original_tag = HUN
+			}
+		}
+	}
+}
+
+DAI_should_build_tanks = {
+	OR = {
+		num_of_military_factories > 40
+		# Always Produce Tanks
+		original_tag = ENG
+		original_tag = FRA
+		original_tag = GER
+		original_tag = ITA
+		original_tag = JAP
+		original_tag = SOV
+		original_tag = USA
+		# Good Tank Producers for Historical
+		AND = {
+			is_historical_focus_on = yes
+			OR = {
+				original_tag = CAN
+				original_tag = CZE
+				original_tag = HUN
+			}
+		}
+	}
+}
+
+DAI_upgrade_navy = {
+	OR = {
+		num_of_naval_factories > 30
+		# Always Produce Tanks
+		original_tag = ENG
+		original_tag = ITA
+		original_tag = JAP
+		original_tag = USA
+	}
+}

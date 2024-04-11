@@ -1,3 +1,0 @@
-SAM_startup_effects = {
-	SAM_Ideas = yes
-}
