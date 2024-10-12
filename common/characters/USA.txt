@@ -223,19 +223,27 @@ characters={
 				small="GFX_idea_dwight_eisenhower"
 			}
 		}
-		advisor={
+		advisor = {
 			slot = army_chief
 			idea_token = dwight_eisenhower
 			allowed = {
+				OR = {
 					original_tag = USA
+					is_literally_china = yes
 				}
-				traits = {
-					army_chief_offensive_2
+			}
+			available = {
+				NOT = {
+					has_country_flag = dwight_d_eisenhower_sent_to_china
 				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
+			}
+			traits = {
+				army_chief_offensive_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
 		}
 		
 		field_marshal={
@@ -338,13 +346,19 @@ characters={
 			slot = army_chief
 			idea_token = douglas_macarthur
 			allowed = {
-				original_tag = USA
+				OR = {
+					is_literally_china = yes
+					original_tag = USA
+				}
 			}
 			available = {
 				NOT = {
-					has_country_leader = {
-						ruling_only = yes
-						character = USA_douglas_macarthur
+					OR = {
+						has_country_flag = douglas_macarthur_sent_to_china
+						has_country_leader = {
+							ruling_only = yes
+							character = USA_douglas_macarthur
+						}
 					}
 				}
 			}
@@ -648,7 +662,10 @@ characters={
 			idea_token = joseph_stilwell
 			ledger = army
 			allowed = {
-				original_tag = USA
+				OR = {
+					is_literally_china = yes
+					original_tag = USA
+				}
 			}
 			available = {
 				NOT = {
@@ -1386,26 +1403,17 @@ characters={
 			slot = political_advisor
 			idea_token = harry_white
 			allowed  = {
-				OR = {
 					original_tag  = USA
-					original_tag  = CHL
-				}
 			}
 			available  = {
-				OR = {
-					if  = {
-						limit  = {
-							has_dlc = "Man the Guns"
-						}
-						has_completed_focus  = USA_reach_out_to_the_ware_group 
-					}
-
-					AND = {
-						CHL_hub_of_the_revolution_trigger = yes
-						USA = { has_completed_focus = USA_america_first }
-					}	
-				}
 				
+				if  = {
+					limit  = {
+						has_dlc = "Man the Guns"
+					}
+					has_completed_focus  = USA_reach_out_to_the_ware_group 
+				}
+
 				NOT  = {
 					has_idea  = USA_henry_morgenthau 
 				}
@@ -1442,7 +1450,6 @@ characters={
 				OR = {
 					original_tag  = USA
 					original_tag = SWE
-					original_tag = CHL
 				}
 			}
 			available  = {
@@ -1458,11 +1465,6 @@ characters={
 						SWE_refuge_for_revolutionaries_trigger = yes
 						USA = { has_completed_focus = USA_america_first }
 					}
-
-					AND = {
-						CHL_hub_of_the_revolution_trigger = yes
-						USA = { has_completed_focus = USA_america_first }
-					}	
 				}
 			}
 			visible  = {
@@ -1497,7 +1499,6 @@ characters={
 				OR = {
 					original_tag  = USA
 					original_tag = SWE
-					original_tag = CHL
 				}
 			}
 			available  = {
@@ -1512,10 +1513,6 @@ characters={
 						SWE_refuge_for_revolutionaries_trigger = yes
 						USA = { has_completed_focus = USA_america_first }
 					}
-					AND = {
-						CHL_hub_of_the_revolution_trigger = yes
-						USA = { has_completed_focus = USA_america_first }
-					}	
 				}
 			}
 			visible  = {

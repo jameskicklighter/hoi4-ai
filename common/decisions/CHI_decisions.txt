@@ -6746,14 +6746,18 @@ CHI_occupation_actions = {
 		ai_will_do = {
 			base = 0
 			#Pretty damn important
-			modifier = {
-				add = 25
-				NOT = { controls_state = 608 }
-			}
-			modifier = {
-				add = 25
-				NOT = { controls_state = 614 }
-			}
+
+			# DAI --
+			# modifier = {
+			# 	add = 25
+			# 	NOT = { controls_state = 608 }
+			# }
+			# modifier = {
+			# 	add = 25
+			# 	NOT = { controls_state = 614 }
+			# }
+			# -- DAI
+
 			modifier = {
 				add = 25
 				NOT = { controls_state = 597 }
@@ -6765,6 +6769,12 @@ CHI_occupation_actions = {
 			modifier = {
 				add = 25
 				NOT = { controls_state = 606 }
+			}
+			modifier = {
+				add = 100
+				607 = { 
+					NOT = { is_fully_controlled_by = ROOT }
+				}
 			}
 		}
 		

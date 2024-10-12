@@ -1,11 +1,8 @@
 technologies = {
 
-	 ##  ###  #   #  ##  #   # ### #  # ###  ##
-	#  # #  # ## ## #  # ## ## #   ## #  #  #
-	#### ###  # # # #### # # # ##  # ##  #   #
-	#  # #  # #   # #  # #   # #   #  #  #    #
-	#  # #  # #   # #  # #   # ### #  #  #  ##
-
+	# ==================================================
+	#   SHIP MODULES
+	# ==================================================
 
 	basic_battery = {
 
@@ -42,23 +39,24 @@ technologies = {
 			ship_secondaries_1
 		}
 
-
-
 		folder = {
 			name = mtgnavalsupportfolder
 			position = { x = 0 y = 1 }
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
+			# Need the basics.
 			modifier = {
+				add = 100
 				OR = {
-					has_tech = early_ship_hull_light
-					has_tech = early_ship_hull_cruiser
-					has_tech = early_ship_hull_heavy
+					DAI_Should_Research_Navy_GENERAL = yes
+					DAI_Should_Research_Navy_ANTI_SUB = yes
 				}
-				factor = 500
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -74,6 +72,7 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
 
 	basic_light_battery = {
 
@@ -94,18 +93,20 @@ technologies = {
 			ship_light_battery_2
 		}
 
-
 		folder = {
 			name = mtgnavalsupportfolder
 			position = { x = -6 y = 5 }
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				has_tech = basic_ship_hull_light
-				factor = 20
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -118,6 +119,7 @@ technologies = {
 		}
 	}
 
+
 	basic_light_shell = {
 		
 		research_cost = 0.5
@@ -128,7 +130,6 @@ technologies = {
 			leads_to_tech = improved_light_battery
 			research_cost_coeff = 1
 		}
-
 
 		destroyer = {
 			lg_attack = 0.05
@@ -161,11 +162,14 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				has_war = yes
-				factor = 10
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1939.1.1 # Soft limit to focus industry first.
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -176,6 +180,7 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
 
 	improved_light_battery = {
 
@@ -201,19 +206,23 @@ technologies = {
 			ship_light_battery_3
 		}
 
-
-
 		folder = {
 			name = mtgnavalsupportfolder
 			position = { x = -6 y = 11 }
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				has_tech = improved_ship_hull_light
-				factor = 20
+				add = 10
+				OR = {
+					has_tech = improved_ship_hull_light
+					is_researching_technology = improved_ship_hull_light
+				}
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -225,6 +234,7 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
 
 	improved_light_shell = {
 
@@ -268,11 +278,13 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				has_war = yes
-				factor = 10
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -283,6 +295,7 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
 
 	advanced_light_battery = {
 
@@ -298,18 +311,23 @@ technologies = {
 			custom_effect_tooltip = light_battery_advice_tt
 		}
 
-
 		folder = {
 			name = mtgnavalsupportfolder
 			position = { x = -6 y = 19 }
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				has_tech = advanced_ship_hull_light
-				factor = 20
+				add = 10
+				OR = {
+					has_tech = advanced_ship_hull_light
+					is_researching_technology = advanced_ship_hull_light
+				}
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -322,12 +340,12 @@ technologies = {
 		}
 	}
 
+
 	basic_medium_battery = {
 
 		research_cost = 1
 
 		start_year = 1936
-
 
 		on_research_complete = {
 			custom_effect_tooltip = medium_battery_advice_tt
@@ -345,19 +363,20 @@ technologies = {
 			ship_secondaries_2
 		}
 
-
-
 		folder = {
 			name = mtgnavalsupportfolder
 			position = { x = 0 y = 5 }
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				has_tech = improved_ship_hull_cruiser
-				factor = 5
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -369,6 +388,7 @@ technologies = {
 			mio_cat_tech_all_cruiser_and_modules
 		}
 	}
+
 
 	basic_medium_shell = {
 
@@ -392,15 +412,18 @@ technologies = {
 
 		folder = {
 			name = mtgnavalsupportfolder
-			position = { x =0 y = 7 }
+			position = { x = 0 y = 7 }
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				has_war = yes
-				factor = 7
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1939.1.1 # Soft limit to focus industry first.
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -410,6 +433,7 @@ technologies = {
 			mio_cat_tech_all_cruiser_and_modules
 		}
 	}
+
 
 	improved_medium_battery = {
 
@@ -430,19 +454,23 @@ technologies = {
 			cat_ship_medium_battery
 		}
 
-
-
 		folder = {
 			name = mtgnavalsupportfolder
 			position = { x = 0 y = 11 }
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				has_tech = advanced_ship_hull_cruiser
-				factor = 5
+				add = 10
+				OR = {
+					has_tech = improved_ship_hull_cruiser
+					is_researching_technology = improved_ship_hull_cruiser
+				}
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -454,6 +482,7 @@ technologies = {
 			mio_cat_tech_all_cruiser_and_modules
 		}
 	}
+
 
 	improved_medium_shell = {
 
@@ -480,18 +509,19 @@ technologies = {
 			hg_armor_piercing = 0.05
 		}
 
-
 		folder = {
 			name = mtgnavalsupportfolder
 			position = { x = 0 y = 16 }
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				has_war = yes
-				factor = 7
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -501,6 +531,7 @@ technologies = {
 			mio_cat_tech_all_cruiser_and_modules
 		}
 	}
+
 
 	advanced_medium_battery = {
 
@@ -516,14 +547,23 @@ technologies = {
 			custom_effect_tooltip = medium_battery_advice_tt
 		}
 
-
 		folder = {
 			name = mtgnavalsupportfolder
 			position = { x = 0 y = 19 }
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
+			modifier = {
+				add = 10
+				OR = {
+					has_tech = advanced_ship_hull_cruiser
+					is_researching_technology = advanced_ship_hull_cruiser
+				}
+				DAI_Should_Research_Navy_GENERAL = yes
+			}
+			# -- DAI
 		}
 
 		categories = {
@@ -535,7 +575,7 @@ technologies = {
 			mio_cat_tech_all_cruiser_and_modules
 		}
 	}
-	
+
 
 	basic_heavy_battery = {
 
@@ -563,18 +603,13 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				has_tech = basic_ship_hull_heavy
-				factor = 20
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
-			modifier = {
-				OR = {
-					tag = GER
-					tag = JAP
-				}
-				factor = 2
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -584,6 +619,7 @@ technologies = {
 			mio_cat_tech_all_capital_ship_and_modules
 		}
 	}
+
 
 	improved_heavy_battery = {
 
@@ -610,18 +646,17 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				has_tech = improved_ship_hull_heavy
-				factor = 20
-			}
-			modifier = {
+				add = 10
 				OR = {
-					tag = GER
-					tag = JAP
+					has_tech = improved_ship_hull_heavy
+					is_researching_technology = improved_ship_hull_heavy
 				}
-				factor = 2
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -631,6 +666,7 @@ technologies = {
 			mio_cat_tech_all_capital_ship_and_modules
 		}
 	}
+
 
 	advanced_heavy_battery = {
 
@@ -652,18 +688,17 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				has_tech = advanced_ship_hull_heavy
-				factor = 20
-			}
-			modifier = {
+				add = 10
 				OR = {
-					tag = GER
-					tag = JAP
+					has_tech = advanced_ship_hull_heavy
+					is_researching_technology = advanced_ship_hull_heavy
 				}
-				factor = 2
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -673,6 +708,7 @@ technologies = {
 			mio_cat_tech_all_capital_ship_and_modules
 		}
 	}
+
 
 	basic_heavy_shell = {
 
@@ -700,13 +736,14 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				is_major = yes
-				has_war = yes
-				factor = 5
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1939.1.1 # Soft limit to focus industry first.
 			}
-
+			# -- DAI
 		}
 
 		categories = {
@@ -714,6 +751,7 @@ technologies = {
 			mio_cat_tech_all_capital_ship_and_modules
 		}
 	}
+
 
 	improved_heavy_shell = {
 
@@ -741,12 +779,13 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				is_major = yes
-				has_war = yes
-				factor = 5
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -754,6 +793,7 @@ technologies = {
 			mio_cat_tech_all_capital_ship_and_modules
 		}
 	}
+
 
 	basic_dp_light_battery = {
 
@@ -783,15 +823,14 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 2
+			# DAI --
+			base = 0
 			modifier = {
-				OR = {
-					tag = ENG
-					tag = USA
-					tag = JAP
-				}
-				factor = 20
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1940.1.1 # Soft limit to focus industry first.
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -804,6 +843,7 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
 
 	improved_dp_light_battery = {
 
@@ -831,15 +871,14 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 2
+			# DAI --
+			base = 0
 			modifier = {
-				OR = {
-					tag = ENG
-					tag = USA
-					tag = JAP
-				}
-				factor = 20
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1940.1.1 # Soft limit to focus industry first.
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -852,6 +891,7 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
 
 	advanced_dp_light_battery = {
 
@@ -874,15 +914,13 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 2
+			# DAI --
+			base = 0
 			modifier = {
-				OR = {
-					tag = ENG
-					tag = USA
-					tag = JAP
-				}
-				factor = 20
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -895,6 +933,7 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
 
 	basic_dp_medium_battery = {
 
@@ -916,15 +955,13 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 2
+			# DAI --
+			base = 0
 			modifier = {
-				OR = {
-					tag = ENG
-					tag = USA
-					tag = JAP
-				}
-				factor = 20
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -936,11 +973,9 @@ technologies = {
 		}
 	}
 
-###  ##  ###  ###  ### ###   ##      #   #  ##  ###   ##  ### ###  ###
- #  #  # #  # #  # #   #  # #  #     #   # #  # #  # #  # #   #  # #  
- #  #  # ###  ###  ##  #  # #  #     # # # #### ###  #### ##  ###  ## 
- #  #  # #  # #    #   #  # #  #     # # # #  # #  # #  # #   #  # #  
- #   ##  #  # #    ### ###   ##       # #  #  # #  # #  # #   #  # ###
+	# ==================================================
+	#   TORPEDOES
+	# ==================================================
 
 	basic_torpedo = {
 
@@ -973,19 +1008,15 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 2
+			# DAI --
+			base = 0
+			# Need the basics.
 			modifier = {
-				OR = {
-					tag = JAP
-					tag = USA
-					tag = GER
-				}
-				factor = 5
+				add = 100
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
-			modifier = {
-				has_war = yes
-				factor = 3
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -998,6 +1029,7 @@ technologies = {
 			mio_cat_tech_all_submarine_and_modules #Not really Sub but unlocks tech improving Subs torpedo stuff later
 		}
 	}
+
 
 	magnetic_detonator = {
 
@@ -1031,31 +1063,20 @@ technologies = {
 			torpedo_attack = 0.2
 		}
 
-
-
 		folder = {
 			name = mtgnavalsupportfolder
 			position = { x = 2 y = 7 }
 		}
 
 		ai_will_do = {
-			factor = 2
+			# DAI --
+			base = 0
 			modifier = {
-				OR = {
-					tag = JAP
-					tag = USA
-					tag = GER
-				}
-				factor = 5
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1939.1.1 # Soft limit to focus industry first.
 			}
-			modifier = {
-				has_war = yes
-				factor = 3
-			}
-			modifier = {
-				tag = JAP #Japan wants torpedoes EXTRA HARD
-				factor = 2
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1068,6 +1089,7 @@ technologies = {
 			mio_cat_tech_all_submarine_and_modules
 		}
 	}
+
 
 	homing_torpedo = {
 
@@ -1095,19 +1117,13 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 2
+			# DAI --
+			base = 0
 			modifier = {
-				OR = {
-					tag = JAP
-					tag = USA
-					tag = GER
-				}
-				factor = 5
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
-			modifier = {
-				has_war = yes
-				factor = 3
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1120,6 +1136,7 @@ technologies = {
 			mio_cat_tech_all_submarine_and_modules
 		}
 	}
+
 
 	electric_torpedo = {
 
@@ -1130,9 +1147,7 @@ technologies = {
 
 		start_year = 1940
 
-
 		naval_torpedo_reveal_chance_factor = -0.25
-
 
 		folder = {
 			name = mtgnavalsupportfolder
@@ -1140,15 +1155,13 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 2
+			# DAI --
+			base = 0
 			modifier = {
-				OR = {
-					tag = JAP
-					tag = USA
-					tag = GER
-				}
-				factor = 5
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1161,6 +1174,8 @@ technologies = {
 			mio_cat_tech_all_submarine_and_modules
 		}
 	}
+
+
 	improved_ship_torpedo_launcher = {
 
 		research_cost = 1.5
@@ -1180,19 +1195,20 @@ technologies = {
 			ship_torpedo_2
 		}
 
-
-
 		folder = {
 			name = mtgnavalsupportfolder
 			position = { x = 0 y = 7 }
 		}
 
 		ai_will_do = {
-			factor = 2
+			# DAI --
+			base = 0
 			modifier = {
-				tag = JAP
-				factor = 5
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1939.1.1 # Soft limit to focus industry first.
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1204,6 +1220,8 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
+
 	advanced_ship_torpedo_launcher = {
 
 		research_cost = 1.5
@@ -1223,19 +1241,19 @@ technologies = {
 			ship_torpedo_3
 		}
 
-
-
 		folder = {
 			name = mtgnavalsupportfolder
 			position = { x = 0 y = 13 }
 		}
 
 		ai_will_do = {
-			factor = 2
+			# DAI --
+			base = 0
 			modifier = {
-				tag = JAP
-				factor = 5
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1247,6 +1265,8 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
+
 	modern_ship_torpedo_launcher = {
 
 		research_cost = 1.5
@@ -1261,18 +1281,19 @@ technologies = {
 			custom_effect_tooltip = torpedo_advice_tt
 		}
 
-
 		folder = {
 			name = mtgnavalsupportfolder
 			position = { x = 0 y = 19 }
 		}
 
 		ai_will_do = {
-			factor = 2
+			# DAI --
+			base = 0
 			modifier = {
-				tag = JAP
-				factor = 5
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1285,12 +1306,9 @@ technologies = {
 		}
 	}
 
-
-###   ##  #   #  ##   ##  ###      ##   ##  #  # ### ###   ##  #
-#  # #  # ## ## #  # #    #       #  # #  # ## #  #  #  # #  # #
-#  # #### # # # #### # ## ##      #    #  # # ##  #  ###  #  # #
-#  # #  # #   # #  # #  # #       #  # #  # #  #  #  #  # #  # #
-###  #  # #   # #  #  ##  ###      ##   ##  #  #  #  #  #  ##  ###
+	# ==================================================
+	#   DAMAGE CONTROL
+	# ==================================================
 
 	damage_control_1 = {
 
@@ -1311,28 +1329,11 @@ technologies = {
 
 		ai_will_do = {
 			# DAI --
-			factor = 3
-
+			base = 0
 			modifier = {
-				has_navy_size = { size < 10 }
-				factor = 0.1
-			}
-
-			modifier = {
-				has_war = yes
-				factor = 2
-			}
-
-			modifier = {
-				factor = 100
+				add = 100
+				DAI_Should_Research_Navy_GENERAL = yes
 				date > 1938.1.1
-				DAI_upgrade_navy = yes
-			}
-
-			modifier = {
-				factor = 10
-				has_navy_size = { size > 9 }
-				date > 1939.1.1
 			}
 			# -- DAI
 		}
@@ -1348,6 +1349,7 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
 
 	damage_control_2 = {
 
@@ -1368,23 +1370,11 @@ technologies = {
 
 		ai_will_do = {
 			# DAI --
-			factor = 3
-
+			base = 0
 			modifier = {
-				has_war = yes
-				factor = 2
-			}
-
-			modifier = {
-				factor = 100
+				add = 100
+				DAI_Should_Research_Navy_GENERAL = yes
 				date > 1939.1.1
-				DAI_upgrade_navy = yes
-			}
-
-			modifier = {
-				factor = 10
-				has_navy_size = { size > 9 }
-				date > 1940.1.1
 			}
 			# -- DAI
 		}
@@ -1400,6 +1390,7 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
 
 	damage_control_3 = {
 
@@ -1416,23 +1407,11 @@ technologies = {
 
 		ai_will_do = {
 			# DAI --
-			factor = 3
-
+			base = 0
 			modifier = {
-				has_war = yes
-				factor = 2
-			}
-
-			modifier = {
-				factor = 100
+				add = 100
+				DAI_Should_Research_Navy_GENERAL = yes
 				date > 1940.1.1
-				DAI_upgrade_navy = yes
-			}
-
-			modifier = {
-				factor = 10
-				has_navy_size = { size > 9 }
-				date > 1941.1.1
 			}
 			# -- DAI
 		}
@@ -1449,13 +1428,12 @@ technologies = {
 		}
 	}
 
-### ### ###  ###      ##   ##  #  # ### ###   ##  #       #   # ### ### #  #  ##  ###   ##
-#    #  #  # #       #  # #  # ## #  #  #  # #  # #       ## ## #    #  #  # #  # #  # #
-##   #  ###  ##      #    #  # # ##  #  ###  #  # #       # # # ##   #  #### #  # #  #  #
-#    #  #  # #       #  # #  # #  #  #  #  # #  # #       #   # #    #  #  # #  # #  #   #
-#   ### #  # ###      ##   ##  #  #  #  #  #  ##  ###     #   # ###  #  #  #  ##  ###  ##
+	# ==================================================
+	#   FIRE CONTROL
+	# ==================================================
 
-#NOTE: FIRE CONTROL SYSTEMS ARE IN ELECTROMECHANICAL ENGINEERING FOLDER!
+	# NOTE: FIRE CONTROL MODULES ARE IN ELECTROMECHANICAL ENGINEERING FOLDER!
+	# These are pure stat buffs regardless of modules.
 
 	fire_control_methods_1 = {
 
@@ -1481,19 +1459,14 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 3
+			# DAI --
+			base = 0
 			modifier = {
-				has_navy_size = { size < 10 }
-				factor = 0.1
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1939.1.1 # Soft limit to focus industry first.
 			}
-			modifier = {
-				has_war = yes
-				factor = 2
-			}
-			modifier = {
-				tag = JAP
-				factor = 5
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1505,6 +1478,7 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules #Not really but for further tech
 		}
 	}
+
 
 	fire_control_methods_2 = {
 		xp_research_type = navy
@@ -1534,15 +1508,14 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 3
+			# DAI --
+			base = 0
 			modifier = {
-				has_war = yes
-				factor = 2
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1939.1.1 # Soft limit to focus industry first.
 			}
-			modifier = {
-				tag = JAP
-				factor = 5
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1554,6 +1527,7 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules #Not really but for further tech
 		}
 	}
+
 
 	fire_control_methods_3 = {
 
@@ -1587,15 +1561,14 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 3
+			# DAI --
+			base = 0
 			modifier = {
-				has_war = yes
-				factor = 2
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1939.1.1 # Soft limit to focus industry first.
 			}
-			modifier = {
-				tag = JAP
-				factor = 5
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1608,12 +1581,9 @@ technologies = {
 		}
 	}
 
-
-#   # ### #  # ###  ##
-## ##  #  ## # #   #
-# # #  #  # ## ##   #
-#   #  #  #  # #     #
-#   # ### #  # ### ##
+	# ==================================================
+	#   MINES
+	# ==================================================
 
 	basic_naval_mines = {
 
@@ -1645,24 +1615,14 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				OR = {
-					tag = GER
-					tag = USA
-					tag = ENG
-					tag = SOV
-				}
-				factor = 6
+				add = 1
+				date > 1939.1.1
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
-			modifier = {
-				has_war = yes
-				factor = 2
-			}
-			modifier = {
-				is_major = no
-				factor = 2
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1674,6 +1634,7 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
 
 	submarine_mine_laying = {
 
@@ -1696,16 +1657,9 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				OR = {
-					tag = GER
-					tag = USA
-					tag = ENG
-					tag = SOV
-				}
-				factor = 6
-			}
+			# DAI --
+			base = 0
+			# -- DAI
 		}
 
 		categories = {
@@ -1716,6 +1670,7 @@ technologies = {
 			mio_cat_tech_all_submarine_and_modules
 		}
 	}
+
 
 	improved_submarine_mine_laying = {
 
@@ -1733,16 +1688,9 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1.5
-			modifier = {
-				OR = {
-					tag = GER
-					tag = USA
-					tag = ENG
-					tag = SOV
-				}
-				factor = 6
-			}
+			# DAI --
+			base = 0
+			# -- DAI
 		}
 
 		categories = {
@@ -1753,6 +1701,7 @@ technologies = {
 			mio_cat_tech_all_submarine_and_modules
 		}
 	}
+
 
 	improved_naval_mines = {
 
@@ -1770,8 +1719,6 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-
-
 		naval_mines_damage_factor = 0.2 # more boom for the boom box
 		folder = {
 			name = mtgnavalsupportfolder
@@ -1779,24 +1726,14 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				OR = {
-					tag = GER
-					tag = USA
-					tag = ENG
-					tag = SOV
-				}
-				factor = 6
+				add = 1
+				date > 1940.1.1
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
-			modifier = {
-				has_war = yes
-				factor = 2
-			}
-			modifier = {
-				is_major = no
-				factor = 2
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1808,6 +1745,7 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
 
 	degaussing = {
 
@@ -1823,16 +1761,14 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				OR = {
-					tag = GER
-					tag = USA
-					tag = ENG
-					tag = SOV
-				}
-				factor = 5
+				add = 1
+				date > 1939.1.1
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1847,6 +1783,7 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
 
 	advanced_naval_mines = {
 
@@ -1875,14 +1812,13 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				OR = {
-					tag = USA
-					tag = ENG
-				}
-				factor = 5
+				add = 1
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1920,15 +1856,13 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				OR = {
-					tag = GER
-					tag = USA
-					tag = ENG
-				}
-				factor = 7
+				add = 0.5
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1937,6 +1871,7 @@ technologies = {
 			naval_equipment
 		}
 	}
+
 
 	airdrop_mines_bba = {
 		allow_branch = {
@@ -1957,15 +1892,13 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				OR = {
-					tag = GER
-					tag = USA
-					tag = ENG
-				}
-				factor = 7
+				add = 0.5
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1974,6 +1907,7 @@ technologies = {
 			naval_equipment
 		}
 	}
+
 
 	modern_naval_mines = {
 
@@ -1997,11 +1931,13 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
 			modifier = {
-				tag = USA
-				factor = 3
+				add = 1
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -2013,6 +1949,7 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
 
 	airsweep_mines = {
 		allow_branch = {
@@ -2037,7 +1974,13 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
+			modifier = {
+				add = 0.5
+				DAI_Should_Research_Navy_GENERAL = yes
+			}
+			# -- DAI
 		}
 
 		categories = {
@@ -2046,6 +1989,7 @@ technologies = {
 			naval_equipment
 		}
 	}
+
 
 	airsweep_mines_bba = {
 		allow_branch = {
@@ -2066,7 +2010,13 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0
+			modifier = {
+				add = 0.5
+				DAI_Should_Research_Navy_GENERAL = yes
+			}
+			# -- DAI
 		}
 
 		categories = {
@@ -2075,6 +2025,10 @@ technologies = {
 			naval_equipment
 		}
 	}
+
+	# ==================================================
+	#   INVASION
+	# ==================================================
 
 	mtg_transport = { #WHEN BALANCING - ALSO FIX REGULAR NAVAL TREE
 
@@ -2096,26 +2050,18 @@ technologies = {
 
 		ai_will_do = {
 			# DAI --
-			factor = 1
-
+			base = 0
 			modifier = {
-				factor = 0.5
-				has_war = no
-				date < 1939.1.1
+				add = 100
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
-
 			modifier = {
-				factor = 100
-				DAI_upgrade_navy = yes
-			}
-
-			modifier = {
-				factor = 10
+				add = 10
 				date > 1940.1.1
 			}
-
 			modifier = {
-				factor = 10
+				add = 10
 				date > 1941.1.1
 			}
 			# -- DAI
@@ -2126,6 +2072,7 @@ technologies = {
 			tp_tech
 		}
 	}
+
 
 	mtg_landing_craft = {
 
@@ -2154,27 +2101,18 @@ technologies = {
 
 		ai_will_do = {
 			# DAI --
-			factor = 2
-
+			base = 1
 			modifier = {
-				factor = 0.5
-				has_war = no
-				date < 1941.1.1
-			}
-
-			modifier = {
-				factor = 100
+				add = 100
+				DAI_Should_Research_Navy_GENERAL = yes
 				date > 1940.1.1
-				DAI_upgrade_navy = yes
 			}
-
 			modifier = {
-				factor = 10
+				add = 5
 				date > 1941.1.1
 			}
-
 			modifier = {
-				factor = 10
+				add = 5
 				date > 1942.1.1
 			}
 			# -- DAI
@@ -2185,6 +2123,7 @@ technologies = {
 			tp_tech
 		}
 	}
+
 
 	mtg_tank_landing_craft = {
 
@@ -2201,27 +2140,18 @@ technologies = {
 
 		ai_will_do = {
 			# DAI --
-			factor = 2
-
+			base = 1
 			modifier = {
-				factor = 0.5
-				has_war = no
-				date < 1944.1.1
-			}
-
-			modifier = {
-				factor = 100
+				add = 100
+				DAI_Should_Research_Navy_GENERAL = yes
 				date > 1943.1.1
-				DAI_upgrade_navy = yes
 			}
-
 			modifier = {
-				factor = 10
+				add = 5
 				date > 1944.1.1
 			}
-
 			modifier = {
-				factor = 10
+				add = 5
 				date > 1945.1.1
 			}
 			# -- DAI

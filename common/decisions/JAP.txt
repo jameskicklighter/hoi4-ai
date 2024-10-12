@@ -153,15 +153,9 @@ JAP_interservice_rivalry = {
 		cost = 30
 		fire_only_once = yes
 		days_remove = -1
+		# DAI
 		ai_will_do = {
 			factor = 999999
-			# modifier = {
-			# 	OR = {
-			# 		CHI = { is_ai = no }
-			# 		MAN = { is_ai = no }
-			# 	}
-			# 	factor = 999999
-			# }
 		}
 		complete_effect = {
 			random_owned_state = {
@@ -225,11 +219,6 @@ JAP_interservice_rivalry = {
 		days_remove = -1
 		ai_will_do = {
 			factor = 1
-			# modifier = {
-			# 	CHI = { is_ai = yes }
-			# 	MAN = { is_ai = yes }
-			# 	factor = 999999
-			# }
 		}
 		complete_effect = {
 			random_owned_state = {
@@ -291,8 +280,9 @@ JAP_interservice_rivalry = {
 		cost = 30
 		fire_only_once = yes
 		days_remove = -1
+		# DAI
 		ai_will_do = {
-			factor = 0
+			factor = 9999
 		}
 		complete_effect = {
 			set_country_flag = { flag = JAP_war_conferences_cd value = 1 days = 180 }
@@ -322,7 +312,7 @@ JAP_interservice_rivalry = {
 		fire_only_once = yes
 		days_remove = -1
 		ai_will_do = {
-			factor = 9999
+			factor = 0
 		}
 		complete_effect = {
 			set_country_flag = { flag = JAP_war_conferences_cd value = 1 days = 180 }
@@ -383,6 +373,7 @@ JAP_interservice_rivalry = {
 		cost = 30
 		days_remove = -1
 		fire_only_once = yes
+		# DAI
 		ai_will_do = {
 			factor = 99999
 		}
@@ -452,6 +443,7 @@ JAP_interservice_rivalry = {
 		cost = 30
 		fire_only_once = yes
 		days_remove = -1
+		# DAI
 		ai_will_do = {
 			factor = 999
 		}

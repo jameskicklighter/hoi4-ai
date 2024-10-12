@@ -64,11 +64,7 @@ technologies = {
 			factor = 2
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			battleship = 1.0
-			cruiser = 1.0
-		}
+		
 	}
 	
 	battlefleet_concentration = {
@@ -122,11 +118,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			battleship = 1.0
-			cruiser = 1.5
-		}
+		
 	}
 	
 	subsidiary_carrier_role = {
@@ -176,12 +168,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			battleship = 1.0
-			carrier = 1.5
-			naval_air = 0.75
-		}
+		
 	}
 	
 	hunter_killer_groups = {
@@ -233,11 +220,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			battleship = 1.5
-			cruiser = 1.0
-		}
+		
 	}
 	
 	floating_fortress = {
@@ -277,10 +260,7 @@ technologies = {
 			factor = 1
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			battleship = 2.0
-		}
+		
 	}
 	
 	floating_airfield = {
@@ -318,11 +298,7 @@ technologies = {
 			factor = 1
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			carrier = 2.0
-			naval_air = 0.75
-		}
+		
 	}
 	
 	grand_battlefleet = {
@@ -373,10 +349,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			battleship = 2.0
-		}
+		
 	}
 	
 	convoy_sailing = {
@@ -429,11 +402,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			battleship = 1.0
-			naval_equipment = 1.0
-		}
+		
 	}
 	
 	convoy_escorts = {
@@ -486,11 +455,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			battleship = 1.5
-			naval_equipment = 1.0
-		}
+		
 	}
 	
 	escort_carriers = {
@@ -542,11 +507,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			battleship = 1.0
-			naval_equipment = 1.5
-		}
+		
 	}
 	
 	integrated_convoy_defence = {
@@ -606,11 +567,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			battleship = 1.0
-			naval_equipment = 1.0
-		}
+		
 	}
 	
 	submarine_operations = {
@@ -650,10 +607,7 @@ technologies = {
 			factor = 1
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			submarine = 2.0
-		}
+		
 	}
 	
 	undersea_blockade = {
@@ -693,10 +647,7 @@ technologies = {
 			factor = 1
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			submarine = 2.0
-		}
+		
 	}
 	
 	convoy_interdiction = {
@@ -736,10 +687,7 @@ technologies = {
 			factor = 1
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			submarine = 2.0
-		}
+		
 	}
 	
 	submarine_offensive = {
@@ -773,10 +721,7 @@ technologies = {
 			factor = 1
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			submarine = 2.0
-		}
+		
 	}
 	
 	trade_interdiction = {
@@ -865,11 +810,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			submarine = 1.0
-			cruiser = 1.0
-		}
+		
 	}
 	
 	convoy_interdiction_ti = {
@@ -923,10 +864,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			submarine = 2.0
-		}
+		
 	}
 	
 	unrestricted_submarine_warfare = {
@@ -979,10 +917,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			submarine = 2.0
-		}
+		
 	}
 	
 	wolfpacks = {
@@ -1037,10 +972,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			submarine = 2.0
-		}
+		
 	}
 	
 	advanced_submarine_warfare = {
@@ -1093,10 +1025,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			submarine = 2.0
-		}
+		
 	}
 	
 	combined_operations_raiding = {
@@ -1160,11 +1089,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			cruiser = 1.5
-			submarine = 1.0
-		}
+		
 	}
 	
 	raider_patrols = {
@@ -1210,11 +1135,7 @@ technologies = {
 			factor = 1
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			cruiser = 1.5
-			battleship = 1.0
-		}
+		
 	}
 	
 	capital_ship_raiders = {
@@ -1261,11 +1182,7 @@ technologies = {
 			factor = 1
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			battleship = 1.0
-			cruiser = 1.0
-		}
+		
 	}
 	
 	battlefleet_concentration_ti = {
@@ -1309,10 +1226,7 @@ technologies = {
 			factor = 1
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			battleship = 2.0
-		}
+		
 	}
 	
 	floating_fortress_ti = {
@@ -1350,10 +1264,7 @@ technologies = {
 			factor = 1
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			battleship = 2.0
-		}
+		
 	}
 	
 	floating_airfield_ti = {
@@ -1386,11 +1297,7 @@ technologies = {
 			factor = 1
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			carrier = 2.0
-			naval_air = 0.75
-		}
+		
 	}
 	
 	carrier_operations = {
@@ -1437,11 +1344,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			carrier = 2.0
-			naval_air = 0.75
-		}
+		
 	}
 	
 	convoy_sailing_ti = {
@@ -1481,11 +1384,7 @@ technologies = {
 			factor = 1
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			battleship = 1.0
-			naval_equipment = 1.0
-		}
+		
 	}
 	
 	subsidiary_carrier_role_ti = {
@@ -1523,11 +1422,7 @@ technologies = {
 			factor = 1
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			carrier = 2.0
-			naval_air = 0.75
-		}
+		
 	}
 	
 	naval_air_operations = {
@@ -1567,11 +1462,7 @@ technologies = {
 			factor = 1
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			carrier = 2.0
-			naval_air = 0.75
-		}
+		
 	}
 	
 	base_strike = {
@@ -1638,11 +1529,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			carrier = 2.0
-			naval_air = 0.75
-		}
+		
 	}
 	
 	carrier_primacy = {
@@ -1706,11 +1593,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			carrier = 2.5
-			naval_air = 1.0
-		}
+		
 	}
 	
 	carrier_task_forces = {
@@ -1775,12 +1658,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			carrier = 1.0
-			naval_air = 0.75
-			cruiser = 1.0
-		}
+		
 	}
 	
 	floating_airfield_bs = {
@@ -1841,11 +1719,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			carrier = 2.0
-			naval_air = 0.75
-		}
+		
 	}
 	
 	massed_strikes = {
@@ -1911,11 +1785,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			carrier = 2.0
-			naval_air = 0.75
-		}
+		
 	}
 	
 	floating_fortress_bs = {
@@ -1967,10 +1837,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			battleship = 2.0
-		}
+		
 	}
 	
 	carrier_battlegroups = {
@@ -2031,12 +1898,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			carrier = 1.5
-			naval_air = 0.75
-			naval_equipment = 1.0
-		}
+		
 	}
 	
 	submarine_operations_bs = {
@@ -2086,10 +1948,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			submarine = 2.0
-		}
+		
 	}
 	
 	undersea_blockade_bs = {
@@ -2138,10 +1997,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			submarine = 2.0
-		}
+		
 	}
 	
 	convoy_interdiction_bs = {
@@ -2192,10 +2048,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			submarine = 2.0
-		}
+		
 	}
 	
 	submarine_offensive_bs = {
@@ -2239,10 +2092,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			submarine = 2.0
-		}
+		
 	}
 	
 	convoy_escorts_bs = {
@@ -2293,11 +2143,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			battleship = 1.0
-			naval_equipment = 1.0
-		}
+		
 	}
 	
 	escort_patrols = {
@@ -2353,11 +2199,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			battleship = 1.0
-			naval_equipment = 1.0
-		}
+		
 	}
 	
 	convoy_sailing_bs = {
@@ -2408,11 +2250,7 @@ technologies = {
 			}
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			battleship = 1.0
-			naval_equipment = 1.0
-		}
+		
 	}
 	
 	integrated_convoy_defence_bs = {
@@ -2453,11 +2291,7 @@ technologies = {
 			factor = 1
 		}
 		
-		ai_research_weights = {
-			naval_doctrine = -1.0
-			naval_equipment = 1.0
-			battleship = 1.0
-		}
+		
 	}
 	
 }

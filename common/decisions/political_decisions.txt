@@ -537,14 +537,6 @@ fascism_on_the_rise = {
 
 		available = {
 			fascism > 0.5
-			IF = {
-				limit = {
-					has_dlc = "Trial of Allegiance"
-				}
-				NOT = {
-					tag = ARG
-				}
-			}
 		}
 
 		visible = {

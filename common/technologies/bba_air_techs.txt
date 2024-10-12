@@ -1,5 +1,5 @@
 technologies = {
-	
+
 	iw_small_airframe = {
 
 		enable_equipments = {
@@ -40,24 +40,19 @@ technologies = {
 			mio_cat_all_light_aircraft_and_modules
 		}
 
-		
 		ai_will_do = {
-			factor = 5
-			
+			# DAI --
+			base = 2
 			modifier = {
-				factor = 2
-				is_major = yes
+				add = 100
+				DAI_should_build_planes = yes
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
-
-			modifier = {
-				num_of_military_factories < 7
-				factor = 0.1
-			}
+			# -- DAI
 		}
 	}
-	
-	
-	
+
+
 	basic_small_airframe = {
 
 		enable_equipments = {
@@ -100,37 +95,18 @@ technologies = {
 		
 		
 		ai_will_do = {
-			factor = 2
-			
+			# DAI --
+			base = 2
 			modifier = {
-				factor = 2
-				is_major = yes
+				add = 100
+				DAI_should_build_planes = yes
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
-			
-			modifier = {
-				factor = 1.2
-				date > "1937.1.1"
-			}
-			
-			modifier = {
-				factor = 1.2
-				date > "1938.1.1"
-			}
-			
-			modifier = {
-				factor = 1.2
-				date > "1939.1.1"
-			}
-			
-			modifier = {
-				factor = 5
-				date > "1940.1.1"
-			}
+			# -- DAI
 		}
 	}
-	
-	
-	
+
+
 	improved_small_airframe = {
 
 		enable_equipments = {
@@ -175,36 +151,24 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 2
-			
-			# DAI ---
+			# DAI --
+			base = 2
 			modifier = {
-				factor = 10
+				add = 999
+				date > 1939.7.1
+				amount_research_slots > 3
 				DAI_should_build_planes = yes
 			}
-
 			modifier = {
-				factor = 1.2
-				date > "1941.1.1"
+				add = 30
+				date > 1940.1.1
+				DAI_should_build_planes = yes
 			}
-			
-			modifier = {
-				factor = 1.2
-				date > "1942.1.1"
-			}
-			
-			modifier = {
-				factor = 1.2
-				date > "1943.1.1"
-			}
-			
-			modifier = {
-				factor = 5
-				date > "1944.1.1"
-			}
+			# -- DAI
 		}
 	}
-	
+
+
 	advanced_small_airframe = {
 
 		enable_equipments = {
@@ -245,35 +209,24 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 2
-			
+			# DAI --
+			base = 2
+			# modifier = {
+			# 	add = 999
+			# 	date > 1943.1.1
+			# 	amount_research_slots > 4
+			# 	DAI_should_build_planes = yes
+			# }
 			modifier = {
-				factor = 4
-				is_major = yes
+				add = 30
+				date > 1944.1.1
+				DAI_should_build_planes = yes
 			}
-			
-			modifier = {
-				factor = 1.2
-				date > "1945.1.1"
-			}
-			
-			modifier = {
-				factor = 1.2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 1.2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 5
-				date > "1948.1.1"
-			}
+			# -- DAI
 		}
 	}
-	
+
+
 	modern_small_airframe = {
 
 		enable_equipments = {
@@ -314,18 +267,24 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 2
+			# modifier = {
+			# 	add = 999
+			# 	date > 1944.1.1
+			# 	amount_research_slots > 4
+			# 	DAI_should_build_planes = yes
+			# }
 			modifier = {
-				is_major = yes
-				factor = 2
+				add = 30
+				date > 1945.1.1
+				DAI_should_build_planes = yes
 			}
-			modifier = {
-				tag = GER
-				factor = 2
-			}
+			# -- DAI
 		}
 	}
-	
+
+
 	iw_medium_airframe = {
 
 		enable_equipments = {
@@ -355,15 +314,18 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			base = 1
-
+			# DAI --
+			base = 0.5
 			modifier = {
-				num_of_military_factories < 15
-				factor = 0.1
+				add = 30
+				date > 1937.1.1
+				DAI_should_build_planes = yes
 			}
+			# -- DAI
 		}
 	}
-	
+
+
 	basic_medium_airframe = {
 
 		enable_equipments = {
@@ -394,34 +356,18 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
-			
+			# DAI --
+			base = 0.5
 			modifier = {
-				factor = 1.2
-				is_major = yes
-				date > "1936.1.1"
+				add = 30
+				date > 1937.1.1
+				DAI_should_build_planes = yes
 			}
-			modifier = {
-				has_deployed_air_force_size = {
-					size > 500
-					type = tactical_bomber
-				}
-				factor = 2
-			}
-			modifier = {
-				factor = 1.2
-				is_major = yes
-				date > "1938.1.1"
-			}
-			
-			modifier = {
-				factor = 5
-				is_major = yes
-				date > "1940.1.1"
-			}
+			# -- DAI
 		}
 	}
-	
+
+
 	improved_medium_airframe = {
 
 		enable_equipments = {
@@ -451,34 +397,18 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
-			
+			# DAI --
+			base = 0.5
 			modifier = {
-				factor = 1.2
-				is_major = yes
-				date > "1940.1.1"
+				add = 30
+				date > 1940.1.1
+				DAI_should_build_planes = yes
 			}
-			modifier = {
-				has_deployed_air_force_size = {
-					size > 500
-					type = tactical_bomber
-				}
-				factor = 2
-			}
-			modifier = {
-				factor = 1.2
-				is_major = yes
-				date > "1941.1.1"
-			}
-			
-			modifier = {
-				factor = 5
-				is_major = yes
-				date > "1944.1.1"
-			}
+			# -- DAI
 		}
 	}
-	
+
+
 	advanced_medium_airframe = {
 
 		enable_equipments = {
@@ -508,28 +438,18 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
-			
+			# DAI --
+			base = 0.5
 			modifier = {
-				factor = 1.2
-				is_major = yes
-				date > "1944.1.1"
+				add = 30
+				date > 1944.1.1
+				DAI_should_build_planes = yes
 			}
-			modifier = {
-				has_deployed_air_force_size = {
-					size > 500
-					type = tactical_bomber
-				}
-				factor = 2
-			}
-			modifier = {
-				factor = 1.2
-				is_major = yes
-				date > "1945.1.1"
-			}
+			# -- DAI
 		}
 	}
-	
+
+
 	modern_medium_airframe = {
 
 		enable_equipments = {
@@ -559,13 +479,17 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 0.5
 			modifier = {
-				is_major = yes
-				factor = 4
+				add = 30
+				date > 1945.1.1
+				DAI_should_build_planes = yes
 			}
+			# -- DAI
 		}
 	}
+
 
 	iw_large_airframe = {
 
@@ -594,26 +518,13 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			base = 1
-
-			modifier = {
-				num_of_military_factories < 30
-				factor = 0.1
-			}
-			
-			modifier = {
-				factor = 5
-				tag = ENG
-			}
-			
-			modifier = {
-				factor = 10
-				tag = USA
-				date > 1937.1.1
-			}
+			# DAI --
+			base = 0.1
+			# -- DAI
 		}
 	}
-	
+
+
 	basic_large_airframe = {
 
 		enable_equipments = {
@@ -641,20 +552,13 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				factor = 5
-				tag = ENG
-			}
-			
-			modifier = {
-				factor = 10
-				tag = USA
-			}
+			# DAI --
+			base = 0.1
+			# -- DAI
 		}
 	}
-	
+
+
 	improved_large_airframe = {
 
 		enable_equipments = {
@@ -682,20 +586,13 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				factor = 5
-				tag = ENG
-			}
-			
-			modifier = {
-				factor = 5
-				tag = USA
-			}
+			# DAI --
+			base = 0.1
+			# -- DAI
 		}
 	}
-	
+
+
 	advanced_large_airframe = {
 
 		enable_equipments = {
@@ -723,20 +620,13 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				factor = 5
-				tag = ENG
-			}
-			
-			modifier = {
-				factor = 5
-				tag = USA
-			}
+			# DAI --
+			base = 0.1
+			# -- DAI
 		}
 	}
-	
+
+
 	modern_large_airframe = {
 
 		enable_equipments = {
@@ -764,16 +654,12 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				has_deployed_air_force_size = {
-					size > 500
-					type = strategic_bomber
-				}
-				factor = 4.5
-			}
+			# DAI --
+			base = 0.1
+			# -- DAI
 		}
 	}
+
 
 	early_bombs = {
 		enable_equipment_modules = {
@@ -812,17 +698,22 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 1.6
 			modifier = {
-				OR = {
-					has_tech = iw_small_airframe
-					has_tech = iw_medium_airframe
-					has_tech = iw_large_airframe
-				}
-				factor = 5
+				add = 30
+				DAI_should_build_planes = yes
 			}
+			# Research interwar small frame/fighter 0 first.
+			modifier = {
+				factor = 0
+				NOT = { has_tech = iw_small_airframe }
+				NOT = { is_researching_technology = iw_small_airframe }
+			}
+			# -- DAI
 		}
 	}
+
 
 	heavy_bombs = {
 		enable_equipment_modules = {
@@ -847,15 +738,19 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 1
 			modifier = {
-				OR = {
-					has_tech = iw_small_airframe
-					has_tech = iw_medium_airframe
-					has_tech = iw_large_airframe
-				}
-				factor = 5
+				add = 30
+				DAI_should_build_planes = yes
 			}
+			# Research improved small frame/fighter 2 first.
+			modifier = {
+				factor = 0
+				NOT = { has_tech = improved_small_airframe }
+				NOT = { is_researching_technology = improved_small_airframe }
+			}
+			# -- DAI
 		}
 	}
 
@@ -883,17 +778,12 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				OR = {
-					has_tech = iw_small_airframe
-					has_tech = iw_medium_airframe
-					has_tech = iw_large_airframe
-				}
-				factor = 5
-			}
+			# DAI --
+			base = 0
+			# -- DAI
 		}
 	}
+
 
 	photo_reconnaisance = {
 		enable_equipment_modules = {
@@ -917,15 +807,12 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				OR = {
-					has_tech = basic_medium_airframe
-				}
-				factor = 3
-			}
+			# DAI --
+			base = 0
+			# -- DAI
 		}
 	}
+
 
 	air_torpedoe_1 = {
 		enable_equipment_modules = {
@@ -956,17 +843,23 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 2
+			# DAI --
+			base = 1.5
 			modifier = {
-				OR = {
-					has_tech = iw_small_airframe
-					has_tech = iw_medium_airframe
-					has_tech = iw_large_airframe
-				}
-				factor = 5
+				add = 30
+				date > 1937.1.1
+				DAI_should_build_planes = yes
 			}
+			# Research interwar small frame/fighter 0 first.
+			modifier = {
+				factor = 0
+				NOT = { has_tech = iw_small_airframe }
+				NOT = { is_researching_technology = iw_small_airframe }
+			}
+			# -- DAI
 		}
 	}
+
 
 	air_torpedoe_2 = {
 		enable_equipment_modules = {
@@ -997,17 +890,29 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 1.5
 			modifier = {
-				OR = {
-					has_tech = iw_small_airframe
-					has_tech = iw_medium_airframe
-					has_tech = iw_large_airframe
-				}
-				factor = 5
+				add = 99
+				date > 1939.1.1
+				amount_research_slots > 4
+				DAI_should_build_planes = yes
 			}
+			modifier = {
+				add = 30
+				date > 1940.1.1
+				DAI_should_build_planes = yes
+			}
+			# Research improved small frame/fighter 2 first.
+			modifier = {
+				factor = 0
+				NOT = { has_tech = improved_small_airframe }
+				NOT = { is_researching_technology = improved_small_airframe }
+			}
+			# -- DAI
 		}
 	}
+
 
 	air_torpedoe_3 = {
 		enable_equipment_modules = {
@@ -1033,17 +938,29 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 1.5
 			modifier = {
-				OR = {
-					has_tech = iw_small_airframe
-					has_tech = iw_medium_airframe
-					has_tech = iw_large_airframe
-				}
-				factor = 5
+				add = 99
+				date > 1943.1.1
+				amount_research_slots > 4
+				DAI_should_build_planes = yes
 			}
+			modifier = {
+				add = 30
+				date > 1944.1.1
+				DAI_should_build_planes = yes
+			}
+			# Research advanced small frame/fighter 3 first.
+			modifier = {
+				factor = 0
+				NOT = { has_tech = advanced_small_airframe }
+				NOT = { is_researching_technology = advanced_small_airframe }
+			}
+			# -- DAI
 		}
 	}
+
 
 	aa_lmg = {
 
@@ -1088,39 +1005,23 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 2
 			modifier = {
-				OR = {
-					has_tech = iw_small_airframe
-					has_tech = iw_medium_airframe
-					has_tech = iw_large_airframe
-				}
-				factor = 5
+				add = 30
+				date > 1937.1.1
+				DAI_should_build_planes = yes
 			}
-			# # DAI ---
-			# modifier = {
-			# 	is_major = yes
-			# 	factor = 2
-			# }
-			# modifier = {
-			# 	num_of_military_factories < 10
-			# 	factor = 0
-			# }
-			# modifier = {
-			# 	date > "1937.1.1"
-			# 	factor = 1.5
-			# }
-			# modifier = {
-			# 	date > "1938.1.1"
-			# 	factor = 1.5
-			# }
-			# modifier = {
-			# 	date > "1939.1.1"
-			# 	factor = 3
-			# }
-			# # --- DAI
+			# Research interwar small frame/fighter 0 first.
+			modifier = {
+				factor = 0
+				NOT = { has_tech = iw_small_airframe }
+				NOT = { is_researching_technology = iw_small_airframe }
+			}
+			# -- DAI
 		}
 	}
+
 
 	survivability_studies = {
 
@@ -1151,25 +1052,29 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 1.8
 			modifier = {
-				date > "1937.1.1"
-				factor = 1.5
+				add = 999
+				date > 1938.1.1
+				amount_research_slots > 3
+				DAI_should_build_planes = yes
 			}
 			modifier = {
-				date > "1938.1.1"
-				factor = 1.5
+				add = 30
+				date > 1939.1.1
+				DAI_should_build_planes = yes
 			}
+			# Research interwar small frame/fighter 0 first.
 			modifier = {
-				date > "1939.1.1"
-				factor = 3
+				factor = 0
+				NOT = { has_tech = iw_small_airframe }
+				NOT = { is_researching_technology = iw_small_airframe }
 			}
-			modifier = {
-				has_War = yes
-				factor = 3
-			}
+			# -- DAI
 		}
 	}
+
 
 	aa_hmg = {
 
@@ -1199,24 +1104,23 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 1.7
 			modifier = {
-				OR = {
-					has_tech = basic_small_airframe
-					has_tech = basic_medium_airframe
-					has_tech = basic_large_airframe
-				}
-				factor = 5
+				add = 999
+				date > 1938.1.1
+				amount_research_slots > 3
+				DAI_should_build_planes = yes
 			}
 			modifier = {
-				OR = {
-					tag = USA
-					tag = GER
-				}
-				factor = 3
+				add = 30
+				date > 1939.1.1
+				DAI_should_build_planes = yes
 			}
+			# -- DAI
 		}
 	}
+
 
 	aa_cannon_1 = {
 
@@ -1253,25 +1157,12 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				OR = {
-					has_tech = basic_small_airframe
-					has_tech = basic_medium_airframe
-					has_tech = basic_large_airframe
-				}
-				factor = 5
-			}
-			modifier = {
-				OR = {
-					tag = GER
-					tag = SOV
-					tag = ENG
-				}
-				factor = 3
-			}
+			# DAI --
+			base = 0.1
+			# -- DAI
 		}
 	}
+
 
 	aa_cannon_2 = {
 
@@ -1301,25 +1192,12 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				OR = {
-					has_tech = improved_small_airframe
-					has_tech = improved_medium_airframe
-					has_tech = improved_large_airframe
-				}
-				factor = 5
-			}
-			modifier = {
-				OR = {
-					tag = GER
-					tag = SOV
-					tag = ENG
-				}
-				factor = 3
-			}
+			# DAI --
+			base = 0.1
+			# -- DAI
 		}
 	}
+
 
 	aa_cannon_3 = {
 
@@ -1349,25 +1227,12 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				OR = {
-					has_tech = improved_small_airframe
-					has_tech = improved_medium_airframe
-					has_tech = improved_large_airframe
-				}
-				factor = 5
-			}
-			modifier = {
-				OR = {
-					tag = GER
-					tag = SOV
-					tag = ENG
-				}
-				factor = 3
-			}
+			# DAI --
+			base = 0.1
+			# -- DAI
 		}
 	}
+
 
 	engines_1 = {
 
@@ -1415,37 +1280,23 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			# DAI --
+			base = 2
 			modifier = {
-				OR = {
-					has_tech = iw_small_airframe
-					has_tech = iw_medium_airframe
-					has_tech = iw_large_airframe
-				}
-				factor = 5
+				add = 30
+				date > 1937.1.1
+				DAI_should_build_planes = yes
 			}
+			# Research interwar small frame/fighter 0 first.
 			modifier = {
-				is_major = yes
-				factor = 2
-			}
-			modifier = {
-				num_of_military_factories < 10
 				factor = 0
+				NOT = { has_tech = iw_small_airframe }
+				NOT = { is_researching_technology = iw_small_airframe }
 			}
-			modifier = {
-				date > "1937.1.1"
-				factor = 1.5
-			}
-			modifier = {
-				date > "1938.1.1"
-				factor = 1.5
-			}
-			modifier = {
-				date > "1939.1.1"
-				factor = 3
-			}
+			# -- DAI
 		}
 	}
+
 
 	engines_2 = {
 
@@ -1483,29 +1334,23 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 5
+			# DAI --
+			base = 1.9
 			modifier = {
-				is_major = yes
-				factor = 2
+				add = 100
+				date > 1937.1.1
+				DAI_should_build_planes = yes
 			}
+			# Research basic small frame/fighter 1 first.
 			modifier = {
-				num_of_military_factories < 10
 				factor = 0
+				NOT = { has_tech = basic_small_airframe }
+				NOT = { is_researching_technology = basic_small_airframe }
 			}
-			modifier = {
-				date > "1937.1.1"
-				factor = 1.5
-			}
-			modifier = {
-				date > "1938.1.1"
-				factor = 1.5
-			}
-			modifier = {
-				date > "1939.1.1"
-				factor = 3
-			}
+			# -- DAI
 		}
 	}
+
 
 	engines_3 = {
 
@@ -1543,29 +1388,29 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 5
+			# DAI --
+			base = 1.9
 			modifier = {
-				is_major = yes
-				factor = 5
+				add = 999
+				date > 1939.7.1
+				amount_research_slots > 3
+				DAI_should_build_planes = yes
 			}
 			modifier = {
-				num_of_military_factories < 10
+				add = 30
+				date > 1940.1.1
+				DAI_should_build_planes = yes
+			}
+			# Research improved small frame/fighter 2 first.
+			modifier = {
 				factor = 0
+				NOT = { has_tech = improved_small_airframe }
+				NOT = { is_researching_technology = improved_small_airframe }
 			}
-			modifier = {
-				date > "1941.1.1"
-				factor = 1.5
-			}
-			modifier = {
-				date > "1942.1.1"
-				factor = 1.5
-			}
-			modifier = {
-				date > "1943.1.1"
-				factor = 3
-			}
+			# -- DAI
 		}
 	}
+
 
 	engines_4 = {
 
@@ -1598,29 +1443,29 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 5
+			# DAI --
+			base = 1.9
 			modifier = {
-				is_major = yes
-				factor = 2
+				add = 999
+				date > 1943.7.1
+				amount_research_slots > 4
+				DAI_should_build_planes = yes
 			}
 			modifier = {
-				num_of_military_factories < 10
+				add = 30
+				date > 1944.1.1
+				DAI_should_build_planes = yes
+			}
+			# Research advanced small frame/fighter 3 first.
+			modifier = {
 				factor = 0
+				NOT = { has_tech = advanced_small_airframe }
+				NOT = { is_researching_technology = advanced_small_airframe }
 			}
-			modifier = {
-				date > "1943.1.1"
-				factor = 1.5
-			}
-			modifier = {
-				date > "1944.1.1"
-				factor = 1.5
-			}
-			modifier = {
-				date > "1945.1.1"
-				factor = 3
-			}
+			# -- DAI
 		}
 	}
+
 
 	range_improvements = {
 
@@ -1651,36 +1496,22 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 5
+			# DAI --
+			base = 1.9
 			modifier = {
-				is_major = yes
-				factor = 2
+				add = 30
+				DAI_should_build_planes = yes
 			}
+			# Research interwar small frame/fighter 0 first.
 			modifier = {
-				num_of_military_factories < 10
 				factor = 0
+				NOT = { has_tech = iw_small_airframe }
+				NOT = { is_researching_technology = iw_small_airframe }
 			}
-			modifier = {
-				date > "1937.1.1"
-				factor = 1.5
-			}
-			modifier = {
-				date > "1938.1.1"
-				factor = 1.5
-			}
-			modifier = {
-				date > "1939.1.1"
-				factor = 3
-			}
-			modifier = {
-				OR = {
-					tag = USA
-					tag = JAP
-				}
-				factor = 3
-			}
+			# -- DAI
 		}
 	}
+
 
 	aircraft_construction = {
 
@@ -1714,7 +1545,20 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 5
+			# DAI --
+			base = 1.6
+			modifier = {
+				add = 30
+				date > 1939.1.1
+				DAI_should_build_planes = yes
+			}
+			# Research basic small frame/fighter 1 first.
+			modifier = {
+				factor = 0
+				NOT = { has_tech = basic_small_airframe }
+				NOT = { is_researching_technology = basic_small_airframe }
+			}
+			# -- DAI
 		}
 	}
 
@@ -1738,7 +1582,9 @@ technologies = {
 		#}
 		
 		ai_will_do = {
-			factor = 0
+			# DAI --
+			base = 0
+			# -- DAI
 		}
 		################
 	}

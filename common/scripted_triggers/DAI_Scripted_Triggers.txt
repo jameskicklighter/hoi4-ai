@@ -13,6 +13,18 @@
 # 	}
 # }
 
+DAI_should_pre_research_industry = {
+	OR = {
+		original_tag = ENG
+		original_tag = FRA
+		original_tag = GER
+		original_tag = ITA
+		original_tag = JAP
+		original_tag = SOV
+		original_tag = USA
+	}
+}
+
 DAI_should_build_planes = {
 	OR = {
 		num_of_military_factories > 30
@@ -37,7 +49,7 @@ DAI_should_build_planes = {
 
 DAI_should_build_tanks = {
 	OR = {
-		num_of_military_factories > 40
+		num_of_military_factories > 30
 		# Always Produce Tanks
 		original_tag = ENG
 		original_tag = FRA
@@ -51,20 +63,118 @@ DAI_should_build_tanks = {
 			is_historical_focus_on = yes
 			OR = {
 				original_tag = CAN
-				original_tag = CZE
+				# original_tag = CZE
 				original_tag = HUN
+				original_tag = ROM
 			}
 		}
 	}
 }
 
-DAI_upgrade_navy = {
+##############################################################################
+### 		NAVAL
+##############################################################################
+
+# Used to prioritize researching technologies that affect all ships
+# such as retreat speed, reduced critical hit, and invasion capacity.
+# Also used to make sure we have decent hulls and weapons.
+DAI_Should_Research_Navy_GENERAL = {
+	# We need to prepare for Barbarossa, regardless of our dockyards.
+	# Furthermore we need to focus on subs.
+	if = { limit = {
+			original_tag = GER
+			has_government = fascism
+		}
+		OR = {
+			date > 1944.1.1
+			AND = {
+				date > 1942.1.1
+				SOV = {
+					OR = {
+						is_in_faction_with = ROOT
+						is_puppet_of = ROOT
+						has_capitulated = yes
+						exists = no
+					}
+				}
+			}
+		}
+	}
+	else = {
+		OR = {
+			# We have sufficient Naval Industry to prioritize upgrades.
+			num_of_naval_factories > 30
+			# We have at least 75% of an enemy's naval strength, and
+			# we have at least a modest navy to upgrade.
+			AND = {
+				has_war = yes
+				enemies_naval_strength_ratio < 1.33
+				has_navy_size = {
+					size > 30
+				}
+				amount_research_slots > 3
+			}
+			# We always need vital ship upgrades to put up a fight.
+			original_tag = ENG
+			original_tag = ITA
+			original_tag = JAP
+			original_tag = USA
+		}
+	}
+}
+
+DAI_Should_Research_Navy_ANTI_SUB = {
+	num_of_naval_factories > 4
 	OR = {
-		num_of_naval_factories > 30
-		# Always Produce Tanks
+		convoy_threat > 0.5
+		# We always need better anti-sub.
 		original_tag = ENG
 		original_tag = ITA
 		original_tag = JAP
 		original_tag = USA
+	}
+}
+
+DAI_Should_Research_Navy_CRUISER = {
+	OR = {
+		# We always need better cruisers.
+		original_tag = ENG
+		original_tag = ITA
+		original_tag = JAP
+		original_tag = USA
+	}
+}
+
+DAI_Should_Research_Navy_CARRIER = {
+	OR = {
+		# We always need better carriers.
+		original_tag = ENG
+		original_tag = JAP
+		original_tag = USA
+	}
+}
+
+DAI_Should_Research_Navy_SUBMARINE = {
+	OR = {
+		# We always need better subs.
+		original_tag = GER
+		original_tag = JAP
+		original_tag = USA
+	}
+}
+
+##############################################################################
+### 		MISCELLANEOUS
+##############################################################################
+
+DAI_ITA_only_has_fake_war_with_ETH = {
+	if = { limit = { original_tag = ITA }
+		has_war = no
+		NOT = {
+			any_other_country = {
+				NOT = { original_tag = ETH }
+				has_war_with = ROOT
+			}
+		}
 	}
 }

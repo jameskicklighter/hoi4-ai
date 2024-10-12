@@ -1,11 +1,8 @@
 technologies = {
 
-#   ###  ##  #  # ###      ## #  # ### ###   ##
-#    #  #    #  #  #      #   #  #  #  #  # #
-#    #  # ## ####  #       #  ####  #  ###   #
-#    #  #  # #  #  #        # #  #  #  #      #
-### ###  ##  #  #  #      ##  #  # ### #    ##
-
+	# ==================================================
+	#   DESTROYERS
+	# ==================================================
 
 	early_ship_hull_light = {
 
@@ -49,12 +46,18 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
+			# Need the basics.
 			modifier = {
-				factor = 4
-				tag = ENG
+				add = 100
+				OR = {
+					DAI_Should_Research_Navy_GENERAL = yes
+					DAI_Should_Research_Navy_ANTI_SUB = yes
+				}
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -64,6 +67,7 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
 
 	basic_ship_hull_light = {
 
@@ -88,19 +92,19 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
+			# Need the basics.
 			modifier = {
-				factor = 4
-				OR = {
-					tag = ENG
-					tag = JAP
-				}
+				add = 100
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
 			modifier = {
-				has_war = yes
-				factor = 2
+				add = 5
+				DAI_Should_Research_Navy_ANTI_SUB = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -110,6 +114,7 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
 
 	improved_ship_hull_light = {
 
@@ -135,16 +140,13 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 4
-				OR = {
-					tag = ENG
-					tag = JAP
-					tag = USA
-				}
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -154,6 +156,7 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
 
 	advanced_ship_hull_light = {
 
@@ -174,16 +177,13 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 4
-				OR = {
-					tag = ENG
-					tag = JAP
-					tag = USA
-				}
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -193,6 +193,7 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
 
 	smoke_generator = {
 
@@ -208,17 +209,17 @@ technologies = {
 		}
 
 		ai_will_do = {
-			base = 2
-
+			# DAI --
+			base = 0
 			modifier = {
-				has_navy_size = { size < 10 }
-				factor = 0.1
+				add = 10
+				OR = {
+					DAI_Should_Research_Navy_GENERAL = yes
+					DAI_Should_Research_Navy_ANTI_SUB = yes
+				}
+				date > 1938.1.1 # Soft limit to focus industry first.
 			}
-
-			modifier = {
-				factor = 4
-				tag = ENG
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -229,12 +230,6 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
-
- ##  #  # ### ###      ## #  # ###  #   #  ##  ###  ### #  # ###
-#  # ## #  #   #      #   #  # #  # ## ## #  # #  #  #  ## # #
-#### # ##  #   #       #  #  # ###  # # # #### ###   #  # ## ##
-#  # #  #  #   #        # #  # #  # #   # #  # #  #  #  #  # #
-#  # #  #  #  ###     ##   ##  ###  #   # #  # #  # ### #  # ###
 
 
 	basic_depth_charges = {
@@ -265,16 +260,18 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 4
-
+			# DAI --
+			base = 0
+			# Need the basics.
 			modifier = {
-				factor = 2
-				has_war_with = GER
+				add = 100
+				OR = {
+					DAI_Should_Research_Navy_GENERAL = yes
+					DAI_Should_Research_Navy_ANTI_SUB = yes
+				}
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
-			modifier = {
-				factor = 2
-				anti_submarine_strategy_required_trigger = yes
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -286,6 +283,8 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
+
 	improved_depth_charges = {
 
 		enable_equipment_modules = {
@@ -312,16 +311,17 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 4
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 2
-				has_war_with = GER
+				add = 10
+				OR = {
+					DAI_Should_Research_Navy_GENERAL = yes
+					DAI_Should_Research_Navy_ANTI_SUB = yes
+				}
+				date > 1938.1.1 # Soft limit to focus industry first.
 			}
-			modifier = {
-				factor = 2
-				anti_submarine_strategy_required_trigger = yes
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -333,6 +333,8 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
+
 	advanced_depth_charges = {
 
 		enable_equipment_modules = {
@@ -358,16 +360,16 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 2
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 4
-				has_war_with = GER
+				add = 5
+				OR = {
+					DAI_Should_Research_Navy_GENERAL = yes
+					DAI_Should_Research_Navy_ANTI_SUB = yes
+				}
 			}
-			modifier = {
-				factor = 2
-				anti_submarine_strategy_required_trigger = yes
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -379,6 +381,8 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
+
 	modern_depth_charges = {
 
 		enable_equipment_modules = {
@@ -401,16 +405,16 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 2
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 4
-				has_war_with = GER
+				add = 5
+				OR = {
+					DAI_Should_Research_Navy_GENERAL = yes
+					DAI_Should_Research_Navy_ANTI_SUB = yes
+				}
 			}
-			modifier = {
-				factor = 2
-				anti_submarine_strategy_required_trigger = yes
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -422,6 +426,8 @@ technologies = {
 			mio_cat_tech_all_destroyer_and_modules
 		}
 	}
+
+
 	sonar = {
 		enable_equipment_modules = {
 			ship_sonar_1
@@ -443,16 +449,18 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 2
-
+			# DAI --
+			base = 0
+			# Need the basics.
 			modifier = {
-				factor = 4
-				has_war_with = GER
+				add = 10
+				OR = {
+					DAI_Should_Research_Navy_GENERAL = yes
+					DAI_Should_Research_Navy_ANTI_SUB = yes
+				}
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
-			modifier = {
-				factor = 2
-				anti_submarine_strategy_required_trigger = yes
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -482,16 +490,17 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 2
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 4
-				has_war_with = GER
+				add = 5
+				OR = {
+					DAI_Should_Research_Navy_GENERAL = yes
+					DAI_Should_Research_Navy_ANTI_SUB = yes
+				}
+				date > 1938.1.1 # Soft limit to focus industry first.
 			}
-			modifier = {
-				factor = 2
-				anti_submarine_strategy_required_trigger = yes
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -504,12 +513,9 @@ technologies = {
 		}
 	}
 
- ##  ###  #  # ###  ## ### ###   ##
-#  # #  # #  #  #  #   #   #  # #
-#    ###  #  #  #   #  ##  ###   #
-#  # #  # #  #  #    # #   #  #   #
- ##  #  #  ##  ### ##  ### #  # ##
-	
+	# ==================================================
+	#   CRUISERS
+	# ==================================================
 
 	early_ship_hull_cruiser = {
 
@@ -545,16 +551,15 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
+			# Need the basics.
 			modifier = {
-				factor = 4
-				OR = {
-					tag = ENG
-					tag = JAP
-					tag = USA
-				}
+				add = 100
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -566,6 +571,7 @@ technologies = {
 			mio_cat_tech_all_cruiser_and_modules
 		}
 	}
+
 
 	basic_ship_hull_cruiser = {
 
@@ -581,7 +587,6 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-
 		research_cost = 1.5
 
 		start_year = 1936
@@ -592,16 +597,18 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 4
-				OR = {
-					tag = ENG
-					tag = JAP
-					tag = USA
-				}
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
+			modifier = {
+				add = 10
+				DAI_Should_Research_Navy_CRUISER = yes
+			}
+			# -- DAI
 		}
 
 		categories = {
@@ -613,6 +620,7 @@ technologies = {
 			mio_cat_tech_all_cruiser_and_modules
 		}
 	}
+
 
 	improved_ship_hull_cruiser = {
 
@@ -637,16 +645,22 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
 			modifier = {
-				OR = {
-					tag = ENG
-					tag = JAP
-					tag = USA
-				}
-				factor = 4
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			modifier = {
+				add = 10
+				DAI_Should_Research_Navy_CRUISER = yes
+			}
+			modifier = {
+				add = 9999
+				original_tag = JAP
+				has_completed_focus = JAP_cruiser_modernization
+			}
+			# -- DAI
 		}
 
 		categories = {
@@ -658,6 +672,7 @@ technologies = {
 			mio_cat_tech_all_cruiser_and_modules
 		}
 	}
+
 
 	advanced_ship_hull_cruiser = {
 
@@ -677,15 +692,17 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 2
-				OR = {
-					tag = ENG
-					tag = USA
-				}
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			modifier = {
+				add = 10
+				DAI_Should_Research_Navy_CRUISER = yes
+			}
+			# -- DAI
 		}
 
 		categories = {
@@ -698,8 +715,8 @@ technologies = {
 		}
 	}
 
-	improved_airplane_launcher = {
 
+	improved_airplane_launcher = {
 
 		enable_equipment_modules = {
 			ship_airplane_launcher_2
@@ -707,7 +724,6 @@ technologies = {
 		on_research_complete = {
 			custom_effect_tooltip = airplane_launcher_advice_tt
 		}
-
 
 		research_cost = 0.75
 
@@ -719,20 +735,15 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 2
-
+			# DAI --
+			base = 0
+			# Wait Before Researching.
 			modifier = {
-				has_navy_size = { size < 20 }
-				factor = 0.1
+				add = 1
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1940.1.1
 			}
-			modifier = {
-				factor = 3.5
-				OR = {
-					tag = GER
-					tag = JAP
-					tag = USA
-				}
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -745,6 +756,8 @@ technologies = {
 			mio_cat_tech_all_cruiser_and_modules
 		}
 	}
+
+
 	basic_cruiser_armor_scheme = {
 
 		enable_equipment_modules = {
@@ -760,8 +773,8 @@ technologies = {
 		}
 
 		XOR = {
-            
-        }
+			
+		}
 
 		xp_research_type = navy
 		xp_boost_cost = 50
@@ -776,16 +789,15 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
+			# Need the basics.
 			modifier = {
-				factor = 3
-				OR = {
-					tag = ENG
-					tag = JAP
-					tag = USA
-				}
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -799,13 +811,9 @@ technologies = {
 		}
 	}
 
-
-#  # ###  ##  #   # #   #      ## #  # ### ###   ##
-#  # #   #  # #   #  # #      #   #  #  #  #  # #
-#### ##  ####  # #    #        #  ####  #  ###   #
-#  # #   #  #  # #    #         # #  #  #  #      #
-#  # ### #  #   #     #       ##  #  # ### #    ##
-
+	# ==================================================
+	#   HEAVY SHIPS / BATTLESHIPS
+	# ==================================================
 
 	early_ship_hull_heavy = {
 
@@ -824,7 +832,6 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-
 		research_cost = 1.75
 
 		start_year = 1922
@@ -835,24 +842,15 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
+			# Need the basics.
 			modifier = {
-				factor = 2
-				OR = {
-					tag = ENG
-					tag = JAP
-					tag = USA
-				}
+				add = 100
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
-			modifier = {
-				is_major = yes
-				factor = 2
-			}
-			modifier = {
-				is_major = no
-				factor = 0
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -862,6 +860,7 @@ technologies = {
 			mio_cat_tech_all_capital_ship_and_modules
 		}
 	}
+
 
 	basic_ship_hull_heavy = {
 
@@ -894,24 +893,15 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
+			# Need the basics.
 			modifier = {
-				factor = 2
-				OR = {
-					tag = ENG
-					tag = JAP
-					tag = USA
-				}
+				add = 100
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
-			modifier = {
-				is_major = yes
-				factor = 2
-			}
-			modifier = {
-				is_major = no
-				factor = 0
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -921,6 +911,8 @@ technologies = {
 			mio_cat_tech_all_capital_ship_and_modules
 		}
 	}
+
+
 	ship_hull_super_heavy = {
 
 		enable_equipments = {
@@ -936,12 +928,10 @@ technologies = {
 		start_year = 1936
 
 		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 25
-				tag = JAP
-			}
+			# DAI --
+			# Not for now...
+			base = 0
+			# -- DAI
 		}
 
 		categories = {
@@ -951,6 +941,7 @@ technologies = {
 			mio_cat_tech_all_capital_ship_and_modules
 		}
 	}
+
 
 	improved_ship_hull_heavy = {
 
@@ -975,16 +966,13 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 5
-				tag = USA
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
-			modifier = {
-				is_major = no
-				factor = 0
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -994,6 +982,7 @@ technologies = {
 			mio_cat_tech_all_capital_ship_and_modules
 		}
 	}
+
 
 	advanced_ship_hull_heavy = {
 
@@ -1013,17 +1002,13 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 5
-				tag = USA
-
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
-			modifier = {
-				is_major = no
-				factor = 0
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1034,6 +1019,7 @@ technologies = {
 		}
 	}
 
+
 	basic_heavy_armor_scheme = {
 
 		enable_equipment_modules = {
@@ -1042,7 +1028,6 @@ technologies = {
 			ship_armor_cruiser_3
 		}
 
-
 		on_research_complete = {
 			custom_effect_tooltip = heavy_armor_advice_tt
 		}
@@ -1050,7 +1035,6 @@ technologies = {
 			leads_to_tech = improved_heavy_armor_scheme
 			research_cost_coeff = 1
 		}
-
 
 		xp_research_type = navy
 		xp_boost_cost = 50
@@ -1065,16 +1049,14 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 2
-				OR = {
-					tag = ENG
-					tag = JAP
-					tag = USA
-				}
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1085,6 +1067,7 @@ technologies = {
 			mio_cat_tech_all_capital_ship_and_modules
 		}
 	}
+
 
 	improved_heavy_armor_scheme = {
 
@@ -1098,7 +1081,6 @@ technologies = {
 			custom_effect_tooltip = heavy_armor_advice_tt
 		}
 
-
 		xp_research_type = navy
 		xp_boost_cost = 50
 		xp_research_bonus = 1.25
@@ -1110,19 +1092,15 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 4
-				OR = {
-					tag = ENG
-					tag = USA
-				}
-			}
-			modifier = {
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 				has_tech = improved_ship_hull_heavy
-				factor = 2
+				date > 1938.1.1 # Soft limit to focus industry first.
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1134,13 +1112,11 @@ technologies = {
 		}
 	}
 
- ##   ##  ###  ###  ### ### ###   ##
-#  # #  # #  # #  #  #  #   #  # #
-#    #### ###  ###   #  ##  ###   #
-#  # #  # #  # #  #  #  #   #  #   #
- ##  #  # #  # #  # ### ### #  # ##
+	# ==================================================
+	#   CARRIERS
+	# ==================================================
 
-early_ship_hull_carrier = {
+	early_ship_hull_carrier = {
 
 		enable_equipments = {
 			ship_hull_carrier_conversion_bb
@@ -1168,16 +1144,14 @@ early_ship_hull_carrier = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 8
-				OR = {
-					tag = ENG
-					tag = JAP
-					tag = USA
-				}
+				add = 10
+				DAI_Should_Research_Navy_CARRIER = yes
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1210,16 +1184,14 @@ early_ship_hull_carrier = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 8
-				OR = {
-					tag = ENG
-					tag = JAP
-					tag = USA
-				}
+				add = 10
+				DAI_Should_Research_Navy_CARRIER = yes
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1252,16 +1224,13 @@ early_ship_hull_carrier = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 8
-				OR = {
-					tag = ENG
-					tag = JAP
-					tag = USA
-				}
+				add = 15
+				DAI_Should_Research_Navy_CARRIER = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1289,16 +1258,13 @@ early_ship_hull_carrier = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 8
-				OR = {
-					tag = ENG
-					tag = JAP
-					tag = USA
-				}
+				add = 15
+				DAI_Should_Research_Navy_CARRIER = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1308,11 +1274,9 @@ early_ship_hull_carrier = {
 		}
 	}
 
-#             ## #  # ###  #   #  ##  ###  ### #  # ###  ##
-#{~._.~}     #   #  # #  # ## ## #  # #  #  #  ## # #   #
-# ( Y )       #  #  # ###  # # # #### ###   #  # ## ##   #
-#()~*~()       # #  # #  # #   # #  # #  #  #  #  # #     #
-#(_)-(_)     ##   ##  ###  #   # #  # #  # ### #  # ### ##
+	# ==================================================
+	#   SUBMARINES
+	# ==================================================
 
 	early_ship_hull_submarine = {
 
@@ -1340,15 +1304,18 @@ early_ship_hull_carrier = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
+			# Need the basics.
 			modifier = {
-				factor = 7
-				OR = {
-					tag = GER
-					tag = USA
+				add = 100
+				OR ={
+					DAI_Should_Research_Navy_GENERAL = yes
+					DAI_Should_Research_Navy_SUBMARINE = yes
 				}
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1357,6 +1324,7 @@ early_ship_hull_carrier = {
 			mio_cat_tech_all_submarine_and_modules
 		}
 	}
+
 
 	basic_ship_hull_submarine = {
 
@@ -1382,15 +1350,18 @@ early_ship_hull_carrier = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
+			# Need the basics.
 			modifier = {
-				factor = 7
-				OR = {
-					tag = GER
-					tag = USA
+				add = 100
+				OR ={
+					DAI_Should_Research_Navy_GENERAL = yes
+					DAI_Should_Research_Navy_SUBMARINE = yes
 				}
+				date > 1937.1.1 # Soft limit to focus industry first.
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1399,6 +1370,7 @@ early_ship_hull_carrier = {
 			mio_cat_tech_all_submarine_and_modules
 		}
 	}
+
 
 	improved_ship_hull_submarine = {
 
@@ -1431,21 +1403,14 @@ early_ship_hull_carrier = {
 
 		ai_will_do = {
 			# DAI --
-			factor = 1
-
+			base = 0
 			modifier = {
-				factor = 100
-				date > 1939.1.1
-				original_tag = GER
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
-
 			modifier = {
-				factor = 100
-				date > 1940.1.1
-				OR = {
-					original_tag = USA
-					original_tag = JAP
-				}
+				add = 10
+				DAI_Should_Research_Navy_SUBMARINE = yes
 			}
 			# -- DAI
 		}
@@ -1456,6 +1421,7 @@ early_ship_hull_carrier = {
 			mio_cat_tech_all_submarine_and_modules
 		}
 	}
+
 
 	advanced_ship_hull_submarine = {
 
@@ -1478,16 +1444,14 @@ early_ship_hull_carrier = {
 
 		ai_will_do = {
 			# DAI --
-			factor = 1
-
+			base = 0
 			modifier = {
-				factor = 100
-				date > 1943.1.1
-				OR = {
-					original_tag = GER
-					original_tag = USA
-					original_tag = JAP
-				}
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
+			}
+			modifier = {
+				add = 10
+				DAI_Should_Research_Navy_SUBMARINE = yes
 			}
 			# -- DAI
 		}
@@ -1498,6 +1462,7 @@ early_ship_hull_carrier = {
 			mio_cat_tech_all_submarine_and_modules
 		}
 	}
+
 
 	basic_submarine_snorkel = {
 
@@ -1521,22 +1486,17 @@ early_ship_hull_carrier = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 7
-				OR = {
-					tag = GER
-					tag = HOL
-				}
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
 			modifier = {
-				not = {
-					has_war_with = ENG
-					has_War_with = USA
-				}
-				factor = 0.5
+				add = 10
+				DAI_Should_Research_Navy_SUBMARINE = yes
 			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1546,6 +1506,7 @@ early_ship_hull_carrier = {
 			mio_cat_tech_all_submarine_and_modules
 		}
 	}
+
 
 	improved_submarine_snorkel = {
 
@@ -1574,15 +1535,17 @@ early_ship_hull_carrier = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 7
-				OR = {
-					tag = GER
-					tag = HOL
-				}
+				add = 10
+				DAI_Should_Research_Navy_GENERAL = yes
 			}
+			modifier = {
+				add = 10
+				DAI_Should_Research_Navy_SUBMARINE = yes
+			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1592,6 +1555,11 @@ early_ship_hull_carrier = {
 			mio_cat_tech_all_submarine_and_modules
 		}
 	}
+
+	# ==================================================
+	#   OTHER
+	# ==================================================
+
 	###Special snowflake hulls for special snowflake nations
 	panzerschiffe = {
 

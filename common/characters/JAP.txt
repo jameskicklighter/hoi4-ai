@@ -62,7 +62,7 @@ characters={
 				grand_battle_plan_expert
 			}
 			ai_will_do = {
-				factor = 1.000
+				base = 0
 			}
 		}
 
@@ -97,7 +97,7 @@ characters={
 				military_theorist
 			}
 			ai_will_do = {
-				factor = 0
+				base = 0
 			}
 		}
 		
@@ -132,7 +132,7 @@ characters={
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 0
+				base = 0
 			}
 		}
 		
@@ -224,10 +224,10 @@ characters={
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 1.000
+				base = 2
 				modifier = {
+					add = 100
 					has_idea_with_trait = navy_chief_decisive_battle_2
-					factor = 999.000
 				}
 			}
 		}
@@ -357,7 +357,7 @@ characters={
 			}
 			cost =  50
 			ai_will_do = {
-				factor = 0
+				base = 0
 			}
 		}
 		
@@ -622,10 +622,10 @@ characters={
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 1.000
+				base = 1
 				modifier = {
+					add = 100
 					has_idea_with_trait = naval_aviation_pioneer
-					factor = 999.000
 				}
 			}
 		}
@@ -701,10 +701,10 @@ characters={
 				naval_aviation_pioneer
 			}
 			ai_will_do = {
-				factor = 1.000
+				base = 1
 				modifier = {
-					has_idea_with_trait = air_chief_night_operations_1
-					factor = 999.000
+					add = 100
+					has_idea_with_trait = air_chief_ground_support_1
 				}
 			}
 		}
@@ -837,7 +837,7 @@ characters={
 			}
 			cost =  50
 			ai_will_do = {
-				factor = 1.000
+				base = 0
 			}
 		}
 		
@@ -975,7 +975,7 @@ characters={
 				naval_theorist
 			}
 			ai_will_do = {
-				factor = 1.000
+				base = 0
 			}
 		}
 	}
@@ -999,7 +999,7 @@ characters={
 				assault_avaition
 			}
 			ai_will_do = {
-				factor = 0
+				base = 0
 			}
 		}
 	}
@@ -1021,7 +1021,7 @@ characters={
 			}
 			traits = { air_warfare_theorist }
 			ai_will_do = {
-				factor = 0
+				base = 0
 			}
 		}
 	}
@@ -1048,7 +1048,7 @@ characters={
 				nuclear_scientist
 			}
 			ai_will_do = {
-				factor = 0
+				base = 0
 			}
 		}
 	}
@@ -1075,7 +1075,7 @@ characters={
 				rocket_scientist
 			}
 			ai_will_do = {
-				factor = 0
+				base = 0
 			}
 		}
 	}
@@ -1101,7 +1101,7 @@ characters={
 			}
 			cost =  50
 			ai_will_do = {
-				factor = 0
+				base = 0
 			}
 		}
 	}
@@ -1127,7 +1127,7 @@ characters={
 			}
 			cost = 200
 			ai_will_do = {
-				factor = 0
+				base = 0
 			}
 		}
 	}
@@ -1150,10 +1150,10 @@ characters={
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 1.000
+				base = 5
 				modifier = {
+					add = 100
 					has_idea_with_trait = silent_workhorse
-					factor = 999.000
 				}
 			}
 		}
@@ -1179,7 +1179,7 @@ characters={
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 1.000
+				base = 0
 			}
 		}
 	}
@@ -1202,7 +1202,7 @@ characters={
 			}
 			cost =  50
 			ai_will_do = {
-				factor = 0
+				base = 0
 			}
 		}
 	}
@@ -1225,10 +1225,10 @@ characters={
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 1.000
+				base = 4
 				modifier = {
+					add = 100
 					has_idea_with_trait = army_chief_morale_2
-					factor = 999.000
 				}
 			}
 		}
@@ -1257,11 +1257,7 @@ characters={
 			}
 			cost =  50
 			ai_will_do = {
-				factor = 1.000
-				modifier = {
-					has_idea_with_trait = war_industrialist
-					factor = 999.000
-				}
+				base = 0
 			}
 		}
 	}
@@ -1284,7 +1280,11 @@ characters={
 			}
 			cost =  50
 			ai_will_do = {
-				factor = 1.000
+				base = 3
+				modifier = {
+					add = 100
+					has_idea_with_trait = war_industrialist
+				}
 			}
 		}
 	}
@@ -1319,7 +1319,7 @@ characters={
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 1.000
+				base = 0
 			}
 		}
 	}
@@ -1343,7 +1343,7 @@ characters={
 			}
 			cost =  50
 			ai_will_do = {
-				factor = 0
+				base = 0
 			}
 		}
 	}
@@ -1367,7 +1367,11 @@ characters={
 			}
 			cost = 200
 			ai_will_do = {
-				factor = 1.000
+				base = 0.5
+				modifier = {
+					add = 100
+					has_idea_with_trait = army_logistics_2
+				}
 			}
 		}
 	}
@@ -1391,7 +1395,7 @@ characters={
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 1.000
+				base = 0
 			}
 		}
 	}
@@ -1415,7 +1419,7 @@ characters={
 			}
 			cost = 100
 			ai_will_do = {
-				factor = 1.000
+				base = 0
 			}
 		}
 	}
@@ -1461,10 +1465,10 @@ characters={
 				}
 			}
 			ai_will_do = {
-				factor = 1.000
+				base = 0
 				modifier = {
-					NOT = { has_government = communism }
-					factor = 0
+					add = 100
+					has_completed_focus = JAP_the_unthinkable_option 
 				}
 			}
 		}
@@ -1508,10 +1512,10 @@ characters={
 				}
 			}
 			ai_will_do = {
-				factor = 1.000
+				base = 0
 				modifier = {
-					NOT = { has_government = democratic }
-					factor = 0
+					add = 100
+					has_completed_focus = JAP_strengthen_civilian_government 
 				}
 			}
 		}
@@ -1549,9 +1553,9 @@ characters={
 				}
 			}
 			ai_will_do = {
-				factor = 0
+				base = 0
 			}
-		}		
+		}
 	}
 
 	JAP_mitsumasa_yonai={
@@ -1571,7 +1575,7 @@ characters={
 				silent_workhorse 
 			}
 			ai_will_do = {
-				factor = 999.000
+				base = 999
 			}
 		}
 	}
@@ -1593,7 +1597,7 @@ characters={
 				prince_of_terror 
 			}
 			ai_will_do = {
-				factor = 1.000
+				base = 0
 			}
 		}
 	}
@@ -1614,7 +1618,10 @@ characters={
 			traits = {
 				compassionate_gentleman 
 			}
-		}		
+			ai_will_do = {
+				base = 0
+			}
+		}
 	}
 
 	JAP_takuo_godo={
@@ -1634,10 +1641,10 @@ characters={
 				war_industrialist 
 			}
 			ai_will_do = {
-				factor = 1.000
+				base = 5
 				modifier = {
+					add = 100
 					has_idea_with_trait = army_infantry_2
-					factor = 999.000
 				}
 			}
 		}

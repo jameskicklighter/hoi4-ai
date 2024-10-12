@@ -2,535 +2,100 @@
 #	AI Divisions mod - decisions
 ############################################################################################################
 
-# DAI_division_decisions  = {
+DAI_division_template_decisions = {
 
-# 	# China should focus on guns early. So make special templates.
-# 	AI_INFANTRY_CHI_14w_cheap = {
-# 		icon = rifles
-# 		visible = {
-# 			is_ai = yes
-# 			is_literally_china = yes
-# 		}
-# 		available = {
-# 			is_literally_china = yes
-# 			has_army_experience > 5
-# 		}
-# 		cost = 0
-# 		fire_only_once = yes
-# 		ai_will_do = {
-# 			factor = 9999
-# 		}
-# 		complete_effect = {
-# 			hidden_effect = {
-# 				army_experience = -5
-# 			}
-# 		}
-# 		complete_effect = {
-# 			division_template = {
-# 				name = "14w CHI Infantry Cheap"
-# 				regiments = {
-# 					infantry = { x = 0 y = 0 }
-# 					infantry = { x = 0 y = 1 }
-# 					infantry = { x = 0 y = 2 }
-# 					infantry = { x = 0 y = 3 }
-# 					infantry = { x = 1 y = 0 }
-# 					infantry = { x = 1 y = 1 }
-# 					infantry = { x = 1 y = 2 }
-# 				}
-# 			}
-# 		}
-# 	}
+	AI_Infantry_Prototype_18w = {
+		icon = rifles
+		visible = {
+			is_ai = yes
+			NOT = { original_tag = JAP }
+		}
+		available = {
+			always = yes
+		}
+		cost = 0
 
-# 	AI_INFANTRY_CHI_14w_upgrade = {
-# 		icon = rifles
-# 		visible = {
-# 			is_ai = yes
-# 			is_literally_china = yes
-# 		}
-# 		available = {
-# 			has_army_experience > 10
-# 			is_literally_china = yes
-# 		}
-# 		cost = 0
-# 		fire_only_once = yes
-# 		ai_will_do = {
-# 			base = 0
-# 			modifier = {
-# 				add = 100
-# 				OR = {
-# 					AND = {
-# 						date > 1938.1.1
-# 						num_of_military_factories > 15
-# 					}
-# 					date > 1939.7.1
-# 				}
-# 			}
-# 		}
-# 		complete_effect = {
-# 			hidden_effect = {
-# 				army_experience = -10
-# 			}
-# 		}
-# 		complete_effect = {
-# 			division_template = {
-# 				name = "14w CHI Infantry"
-# 				regiments = {
-# 					infantry = { x = 0 y = 0 }
-# 					infantry = { x = 0 y = 1 }
-# 					infantry = { x = 0 y = 2 }
-# 					infantry = { x = 0 y = 3 }
-# 					infantry = { x = 1 y = 0 }
-# 					infantry = { x = 1 y = 1 }
-# 					infantry = { x = 1 y = 2 }
-# 				}
-# 				support = {
-# 					artillery = { x = 0 y = 0 }
-# 				}
-# 			}
-# 		}
-# 	}
+		fire_only_once = yes
 
-# 	AI_INFANTRY_CHI_14w_upgrade = {
-# 		icon = rifles
-# 		visible = {
-# 			is_ai = yes
-# 			is_literally_china = yes
-# 		}
-# 		available = {
-# 			has_army_experience > 10
-# 			is_literally_china = yes
-# 		}
-# 		cost = 0
-# 		fire_only_once = yes
-# 		ai_will_do = {
-# 			base = 0
-# 			modifier = {
-# 				add = 100
-# 				OR = {
-# 					AND = {
-# 						date > 1938.1.1
-# 						num_of_military_factories > 15
-# 					}
-# 					date > 1939.7.1
-# 				}
-# 			}
-# 		}
-# 		complete_effect = {
-# 			hidden_effect = {
-# 				army_experience = -10
-# 			}
-# 		}
-# 		complete_effect = {
-# 			division_template = {
-# 				name = "14w CHI Infantry"
-# 				regiments = {
-# 					infantry = { x = 0 y = 0 }
-# 					infantry = { x = 0 y = 1 }
-# 					infantry = { x = 0 y = 2 }
-# 					infantry = { x = 0 y = 3 }
-# 					infantry = { x = 1 y = 0 }
-# 					infantry = { x = 1 y = 1 }
-# 					infantry = { x = 1 y = 2 }
-# 				}
-# 				support = {
-# 					artillery = { x = 0 y = 0 }
-# 				}
-# 			}
-# 		}
-# 	}
+		ai_will_do = {
+			base = 100
+		}
 
-# 	# Generic Cheap Template
-# 	AI_INFANTRY_14w = {
-# 		icon = rifles
-# 		visible = {
-# 			is_ai = yes
-# 		}
-# 		available = {
-# 			has_army_experience > 15
-# 			NOT = {
-# 				OR = {
-# 					original_tag = ENG
-# 					original_tag = FRA
-# 					original_tag = GER
-# 					original_tag = ITA
-# 					original_tag = JAP
-# 					original_tag = SOV
-# 					original_tag = USA
-# 				}
-# 			}
-# 		}
-# 		cost = 0
-# 		fire_only_once = yes
-# 		ai_will_do = {
-# 			base = 0 
-# 			modifier = {
-# 				add = 100
-# 				is_literally_china = no
-# 				date > 1936.7.1
-# 			}
-# 			modifier = {
-# 				add = 100
-# 				is_literally_china = yes
+		complete_effect = {
+		}
 
-# 			}
-# 		}
-# 		complete_effect = {
-# 			hidden_effect = {
-# 				army_experience = -10
-# 			}
-# 		}
-# 		complete_effect = {
-# 			division_template = {
-# 				name = "14w Infantry"
-# 				regiments = {
-# 					infantry = { x = 0 y = 0 }
-# 					infantry = { x = 0 y = 1 }
-# 					infantry = { x = 0 y = 2 }
-# 					infantry = { x = 0 y = 3 }
-# 					infantry = { x = 1 y = 0 }
-# 					infantry = { x = 1 y = 1 }
-# 					infantry = { x = 1 y = 2 }
-# 				}
-# 				support = {
-# 					engineer = { x = 0 y = 0 }
-# 					artillery = { x = 0 y = 1 }
-# 				}
-# 			}
-# 		}
-# 	}
+		complete_effect = {
+			division_template = {
+				name = "Infantry template 1"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+				}
+				support = {
+					artillery = { x = 0 y = 0 }
+				}
+			}
+		}
+	}
 
+	AI_Infantry_Prototype_18w_JAP = {
+		icon = rifles
+		visible = {
+			is_ai = yes
+			original_tag = JAP
+		}
+		available = {
+			always = yes
+		}
+		cost = 0
 
+		fire_only_once = yes
 
+		ai_will_do = {
+			base = 100
+		}
 
-# 	AI_set_up_templates_infantry_heavy = {
-# 		icon = rifles
+		complete_effect = {
+		}
 
-# 		visible = {
-# 			is_ai = yes
-# 		}
+		complete_effect = {
+			division_template = {
+				name = "Infantry template 1"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+					recon = { x = 0 y = 2 }
+				}
+			}
+		}
+	}
 
-# 		# available = {
-# 		# 	NOT = { has_country_flag = KR_set_up_ai_templates1 }
-# 		# }
-
-# 		available = {
-# 			has_tech = interwar_antitank 
-# 			has_tech = interwar_antiair
-# 		}
-
-# 		custom_cost_trigger = {
-# 			has_army_experience > 40
-# 		}
-
-# 		custom_cost_text = decision_cost_army_xp_40
-		
-# 		fire_only_once = yes
-
-# 		ai_will_do = {
-# 			factor = 0
-# 		}
-
-# 		complete_effect = {
-# 			hidden_effect = {
-# 				army_experience = -40
-# 			}
-# 		}
-
-# 		complete_effect = {
-# 			# set_country_flag = KR_set_up_ai_templates1
-# 			division_template = {
-# 				name = "Assault Infantry Division"
-# 				regiments = {
-# 					infantry = { x = 0 y = 0 }
-# 					infantry = { x = 0 y = 1 }
-# 					infantry = { x = 0 y = 2 }
-# 					infantry = { x = 0 y = 3 }
-# 					infantry = { x = 0 y = 4 }
-# 					infantry = { x = 1 y = 0 }
-# 					infantry = { x = 1 y = 1 }
-# 					infantry = { x = 1 y = 2 }
-# 					infantry = { x = 1 y = 3 }
-# 					infantry = { x = 1 y = 4 }
-# 					infantry = { x = 2 y = 0 }
-# 					infantry = { x = 2 y = 1 }
-# 					infantry = { x = 2 y = 2 }
-# 					artillery_brigade = { x = 3 y = 0 }
-# 					artillery_brigade = { x = 3 y = 1 }
-# 					artillery_brigade = { x = 3 y = 2 }
-# 					artillery_brigade = { x = 3 y = 3 }
-# 					anti_air_brigade = { x = 4 y = 0 }
-# 					anti_tank_brigade = { x = 4 y = 1 }
-# 				}
-# 				support = {
-# 					engineer = { x = 0 y = 0 }
-# 					artillery = { x = 0 y = 1 }
-# 					field_hospital = { x = 0 y = 2 }
-# 					anti_air = { x = 0 y = 3 }
-# 				}
-# 			}
-# 		}
-# 	}
-
-# 	AI_set_up_templates_motorized = {
-# 		icon = rifles
-
-# 		visible = {
-# 			is_ai = yes
-# 		}
-
-# 		# available = {
-# 		# 	NOT = { has_country_flag = KR_set_up_ai_templates50 }
-# 		# }
-		
-# 		available = {
-# 			has_tech = motorised_infantry   
-# 		}
-
-# 		custom_cost_trigger = {
-# 			has_army_experience > 30
-# 		}
-
-# 		custom_cost_text = decision_cost_army_xp_30
-		
-# 		fire_only_once = yes
-
-# 		ai_will_do = {
-# 			factor = 0
-# 		}
-		
-# 		complete_effect = {
-# 			hidden_effect = {
-# 				army_experience = -30
-# 			}
-# 		}
-
-# 		complete_effect = {
-# 			# set_country_flag = KR_set_up_ai_templates50
-# 			division_template = {
-# 				name = "Assault Motorized Infantry Division"
-# 				regiments = {
-# 					motorized = { x = 0 y = 0 }
-# 					motorized = { x = 0 y = 1 }
-# 					motorized = { x = 0 y = 2 }
-# 					motorized = { x = 0 y = 3 }
-# 					motorized = { x = 1 y = 0 }
-# 					motorized = { x = 1 y = 1 }
-# 					motorized = { x = 1 y = 2 }
-# 					motorized = { x = 1 y = 3 }
-# 					motorized = { x = 2 y = 0 }
-# 					motorized = { x = 2 y = 1 }
-# 					motorized = { x = 2 y = 2 }
-# 					mot_artillery_brigade = { x = 3 y = 0 }
-# 					mot_artillery_brigade = { x = 3 y = 1 }
-# 					mot_anti_tank_brigade = { x = 3 y = 2 }
-# 					mot_anti_air_brigade = { x = 3 y = 2 }
-# 				}
-# 				support = {
-# 					engineer = { x = 0 y = 0 }
-# 					mot_recon = { x = 0 y = 1 }
-# 					artillery = { x = 0 y = 2 }
-# 				}
-# 			}
-# 		}
-# 	}
-
-
-# 	AI_set_up_templates_mechanized = {
-# 		icon = rifles
-
-# 		visible = {
-# 			is_ai = yes
-# 		}
-
-# 		# available = {
-# 		# 	NOT = { has_country_flag = KR_set_up_ai_templates3 }
-# 		# }
-		
-# 		available = {
-# 			has_tech = mechanised_infantry
-# 		}
-
-# 		custom_cost_trigger = {
-# 			has_army_experience > 50
-# 		}
-
-# 		custom_cost_text = decision_cost_army_xp_50
-		
-# 		fire_only_once = yes
-
-# 		ai_will_do = {
-# 			factor = 0
-# 		}
-		
-# 		complete_effect = {
-# 			hidden_effect = {
-# 				army_experience = -50
-# 			}
-# 		}
-
-# 		complete_effect = {
-# 			# set_country_flag = KR_set_up_ai_templates3
-# 			division_template = {
-# 				name = "Assault Mechanized Infantry Division"
-# 				regiments = {
-# 					mechanized = { x = 0 y = 0 }
-# 					mechanized = { x = 0 y = 1 }
-# 					mechanized = { x = 0 y = 2 }
-# 					mechanized = { x = 0 y = 3 }
-# 					mechanized = { x = 1 y = 0 }
-# 					mechanized = { x = 1 y = 1 }
-# 					mechanized = { x = 1 y = 2 }
-# 					mechanized = { x = 1 y = 3 }
-# 					mechanized = { x = 2 y = 0 }
-# 					mechanized = { x = 2 y = 1 }
-# 					mot_artillery_brigade = { x = 3 y = 0 }
-# 					mot_artillery_brigade = { x = 3 y = 1 }
-# 					mot_artillery_brigade = { x = 3 y = 2 }
-# 					mot_anti_tank_brigade = { x = 3 y = 3 }
-# 				}
-# 				support = {
-# 					anti_air = { x = 0 y = 0 }
-# 					mot_recon = { x = 0 y = 1 }
-# 					engineer = { x = 0 y = 2 }
-# 				}
-# 			}
-# 		}
-# 	}
-
-# 	AI_set_up_templates_marines = {
-# 		icon = rifles
-
-# 		visible = {
-# 			is_ai = yes
-# 		}
-
-# 		# available = {
-# 		# 	NOT = { has_country_flag = KR_set_up_ai_templates7 }
-# 		# }
-		
-# 		available = {
-# 			has_tech = marines   
-# 		}
-
-# 		custom_cost_trigger = {
-# 			has_army_experience > 30
-# 		}
-
-# 		custom_cost_text = decision_cost_army_xp_30
-# 		fire_only_once = yes
-
-# 		ai_will_do = {
-# 			factor = 0
-# 		}
-		
-# 		complete_effect = {
-# 			hidden_effect = {
-# 				army_experience = -25
-# 			}
-# 		}
-
-# 		complete_effect = {
-# 			# set_country_flag = KR_set_up_ai_templates7
-# 			division_template = {
-# 				name = "Assault Marines Division"
-# 				regiments = {
-# 					marine = { x = 0 y = 0 }
-# 					marine = { x = 0 y = 1 }
-# 					marine = { x = 0 y = 2 }
-# 					marine = { x = 0 y = 3 }
-# 					marine = { x = 1 y = 0 }
-# 					marine = { x = 1 y = 1 }
-# 					marine = { x = 1 y = 2 }
-# 					marine = { x = 1 y = 3 }
-# 					marine = { x = 2 y = 0 }
-# 					marine = { x = 2 y = 1 }
-# 					marine = { x = 2 y = 2 }
-# 					marine = { x = 2 y = 3 }
-# 					marine = { x = 3 y = 0 }
-# 					artillery_brigade = { x = 4 y = 0 }
-# 					artillery_brigade = { x = 4 y = 1 }
-# 					artillery_brigade = { x = 4 y = 2 }
-# 				}
-# 				support = {
-# 					engineer = { x = 0 y = 0 }
-# 					rangers_support = { x = 0 y = 1 }
-# 					anti_air = { x = 0 y = 2 }
-# 				}
-# 			}
-# 		}
-# 	}
-
-# 	AI_set_up_templates_mountaineers = {
-# 		icon = rifles
-
-# 		visible = {
-# 			is_ai = yes
-# 		}
-
-# 		# available = {
-# 		# 	NOT = { has_country_flag = KR_set_up_ai_templates8 }
-# 		# }
-		
-# 		available = {
-# 			has_tech = tech_mountaineers
-# 		}
-
-# 		custom_cost_trigger = {
-# 			has_army_experience > 30
-# 		}
-
-# 		custom_cost_text = decision_cost_army_xp_30
-		
-# 		fire_only_once = yes
-
-# 		ai_will_do = {
-# 			factor = 0
-# 		}
-		
-# 		complete_effect = {
-# 			hidden_effect = {
-# 				army_experience = -30
-# 			}
-# 		}
-
-# 		complete_effect = {
-# 				# set_country_flag = KR_set_up_ai_templates8
-# 				division_template = {
-# 					name = "Assault Mountaineers Division"
-# 					regiments = {
-# 						mountaineers = { x = 0 y = 0 }
-# 						mountaineers = { x = 0 y = 1 }
-# 						mountaineers = { x = 0 y = 2 }
-# 						mountaineers = { x = 0 y = 3 }
-# 						mountaineers = { x = 1 y = 0 }
-# 						mountaineers = { x = 1 y = 1 }
-# 						mountaineers = { x = 1 y = 2 }
-# 						mountaineers = { x = 1 y = 3 }
-# 						artillery_brigade = { x = 2 y = 0 }
-# 						artillery_brigade = { x = 2 y = 1 }
-# 						artillery_brigade = { x = 2 y = 2 }
-# 					}
-# 					support = {
-# 						engineer = { x = 0 y = 0 }
-# 						mot_recon = { x = 0 y = 1 }
-# 						artillery = { x = 0 y = 2 }
-# 					}
-# 				}
-# 			}
-# 		}
-
-		
-
-# }
-
-DAI_division_decisions_armor = {
-
-	AI_Medium_Armor_Prototype = {
+	AI_Medium_Armor_Prototype_Major = {
 		icon = rifles
 		visible = {
 			is_ai = yes
 		}
 		available = {
+			always = yes
+			DAI_should_build_tanks = yes
 			OR = {
 				has_tech = basic_medium_tank_chassis
 				has_tech = basic_medium_tank
@@ -538,19 +103,13 @@ DAI_division_decisions_armor = {
 		}
 		cost = 0
 
-		# custom_cost_trigger = {
-		# 	has_army_experience > 30
-		# }
-
-		# custom_cost_text = decision_cost_army_xp_45
-		
 		fire_only_once = yes
 
 		ai_will_do = {
 			base = 0
 			modifier = {
 				add = 100
-				date > 1936.12.1
+				# date > 1936.12.1
 				DAI_should_build_tanks = yes
 			}
 		}
@@ -563,483 +122,413 @@ DAI_division_decisions_armor = {
 
 		complete_effect = {
 			division_template = {
-				name = "Medium Armor Prototype"
+				name = "Medium Armor Prototype Major"
 				regiments = {
 					medium_armor = { x = 0 y = 0 }
 					medium_armor = { x = 0 y = 1 }
 					medium_armor = { x = 0 y = 2 }
 					medium_armor = { x = 1 y = 0 }
 					medium_armor = { x = 1 y = 1 }
+					medium_armor = { x = 1 y = 2 }
 					motorized = { x = 2 y = 0 }
 					motorized = { x = 2 y = 1 }
 					motorized = { x = 2 y = 2 }
-					motorized = { x = 2 y = 3 }
+					motorized = { x = 3 y = 0 }
+					motorized = { x = 3 y = 1 }
+					motorized = { x = 3 y = 2 }
 				}
 				support = {
-					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
+					# engineer = { x = 0 y = 0 }
+					# signal_company = { x = 0 y = 1 }
+					# maintenance_company = { x = 0 y = 2 }
 				}
 			}
 		}
 	}
 
-	# AI_set_up_templates_medium_armor_mech_25 = {
-	# 	icon = rifles
+}
 
-	# 	visible = {
-	# 		is_ai = yes
-	# 	}
+DAI_disband_starting_units_decisions = {
 
-	# 	# available = {
-	# 	# 	NOT = { has_country_flag = KR_set_up_ai_templates12 }
-	# 	# }
-		
-	# 	# available = {
-	# 	# 	num_of_military_factories > 20
-	# 	# 	num_of_military_factories < 50
-	# 	# }
-		
-	# 	available = {
-	# 		OR = {
-	# 		has_tech = improved_medium_tank_chassis  
-	# 		has_tech = improved_medium_tank  
-	# 		}
-	# 	}
-		
-	# 	available = {
-	# 		OR = {
-	# 		has_tech = mechanised_infantry  
-	# 		}
-	# 	}
+	# ==================== #
+	# ====   EUROPE   ==== #
+	# ==================== #
 
-	# 	custom_cost_trigger = {
-	# 		has_army_experience > 45
-	# 	}
+	ENG_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = ENG }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
 
-	# 	custom_cost_text = decision_cost_army_xp_45
-		
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Cavalry Brigade"
+					disband = yes
+				}
+				# Light Tank
+				delete_units = {
+					division_template = "Tank Brigade"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	FRA_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = FRA }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Division de Cavalerie"
+					disband = yes
+				}
+				# Motorized
+				delete_units = {
+					division_template = "Division d'Infanterie Motorisée"
+					disband = yes
+				}
+				# Light Tank
+				delete_units = {
+					division_template = "Brigade de Chars de Combat"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	GER_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = GER }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Mountaineers
+				delete_units = {
+					division_template = "Gebirgs-Brigade"
+					disband = yes
+				}
+				# Cavalry
+				delete_units = {
+					division_template = "Kavallerie-Brigade"
+					disband = yes
+				}
+				# Motorized
+				delete_units = {
+					division_template = "Infanterie-Division (mot.)"
+					disband = yes
+				}
+				# Light Tank
+				delete_units = {
+					division_template = "Panzer-Division"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	GRE_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = GRE }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Merarchía Ippikoú"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	HUN_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = HUN }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Huszár Dandár"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	# TODO
+	# ITA_disband_useless_starting_divisions = {
+	# 	icon = GFX_decision_generic_disband_irregulars
+	# 	allowed = { original_tag = ITA }
+	# 	visible = { is_ai = yes }
+	# 	available = { date < 1936.1.10 }
+	# 	cost = 0
 	# 	fire_only_once = yes
+	# 	ai_will_do = { base = 999 }
 
-	# 	ai_will_do = {
-	# 		factor = 0
-	# 	}
-		
 	# 	complete_effect = {
 	# 		hidden_effect = {
-	# 			army_experience = -45
-	# 		}
-	# 	}
-
-	# 	complete_effect = {
-	# 		# set_country_flag = KR_set_up_ai_templates12
-	# 		division_template = {
-	# 			name = "Medium Mechanized Armored Division (25W)"
-	# 			regiments = {
-	# 				medium_armor = { x = 0 y = 0 }
-	# 				medium_armor = { x = 0 y = 1 }
-	# 				medium_armor = { x = 0 y = 2 }
-	# 				medium_armor = { x = 0 y = 3 }
-	# 				medium_armor = { x = 1 y = 0 }
-	# 				medium_armor = { x = 1 y = 1 }
-	# 				medium_armor = { x = 1 y = 2 }
-	# 				mechanized = { x = 2 y = 0 }
-	# 				mechanized = { x = 2 y = 1 }
-	# 				mechanized = { x = 2 y = 2 }
-	# 				mechanized = { x = 2 y = 3 }
-	# 				medium_tank_destroyer_brigade = { x = 3 y = 0 }
-	# 			}
-	# 			support = {
-	# 				signal_company = { x = 0 y = 0 }
-	# 				mot_recon = { x = 0 y = 1 }
-	# 				anti_air = { x = 0 y = 2 }
-	# 				maintenance_company  = { x = 0 y = 3 }
+	# 			# Cavalry
+	# 			delete_units = {
+	# 				division_template = "Reggimento di Cavalleria"
+	# 				disband = yes
 	# 			}
 	# 		}
 	# 	}
 	# }
 
-	# AI_set_up_templates_armor_30 = {
-	# 	icon = rifles
+	POL_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = POL }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
 
-	# 	visible = {
-	# 		is_ai = yes
-	# 	}
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Brygada Kawalerii"
+					disband = yes
+				}
+			}
+		}
+	}
 
-	# 	# available = {
-	# 	# 	NOT = { has_country_flag = KR_set_up_ai_templates2 }
-	# 	# }
-		
-	# 	# available = {
-	# 	# 	num_of_military_factories > 49
-	# 	# 	num_of_military_factories < 100
-	# 	# }
-		
-	# 	available = {
-	# 		OR = {
-	# 		has_tech = basic_medium_tank_chassis  
-	# 		has_tech = basic_medium_tank  
-	# 		}
-	# 	}
+	ROM_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = ROM }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
 
-	# 	custom_cost_trigger = {
-	# 		has_army_experience > 30
-	# 	}
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Brigada de Cavalerie"
+					disband = yes
+				}
+			}
+		}
+	}
 
-	# 	custom_cost_text = decision_cost_army_xp_45
-		
+	SOV_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = SOV }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Kavaleriyskaya Diviziya"
+					disband = yes
+				}
+				# Motorized
+				delete_units = {
+					division_template = "Motostrelkovaya Diviziya"
+					disband = yes
+				}
+				# Light Tank
+				delete_units = {
+					division_template = "Mekhanizirovaniy Korpus"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	USA_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = USA }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
+
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Cavalry Division"
+					disband = yes
+				}
+			}
+		}
+	}
+
+	# TODO
+	# YUG_disband_useless_starting_divisions = {
+	# 	icon = GFX_decision_generic_disband_irregulars
+	# 	allowed = { original_tag = YUG }
+	# 	visible = { is_ai = yes }
+	# 	available = { date < 1936.1.10 }
+	# 	cost = 0
 	# 	fire_only_once = yes
+	# 	ai_will_do = { base = 999 }
 
-	# 	ai_will_do = {
-	# 		factor = 0
-	# 	}
-		
 	# 	complete_effect = {
 	# 		hidden_effect = {
-	# 			army_experience = -30
-	# 		}
-	# 	}
-
-	# 	complete_effect = {
-	# 		# set_country_flag = KR_set_up_ai_templates2
-	# 		division_template = {
-	# 			name = "Medium Armored Division (30W)"
-	# 			regiments = {
-	# 				medium_armor = { x = 0 y = 0 }
-	# 				medium_armor = { x = 0 y = 1 }
-	# 				medium_armor = { x = 0 y = 2 }
-	# 				medium_armor = { x = 0 y = 3 }
-	# 				medium_armor = { x = 1 y = 0 }
-	# 				medium_armor = { x = 1 y = 1 }
-	# 				medium_armor = { x = 1 y = 2 }
-	# 				motorized = { x = 2 y = 0 }
-	# 				motorized = { x = 2 y = 1 }
-	# 				motorized = { x = 2 y = 2 }
-	# 				motorized = { x = 2 y = 3 }
-	# 				motorized = { x = 3 y = 0 }
-	# 				motorized = { x = 3 y = 1 }
-	# 				motorized = { x = 3 y = 2 }
-	# 				motorized = { x = 3 y = 3 }
-					
-	# 			}
-	# 			support = {
-	# 				signal_company = { x = 0 y = 0 }
-	# 				mot_recon = { x = 0 y = 1 }
-	# 				anti_air = { x = 0 y = 2 }
-	# 				maintenance_company  = { x = 0 y = 3 }
+	# 			# Cavalry
+	# 			delete_units = {
+	# 				division_template = "Konjièka Divizija"
+	# 				disband = yes
 	# 			}
 	# 		}
 	# 	}
 	# }
 
-	# AI_set_up_templates_medium_armor_mech_30 = {
-	# 	icon = rifles
+	# ==================== #
+	# =====   ASIA   ===== #
+	# ==================== #
 
-	# 	visible = {
-	# 		is_ai = yes
-	# 	}
-
-	# 	# available = {
-	# 	# 	NOT = { has_country_flag = KR_set_up_ai_templates6 }
-	# 	# }
-		
-	# 	# available = {
-	# 	# 	num_of_military_factories > 49
-	# 	# 	num_of_military_factories < 100
-	# 	# }
-		
-	# 	available = {
+	# CHI_disband_useless_starting_garrison_divisions = {
+	# 	icon = GFX_decision_generic_disband_irregulars
+	# 	allowed = {
 	# 		OR = {
-	# 		has_tech = improved_medium_tank_chassis  
-	# 		has_tech = improved_medium_tank  
+	# 			original_tag = CHI
+	# 			original_tag = PRC
 	# 		}
 	# 	}
-		
-	# 	available = {
-	# 		OR = {
-	# 		has_tech = mechanised_infantry  
-	# 		}
-	# 	}
-
-	# 	custom_cost_trigger = {
-	# 		has_army_experience > 45
-	# 	}
-
-	# 	custom_cost_text = decision_cost_army_xp_45
-		
+	# 	visible = { is_ai = yes }
+	# 	available = { date < 1936.1.10 }
+	# 	cost = 0
 	# 	fire_only_once = yes
+	# 	ai_will_do = { base = 999 }
 
-	# 	ai_will_do = {
-	# 		factor = 0
-	# 	}
-		
 	# 	complete_effect = {
 	# 		hidden_effect = {
-	# 			army_experience = -45
-	# 		}
-	# 	}
-
-	# 	complete_effect = {
-	# 		# set_country_flag = KR_set_up_ai_templates6
-	# 		division_template = {
-	# 			name = "Medium Mechanized Armored Division (30W)"
-	# 			regiments = {
-	# 				medium_armor = { x = 0 y = 0 }
-	# 				medium_armor = { x = 0 y = 1 }
-	# 				medium_armor = { x = 0 y = 2 }
-	# 				medium_armor = { x = 0 y = 3 }
-	# 				medium_armor = { x = 1 y = 0 }
-	# 				medium_armor = { x = 1 y = 1 }
-	# 				medium_armor = { x = 1 y = 2 }
-	# 				mechanized = { x = 2 y = 0 }
-	# 				mechanized = { x = 2 y = 1 }
-	# 				mechanized = { x = 2 y = 2 }
-	# 				mechanized = { x = 2 y = 3 }
-	# 				mechanized = { x = 3 y = 0 }
-	# 				mechanized = { x = 3 y = 1 }
-	# 				mechanized = { x = 3 y = 2 }
-	# 				mechanized = { x = 3 y = 3 }
-					
-	# 			}
-	# 			support = {
-	# 				signal_company = { x = 0 y = 0 }
-	# 				mot_recon = { x = 0 y = 1 }
-	# 				anti_air = { x = 0 y = 2 }
-	# 				maintenance_company  = { x = 0 y = 3 }
+	# 			# Garrison
+	# 			delete_units = {
+	# 				division_template = "Juntuán"
+	# 				disband = yes
 	# 			}
 	# 		}
 	# 	}
 	# }
 
-	# AI_set_up_templates_armor_35 = {
-	# 	icon = rifles
+	CHI_disband_useless_starting_cavalry_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = {
+			OR = {
+				original_tag = CHI
+				original_tag = XSM
+				original_tag = MEN
+			}
+		}
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
 
-	# 	visible = {
-	# 		is_ai = yes
-	# 	}
+		complete_effect = {
+			hidden_effect = {
+				# Cavalry
+				delete_units = {
+					division_template = "Qibing Jun"
+					disband = yes
+				}
+			}
+		}
+	}
 
-	# 	# available = {
-	# 	# 	NOT = { has_country_flag = KR_set_up_ai_templates13 }
-	# 	# }
-		
-	# 	# available = {
-	# 	# 	num_of_military_factories > 99
-	# 	# }
-		
-	# 	available = {
-	# 		OR = {
-	# 		has_tech = basic_medium_tank_chassis  
-	# 		has_tech = basic_medium_tank  
-	# 		}
-	# 	}
+	JAP_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = JAP }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
 
-	# 	custom_cost_trigger = {
-	# 		has_army_experience > 30
-	# 	}
+		complete_effect = {
+			hidden_effect = {
+				# # Garrison
+				# delete_units = {
+				# 	division_template = "Chuton-chi Shidan"
+				# 	disband = yes
+				# }
+				# Cavalry
+				delete_units = {
+					division_template = "Kihei Shidan"
+					disband = yes
+				}
+				# Motorized
+				delete_units = {
+					division_template = "Jidousha Shidan"
+					disband = yes
+				}
+				# Light Tank
+				delete_units = {
+					division_template = "Dokuritsu Konsei Ryodan"
+					disband = yes
+				}
+			}
+		}
+	}
 
-	# 	custom_cost_text = decision_cost_army_xp_45
-		
-	# 	fire_only_once = yes
+	MAN_disband_useless_starting_divisions = {
+		icon = GFX_decision_generic_disband_irregulars
+		allowed = { original_tag = MAN }
+		visible = { is_ai = yes }
+		available = { date < 1936.1.10 }
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { base = 999 }
 
-	# 	ai_will_do = {
-	# 		factor = 0
-	# 	}
-		
-	# 	complete_effect = {
-	# 		hidden_effect = {
-	# 			army_experience = -30
-	# 		}
-	# 	}
-
-	# 	complete_effect = {
-	# 		# set_country_flag = KR_set_up_ai_templates13
-	# 		division_template = {
-	# 			name = "Medium Armored Division (35W)"
-	# 			regiments = {
-	# 				medium_armor = { x = 0 y = 0 }
-	# 				medium_armor = { x = 0 y = 1 }
-	# 				medium_armor = { x = 0 y = 2 }
-	# 				medium_armor = { x = 0 y = 3 }
-	# 				medium_armor = { x = 1 y = 0 }
-	# 				medium_armor = { x = 1 y = 1 }
-	# 				medium_armor = { x = 1 y = 2 }
-	# 				medium_armor = { x = 1 y = 3 }
-	# 				motorized = { x = 2 y = 0 }
-	# 				motorized = { x = 2 y = 1 }
-	# 				motorized = { x = 2 y = 2 }
-	# 				motorized = { x = 2 y = 3 }
-	# 				motorized = { x = 3 y = 0 }
-	# 				motorized = { x = 3 y = 1 }
-	# 				motorized = { x = 3 y = 2 }
-	# 				motorized = { x = 3 y = 3 }
-	# 				mot_artillery_brigade = { x = 4 y = 0 }
-					
-	# 			}
-	# 			support = {
-	# 				signal_company = { x = 0 y = 0 }
-	# 				mot_recon = { x = 0 y = 1 }
-	# 				anti_air = { x = 0 y = 2 }
-	# 				maintenance_company  = { x = 0 y = 3 }
-	# 			}
-	# 		}
-	# 	}
-	# }
-
-	# AI_set_up_templates_medium_armor_mech_35 = {
-	# 	icon = rifles
-
-	# 	visible = {
-	# 		is_ai = yes
-	# 	}
-
-	# 	# available = {
-	# 	# 	NOT = { has_country_flag = KR_set_up_ai_templates14 }
-	# 	# }
-		
-	# 	# available = {
-	# 	# 	num_of_military_factories > 99
-	# 	# }
-
-	# 	available = {
-	# 		OR = {
-	# 		has_tech = improved_medium_tank_chassis  
-	# 		has_tech = improved_medium_tank  
-	# 		}
-	# 	}
-		
-	# 	available = {
-	# 		OR = {
-	# 		has_tech = mechanised_infantry  
-	# 		}
-	# 	}
-
-	# 	custom_cost_trigger = {
-	# 		has_army_experience > 45
-	# 	}
-
-	# 	custom_cost_text = decision_cost_army_xp_45
-		
-	# 	fire_only_once = yes
-
-	# 	ai_will_do = {
-	# 		factor = 0
-	# 	}
-		
-	# 	complete_effect = {
-	# 		hidden_effect = {
-	# 			army_experience = -45
-	# 		}
-	# 	}
-
-	# 	complete_effect = {
-	# 		# set_country_flag = KR_set_up_ai_templates14
-	# 		division_template = {
-	# 			name = "Mechanized Armored Division (35W)"
-	# 			regiments = {
-	# 				medium_armor = { x = 0 y = 0 }
-	# 				medium_armor = { x = 0 y = 1 }
-	# 				medium_armor = { x = 0 y = 2 }
-	# 				medium_armor = { x = 0 y = 3 }
-	# 				medium_armor = { x = 1 y = 0 }
-	# 				medium_armor = { x = 1 y = 1 }
-	# 				medium_armor = { x = 1 y = 2 }
-	# 				medium_armor = { x = 1 y = 3 }
-	# 				mechanized = { x = 2 y = 0 }
-	# 				mechanized = { x = 2 y = 1 }
-	# 				mechanized = { x = 2 y = 2 }
-	# 				mechanized = { x = 2 y = 3 }
-	# 				mechanized = { x = 3 y = 0 }
-	# 				mechanized = { x = 3 y = 1 }
-	# 				mechanized = { x = 3 y = 2 }
-	# 				mechanized = { x = 3 y = 3 }
-	# 				medium_sp_artillery_brigade = { x = 4 y = 0 }
-	# 			}
-	# 			support = {
-	# 				signal_company = { x = 0 y = 0 }
-	# 				mot_recon = { x = 0 y = 1 }
-	# 				anti_air = { x = 0 y = 2 }
-	# 				maintenance_company  = { x = 0 y = 3 }
-	# 			}
-	# 		}
-	# 	}
-	# }
-
-	# AI_set_up_templates_modern_armor_mech = {
-	# 	icon = rifles
-
-	# 	visible = {
-	# 		is_ai = yes
-	# 	}
-
-	# 	# available = {
-	# 	# 	NOT = { has_country_flag = KR_set_up_ai_templates10 }
-	# 	# }
-		
-	# 	available = {
-	# 		OR = {
-	# 		has_tech = main_battle_tank_chassis  
-	# 		has_tech = main_battle_tank  
-	# 		}
-	# 	}
-		
-	# 	available = {
-	# 		OR = {
-	# 		has_tech = mechanised_infantry  
-	# 		}
-	# 	}
-
-	# 	custom_cost_trigger = {
-	# 		has_army_experience > 45
-	# 	}
-
-	# 	custom_cost_text = decision_cost_army_xp_45
-		
-	# 	fire_only_once = yes
-
-	# 	ai_will_do = {
-	# 		factor = 0
-	# 	}
-		
-	# 	complete_effect = {
-	# 		hidden_effect = {
-	# 			army_experience = -45
-	# 		}
-	# 	}
-
-	# 	complete_effect = {
-	# 		# set_country_flag = KR_set_up_ai_templates10
-	# 		division_template = {
-	# 			name = "Modern Armor Division"
-	# 			regiments = {
-	# 				modern_armor = { x = 0 y = 0 }
-	# 				modern_armor = { x = 0 y = 1 }
-	# 				modern_armor = { x = 0 y = 2 }
-	# 				modern_armor = { x = 0 y = 3 }
-	# 				modern_armor = { x = 0 y = 4 }
-	# 				modern_armor = { x = 1 y = 0 }
-	# 				modern_armor = { x = 1 y = 1 }
-	# 				modern_armor = { x = 1 y = 2 }
-	# 				modern_armor = { x = 1 y = 3 }
-	# 				modern_armor = { x = 1 y = 4 }
-	# 				mechanized = { x = 2 y = 0 }
-	# 				mechanized = { x = 2 y = 1 }
-	# 				mechanized = { x = 2 y = 2 }
-	# 				mechanized = { x = 2 y = 3 }
-	# 				mechanized = { x = 2 y = 4 }
-	# 				mechanized = { x = 3 y = 0 }
-	# 				mechanized = { x = 3 y = 1 }
-	# 				mechanized = { x = 3 y = 2 }
-	# 				mechanized = { x = 3 y = 3 }
-	# 				modern_sp_artillery_brigade = { x = 4 y = 0 }
-					
-	# 			}
-	# 			support = {
-	# 				signal_company = { x = 0 y = 0 }
-	# 				mot_recon = { x = 0 y = 1 }
-	# 				anti_air = { x = 0 y = 2 }
-	# 				maintenance_company  = { x = 0 y = 3 }
-	# 			}
-	# 		}
-	# 	}
-	# }
+		complete_effect = {
+			hidden_effect = {
+				# Infantry/Garrison
+				delete_units = {
+					division_template = "Qu Jun"
+					disband = yes
+				}
+				# Cavalry
+				delete_units = {
+					division_template = "Qibing Shi"
+					disband = yes
+				}
+			}
+		}
+	}
 
 }

@@ -39,11 +39,11 @@ INFANTRY_SOV = {
 				engineer = 1
 				artillery = 1
 				anti_air = 1
+				anti_tank = 1
+				recon = 1
 			}
 			regiments = {
-				infantry = 7
-				artillery_brigade = 1
-				anti_air_brigade =  1
+				infantry = 9
 			}
 		}
 		allowed_types = {
@@ -51,10 +51,10 @@ INFANTRY_SOV = {
 			engineer
 			artillery
 			anti_air
+			anti_tank
+			recon
 			# Line Battalion
 			infantry
-			artillery_brigade
-			anti_air_brigade
 		}
 	}
 
@@ -64,7 +64,7 @@ INFANTRY_SOV = {
 		target_width = 18.0
 		width_weight = 1.0
 		column_swap_factor = 1.0
-		enable = { date > 1939.1.1 }
+		enable = { OR = { has_tech = vast_offensives has_tech = human_wave_offensive } }
 		# Design
 		target_template = {
 			weight = 100.0
@@ -74,11 +74,10 @@ INFANTRY_SOV = {
 				artillery = 1
 				anti_air = 1
 				anti_tank = 1
+				recon = 1
 			}
 			regiments = {
-				infantry = 8
-				artillery_brigade = 1
-				anti_air_brigade =  1
+				infantry = 11
 			}
 		}
 		allowed_types = {
@@ -87,10 +86,9 @@ INFANTRY_SOV = {
 			artillery
 			anti_air
 			anti_tank
+			recon
 			# Line Battalion
 			infantry
-			artillery_brigade
-			anti_air_brigade
 		}
 	}
 }

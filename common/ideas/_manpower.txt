@@ -199,9 +199,9 @@ ideas = {
 					factor = 0
 				}
 				modifier = {
-					tag = SOV
-					threat > 0.8
-					factor = 3
+					add = 9999
+					original_tag = SOV
+					date > 1940.1.1
 				}
 				modifier = {
 					factor = 0
@@ -376,7 +376,7 @@ ideas = {
 				}
 
 				modifier = {
-					factor = 5
+					factor = 999
 
 					original_tag = SOV
 					has_war = yes

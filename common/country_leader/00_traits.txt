@@ -386,6 +386,20 @@ leader_traits = {
 		sprite = 15
 		operative_slot = 1
 		agency_upgrade_time = -0.15
+
+		ai_will_do = {
+			base = 0.1
+			modifier = {
+				add = 0.9
+				is_major = yes
+			}
+			# Japan's is auto-generated.
+			modifier = {
+				add = 100
+				original_tag = JAP
+				has_idea_with_trait = air_air_combat_training_3
+			}
+		}
 	}
 
 	mastermind_code_cracker = {
@@ -3981,7 +3995,7 @@ leader_traits = {
 
 	SWE_close_ties_to_the_military = {
 		sprite = 10
-		random = NO
+		random = no
 		max_command_power = 30
 		training_time_factor = -0.1
 
@@ -4265,8 +4279,8 @@ leader_traits = {
 
 	unbreakable = {
 		dont_lose_dig_in_on_attack = 1.0
-		offence = -0.05
-		defence = 0.15
+		army_attack_factor = -0.05
+		army_defence_factor = 0.15
 	}
 
 	hyena = {
@@ -5427,7 +5441,7 @@ leader_traits = {
 		equipment_bonus = {
 			train_equipment = {
 				build_cost_ic = 0.05
-				reliability = 0.15
+				armor_value = 0.1
 			}
 		}
 		production_speed_rail_way_factor = 0.05
@@ -7812,7 +7826,7 @@ leader_traits = {
 	}
 
 	telephone_company = {
-		random= No
+		random = no
 		land_reinforce_rate = 0.02
 		coordination_bonus = 0.04
 		ai_will_do = {
@@ -8099,12 +8113,38 @@ leader_traits = {
 		production_speed_industrial_complex_factor = 0.2
 	}
 
+	NOR_tobacco_industrialist_leader = {
+		random = no
+		sprite = 10  
+
+		consumer_goods_factor = -0.1
+		production_speed_infrastructure_factor = 0.1
+		production_speed_industrial_complex_factor = 0.05
+	}
+
 	NOR_compliant_politician = {
 		random = no
 		sprite = 13  
 
 		stability_factor = 0.10
 		political_power_factor = 0.1
+	}
+
+	NOR_popular_reformer = {
+		random = no
+		sprite = 13  
+
+		stability_factor = 0.05
+		war_support_factor = -0.03
+		political_power_factor = 0.05
+	}
+
+	NOR_temperate_miners_unionist = {
+		random = no
+		sprite = 13  
+
+		stability_factor = 0.05
+		local_resources_factor = 0.1
 	}
 
 	NOR_conservative_businessman = {

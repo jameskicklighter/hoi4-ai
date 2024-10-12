@@ -7,7 +7,7 @@ ideas = {
 				air_advisor_cost_factor = -0.75
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -27,7 +27,7 @@ ideas = {
 				#jet_strat_bomber_equipment_design_cost_factor = -0.75
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -48,7 +48,7 @@ ideas = {
 				#cv_CAS_equipment_design_cost_factor = -0.75
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -68,7 +68,7 @@ ideas = {
 				#jet_tac_bomber_equipment_design_cost_factor = -0.75
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -84,7 +84,7 @@ ideas = {
 				heavy_air = 0.15
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -99,7 +99,7 @@ ideas = {
 				air_training_xp_gain_factor = 0.25
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -114,7 +114,7 @@ ideas = {
 				airforce_intel_to_others = -5
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -129,7 +129,7 @@ ideas = {
 				air_accidents_factor = -0.25
 			}
 			ai_will_do = {
-				factor = 100
+				base = 1
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -147,7 +147,7 @@ ideas = {
 				air_escort_efficiency = 0.05
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -162,7 +162,7 @@ ideas = {
 				carrier_night_traffic = 0.5
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -176,7 +176,7 @@ ideas = {
 				air_wing_xp_loss_when_killed_factor = -0.25
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -191,7 +191,11 @@ ideas = {
 				air_mission_efficiency = 0.1
 			}
 			ai_will_do = {
-				factor = 100
+				base = 0
+				modifier = {
+					add = 1
+					NOT = { has_government = communism }
+				}
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -206,7 +210,11 @@ ideas = {
 				air_untrained_pilots_penalty_factor = -0.33
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
+				modifier = {
+					add = 1
+					has_government = communism
+				}
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -220,7 +228,7 @@ ideas = {
 				ace_effectiveness_factor = 0.5
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -234,7 +242,7 @@ ideas = {
 				air_power_projection_factor = 0.1
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -249,7 +257,7 @@ ideas = {
 				army_bonus_air_superiority_factor = 0.05
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -264,7 +272,7 @@ ideas = {
 				air_cas_efficiency = 0.25
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -279,7 +287,7 @@ ideas = {
 				air_strategic_bomber_bombing_factor = 0.1
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }

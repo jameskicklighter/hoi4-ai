@@ -46,7 +46,7 @@ CHI_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = -10
+		value = 0
 	}
 
 	ai_strategy = {
@@ -87,35 +87,35 @@ CHI_unit_production = {
 	}
 	
 	# Naval unit factors
-	ai_strategy = {
-		type = unit_ratio
-		id = capital_ship
-		value = 25 # from 15 to 25
-	}
+	# ai_strategy = {
+	# 	type = unit_ratio
+	# 	id = capital_ship
+	# 	value = 25 # from 15 to 25
+	# }
 
-	ai_strategy = {
-		type = unit_ratio
-		id = submarine
-		value = 40 #from 50 to 40
-	}
+	# ai_strategy = {
+	# 	type = unit_ratio
+	# 	id = submarine
+	# 	value = 40 #from 50 to 40
+	# }
 
-	ai_strategy = {
-		type = unit_ratio
-		id = screen_ship
-		value = 20
-	}
+	# ai_strategy = {
+	# 	type = unit_ratio
+	# 	id = screen_ship
+	# 	value = 20
+	# }
 
-	ai_strategy = {
-		type = unit_ratio
-		id = convoy
-		value = 20
-	}
+	# ai_strategy = {
+	# 	type = unit_ratio
+	# 	id = convoy
+	# 	value = 20
+	# }
 	
-	ai_strategy = {
-		type = equipment_production_factor
-		id = fighter
-		value = 20
-	}
+	# ai_strategy = {
+	# 	type = equipment_production_factor
+	# 	id = fighter
+	# 	value = 20
+	# }
 
 	ai_strategy = {
 		type = ignore_army_incompetence
@@ -189,6 +189,7 @@ CHI_build_civs = {
 	}
 	enable = {
 		date < 1937.1.1
+		JAP = { is_ai = yes }
 	}
 	abort_when_not_enabled = yes
 
@@ -199,28 +200,28 @@ CHI_build_civs = {
 	}
 }
 
-# CHI_let_japan_get_lost_in_the_desert = {
-# 	allowed = {
-# 		original_tag = CHI
-# 	}
-# 	enable = {
-# 		is_in_faction_with = SHX
-# 		is_in_faction_with = XSM
-# 		# JAP = { has_completed_focus = JAP_purge_the_kodoha_faction }
-# 		has_war_with = JAP
-# 	}
+CHI_let_japan_get_lost_in_the_desert = {
+	allowed = {
+		original_tag = CHI
+	}
+	enable = {
+		is_in_faction_with = SHX
+		is_in_faction_with = XSM
+		has_war_with = JAP
+		JAP = { is_ai = no }
+	}
 
-# 	ai_strategy = {
-# 		type = dont_defend_ally_borders
-# 		id = "SHX"
-# 		value = 100
-# 	}
-# 	ai_strategy = {
-# 		type = dont_defend_ally_borders
-# 		id = "XSM"
-# 		value = 100
-# 	}
-# }
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "SHX"
+		value = 100
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "XSM"
+		value = 100
+	}
+}
 
 # EAI_CHI_defensive_vs_JAP_careful_north = {
 # 	allowed = {
@@ -265,9 +266,7 @@ CHI_dont_waste_on_offensive_air_early = {
 	enable = {
 		date < 1940.1.1
 	}
-	abort = {
-		date > 1940.1.1
-	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = equipment_variant_production_factor
@@ -282,36 +281,24 @@ CHI_dont_waste_on_offensive_air_early = {
 	}
 }
 
-CHI_highered_armored_production = {
-	allowed = { original_tag = CHI }
-	enable = {
-		num_of_military_factories > 40
-	}
-	abort = {
-		num_of_military_factories < 41
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = armor
-		value = 15
-	}
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
-		value = -15
-	}
-}
-
-# CHI_prio_military_even_at_peace = {
+# CHI_highered_armored_production = {
 # 	allowed = { original_tag = CHI }
 # 	enable = {
-# 		always = yes
+# 		num_of_military_factories > 40
+# 	}
+# 	abort = {
+# 		num_of_military_factories < 41
 # 	}
 
 # 	ai_strategy = {
-# 		type = added_military_to_civilian_factory_ratio
-# 		value = 50
+# 		type = role_ratio
+# 		id = armor
+# 		value = 15
+# 	}
+# 	ai_strategy = {
+# 		type = role_ratio
+# 		id = infantry
+# 		value = -15
 # 	}
 # }
 
@@ -372,30 +359,39 @@ CHI_you_should_be_prepared_for_war = {
 	}
 }
 
-# CHI_coastal_buffer = {
-# 	allowed = {
-# 		original_tag = CHI
-# 	}
-# 	enable = {
-# 		has_war_with = JAP
-# 	}
-# 	abort_when_not_enabled = yes
+CHI_coastal_buffer = {
+	allowed = {
+		original_tag = CHI
+	}
+	enable = {
+		JAP = {
+			is_ai = no
+			has_war_with = CHI
+			focus_progress = {
+				focus = JAP_intervene_in_china
+				progress > 0.01
+			}
+			is_justifying_wargoal_against = JAP
+			has_wargoal_against = JAP
+		}
+	}
+	abort_when_not_enabled = yes
 
-# 	ai_strategy = {
-# 		type = put_unit_buffers
-# 		states = {
-# 			597
-# 			743
-# 			613
-# 			596
-# 			595
-# 		}
-# 		ratio = 0.10
-# 		area = asia
-# 		subtract_invasions_from_need = no
-# 		subtract_fronts_from_need = no
-# 	}
-# }
+	ai_strategy = {
+		type = put_unit_buffers
+		states = {
+			595
+			596
+			597
+			613
+			743
+		}
+		ratio = 0.2
+		area = asia
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+}
 
 # CHI_behind_river_buffer = {
 # 	allowed = {
@@ -421,32 +417,32 @@ CHI_you_should_be_prepared_for_war = {
 # 	}
 # }
 
-CHI_buffer_in_mainland = {
-	allowed = {
-		is_literally_china = yes
-	}
-	enable = {
-		date < 1941.1.1
-	}
-	abort_when_not_enabled = yes
+# CHI_buffer_in_mainland = {
+# 	allowed = {
+# 		is_literally_china = yes
+# 	}
+# 	enable = {
+# 		date < 1941.1.1
+# 	}
+# 	abort_when_not_enabled = yes
 	
-	ai_strategy = {
-		type = put_unit_buffers
-		states = {
-			620 #Mainland china, without coast. This should slow down japanese advance due to tendency for china to retreat in disarray.
-			602
-			600
-			750
-			603
-			748
-			605
-		}
-		ratio = 0.15
-		area = asia
-		subtract_invasions_from_need = no
-		subtract_fronts_from_need = no
-	}
-}
+# 	ai_strategy = {
+# 		type = put_unit_buffers
+# 		states = {
+# 			620 #Mainland china, without coast. This should slow down japanese advance due to tendency for china to retreat in disarray.
+# 			602
+# 			600
+# 			750
+# 			603
+# 			748
+# 			605
+# 		}
+# 		ratio = 0.15
+# 		area = asia
+# 		subtract_invasions_from_need = no
+# 		subtract_fronts_from_need = no
+# 	}
+# }
 
 CHI_easy_going = {
 	allowed = {
@@ -454,7 +450,8 @@ CHI_easy_going = {
 	}
 	enable = {
 		has_war_with = JAP
-		date < 1939.1.1
+		date < 1940.1.1
+		JAP = { is_ai = yes }
 	}
 	abort_when_not_enabled = yes
 
@@ -474,6 +471,8 @@ SOV_dont_get_directly_involved_in_china = {
 	}
 	enable = {
 		date < 1943.1.1
+		is_historical_focus_on = yes
+		PRC = { has_war_with = CHI }
 	}
 	abort_when_not_enabled = yes
 

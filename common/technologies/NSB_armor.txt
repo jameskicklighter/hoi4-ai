@@ -119,27 +119,14 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 1
 			modifier = {
-				factor = 2
-				is_major = yes
+				add = 30
+				DAI_should_build_tanks = yes
+				date > 1937.1.1
 			}
-
-			modifier = {
-				factor = 1.2
-				date > "1937.1.1"
-			}
-
-			modifier = {
-				factor = 1.2
-				date > "1938.1.1"
-			}
-
-			modifier = {
-				factor = 1.2
-				date > "1939.1.1"
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -209,29 +196,9 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 0 # DAI
-
-			# factor = 1
-
-			# modifier = {
-			# 	factor = 2
-			# 	is_major = yes
-			# }
-
-			# modifier = {
-			# 	factor = 1.1
-			# 	date > "1937.1.1"
-			# }
-
-			# modifier = {
-			# 	factor = 1.1
-			# 	date > "1938.1.1"
-			# }
-
-			# modifier = {
-			# 	factor = 1.1
-			# 	date > "1939.1.1"
-			# }
+			# DAI --
+			base = 0
+			# -- DAI
 		}
 
 		categories = {
@@ -270,51 +237,9 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 0 #DAI
-
-			# factor = 1
-
-			# modifier = {
-			# 	factor = 2
-			# 	is_major = yes
-			# 	NOT = {
-			# 		AND = {
-			# 			tag = JAP
-			# 			num_of_military_factories < 50
-			# 		}
-			# 	}
-			# }
-			# modifier = {
-			# 	is_major = yes
-			# 	not = { tag = JAP }
-			# 	has_war = yes
-			# 	factor = 10 #you are embarassing yourself
-			# }
-			# modifier = {
-			# 	tag = SOV
-			# 	factor = 3
-			# }
-			# modifier = {
-			# 	factor = 3
-			# 	# Matilda II was designed and entered production in 1937
-			# 	tag = ENG
-			# 	date > "1936.9.1"
-			# }
-
-			# modifier = {
-			# 	factor = 1.1
-			# 	date > "1937.1.1"
-			# }
-
-			# modifier = {
-			# 	factor = 1.1
-			# 	date > "1938.1.1"
-			# }
-
-			# modifier = {
-			# 	factor = 1.1
-			# 	date > "1939.1.1"
-			# }
+			# DAI --
+			base = 0
+			# -- DAI
 		}
 
 		on_research_complete = {
@@ -365,32 +290,9 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 0 # DAI
-
-			# factor = 0.5
-
-			# modifier = {
-			# 	factor = 2
-			# 	is_major = yes
-			# 	NOT = {
-			# 		TAG = GER
-			# 	}
-			# }
-			# modifier = {
-			# 	OR = {
-			# 		original_tag = USA
-			# 		original_tag = JAP
-			# 	}
-			# 	factor = 2
-			# }
-			# modifier = {
-			# 	not = {
-			# 		any_controlled_state = {
-			# 			is_coastal = yes
-			# 		}
-			# 	}
-			# 	factor = 0
-			# }
+			# DAI --
+			base = 0
+			# -- DAI
 		}
 
 		categories = {
@@ -432,29 +334,9 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 0 # DAI
-
-			# factor = 0.5
-
-			# modifier = {
-			# 	factor = 2
-			# 	is_major = yes
-			# }
-			# modifier = {
-			# 	OR = {
-			# 		original_tag = USA
-			# 		original_tag = JAP
-			# 	}
-			# 	factor = 2
-			# }
-			# modifier = {
-			# 	not = {
-			# 		any_controlled_state = {
-			# 			is_coastal = yes
-			# 		}
-			# 	}
-			# 	factor = 0
-			# }
+			# DAI --
+			base = 0
+			# -- DAI
 		}
 
 		categories = {
@@ -483,28 +365,9 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 0 # DAI
-
-			# factor = 0.5
-			# modifier = {
-			# 	is_major = no
-			# 	factor = 2  # Minors prefer light tanks
-			# }
-
-			# modifier = {
-			# 	factor = 1.1
-			# 	date > "1942.1.1"
-			# }
-
-			# modifier = {
-			# 	factor = 1.1
-			# 	date > "1943.1.1"
-			# }
-
-			# modifier = {
-			# 	factor = 1.1
-			# 	date > "1944.1.1"
-			# }
+			# DAI --
+			base = 0
+			# -- DAI
 		}
 
 		categories = {
@@ -514,6 +377,7 @@ technologies = {
 			mio_cat_tech_light_armor_and_modules
 		}
 	}
+
 
 	basic_medium_tank_chassis = { #Panzer III
 
@@ -568,55 +432,18 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 2
-
 			# DAI --
+			base = 1
 			modifier = {
-				factor = 5
+				add = 999
+				date > 1937.1.1
+				OR = { amount_research_slots > 3 is_major = yes }
 				DAI_should_build_tanks = yes
+			}
+			modifier = {
+				add = 30
 				date > 1938.1.1
-			}
-
-			modifier = {
-				tag = SOV
-				factor = 1.5
-			}
-
-			modifier = {
-				factor = 10
-				tag = GER
-				date > 1937.6.1
-			}
-
-			modifier = {
-				factor = 1.1
-				date > 1939.1.1
-			}
-
-			modifier = {
-				factor = 1.1
-				date > 1940.1.1
-			}
-
-			modifier = {
-				factor = 1.1
-				date > 1941.1.1
-			}
-
-			modifier = {
-				factor = 1.1
-				date > 1942.1.1
-			}
-
-			modifier = {
-				factor = 15.0
-				tag = GER
-				has_opinion_modifier = sov_ger_treaty
-			}
-
-			modifier = {
-				factor = 0.2
-				DAI_should_build_tanks = no
+				DAI_should_build_tanks = yes
 			}
 			# -- DAI
 		}
@@ -628,7 +455,6 @@ technologies = {
 			mio_cat_tech_medium_armor_and_modules
 		}
 	}
-
 
 
 	improved_medium_tank_chassis = { #Panzer IV
@@ -668,40 +494,18 @@ technologies = {
 
 		ai_will_do = {
 			# DAI --
-			factor = 3
-
+			base = 1
 			modifier = {
-				factor = 100
-				original_tag = GER
+				add = 999
 				date > 1939.1.1
-			}
-
-			modifier = {
-				factor = 5
+				OR = { amount_research_slots > 3 is_major = yes }
 				DAI_should_build_tanks = yes
+			}
+			modifier = {
+				add = 30
 				date > 1940.1.1
+				DAI_should_build_tanks = yes
 			}
-
-			modifier = {
-				factor = 1.1
-				date > 1942.1.1
-			}
-
-			modifier = {
-				factor = 1.1
-				date > 1943.1.1
-			}
-
-			modifier = {
-				factor = 1.1
-				date > 1944.1.1
-			}
-
-			modifier = {
-				factor = 0.2
-				DAI_should_build_tanks = no
-			}
-
 			# -- DAI
 		}
 
@@ -746,22 +550,20 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 1
 			modifier = {
-				factor = 1.2
-				date > "1944.1.1"
+				add = 30
+				date > 1942.7.1
+				amount_research_slots > 3
+				DAI_should_build_tanks = yes
 			}
-
 			modifier = {
-				factor = 1.2
-				date > "1945.1.1"
+				add = 30
+				date > 1943.1.1
+				DAI_should_build_tanks = yes
 			}
-
-			modifier = {
-				factor = 1.2
-				date > "1946.1.1"
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -793,22 +595,20 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 1
 			modifier = {
-				factor = 2
-				date > "1946.1.1"
+				add = 30
+				date > 1944.7.1
+				amount_research_slots > 3
+				DAI_should_build_tanks = yes
 			}
-
 			modifier = {
-				factor = 2
-				date > "1947.1.1"
+				add = 30
+				date > 1945.1.1
+				DAI_should_build_tanks = yes
 			}
-
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -873,33 +673,9 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 0 # DAI
-
-			# factor = 0.8
-
-			# modifier = {
-			# 	factor = 1.2
-			# 	date > "1937.1.1"
-			# }
-
-			# modifier = {
-			# 	factor = 1.2
-			# 	date > "1938.1.1"
-			# }
-
-			# modifier = {
-			# 	factor = 1.2
-			# 	date > "1939.1.1"
-			# }
-			# modifier = {
-			# 	tag = FRA
-			# 	factor = 3
-			# }
-			# modifier = {
-			# 	tag = JAP
-			# 	num_of_military_factories < 100
-			# 	factor = 0
-			# }
+			# DAI --
+			base = 0
+			# -- DAI
 		}
 
 		categories = {
@@ -951,28 +727,9 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 0 # DAI
-
-			# factor = 0.8
-			# modifier = {
-			# 	tag = JAP
-			# 	num_of_military_factories < 100
-			# 	factor = 0
-			# }
-			# modifier = {
-			# 	factor = 1.2
-			# 	date > "1942.1.1"
-			# }
-
-			# modifier = {
-			# 	factor = 1.2
-			# 	date > "1943.1.1"
-			# }
-
-			# modifier = {
-			# 	factor = 1.2
-			# 	date > "1944.1.1"
-			# }
+			# DAI --
+			base = 0
+			# -- DAI
 		}
 
 		categories = {
@@ -1017,24 +774,9 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 0 # DAI
-
-			# factor = 0.8
-
-			# modifier = {
-			# 	factor = 1.2
-			# 	date > "1944.1.1"
-			# }
-
-			# modifier = {
-			# 	factor = 1.2
-			# 	date > "1945.1.1"
-			# }
-
-			# modifier = {
-			# 	factor = 1.2
-			# 	date > "1946.1.1"
-			# }
+			# DAI --
+			base = 0
+			# -- DAI
 		}
 
 		categories = {
@@ -1096,7 +838,9 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 0 # Hitler cries on the inside
+			# DAI --
+			base = 0
+			# -- DAI
 		}
 
 		categories = {
@@ -1130,31 +874,22 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 1
 			modifier = {
-				factor = 2
-				is_major = yes
+				add = 30
+				DAI_should_build_tanks = yes
 			}
 			modifier = {
-				has_war = yes
-				factor = 2
+				factor = 0
+				NOT = {
+					OR = {
+						has_tech = improved_medium_tank_chassis
+						is_researching_technology = improved_medium_tank_chassis
+					}
+				}
 			}
-
-			modifier = {
-				factor = 1.1
-				date > "1937.1.1"
-			}
-
-			modifier = {
-				factor = 1.1
-				date > "1938.1.1"
-			}
-
-			modifier = {
-				factor = 1.1
-				date > "1939.1.1"
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1189,31 +924,29 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 1
 			modifier = {
-				factor = 2
-				is_major = yes
+				add = 999
+				date > 1937.7.1
+				amount_research_slots > 3
+				DAI_should_build_tanks = yes
 			}
 			modifier = {
-				has_war = yes
-				factor = 2
+				add = 30
+				date > 1939.1.1
+				DAI_should_build_tanks = yes
 			}
-
 			modifier = {
-				factor = 1.1
-				date > "1937.1.1"
+				factor = 0
+				NOT = {
+					OR = {
+						has_tech = improved_medium_tank_chassis
+						is_researching_technology = improved_medium_tank_chassis
+					}
+				}
 			}
-
-			modifier = {
-				factor = 1.1
-				date > "1938.1.1"
-			}
-
-			modifier = {
-				factor = 1.1
-				date > "1939.1.1"
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1246,31 +979,23 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 1
 			modifier = {
-				factor = 2
-				is_major = yes
+				add = 30
+				date > 1941.1.1
+				DAI_should_build_tanks = yes
 			}
 			modifier = {
-				has_war = yes
-				factor = 2
+				factor = 0
+				NOT = {
+					OR = {
+						has_tech = improved_medium_tank_chassis
+						is_researching_technology = improved_medium_tank_chassis
+					}
+				}
 			}
-
-			modifier = {
-				factor = 1.1
-				date > "1937.1.1"
-			}
-
-			modifier = {
-				factor = 1.1
-				date > "1938.1.1"
-			}
-
-			modifier = {
-				factor = 1.1
-				date > "1939.1.1"
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1297,31 +1022,23 @@ technologies = {
 		show_effect_as_desc = yes
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 1
 			modifier = {
-				factor = 2
-				is_major = yes
+				add = 5
+				date > 1944.1.1
+				DAI_should_build_tanks = yes
 			}
 			modifier = {
-				has_war = yes
-				factor = 2
+				factor = 0
+				NOT = {
+					OR = {
+						has_tech = advanced_medium_tank_chassis
+						is_researching_technology = advanced_medium_tank_chassis
+					}
+				}
 			}
-
-			modifier = {
-				factor = 1.1
-				date > "1937.1.1"
-			}
-
-			modifier = {
-				factor = 1.1
-				date > "1938.1.1"
-			}
-
-			modifier = {
-				factor = 1.1
-				date > "1939.1.1"
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1352,31 +1069,23 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 1
 			modifier = {
-				factor = 2
-				is_major = yes
+				add = 30
+				date > 1938.1.1
+				DAI_should_build_tanks = yes
 			}
 			modifier = {
-				has_war = yes
-				factor = 2
+				factor = 0
+				NOT = {
+					OR = {
+						has_tech = improved_medium_tank_chassis
+						is_researching_technology = improved_medium_tank_chassis
+					}
+				}
 			}
-
-			modifier = {
-				factor = 1.1
-				date > "1937.1.1"
-			}
-
-			modifier = {
-				factor = 1.1
-				date > "1938.1.1"
-			}
-
-			modifier = {
-				factor = 1.1
-				date > "1939.1.1"
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1409,31 +1118,23 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 1
 			modifier = {
-				factor = 2
-				is_major = yes
+				add = 30
+				date > 1939.1.1
+				DAI_should_build_tanks = yes
 			}
 			modifier = {
-				has_war = yes
-				factor = 2
+				factor = 0
+				NOT = {
+					OR = {
+						has_tech = improved_medium_tank_chassis
+						is_researching_technology = improved_medium_tank_chassis
+					}
+				}
 			}
-
-			modifier = {
-				factor = 1.1
-				date > "1937.1.1"
-			}
-
-			modifier = {
-				factor = 1.1
-				date > "1938.1.1"
-			}
-
-			modifier = {
-				factor = 1.1
-				date > "1939.1.1"
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1464,31 +1165,23 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 1
 			modifier = {
-				factor = 2
-				is_major = yes
+				add = 30
+				date > 1941.1.1
+				DAI_should_build_tanks = yes
 			}
 			modifier = {
-				has_war = yes
-				factor = 2
+				factor = 0
+				NOT = {
+					OR = {
+						has_tech = improved_medium_tank_chassis
+						is_researching_technology = improved_medium_tank_chassis
+					}
+				}
 			}
-
-			modifier = {
-				factor = 1.1
-				date > "1937.1.1"
-			}
-
-			modifier = {
-				factor = 1.1
-				date > "1938.1.1"
-			}
-
-			modifier = {
-				factor = 1.1
-				date > "1939.1.1"
-			}
+			# -- DAI
 		}
 
 		categories = {
@@ -1513,31 +1206,23 @@ technologies = {
 		}
 		show_effect_as_desc = yes
 		ai_will_do = {
-			factor = 1
-
+			# DAI --
+			base = 1
 			modifier = {
-				factor = 2
-				is_major = yes
+				add = 5
+				date > 1944.1.1
+				DAI_should_build_tanks = yes
 			}
 			modifier = {
-				has_war = yes
-				factor = 2
+				factor = 0
+				NOT = {
+					OR = {
+						has_tech = advanced_medium_tank_chassis
+						is_researching_technology = advanced_medium_tank_chassis
+					}
+				}
 			}
-
-			modifier = {
-				factor = 1.1
-				date > "1937.1.1"
-			}
-
-			modifier = {
-				factor = 1.1
-				date > "1938.1.1"
-			}
-
-			modifier = {
-				factor = 1.1
-				date > "1939.1.1"
-			}
+			# -- DAI
 		}
 
 		categories = {

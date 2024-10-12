@@ -7,7 +7,14 @@ ideas = {
 				custom_modifier_tooltip = instilled_aggression_spirit_tt
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
+				modifier = {
+					add = 1
+					# OR = {
+					# 	has_navy_size = { unit = carrier size < 1 }
+					# 	NOT = { has_tech = base_strike }
+					# }
+				}
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -21,7 +28,7 @@ ideas = {
 				custom_modifier_tooltip = calculated_restraint_spirit_tt
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -35,7 +42,7 @@ ideas = {
 				custom_modifier_tooltip = signals_training_spirit_tt
 			}
 			ai_will_do = {
-				factor = 75
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -52,7 +59,7 @@ ideas = {
 				trait_superior_tactician_xp_gain_factor = 0.2
 			}
 			ai_will_do = {
-				factor = 1.5
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -69,7 +76,7 @@ ideas = {
 				trait_blockade_runner_xp_gain_factor = 0.2
 			}
 			ai_will_do = {
-				factor = 1.5
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -86,7 +93,11 @@ ideas = {
 				trait_fleet_protector_xp_gain_factor = 0.2
 			}
 			ai_will_do = {
-				factor = 1.5
+				base = 0
+				# modifier = {
+				# 	add = 1
+				# 	has_navy_size = { unit = carrier size > 1 }
+				# }
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -102,7 +113,7 @@ ideas = {
 				custom_modifier_tooltip = best_of_the_best_naval_academy_spirit_tt
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -118,7 +129,7 @@ ideas = {
 				custom_modifier_tooltip = naval_academy_scholarships_spirit_tt
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -137,7 +148,12 @@ ideas = {
 				ship_hull_light_design_cost_factor = -0.6
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
+				modifier = {
+					add = 1
+					NOT = { original_tag = GER }
+					DAI_Should_Research_Navy_GENERAL = no
+				}
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -171,7 +187,7 @@ ideas = {
 				ship_hull_cruiser_design_cost_factor = -0.6
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -185,7 +201,7 @@ ideas = {
 				ship_modules_tech = 0.20
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -198,7 +214,7 @@ ideas = {
 				experience_gain_navy_factor = 0.15
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -212,7 +228,14 @@ ideas = {
 				repair_speed_factor = 0.15
 			}
 			ai_will_do = {
-				factor = 100
+				base = 1
+				modifier = {
+					factor = 0
+					OR = {
+						original_tag = GER
+						DAI_Should_Research_Navy_GENERAL = no
+					}
+				}
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -235,7 +258,7 @@ ideas = {
 				ship_hull_heavy_design_cost_factor = -0.6
 			}
 			ai_will_do = {
-				factor = 1.5
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -252,7 +275,11 @@ ideas = {
 				ship_hull_submarine_design_cost_factor = -0.6
 			}
 			ai_will_do = {
-				factor = 1.5
+				base = 0
+				modifier = {
+					add = 1
+					original_tag = GER
+				}
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -269,7 +296,7 @@ ideas = {
 				ship_hull_carrier_design_cost_factor = -0.6
 			}
 			ai_will_do = {
-				factor = 1.5
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -281,12 +308,19 @@ ideas = {
 	naval_command_spirit = {
 		close_combat_navy_spirit = {
 			ledger = navy
-			modifier ={
+			modifier = {
 				navy_screen_attack_factor = 0.05
 				naval_torpedo_screen_penetration_factor = 0.05
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
+				modifier = {
+					add = 1
+					OR = {
+						original_tag = JAP
+						original_tag = USA
+					}
+				}
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -301,7 +335,14 @@ ideas = {
 				navy_visibility = -0.05
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
+				modifier = {
+					add = 1
+					NOT = { original_tag = JAP }
+					NOT = { original_tag = USA }
+					NOT = { original_tag = ITA }
+					NOT = { original_tag = ENG }
+				}
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -316,7 +357,7 @@ ideas = {
 				naval_retreat_chance_after_initial_combat = 0.1
 			}
 			ai_will_do = {
-				factor = 1.5
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -329,7 +370,7 @@ ideas = {
 				positioning = 0.15
 			}
 			ai_will_do = {
-				factor = 50
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -351,7 +392,7 @@ ideas = {
 				naval_retreat_chance = 0.1
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -368,7 +409,14 @@ ideas = {
 				naval_hit_chance = 0.1
 			}
 			ai_will_do = {
-				factor = 1.5
+				base = 0
+				modifier = {
+					add = 1
+					OR = {
+						original_tag = ITA
+						original_tag = ENG
+					}
+				}
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -381,7 +429,7 @@ ideas = {
 				navy_weather_penalty = -0.4
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
@@ -395,13 +443,13 @@ ideas = {
 				naval_retreat_chance = -0.05
 			}
 			ai_will_do = {
-				factor = 1
+				base = 0
 				modifier = {
 					factor = 0
 					NOT = { has_dlc = "No Step Back" }
 				}
 			}
-		} 
+		}
 		bureau_of_ordnance_spirit = {
 			ledger = navy
 			visible = { tag = USA }

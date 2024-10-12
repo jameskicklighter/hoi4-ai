@@ -104,7 +104,12 @@ political_actions = {
 			modifier = {
 				add = 1
 				has_stability < 0.6
-				has_political_power > 155 #Spend on other things first
+				has_political_power > 200 #Spend on other things first
+			}
+			modifier = {
+				factor = 0
+				is_major = yes
+				date < 1941.1.1 #Spend on other things first
 			}
 			modifier = {
 				factor = 0
@@ -1791,7 +1796,7 @@ war_measures = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				has_political_power < 100
+				has_political_power < 200
 				factor = 0 #use as pp dump
 			}
 
@@ -1799,6 +1804,11 @@ war_measures = {
 				factor = 0
 				original_tag = SOV
 				SOV_save_pp_for_manpower_trouble = yes
+			}
+
+			modifier = {
+				factor = 0
+				has_idea = tot_economic_mobilisation
 			}
 		}
 
@@ -1880,6 +1890,8 @@ war_measures = {
 						tag = CHL #has a focus
 						tag = BRA #has a focus
 						tag = ARG #has a focus
+						tag = AST #has a focus
+						tag = FRA #has a focus
 					}
 				} 
 			}

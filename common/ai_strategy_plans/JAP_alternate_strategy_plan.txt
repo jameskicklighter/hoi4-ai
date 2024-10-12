@@ -103,13 +103,7 @@ JAP_manchukuo_player_historical_plan = {
 	}
 
 	ideas = {
-		# Political Advisors
-		head_of_intelligence = 50
 
-		# Army Spirits
-		inventive_leadership_spirit = 75
-		state_serves_the_military_spirit = 200
-		logistical_focus_spirit = 50
 	}
 
 	ai_strategy = {
@@ -263,13 +257,7 @@ JAP_alternate_plan_strike_north = {
 	}
 
 	ideas = {
-		# Political Advisors
-		head_of_intelligence = 50
 
-		# Army Spirits
-		inventive_leadership_spirit = 100
-		elevated_engineering_corps_spirit = 50
-		logistical_focus_spirit = 75
 	}
 
 	# Keep small, as it is used as a factor for some things (such as research needs)
