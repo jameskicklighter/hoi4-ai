@@ -200,28 +200,28 @@ CHI_build_civs = {
 	}
 }
 
-CHI_let_japan_get_lost_in_the_desert = {
-	allowed = {
-		original_tag = CHI
-	}
-	enable = {
-		is_in_faction_with = SHX
-		is_in_faction_with = XSM
-		has_war_with = JAP
-		JAP = { is_ai = no }
-	}
+# CHI_let_japan_get_lost_in_the_desert = {
+# 	allowed = {
+# 		original_tag = CHI
+# 	}
+# 	enable = {
+# 		is_in_faction_with = SHX
+# 		is_in_faction_with = XSM
+# 		has_war_with = JAP
+# 		JAP = { is_ai = no }
+# 	}
 
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		id = "SHX"
-		value = 100
-	}
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		id = "XSM"
-		value = 100
-	}
-}
+# 	ai_strategy = {
+# 		type = dont_defend_ally_borders
+# 		id = "SHX"
+# 		value = 100
+# 	}
+# 	ai_strategy = {
+# 		type = dont_defend_ally_borders
+# 		id = "XSM"
+# 		value = 100
+# 	}
+# }
 
 # EAI_CHI_defensive_vs_JAP_careful_north = {
 # 	allowed = {
@@ -444,26 +444,26 @@ CHI_coastal_buffer = {
 # 	}
 # }
 
-CHI_easy_going = {
-	allowed = {
-		original_tag = CHI
-	}
-	enable = {
-		has_war_with = JAP
-		date < 1940.1.1
-		JAP = { is_ai = yes }
-	}
-	abort_when_not_enabled = yes
+# CHI_easy_going = {
+# 	allowed = {
+# 		original_tag = CHI
+# 	}
+# 	enable = {
+# 		has_war_with = JAP
+# 		date < 1940.1.1
+# 		JAP = { is_ai = yes }
+# 	}
+# 	abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = front_control
-		tag = JAP
-		priority = 100
-		ordertype = front
-		execution_type = careful
-		# execute_order = yes
-	}
-}
+# 	ai_strategy = {
+# 		type = front_control
+# 		tag = JAP
+# 		priority = 100
+# 		ordertype = front
+# 		execution_type = careful
+# 		# execute_order = yes
+# 	}
+# }
 
 SOV_dont_get_directly_involved_in_china = {
 	allowed = {
@@ -480,5 +480,60 @@ SOV_dont_get_directly_involved_in_china = {
 		type = alliance
 		id = PRC
 		value = -200
+	}
+}
+
+CHI_dont_join_ENG_if_not_democratic = {
+	allowed = {
+		WTT_is_chinese_country = yes 
+	}
+
+	enable = {
+		WTT_is_chinese_country = yes 
+		NOT = { has_government = democratic }
+		ENG = { has_government = democratic }
+	}
+
+	abort_when_not_enabled = yes 
+
+	ai_strategy = {
+		type =  alliance
+		id = ENG
+		value = -200
+	}
+}
+
+CHI_dont_join_USA_if_not_democratic = {
+	allowed = {
+		WTT_is_chinese_country = yes 
+	}
+
+	enable = {
+		WTT_is_chinese_country = yes 
+		NOT = { has_government = democratic }
+		USA = { has_government = democratic }
+	}
+
+	abort_when_not_enabled = yes 
+
+	ai_strategy = {
+		type =  alliance
+		id = USA
+		value = -200
+	}
+}
+
+#### FORCE CONCENTRATION
+CHI_reduce_early_AIFC = {
+	allowed = { original_tag = CHI }
+	enable = {
+		date < 1940.1.1
+		surrender_progress < 0.1
+	}
+	abort_when_not_enabled = yes 
+
+	ai_strategy = {
+		type = force_concentration_factor
+		value = -50
 	}
 }

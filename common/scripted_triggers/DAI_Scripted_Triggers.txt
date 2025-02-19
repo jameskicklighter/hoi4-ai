@@ -71,6 +71,24 @@ DAI_should_build_tanks = {
 	}
 }
 
+# For potential raids.
+DAI_should_build_paratroopers = {
+	always = no
+	# OR = {
+	# 	AND = {
+	# 		date > 1938.1.1
+	# 		OR = {
+	# 			tag = ENG
+	# 			tag = GER
+	# 		}
+	# 	}
+	# 	AND = {
+	# 		date > 1940.1.1
+	# 		is_major = yes
+	# 	}
+	# }
+}
+
 ##############################################################################
 ### 		NAVAL
 ##############################################################################
@@ -81,7 +99,8 @@ DAI_should_build_tanks = {
 DAI_Should_Research_Navy_GENERAL = {
 	# We need to prepare for Barbarossa, regardless of our dockyards.
 	# Furthermore we need to focus on subs.
-	if = { limit = {
+	if = {
+		limit = {
 			original_tag = GER
 			has_government = fascism
 		}
@@ -100,19 +119,29 @@ DAI_Should_Research_Navy_GENERAL = {
 			}
 		}
 	}
+	# else_if = {
+	# 	limit = {
+	# 		original_tag = SOV
+	# 	}
+	# 	AND = {
+	# 		date > 1942.1.1
+	# 		surrender_progress < 0.1
+	# 	}
+	# }
 	else = {
 		OR = {
 			# We have sufficient Naval Industry to prioritize upgrades.
-			num_of_naval_factories > 30
 			# We have at least 75% of an enemy's naval strength, and
 			# we have at least a modest navy to upgrade.
 			AND = {
 				has_war = yes
+				surrender_progress < 0.1
+				amount_research_slots > 3
 				enemies_naval_strength_ratio < 1.33
+				num_of_naval_factories > 20
 				has_navy_size = {
 					size > 30
 				}
-				amount_research_slots > 3
 			}
 			# We always need vital ship upgrades to put up a fight.
 			original_tag = ENG
@@ -178,3 +207,34 @@ DAI_ITA_only_has_fake_war_with_ETH = {
 		}
 	}
 }
+
+##############################################################################
+### 		IDEAS
+##############################################################################
+
+DAI_should_upgrade_manpower_law = {
+
+	NOT = { conscription_ratio < 1.0 }
+
+	set_temp_variable = { manpower_in_reserve_ratio = manpower_k }
+	if = { limit = { check_variable = { deployed_army_manpower_k > 0 } }
+		divide_temp_variable = { manpower_in_reserve_ratio = deployed_army_manpower_k }
+	}
+	else = {
+		set_temp_variable = { manpower_in_reserve_ratio = 1 }
+	}
+
+	# We want to have 40% of our army's size in reserve, otherwise we need to upgrade
+	# our manpower law. We also need at least 100k in reserve.
+	OR = {
+		has_war = yes
+		date > 1937.1.1
+	}
+	OR = {
+		has_manpower < 100000
+		check_variable = { manpower_in_reserve_ratio < 0.4 }
+	}
+
+}
+
+

@@ -142,35 +142,10 @@ technologies = {
 		xor = {
 			armored_spearhead
 		}
-		motorized = {
+		category_mobile_and_mobile_combat_sup = {
 			maximum_speed = 0.1
 			default_morale = 0.2
 		}
-		armored_car = {
-			maximum_speed = 0.1
-			default_morale = 0.2
-		}
-		mot_artillery_brigade = {
-			maximum_speed = 0.1
-			default_morale = 0.2
-		}
-		mot_anti_tank_brigade = {
-			maximum_speed = 0.1
-			default_morale = 0.2
-		}
-		mot_anti_air_brigade = {
-			maximum_speed = 0.1
-			default_morale = 0.2
-		}
-		mechanized = {
-			maximum_speed = 0.1
-			default_morale = 0.2
-		}
-		amphibious_mechanized = {
-			maximum_speed = 0.1
-			default_morale = 0.2
-		}
-
 		path = {
 			leads_to_tech = mass_motorization 
 			research_cost_coeff = 1
@@ -231,13 +206,7 @@ technologies = {
 		xp_research_type = army
 		xp_unlock_cost = 100
 
-		motorized = {
-			max_organisation = 15
-		}
-		mechanized = {
-			max_organisation = 15
-		}
-		amphibious_mechanized = {
+		category_vehicle_infantry = {
 			max_organisation = 15
 		}
 		armored_car = {
@@ -371,18 +340,12 @@ technologies = {
 			default_morale = 0.1
 			max_organisation = 7
 		}
+		category_vehicle_infantry = {
+			max_organisation = 5
+		}
 
 		enable_tactic = tactic_breakthrough
 
-		motorized = {
-			max_organisation = 5
-		}
-		mechanized = {
-			max_organisation = 5
-		}
-		amphibious_mechanized = {
-			max_organisation = 5
-		}
 
 		path = {
 			leads_to_tech = kampfgruppe 
@@ -482,7 +445,7 @@ technologies = {
 		}
 
 		ai_will_do = {
-			base = 1 # Preferred Branch
+			base = 0
 		}
 
 	}
@@ -539,7 +502,7 @@ technologies = {
 		}
 
 		ai_will_do = {
-			base = 1 # If we somehow got in this branch, go for it.
+			base = 1
 		}
 
 	}
@@ -583,7 +546,7 @@ technologies = {
 		}
 
 		ai_will_do = {
-			base = 0
+			base = 1 # Preferred Branch
 		}
 
 	}
@@ -613,7 +576,7 @@ technologies = {
 		}
 
 		ai_will_do = {
-			base = 1 # If we somehow got in this branch, go for it.
+			base = 1
 		}
 
 	}
@@ -694,12 +657,6 @@ technologies = {
 		
 		ai_will_do = {
 			base = 0
-			modifier = {
-				add = 1
-				NOT = { has_tech = mobile_warfare }
-				NOT = { has_tech = trench_warfare }
-				NOT = { has_tech = mass_assault }
-			}
 		}
 
 	}
@@ -1447,16 +1404,10 @@ technologies = {
 			infantry_offensive
 		}
 	
-		motorized = {
+		category_vehicle_infantry = {
 			max_organisation = 5
 		}
 		armored_car = {
-			max_organisation = 5
-		}
-		mechanized = {
-			max_organisation = 5
-		}
-		amphibious_mechanized = {
 			max_organisation = 5
 		}
 
@@ -1686,6 +1637,9 @@ technologies = {
 			max_organisation = 5
 			breakthrough = 0.1
 		}
+		category_cavalry = {
+			breakthrough = 0.05
+		}
 
 		additional_brigade_column_size = 1
 
@@ -1767,6 +1721,10 @@ technologies = {
 		recon = {
 			battalion_mult = {
 				category = category_light_infantry
+				soft_attack = 0.05
+			}
+			battalion_mult = {
+				category = category_cavalry
 				soft_attack = 0.05
 			}
 		}
@@ -1937,17 +1895,9 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 1
-				OR = {
-					tag = CHI
-					tag = PRC
-					tag = GXC
-					tag = YUN
-					tag = SHX
-					tag = XSM
-					tag = SIK
-					tag = MEN
-					tag = MAN
-				}
+				NOT = { has_tech = mobile_warfare }
+				NOT = { has_tech = superior_firepower }
+				NOT = { has_tech = trench_warfare }
 			}
 		}
 
@@ -2068,10 +2018,6 @@ technologies = {
 
 		ai_will_do = {
 			base = 0
-			modifier = {
-				add = 1
-				tag = SOV
-			}
 		}
 
 	}
@@ -2240,15 +2186,7 @@ technologies = {
 			default_morale = 0.1
 		}
 
-		mechanized = {
-			max_organisation = 10
-			default_morale = 0.1
-		}
-		motorized = {
-			max_organisation = 10
-			default_morale = 0.1
-		}
-		amphibious_mechanized = {
+		category_vehicle_infantry = {
 			max_organisation = 10
 			default_morale = 0.1
 		}
@@ -2360,22 +2298,7 @@ technologies = {
 		}
 
 		ai_will_do = {
-			base = 0
-			modifier = {
-				add = 1
-				OR = {
-					tag = CHI
-					tag = PRC 
-					tag = GXC
-					tag = YUN
-					tag = SHX
-					tag = XSM
-					tag = SIK
-					tag = MEN
-					tag = MAN
-				}
-			}
-
+			base = 1
 		}
 
 	}

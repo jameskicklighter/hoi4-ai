@@ -1,5 +1,5 @@
 ############################################################################################################
-#	AI Divisions mod - decisions
+#	DAI Mod Decisions
 ############################################################################################################
 
 DAI_division_template_decisions = {
@@ -63,9 +63,6 @@ DAI_division_template_decisions = {
 		}
 
 		complete_effect = {
-		}
-
-		complete_effect = {
 			division_template = {
 				name = "Infantry template 1"
 				regiments = {
@@ -87,6 +84,43 @@ DAI_division_template_decisions = {
 			}
 		}
 	}
+
+	# AI_Infantry_Filler_Spawn_18w = {
+	# 	icon = rifles
+	# 	visible = {
+	# 		is_ai = yes
+	# 		# original_tag = JAP
+	# 	}
+	# 	available = {
+	# 		always = yes
+	# 	}
+	# 	cost = 0
+
+	# 	fire_only_once = yes
+
+	# 	ai_will_do = {
+	# 		base = 999
+	# 	}
+
+	# 	complete_effect = {
+	# 		division_template = {
+	# 			name = "Infantry 1936 Template"
+	# 			regiments = {
+	# 				infantry = { x = 0 y = 0 }
+	# 				infantry = { x = 0 y = 1 }
+	# 				infantry = { x = 0 y = 2 }
+	# 				infantry = { x = 1 y = 0 }
+	# 				infantry = { x = 1 y = 1 }
+	# 				infantry = { x = 1 y = 2 }
+	# 				infantry = { x = 2 y = 0 }
+	# 				infantry = { x = 2 y = 1 }
+	# 				infantry = { x = 2 y = 2 }
+	# 			}
+	# 			support = {
+	# 			}
+	# 		}
+	# 	}
+	# }
 
 	AI_Medium_Armor_Prototype_Major = {
 		icon = rifles
@@ -115,12 +149,6 @@ DAI_division_template_decisions = {
 		}
 
 		complete_effect = {
-			hidden_effect = {
-				army_experience = -1
-			}
-		}
-
-		complete_effect = {
 			division_template = {
 				name = "Medium Armor Prototype Major"
 				regiments = {
@@ -141,6 +169,68 @@ DAI_division_template_decisions = {
 					# engineer = { x = 0 y = 0 }
 					# signal_company = { x = 0 y = 1 }
 					# maintenance_company = { x = 0 y = 2 }
+				}
+			}
+		}
+	}
+
+	AI_Medium_Armor_Prototype_SOV = {
+		icon = rifles
+		visible = {
+			is_ai = yes
+			# original_tag = SOV
+		}
+		available = {
+			# original_tag = SOV
+			DAI_should_build_tanks = yes
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			has_tech = interwar_antiair
+			has_tech = interwar_antitank
+			date > 1939.6.1
+		}
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 100
+				# date > 1936.12.1
+				DAI_should_build_tanks = yes
+			}
+		}
+
+		complete_effect = {
+			division_template = {
+				name = "Medium Armor Prototype SOV"
+				regiments = {
+					medium_armor = { x = 0 y = 0 }
+					medium_armor = { x = 0 y = 1 }
+					medium_armor = { x = 0 y = 2 }
+					medium_armor = { x = 0 y = 3 }
+					medium_armor = { x = 1 y = 0 }
+					medium_armor = { x = 1 y = 1 }
+					medium_armor = { x = 1 y = 2 }
+					medium_armor = { x = 1 y = 3 }
+					motorized = { x = 2 y = 0 }
+					motorized = { x = 2 y = 1 }
+					motorized = { x = 2 y = 2 }
+					motorized = { x = 2 y = 3 }
+					motorized = { x = 3 y = 0 }
+					motorized = { x = 3 y = 1 }
+					motorized = { x = 3 y = 2 }
+					motorized = { x = 3 y = 3 }
+					# medium_sp_anti_air_brigade = { x = 4 y = 0 }
+					# medium_tank_destroyer_brigade = { x = 4 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+					anti_air = { x = 0 y = 2 }
 				}
 			}
 		}
@@ -526,6 +616,281 @@ DAI_disband_starting_units_decisions = {
 				delete_units = {
 					division_template = "Qibing Shi"
 					disband = yes
+				}
+			}
+		}
+	}
+
+}
+
+# DAI_hire_advisor_decisions = {
+
+# 	JAP_hire_head_of_intelligence = {
+# 		icon = GFX_decision_generic_disband_irregulars
+# 		allowed = { original_tag = JAP }
+# 		visible = { is_ai = yes }
+# 		available = { date < 1936.1.10 }
+# 		cost = 0
+
+# 		fire_only_once = yes
+# 		ai_will_do = { base = 999 }
+
+# 		complete_effect = {
+# 			add_trait = {
+# 				# character = SOV_nikolay_yezhov
+# 				slot = political_advisor
+# 				trait = JAP_hire_head_of_intelligence
+# 			}
+# 		}
+# 	}
+
+# }
+
+DAI_spawn_divisions_decisions = {
+
+	DAI_GER_spawn_units = {
+		icon = rifles
+		visible = {
+			is_ai = yes
+			original_tag = GER
+		}
+		available = {
+			has_manpower > 1000000
+			has_army_manpower = { size < 3000000 }
+			has_equipment = { infantry_equipment > 1000 }
+		}
+		cost = 0
+
+		fire_only_once = no
+		days_re_enable = 30
+
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = { 
+					type = infantry_equipment
+					amount = -900
+				}
+				add_manpower = -9000
+			}
+		}
+
+		complete_effect = {
+			if = { limit = { NOT = { has_template = "Infantry 1936 Template" } }
+				division_template = {
+					name = "Infantry 1936 Template"
+
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+					}
+				}
+			}
+		}
+
+		complete_effect = {
+			capital_scope = {
+				create_unit = {
+					division = "division_template = \"Infantry 1936 Template\" start_experience_factor = 0.0 start_equipment_factor = 1.0"
+					owner = ROOT
+				}
+			}
+		}
+	}
+
+	DAI_POL_spawn_units = {
+		icon = rifles
+		visible = {
+			is_ai = yes
+			original_tag = POL
+		}
+		available = {
+			has_manpower > 300000
+			has_army_manpower = { size < 1500000 }
+			has_equipment = { infantry_equipment > 1000 }
+		}
+		cost = 0
+
+		fire_only_once = no
+		days_re_enable = 30
+
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = { 
+					type = infantry_equipment
+					amount = -900
+				}
+				add_manpower = -9000
+			}
+		}
+
+		complete_effect = {
+			if = { limit = { NOT = { has_template = "Infantry 1936 Template" } }
+				division_template = {
+					name = "Infantry 1936 Template"
+
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+					}
+				}
+			}
+		}
+
+		complete_effect = {
+			capital_scope = {
+				create_unit = {
+					division = "division_template = \"Infantry 1936 Template\" start_experience_factor = 0.0 start_equipment_factor = 1.0"
+					owner = ROOT
+				}
+			}
+		}
+	}
+
+	DAI_SOV_spawn_units = {
+		icon = rifles
+		visible = {
+			is_ai = yes
+			original_tag = SOV
+		}
+		available = {
+			has_manpower > 1000000
+			has_army_manpower = { size < 3000000 }
+			has_equipment = { infantry_equipment > 1000 }
+		}
+		cost = 0
+
+		fire_only_once = no
+		days_re_enable = 30
+
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = { 
+					type = infantry_equipment
+					amount = -900
+				}
+				add_manpower = -9000
+			}
+		}
+
+		complete_effect = {
+			if = { limit = { NOT = { has_template = "Infantry 1936 Template" } }
+				division_template = {
+					name = "Infantry 1936 Template"
+
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+					}
+				}
+			}
+		}
+
+		complete_effect = {
+			capital_scope = {
+				create_unit = {
+					division = "division_template = \"Infantry 1936 Template\" start_experience_factor = 0.0 start_equipment_factor = 1.0"
+					owner = ROOT
+				}
+			}
+		}
+	}
+
+	DAI_JAP_spawn_units = {
+		icon = rifles
+		visible = {
+			is_ai = yes
+			original_tag = JAP
+		}
+		available = {
+			has_manpower > 500000
+			has_army_manpower = { size < 2000000 }
+			has_equipment = { infantry_equipment > 1000 }
+		}
+		cost = 0
+
+		fire_only_once = no
+		days_re_enable = 30
+
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = { 
+					type = infantry_equipment
+					amount = -900
+				}
+				add_manpower = -9000
+			}
+		}
+
+		complete_effect = {
+			if = { limit = { NOT = { has_template = "Infantry 1936 Template" } }
+				division_template = {
+					name = "Infantry 1936 Template"
+
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+					}
+				}
+			}
+		}
+
+		complete_effect = {
+			capital_scope = {
+				create_unit = {
+					division = "division_template = \"Infantry 1936 Template\" start_experience_factor = 0.0 start_equipment_factor = 1.0"
+					owner = ROOT
 				}
 			}
 		}

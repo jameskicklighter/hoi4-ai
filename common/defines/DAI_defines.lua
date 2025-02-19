@@ -47,7 +47,7 @@ NDefines.NAI.DESIRE_USE_XP_TO_UNLOCK_NAVY_SPIRIT = 0.4   -- How quickly is desir
 NDefines.NAI.DESIRE_USE_XP_TO_UNLOCK_AIR_SPIRIT = 0.4     -- How quickly is desire to unlock air spirits accumulated?
 
 -- Naval Production
-NDefines.NAI.PRODUCTION_MAX_PROGRESS_TO_SWITCH_NAVAL = 0.1 -- temp fix
+-- NDefines.NAI.PRODUCTION_MAX_PROGRESS_TO_SWITCH_NAVAL = 0.1 -- temp fix
 
 -- DO NOT TOUCH THESE RATIOS OR GAME WILL CRASH UPON STARTUP!!! BUT DON'T KNOW WHY
 
@@ -62,8 +62,8 @@ NDefines.NAI.PRODUCTION_MAX_PROGRESS_TO_SWITCH_NAVAL = 0.1 -- temp fix
 
 -- NDefines.NAI.CONSTRUCTION_PRIO_INFRASTRUCTURE = 10.00     -- was 0.20
 
-NDefines.NAI.MAX_MICRO_ATTACKS_PER_ORDER = 5            -- AI goes through its orders and checks if there are situations to take advantage of
-NDefines.NAI.MICRO_POCKET_SIZE = 10
+-- NDefines.NAI.MAX_MICRO_ATTACKS_PER_ORDER = 5            -- AI goes through its orders and checks if there are situations to take advantage of
+-- NDefines.NAI.MICRO_POCKET_SIZE = 10
 
 NDefines.NAI.DEFAULT_MODULE_VARIANT_CREATION_XP_CUTOFF_LAND = 50 --50	-- Army XP needed before attempting to create a variant of a type that uses the tank designer (the tank designer DLC feature must be active).
 NDefines.NAI.DEFAULT_MODULE_VARIANT_CREATION_XP_CUTOFF_NAVY = 25 --50	-- Same as above but for the ship designer.
@@ -72,3 +72,20 @@ NDefines.NAI.DEFAULT_MODULE_VARIANT_CREATION_XP_CUTOFF_AIR = 25 --25	-- Same as 
 -- BUILDING_TARGETS_BUILDING_PRIORITIES = {				-- buildings in order of pirority when considering building targets strategies. First has the greatest priority, omitted has the lowest. NOTE: not all buildings are supported by building targets strategies.
 --     'industrial_complex',
 -- },
+
+-- NDefines.NAI.PRODUCTION_EQUIPMENT_SURPLUS_FACTOR = 1 -- [0.4] -- Base value for how much of currently used equipment the AI will at least strive to have in stock
+-- NDefines.NAI.PRODUCTION_EQUIPMENT_SURPLUS_FACTOR_GARRISON = -- [0.3]
+
+-- NDefines.NAI.SHIPS_PRODUCTION_BASE_COST = 1
+-- NDefines.NAI.NEEDED_NAVAL_FACTORIES_EXPENSIVE_SHIP_BONUS = 1000
+-- NDefines.NAI.PRODUCTION_MAX_PROGRESS_TO_SWITCH_NAVAL = 0.001 -- temp fix
+-- NDefines.NAI.PRODUCTION_WAIT_TO_FINISH_IF_EXPENSIVE = 0.25
+-- NDefines.NAI.PRODUCTION_WAIT_TO_FINISH_IF_CHEAP = 0.75
+
+-- NDefines.NAI.NAVAL_DOCKYARDS_SHIP_FACTOR = 1000			-- The extent to which number of dockyards play into amount of sips a nation wants
+-- NDefines.NAI.NAVAL_BASES_SHIP_FACTOR = 1000				-- The extent to which number of naval bases play into amount of sips a nation wants
+-- NDefines.NAI.NAVAL_STATES_SHIP_FACTOR = 1000			-- The extent to which number of states play into amount of sips a nation wants
+
+-- NDefines.NAI.PRODUCTION_LINE_SWITCH_SURPLUS_NEEDED_MODIFIER = 0 -- 0.2 --delays the AI from upgrading air lines too long, this is handled by strategies instead
+
+--NDefines.NAI.PRODUCTION_UNAVAILABLE_RESORCE_FACTORY_FACTOR = 0.5

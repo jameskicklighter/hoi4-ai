@@ -75,6 +75,12 @@ SOV_unit_production = {
 		value = 63
 	}
 
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = medium_tank_chassis
+		value = 100
+	}
+
 	#Air unit factors
 	# ai_strategy = {
 	# 	type = unit_ratio
@@ -108,16 +114,16 @@ SOV_unit_production = {
 }
 
 # DAI --
-SOV_wait_on_air_production = {
-	allowed = { original_tag = SOV }
-	enable = { NOT = { has_completed_focus = SOV_foster_flying_clubs } }
-	abort_when_not_enabled = yes
+# SOV_wait_on_air_production = {
+# 	allowed = { original_tag = SOV }
+# 	enable = { NOT = { has_completed_focus = SOV_foster_flying_clubs } }
+# 	abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = air_factory_balance
-		value = -75
-	}
-}
+# 	ai_strategy = {
+# 		type = air_factory_balance
+# 		value = -75
+# 	}
+# }
 # -- DAI
 
 # SOV_bomber_production = {
@@ -357,7 +363,7 @@ germany_ally = {
 	enable = {
 		OR = {
 			has_completed_focus = SOV_anti_capitalist_policies
-			GER = { has_completed_focus = GER_soviet_ally }
+			GER = { has_completed_focus = GER_alliance_with_the_ussr }
 		}
 		country_exists = GER
 	}
@@ -593,43 +599,43 @@ SOV_pp_spending = {
 	}
 }
 
-SOV_decision_pp_spending = {
-	allowed = {
-		original_tag = SOV
-	}
-	enable = {
-		OR = {
-			has_manpower < 100000
-			AND = {
-				has_war = yes
-				has_manpower < 1000000
-			}
-		}
-		has_political_power < 200
-		OR = {
-			has_idea = volunteer_only
-			has_idea = limited_conscription
-			has_idea = extensive_conscription
-		}
-	}
-	abort_when_not_enabled = yes
+# SOV_decision_pp_spending = {
+# 	allowed = {
+# 		original_tag = SOV
+# 	}
+# 	enable = {
+# 		OR = {
+# 			has_manpower < 100000
+# 			AND = {
+# 				has_war = yes
+# 				has_manpower < 1000000
+# 			}
+# 		}
+# 		has_political_power < 200
+# 		OR = {
+# 			has_idea = volunteer_only
+# 			has_idea = limited_conscription
+# 			has_idea = extensive_conscription
+# 		}
+# 	}
+# 	abort_when_not_enabled = yes
 
-	ai_strategy = { # dont burn PP on decisions and other shit when we are desparate for manpower laws
-		type = pp_spend_priority
-		id = decision
-		value = -100
-	}
-	ai_strategy = {
-		type = pp_spend_priority
-		id = guarantee
-		value = -200
-	}
-	ai_strategy = {
-		type = pp_spend_priority
-		id = relation
-		value = -200
-	}
-}
+# 	ai_strategy = { # dont burn PP on decisions and other shit when we are desparate for manpower laws
+# 		type = pp_spend_priority
+# 		id = decision
+# 		value = -100
+# 	}
+# 	ai_strategy = {
+# 		type = pp_spend_priority
+# 		id = guarantee
+# 		value = -200
+# 	}
+# 	ai_strategy = {
+# 		type = pp_spend_priority
+# 		id = relation
+# 		value = -200
+# 	}
+# }
 
 SOV_play_nice_with_ribbentrop_pact = {
 	allowed = {
@@ -942,11 +948,12 @@ SOV_scorched_earth_german_front_baltics = {
 		NOT = { # please don't spend PP on blowing up your own stuff when you need it for manpower
 			has_manpower < 1000000
 			has_political_power < 200
-			OR = {
-				has_idea = volunteer_only
-				has_idea = limited_conscription
-				has_idea = extensive_conscription
-			}
+			# DAI TEST
+			# OR = {
+			# 	has_idea = volunteer_only
+			# 	has_idea = limited_conscription
+			# 	has_idea = extensive_conscription
+			# }
 		}
 		count_triggers = {
 			amount = 4 #if 4 baltic states are owned by an enemy, burn the rest of the Baltics
@@ -1006,11 +1013,12 @@ SOV_scorched_earth_german_front_Poland = {
 		NOT = { # please don't spend PP on blowing up your own stuff when you need it for manpower
 			has_manpower < 1000000
 			has_political_power < 200
-			OR = {
-				has_idea = volunteer_only
-				has_idea = limited_conscription
-				has_idea = extensive_conscription
-			}
+			# DAI TEST
+			# OR = {
+			# 	has_idea = volunteer_only
+			# 	has_idea = limited_conscription
+			# 	has_idea = extensive_conscription
+			# }
 		}
 		count_triggers = {
 			amount = 2 #if 2 states are owned by an enemy, burn the rest of the area
@@ -1059,11 +1067,12 @@ SOV_scorched_earth_german_front_north = {
 		NOT = { # please don't spend PP on blowing up your own stuff when you need it for manpower
 			has_manpower < 1000000
 			has_political_power < 200
-			OR = {
-				has_idea = volunteer_only
-				has_idea = limited_conscription
-				has_idea = extensive_conscription
-			}
+			# DAI TEST
+			# OR = {
+			# 	has_idea = volunteer_only
+			# 	has_idea = limited_conscription
+			# 	has_idea = extensive_conscription
+			# }
 		}
 		count_triggers = {
 			amount = 2 #if 2 states are owned by an enemy, burn the rest of the area
@@ -1111,11 +1120,12 @@ SOV_scorched_earth_german_front_center = {
 		NOT = { # please don't spend PP on blowing up your own stuff when you need it for manpower
 			has_manpower < 1000000
 			has_political_power < 200
-			OR = {
-				has_idea = volunteer_only
-				has_idea = limited_conscription
-				has_idea = extensive_conscription
-			}
+			# DAI TEST
+			# OR = {
+			# 	has_idea = volunteer_only
+			# 	has_idea = limited_conscription
+			# 	has_idea = extensive_conscription
+			# }
 		}
 		count_triggers = {
 			amount = 4 #if 4 states are owned by an enemy, burn the rest of the area
@@ -1173,11 +1183,12 @@ SOV_scorched_earth_german_front_moscow = {
 		NOT = { # please don't spend PP on blowing up your own stuff when you need it for manpower
 			has_manpower < 1000000
 			has_political_power < 200
-			OR = {
-				has_idea = volunteer_only
-				has_idea = limited_conscription
-				has_idea = extensive_conscription
-			}
+			# DAI TEST
+			# OR = {
+			# 	has_idea = volunteer_only
+			# 	has_idea = limited_conscription
+			# 	has_idea = extensive_conscription
+			# }
 		}
 		count_triggers = {
 			amount = 1 #if 1 states are owned by an enemy, burn the rest of the area
@@ -1227,11 +1238,12 @@ SOV_scorched_earth_german_front_stalingrad = {
 		NOT = { # please don't spend PP on blowing up your own stuff when you need it for manpower
 			has_manpower < 1000000
 			has_political_power < 200
-			OR = {
-				has_idea = volunteer_only
-				has_idea = limited_conscription
-				has_idea = extensive_conscription
-			}
+			# DAI TEST
+			# OR = {
+			# 	has_idea = volunteer_only
+			# 	has_idea = limited_conscription
+			# 	has_idea = extensive_conscription
+			# }
 		}
 		count_triggers = {
 			amount = 1 #if 1 states are owned by an enemy, burn the rest of the area
@@ -1719,7 +1731,7 @@ SOV_ENG_tagteam_iran = {
 		}
 	}
 	enable = {
-		has_completed_focus = SOV_preemptive_invasion_of_iran
+		SOV = { has_completed_focus = SOV_preemptive_invasion_of_iran } # DAI
 		has_global_flag = SOV_agreed_anglo_soviet_invasion_of_iran_flag
 		RAJ = {
 			is_in_faction_with = ENG
@@ -1809,14 +1821,14 @@ SOV_build_civs = {
 		original_tag = SOV
 	}
 	enable = {
-		date < 1939.5.1
+		date < 1939.1.1
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = building_target
 		id = industrial_complex
-		value = 250
+		value = 200
 	}
 }
 
@@ -1825,7 +1837,7 @@ SOV_build_mils = {
 		original_tag = SOV
 	}
 	enable = {
-		date > 1939.5.1
+		date > 1939.1.1
 	}
 	abort_when_not_enabled = yes
 
@@ -2008,15 +2020,18 @@ SOV_defense_in_depth = {
 	}
 }
 
-SOV_dont_naval_invade_early_war = {
+SOV_dont_naval_invade_when_in_danger = {
+	reversed = yes
 	allowed = {
 		original_tag = SOV
 	}
 	enable = {
-		is_historical_focus_on = yes
-		has_war_with = GER
 		OR = {
-			date < 1943.1.1 #Maybe this isn't such a good idea now?
+			AND = {
+				is_historical_focus_on = yes
+				GER = { going_war_with_SOV = yes }
+				date < 1943.1.1
+			}
 			surrender_progress > 0.2
 		}
 	}
@@ -2024,8 +2039,24 @@ SOV_dont_naval_invade_early_war = {
 
 	ai_strategy = {
 		type = invade
-		# id = "AST"
+		id = "SOV"
 		value = -9999
+	}
+}
+
+SOV_tanks_on_germany = {
+	allowed = {
+		original_tag = SOV
+	}
+	enable = {
+		GER = { going_war_with_SOV = yes }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_armor_score
+		id = GER
+		value = 200
 	}
 }
 
@@ -2194,74 +2225,74 @@ ALLIES_avoid_enemies_for_a_while_ww3 = {
 	}
 }
 
-SOV_defend_leningrad_if_at_war_with_fin = {
-	allowed = {
-		original_tag = SOV
-	}
-	enable = {
-		NOT = { 
-			has_war_with = JAP
-			has_war_with = GER
-		}
+# SOV_defend_leningrad_if_at_war_with_fin = {
+# 	allowed = {
+# 		original_tag = SOV
+# 	}
+# 	enable = {
+# 		NOT = { 
+# 			has_war_with = JAP
+# 			has_war_with = GER
+# 		}
 		
-		OR = {
-			has_war_with = FIN
-			has_wargoal_against = { target = FIN }
-			SOV = {
-				focus_progress = {
-					focus = SOV_secure_leningrad
-					progress > 0
-				}
-			}
-		}
-	}
+# 		OR = {
+# 			has_war_with = FIN
+# 			has_wargoal_against = { target = FIN }
+# 			SOV = {
+# 				focus_progress = {
+# 					focus = SOV_secure_leningrad
+# 					progress > 0
+# 				}
+# 			}
+# 		}
+# 	}
 
-	ai_strategy = {
-		type = area_priority
-		id = winter_war_front
-		value = 200
-	}
+# 	ai_strategy = {
+# 		type = area_priority
+# 		id = winter_war_front
+# 		value = 200
+# 	}
 
-	ai_strategy = {
-		type = put_unit_buffers
-		ratio = 0.1
-		states = {
-			195
-		}
-		subtract_fronts_from_need = yes
-	}
+# 	ai_strategy = {
+# 		type = put_unit_buffers
+# 		ratio = 0.1
+# 		states = {
+# 			195
+# 		}
+# 		subtract_fronts_from_need = yes
+# 	}
 
-	ai_strategy = {
-    	type = front_armor_score
-    	id = FIN
-    	value = 200
-	}
+# 	ai_strategy = {
+# 		type = front_armor_score
+# 		id = FIN
+# 		value = 200
+# 	}
 
-	ai_strategy = {
-		type = front_control
-		state_trigger = {
-			OR = {
-				state = 195
-				state = 146
-				state = 928
-				state = 111
-				state = 927
-				state = 926
-			}
-		}
-		tag = FIN
+# 	ai_strategy = {
+# 		type = front_control
+# 		state_trigger = {
+# 			OR = {
+# 				state = 195
+# 				state = 146
+# 				state = 928
+# 				state = 111
+# 				state = 927
+# 				state = 926
+# 			}
+# 		}
+# 		tag = FIN
 
-		ratio = 0.15
+# 		ratio = 0.15
 
-		priority = 100
-		ordertype = front
-		execution_type = rush
-		execute_order = yes
-		manual_attack = yes
-	}
+# 		priority = 100
+# 		ordertype = front
+# 		execution_type = rush
+# 		execute_order = yes
+# 		manual_attack = yes
+# 	}
 
-	abort_when_not_enabled = yes
-}
+# 	abort_when_not_enabled = yes
+# }
 
 SOV_dont_send_all_convoys_on_holiday_to_vladivostok = {
 	allowed = { original_tag = SOV }
@@ -2309,4 +2340,62 @@ SOV_large_standing_army = {
 	
 	ai_strategy = { type = build_army id = infantry value = 500 }
 	ai_strategy = { type = force_build_armies value = 300 }
+}
+
+SOV_historical_dont_attack_poland_too_early = {
+	allowed = { original_tag = SOV }
+	enable = {
+		is_historical_focus_on = yes
+		date < 1941.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = declare_war
+		id = POL
+		value = -300
+	}
+}
+
+SOV_cant_stop_wont_stop = {
+	allowed = { original_tag = SOV }
+	enable = {
+		is_historical_focus_on = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = ai_wanted_divisions_factor
+		value = 0.15  #FEED THE MEATGRINDER
+	}
+}
+
+#### FORCE CONCENTRATION
+
+# Spread out before barbarossa
+SOV_aifc_linear_defence = {
+	allowed = { original_tag = SOV }
+	enable = {
+		# We have split Poland up 
+		OR = {
+			owns_state = 96
+			owns_state = 95
+			owns_state = 94
+			owns_state = 93
+			owns_state = 92
+		}
+	}
+	abort = {
+		OR ={
+			# Winter Offensive, Right
+			date > 1941.12.1
+			# Desperate Defence
+			surrender_progress > 0.45
+		}
+	}
+
+	ai_strategy = {
+		type = force_concentration_factor
+		value = -100  # Just don't
+	}
 }

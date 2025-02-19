@@ -35,12 +35,19 @@ ability = {
 				
 				add = 2
 			}
+			# DAI --
 			modifier = {
-				# DAI --
 				factor = 0
+				command_power < 40.0
 				date < 1942.1.1
-				# -- DAI
 			}
+			# Soviets need Command Power for some decisions.
+			modifier = {
+				factor = 0
+				command_power < 100.0
+				tag = SOV
+			}
+			# -- DAI
 		}
 		
 		cost = 0.22
@@ -113,19 +120,19 @@ ability = {
 				
 				add = 2
 			}
+			# DAI --
 			modifier = {
-				# DAI --
 				factor = 0
+				command_power < 40.0
 				date < 1942.1.1
-				# -- DAI
 			}
-			# modifier = {
-			# 	# DAI --
-			# 	factor = 0
-			# 	is_major = yes
-			# 	date < 1942.1.1
-			# 	# -- DAI
-			# }
+			# Soviets need Command Power for some decisions.
+			modifier = {
+				factor = 0
+				command_power < 100.0
+				tag = SOV
+			}
+			# -- DAI
 		}
 	}
 	

@@ -11,7 +11,7 @@
 
 INFANTRY_JAP = {
 	available_for = { JAP }
-	roles = { infantry }
+	role = infantry
 	upgrade_prio = {
 		base = 1 
 		modifier = {
@@ -23,45 +23,12 @@ INFANTRY_JAP = {
 			date > 1939.1.1
 		}
 	}
-	match_to_count = 0.5
-
-	# INFANTRY_JAP_default = {
-	# 	# Weights
-	# 	upgrade_prio = { base = 0.1 }
-	# 	target_width = 24.0
-	# 	width_weight = 1.0
-	# 	column_swap_factor = 1.0
-	# 	# Design
-	# 	target_template = {
-	# 		weight = 100.0
-	# 		match_value = 1.0
-	# 		support = {
-	# 			engineer = 1
-	# 			recon = 1
-	# 		}
-	# 		regiments = {
-	# 			infantry = 12
-	# 		}
-	# 	}
-	# 	allowed_types = {
-	# 		# Support Battalion
-	# 		engineer
-	# 		recon
-	# 		# Line Battalion
-	# 		infantry
-	# 	}
-	# }
 
 	INFANTRY_JAP_1 = {
 		# Weights
 		upgrade_prio = { base = 10 }
-		target_width = 18.0
-		width_weight = 1.0
-		column_swap_factor = 1.0
 		# Design
 		target_template = {
-			weight = 100.0
-			match_value = 1.0
 			support = {
 				engineer = 1
 				artillery = 1
@@ -84,20 +51,14 @@ INFANTRY_JAP = {
 	INFANTRY_JAP_2 = {
 		# Weights
 		upgrade_prio = { base = 20 }
-		target_width = 18.0
-		width_weight = 1.0
-		column_swap_factor = 1.0
 		enable = { date > 1940.6.1 }
 		# Design
 		target_template = {
-			weight = 100.0
-			match_value = 1.0
 			support = {
 				engineer = 1
 				artillery = 1
 				anti_air = 1
 				logistics_company = 1
-				recon = 1
 			}
 			regiments = {
 				infantry = 9
@@ -109,7 +70,6 @@ INFANTRY_JAP = {
 			artillery
 			anti_air
 			logistics_company
-			recon
 			# Line Battalion
 			infantry
 		}

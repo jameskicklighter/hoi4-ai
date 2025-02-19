@@ -184,7 +184,7 @@ ITA_trade_with_germany = {
 	}
 }
 
-stresa_front_ita = {
+ITA_stresa_front = {
 	allowed = {
 		original_tag = ITA
 	}
@@ -195,17 +195,17 @@ stresa_front_ita = {
 
 	ai_strategy = {
 		type = alliance
-		id = "ENG"
+		id = ENG
 		value = 400
 	}
 	ai_strategy = {
 		type = alliance
-		id = "FRA"
+		id = FRA
 		value = 400
 	}
 }
 
-stresa_front_eng_fra = {
+ITA_stresa_front_ENG_FRA = {
 	allowed = {
 		OR = {
 			original_tag = FRA
@@ -223,12 +223,12 @@ stresa_front_eng_fra = {
 
 	ai_strategy = {
 		type = alliance
-		id = "ITA"
+		id = ITA
 		value = 400
 	}
 }
 
-albania_war_goal = {
+ITA_albania_war_goal = {
 	allowed = {
 		original_tag = ITA
 	}
@@ -244,12 +244,12 @@ albania_war_goal = {
 
 	ai_strategy = {
 		type = antagonize
-		id = "ALB"
+		id = ALB
 		value = 200
 	}
 }
 
-greece_war_goal = {
+ITA_greece_war_goal = {
 	allowed = {
 		original_tag = ITA
 	}
@@ -265,12 +265,12 @@ greece_war_goal = {
 
 	ai_strategy = {
 		type = antagonize
-		id = "GRE"
+		id = GRE
 		value = 200
 	}
 }
 
-ita_shore_up_against_france = {
+ITA_shore_up_against_france = {
 	allowed = {
 		original_tag = ITA
 	}
@@ -336,7 +336,7 @@ ITA_slow_going_against_france = {
 	
 }
 
-anti_uk_war_goals = {
+ITA_anti_uk_war_goals = {
 	allowed = {
 		original_tag = ITA
 	}
@@ -352,12 +352,12 @@ anti_uk_war_goals = {
 
 	ai_strategy = {
 		type = antagonize
-		id = "ENG"
+		id = ENG
 		value = 200
 	}
 }
 
-yugoslavia_war_goal = { #TODO_Manu: Check this with new focus
+ITA_yugoslavia_war_goal = { 
 	allowed = {
 		original_tag = ITA
 	}
@@ -374,12 +374,12 @@ yugoslavia_war_goal = { #TODO_Manu: Check this with new focus
 
 	ai_strategy = {
 		type = antagonize
-		id = "YUG"
+		id = YUG
 		value = 200
 	}
 }
 
-germany_ally = {
+ITA_germany_ally = {
 	allowed = {
 		original_tag = ITA
 	}
@@ -393,17 +393,17 @@ germany_ally = {
 
 	ai_strategy = {
 		type = befriend
-		id = "GER"
+		id = GER
 		value = 100
 	}
 	ai_strategy = {
 		type = alliance
-		id = "GER"
+		id = GER
 		value = 100
 	}
 }
 
-romania_ally = {
+ITA_romania_ally = {
 	allowed = {
 		original_tag = ITA
 	}
@@ -417,17 +417,17 @@ romania_ally = {
 
 	ai_strategy = {
 		type = befriend
-		id = "ROM"
+		id = ROM
 		value = 200
 	}
 	ai_strategy = {
 		type = alliance
-		id = "ROM"
+		id = ROM
 		value = 200
 	}
 }
 
-bulgaria_ally = {
+ITA_bulgaria_ally = {
 	allowed = {
 		original_tag = ITA
 	}
@@ -441,17 +441,17 @@ bulgaria_ally = {
 
 	ai_strategy = {
 		type = befriend
-		id = "BUL"
+		id = BUL
 		value = 200
 	}
 	ai_strategy = {
 		type = alliance
-		id = "BUL"
+		id = BUL
 		value = 200
 	}
 }
 
-yugoslavia_ally = { #TODO_Manu: Check this with new focus
+ITA_yugoslavia_ally = { 
 	allowed = {
 		original_tag = ITA
 	}
@@ -465,17 +465,17 @@ yugoslavia_ally = { #TODO_Manu: Check this with new focus
 
 	ai_strategy = {
 		type = befriend
-		id = "YUG"
+		id = YUG
 		value = 100
 	}
 	ai_strategy = {
 		type = alliance
-		id = "YUG"
+		id = YUG
 		value = 100
 	}
 }
 
-greece_ally = {
+ITA_greece_ally = {
 	allowed = {
 		original_tag = ITA
 	}
@@ -489,17 +489,17 @@ greece_ally = {
 
 	ai_strategy = {
 		type = befriend
-		id = "GRE"
+		id = GRE
 		value = 100
 	}
 	ai_strategy = {
 		type = alliance
-		id = "GRE"
+		id = GRE
 		value = 100
 	}
 }
 
-turkey_ally = {
+ITA_turkey_ally = {
 	allowed = {
 		original_tag = ITA
 	}
@@ -513,17 +513,17 @@ turkey_ally = {
 
 	ai_strategy = {
 		type = befriend
-		id = "TUR"
+		id = TUR
 		value = 100
 	}
 	ai_strategy = {
 		type = alliance
-		id = "TUR"
+		id = TUR
 		value = 100
 	}
 }
 
-portugal_ally = {
+ITA_portugal_ally = {
 	allowed = {
 		original_tag = ITA
 	}
@@ -537,12 +537,12 @@ portugal_ally = {
 
 	ai_strategy = {
 		type = befriend
-		id = "POR"
+		id = POR
 		value = 100
 	}
 	ai_strategy = {
 		type = alliance
-		id = "POR"
+		id = POR
 		value = 100
 	}
 }
@@ -673,7 +673,7 @@ ITA_template_design_2 = {
 }
 
 # extra scaryness around italy, this together with sufficient enemy superiority will make ai avoid transports around its coast
-italy_be_careful_transporting_through_the_med = {
+ITA_be_careful_transporting_through_the_med = {
 	allowed = {
 		original_tag = ITA
 	}
@@ -721,7 +721,7 @@ italy_be_careful_transporting_through_the_med = {
 	}
 }
 
-dont_take_claims_on_yug = {
+ITA_dont_take_claims_on_yug = {
 	allowed = {
 		original_tag = ITA
 	}
@@ -731,7 +731,6 @@ dont_take_claims_on_yug = {
 		date < 1941.4.30
 
 	}
-
 	abort = {
 		OR = {
 			NOT = { country_exists = YUG }
@@ -741,13 +740,13 @@ dont_take_claims_on_yug = {
 
 	ai_strategy = {
 		type = declare_war
-		id = "YUG"
+		id = YUG
 		value = -200
 	}
 
 	ai_strategy = {
 		type = ignore_claim
-		id = "YUG"
+		id = YUG
 		value = 1
 	}
 }
@@ -848,32 +847,32 @@ ITA_share_borders_with_GER_against_SOV = {
 
 	ai_strategy = {
 		type = force_defend_ally_borders
-		id = "CRO"
+		id = CRO
 		value = 100
 	}
 	ai_strategy = {
 		type = force_defend_ally_borders
-		id = "ROM"
+		id = ROM
 		value = 100
 	}
 	ai_strategy = {
 		type = force_defend_ally_borders
-		id = "HUN"
+		id = HUN
 		value = 100
 	}
 	ai_strategy = {
 		type = force_defend_ally_borders
-		id = "SLO"
+		id = SLO
 		value = 100
 	}
 	ai_strategy = {
 		type = dont_defend_ally_borders
-		id = "GER"
+		id = GER
 		value = 100
 	}
 }
 
-spain_scw_support_ITA_resistance = {
+ITA_spain_scw_support_la_resistance = {
 	allowed = {
 		original_tag = ITA
 		has_dlc = "La Resistance"
@@ -951,27 +950,27 @@ ITA_wants_civ = {
 	# }
 }
 
-# ITA_wants_docks = {
-# 	allowed = {
-# 		original_tag = ITA
-# 	}
-# 	enable = {
-# 		NOT = {
-# 			any_home_area_neighbor_country = {
-# 				has_war_with = ROOT
-# 			}
-# 		}
-# 		date > 1938.1.1
-# 		num_of_military_factories > 40
-# 	}
-# 	abort_when_not_enabled = yes
+ITA_wants_docks = {
+	allowed = {
+		original_tag = ITA
+	}
+	enable = {
+		NOT = {
+			any_home_area_neighbor_country = {
+				has_war_with = ROOT
+			}
+		}
+		date > 1938.1.1
+		num_of_military_factories > 40
+	}
+	abort_when_not_enabled = yes
 
-# 	ai_strategy = {
-# 		type = building_target
-# 		id = dockyard
-# 		value = 40
-# 	}
-# }
+	ai_strategy = {
+		type = building_target
+		id = dockyard
+		value = 40
+	}
+}
 
 ITA_hold_africa = {
 	allowed = {
@@ -1016,10 +1015,10 @@ ITA_dont_invade_NOR_until_FRA_falls = {
 
 	enable = {
 		has_war_together_with = GER
-		date < 1941.1.1
-		FRA = {
-			has_capitulated = no
-		}
+		date < 1942.1.1  # Italy should probably stay out of Norway for a while even if France has capitulated
+		#FRA = {
+		#	has_capitulated = no
+		#}
 	}
 
 	abort_when_not_enabled = yes
@@ -1306,7 +1305,7 @@ ITA_prepare_to_invade_afar = {
 
 	ai_strategy = {
 		type = prepare_for_war
-		id = "AFA"
+		id = AFA
 		value = 200
 	}
 
@@ -1451,7 +1450,7 @@ ITA_balbo_ignore_germany = {
 	}
 	ai_strategy = {
 		type = ignore
-		id = "GER"
+		id = GER
 		value = 200
 	}
 }
@@ -1509,12 +1508,12 @@ ITA_prepare_british_invasion = {
 
 	ai_strategy = {
 		type = prepare_for_war
-		id = "ENG"
+		id = ENG
 		value = 200
 	}
 }
 
-dont_die_in_mountains = {
+ITA_dont_die_in_mountains = {
 	allowed = {
 		original_tag = ITA
 	}
@@ -1530,16 +1529,15 @@ dont_die_in_mountains = {
 
 	ai_strategy = {
 		type = ignore
-		id = "SWI"
+		id = SWI
 		value = 1000
 	}
 }
 
-ITA_ignore_vichy = {
+ITA_ignore_vichy_we_will_annex_them_later = {
 	allowed = {
 		original_tag = ITA
 	}
-
 	enable = {
 		country_exists = VIC
 	}
@@ -1547,14 +1545,14 @@ ITA_ignore_vichy = {
 
 	ai_strategy = {
 		type = ignore
-		id = "VIC"
+		id = VIC
 		value = 100
 	}
 }
 
 ITA_other_priorities = {
 	allowed = { original_tag = ITA }
-	enable = { 
+	enable = {
 		is_historical_focus_on = yes
 		date > 1941.4.6
 		date < 1943.6.6
@@ -1570,13 +1568,12 @@ ITA_other_priorities = {
 		id = north_africa
 		value = -30
 	}
-	
+
 	ai_strategy = {
 		type = front_unit_request
 		area = north_africa
-		value = -60 
+		value = -50
 	}
-	
 }
 
 # Don't consider joining Italy if they are only at war with GiEs 
@@ -1596,10 +1593,10 @@ ITA_AXIS_dont_join_against_eth = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
-	    type = diplo_action_desire
-	    id = ITA
-	    value = -1000
-	    target = join_allies
+		type = diplo_action_desire
+		id = ITA
+		value = -1000
+		target = join_allies
 	}
 
 	ai_strategy = {

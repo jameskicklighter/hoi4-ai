@@ -477,7 +477,8 @@ SOV_paranoia_system = {
 		icon = generic_brainwash
 
 		ai_will_do = {
-			base = 1
+			# DAI --
+			base = 200
 			modifier = {
 				factor = 2
 				any_enemy_country = {
@@ -488,6 +489,11 @@ SOV_paranoia_system = {
 				factor = 5
 				has_idea = SOV_anti_soviet_military_thinking_banned_army
 			}
+			modifier = {
+				factor = 2
+				has_idea = SOV_anti_soviet_military_thinking_banned_airforce
+			}
+			# -- DAI
 		}
 
 		allowed = {
@@ -500,6 +506,12 @@ SOV_paranoia_system = {
 					has_country_flag = SOV_assassinated_stalin_flag
 				}
 				has_country_flag = SOV_assassinated_stalin_flag
+			}
+			else_if = {
+				limit = {
+					has_global_flag = SOV_soviet_civil_war
+				}
+				has_global_flag = SOV_soviet_civil_war
 			}
 			else = {
 				has_country_flag = { flag = SOV_third_moscow_trial_flag days > 365 }
@@ -585,6 +597,12 @@ SOV_paranoia_system = {
 					has_country_flag = SOV_assassinated_stalin_flag
 				}
 				has_country_flag = SOV_assassinated_stalin_flag
+			}
+			else_if = {
+				limit = {
+					has_global_flag = SOV_soviet_civil_war
+				}
+				has_global_flag = SOV_soviet_civil_war
 			}
 			else = {
 				has_country_flag = { flag = SOV_third_moscow_trial_flag days > 365 }
@@ -685,6 +703,12 @@ SOV_paranoia_system = {
 				}
 				has_country_flag = SOV_assassinated_stalin_flag
 			}
+			else_if = {
+				limit = {
+					has_global_flag = SOV_soviet_civil_war
+				}
+				has_global_flag = SOV_soviet_civil_war
+			}
 			else = {
 				has_country_flag = { flag = SOV_third_moscow_trial_flag days > 365 }
 			}
@@ -773,6 +797,13 @@ SOV_paranoia_system = {
 				flag = SOV_mig_design_bureau_dissolved_flag
 				days > 365
 			}
+			custom_trigger_tooltip = {
+				tooltip = SOV_mig_design_bureau_dissolved_days_tt
+				has_country_flag = {
+					flag = SOV_mig_design_bureau_dissolved_flag
+					days > 365
+				}
+			}
 			num_of_civilian_factories_available_for_projects > 1
 		}
 
@@ -813,6 +844,13 @@ SOV_paranoia_system = {
 			has_country_flag = {
 				flag = SOV_ilyushin_design_bureau_dissolved_flag
 				days > 365
+			}
+			custom_trigger_tooltip = {
+				tooltip = SOV_ilyushin_design_bureau_dissolved_days_tt
+				has_country_flag = {
+					flag = SOV_ilyushin_design_bureau_dissolved_flag
+					days > 365
+				}
 			}
 			num_of_civilian_factories_available_for_projects > 1
 		}
@@ -855,6 +893,13 @@ SOV_paranoia_system = {
 				flag = SOV_tupolev_design_bureau_dissolved_flag
 				days > 365
 			}
+			custom_trigger_tooltip = {
+				tooltip = SOV_tupolev_design_bureau_dissolved_days_tt
+				has_country_flag = {
+					flag = SOV_tupolev_design_bureau_dissolved_flag
+					days > 365
+				}
+			}
 			num_of_civilian_factories_available_for_projects > 1
 		}
 
@@ -895,6 +940,13 @@ SOV_paranoia_system = {
 			has_country_flag = {
 				flag = SOV_yakovlev_design_bureau_dissolved_flag
 				days > 365
+			}
+			custom_trigger_tooltip = {
+				tooltip = SOV_yakovlev_design_bureau_dissolved_days_tt
+				has_country_flag = {
+					flag = SOV_yakovlev_design_bureau_dissolved_flag
+					days > 365
+				}
 			}
 			num_of_civilian_factories_available_for_projects > 1
 		}
@@ -1898,27 +1950,21 @@ SOV_propaganda_campaigns = {
 		icon = eng_propaganda_campaigns
 
 		ai_will_do = {
-			base = 0
+			# DAI --
+			base = 40
 			modifier = {
-				add = 1
-				surrender_progress > 0.4
+				factor = 0.5
+				check_variable = { SOV_propaganda_motherland_calls_cost > 15 } # Second Time
 			}
 			modifier = {
-				add = 10
-				has_manpower < 500000
-			}
-			modifier = {
-				factor = 0.1
-				check_variable = { SOV_propaganda_motherland_calls_cost > 30 } #Less likely to do it a third time
-			}
-			modifier = {
-				factor = 0.1
-				check_variable = { SOV_propaganda_motherland_calls_cost > 45 } #Even less likely to do it a fourth time
+				factor = 0.5
+				check_variable = { SOV_propaganda_motherland_calls_cost > 30 } # Third Time
 			}
 			modifier = {
 				factor = 0
-				check_variable = { SOV_propaganda_motherland_calls_cost > 90 } #Shouldn't even consider doing it a fifth time
+				check_variable = { SOV_propaganda_motherland_calls_cost > 60 } # STOP
 			}
+			# -- DAI
 		}
 
 		allowed = {
@@ -1979,19 +2025,21 @@ SOV_propaganda_campaigns = {
 		icon = eng_propaganda_campaigns
 
 		ai_will_do = {
-			base = 1
+			# DAI --
+			base = 50
 			modifier = {
-				factor = 0.1
-				check_variable = { SOV_propaganda_victory_at_hand_cost > 30 } #Less likely to do it a third time
+				factor = 0.5
+				check_variable = { SOV_propaganda_victory_at_hand_cost > 15 } # Second Time
 			}
 			modifier = {
-				factor = 0.1
-				check_variable = { SOV_propaganda_victory_at_hand_cost > 45 } #Even less likely to do it a fourth time
+				factor = 0.5
+				check_variable = { SOV_propaganda_victory_at_hand_cost > 30 } # Third Time
 			}
 			modifier = {
 				factor = 0
-				check_variable = { SOV_propaganda_victory_at_hand_cost > 90 } #Shouldn't even consider doing it a fifth time
+				check_variable = { SOV_propaganda_victory_at_hand_cost > 60 } # STOP
 			}
+			# -- DAI
 		}
 
 		allowed = {
@@ -2143,38 +2191,21 @@ SOV_propaganda_campaigns = {
 		icon = eng_propaganda_campaigns
 
 		ai_will_do = {
-			base = 0.75
+			# DAI --
+			base = 100
 			modifier = {
-				factor = 10
-				OR = {
-					AND = {
-						stockpile_ratio = {
-							archetype = train_equipment
-							ratio < 0.75
-						}
-						stockpile_ratio = {
-							archetype = motorized_equipment
-							ratio < 0.75
-						}
-					}
-					stockpile_ratio = {
-						archetype = convoy
-						ratio < 5
-					}
-				}
+				factor = 0.5
+				check_variable = { SOV_propaganda_fight_to_the_last_cost > 15 } # Second Time
 			}
 			modifier = {
-				factor = 0.1
-				check_variable = { SOV_propaganda_fight_to_the_last_cost > 30 } #Less likely to do it a third time
-			}
-			modifier = {
-				factor = 0.1
-				check_variable = { SOV_propaganda_fight_to_the_last_cost > 45 } #Even less likely to do it a fourth time
+				factor = 0.5
+				check_variable = { SOV_propaganda_fight_to_the_last_cost > 30 } # Third Time
 			}
 			modifier = {
 				factor = 0
-				check_variable = { SOV_propaganda_fight_to_the_last_cost > 90 } #Shouldn't even consider doing it a fifth time
+				check_variable = { SOV_propaganda_fight_to_the_last_cost > 60 } # STOP
 			}
+			# -- DAI
 		}
 
 		allowed = {
@@ -2232,19 +2263,17 @@ SOV_propaganda_campaigns = {
 		icon = eng_propaganda_campaigns
 
 		ai_will_do = {
-			base = 10
+			# DAI --
+			base = 40
 			modifier = {
-				factor = 0.1
-				check_variable = { SOV_propaganda_hit_of_hammer_cost > 30 } #Less likely to do it a third time
-			}
-			modifier = {
-				factor = 0.1
-				check_variable = { SOV_propaganda_hit_of_hammer_cost > 45 } #Even less likely to do it a fourth time
+				factor = 0.5
+				check_variable = { SOV_propaganda_hit_of_hammer_cost > 15 } # Second Time
 			}
 			modifier = {
 				factor = 0
-				check_variable = { SOV_propaganda_hit_of_hammer_cost > 90 } #Shouldn't even consider doing it a fifth time
+				check_variable = { SOV_propaganda_hit_of_hammer_cost > 30 } # STOP
 			}
+			# -- DAI
 		}
 
 		allowed = {
@@ -2584,19 +2613,21 @@ SOV_propaganda_campaigns = {
 		icon = eng_propaganda_campaigns
 
 		ai_will_do = {
-			base = 10
+			# DAI --
+			base = 200
 			modifier = {
-				factor = 0.1
-				check_variable = { SOV_propaganda_high_yield_cost > 30 } #Less likely to do it a third time
+				factor = 0.5
+				check_variable = { SOV_propaganda_high_yield_cost > 15 } # Second Time -- 30 pp
 			}
 			modifier = {
-				factor = 0.1
-				check_variable = { SOV_propaganda_high_yield_cost > 45 } #Even less likely to do it a fourth time
+				factor = 0.5
+				check_variable = { SOV_propaganda_high_yield_cost > 30 } # Third Time -- 60 pp
 			}
 			modifier = {
 				factor = 0
-				check_variable = { SOV_propaganda_high_yield_cost > 90 } #Shouldn't even considered doing it a fifth time
+				check_variable = { SOV_propaganda_high_yield_cost > 60 } # STOP
 			}
+			# -- DAI
 		}
 
 		allowed = {
@@ -2734,19 +2765,25 @@ SOV_propaganda_campaigns = {
 		icon = eng_propaganda_campaigns
 
 		ai_will_do = {
-			base = 10
+			# DAI --
+			base = 0
 			modifier = {
-				factor = 0.1
-				check_variable = { SOV_propaganda_heroes_forward_cost > 30 } #Less likely to do it a third time
+				add = 100
+				surrender_progress > 0.1
 			}
 			modifier = {
-				factor = 0.1
-				check_variable = { SOV_propaganda_heroes_forward_cost > 45 } #Even less likely to do it a fourth time
+				factor = 0.5
+				check_variable = { SOV_propaganda_heroes_forward_cost > 15 } # Second Time
+			}
+			modifier = {
+				factor = 0.5
+				check_variable = { SOV_propaganda_heroes_forward_cost > 30 } # Third Time
 			}
 			modifier = {
 				factor = 0
-				check_variable = { SOV_propaganda_heroes_forward_cost > 90 } #Shouldn't even considered doing it a fifth time
+				check_variable = { SOV_propaganda_heroes_forward_cost > 60 } # STOP
 			}
+			# -- DAI
 		}
 
 		allowed = {
@@ -5314,6 +5351,14 @@ SOV_diplomacy_baltic_decision_category = {
 
 		ai_will_do = {
 			base = 200
+			modifier = {
+				factor = 0.1
+				NOT = { is_neighbor_of = FROM }
+			}
+			modifier = {
+				factor = 0.25
+				date < 1940.1.1
+			}
 			modifier = {
 				factor = 10
 				has_political_power > 160
@@ -10874,7 +10919,7 @@ SOV_industry_relocation = {
 		icon = generic_construction
 
 		ai_will_do = {
-			factor = 0
+			base = 10
 			modifier = {
 				add = 200 # oh shit they are getting close!
 				FROM = {
@@ -10887,6 +10932,15 @@ SOV_industry_relocation = {
 					}
 					any_neighbor_state = {
 						NOT = { is_fully_controlled_by = ROOT }
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				GER = {
+					focus_progress = {
+						focus = GER_war_with_the_ussr
+						progress > 0
 					}
 				}
 			}
@@ -11128,7 +11182,7 @@ SOV_industry_relocation = {
 		}
 
 		ai_will_do = {
-			factor = 0.5
+			base = 0.5
 			modifier = {
 				factor = 200 # oh shit they are getting close!
 				OR = {
@@ -11155,6 +11209,15 @@ SOV_industry_relocation = {
 					AND = {
 						owns_state = 146
 						NOT = { controls_state = 146 }
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				GER = {
+					focus_progress = {
+						focus = GER_war_with_the_ussr
+						progress > 0
 					}
 				}
 			}
@@ -11230,8 +11293,8 @@ SOV_infiltrate_foreign_atomic_programs_dec_cat = {
 			modifier = {
 				factor = 0.5
 				OR = {
-					has_tech = nukes
-					is_researching_technology = nukes
+					is_special_project_completed = sp:sp_nuclear_bomb
+					is_special_project_being_researched = sp:sp_nuclear_bomb
 				}
 			}
 		}
@@ -11858,10 +11921,10 @@ SOV_great_patriotic_war = {
 		icon = generic_army_support
 
 		ai_will_do = {
-			factor = 1
+			base = 1
 			modifier = {
 				surrender_progress > 0.25
-				factor = 10
+				add = 999
 			}
 		}
 
@@ -12374,12 +12437,12 @@ SOV_great_patriotic_war = {
 		timeout_effect = {
 			add_stability = 0.05
 			add_war_support = 0.05
-			217 = { save_event_target_as = state }
+			217 = { save_event_target_as = soviet_city }
 			country_event = wtt_soviet_hold_city.1
 		}
 		#Fail
 		complete_effect = {
-			217 = { save_event_target_as = state }
+			217 = { save_event_target_as = soviet_city }
 			country_event = wtt_soviet_hold_city.2
 		}
 	}
@@ -12428,12 +12491,12 @@ SOV_great_patriotic_war = {
 		timeout_effect = {
 			add_stability = 0.05
 			add_war_support = 0.05
-			195 = { save_event_target_as = state }
+			195 = { save_event_target_as = soviet_city }
 			country_event = wtt_soviet_hold_city.3
 		}
 		#Fail
 		complete_effect = {
-			195 = { save_event_target_as = state }
+			195 = { save_event_target_as = soviet_city }
 			country_event = wtt_soviet_hold_city.4
 		}
 	}
@@ -12479,12 +12542,12 @@ SOV_great_patriotic_war = {
 		timeout_effect = {
 			add_stability = 0.05
 			add_war_support = 0.05
-			219 = { save_event_target_as = state }
+			219 = { save_event_target_as = soviet_city }
 			country_event = wtt_soviet_hold_city.5
 		}
 		#Fail
 		complete_effect = {
-			219 = { save_event_target_as = state }
+			219 = { save_event_target_as = soviet_city }
 			country_event = wtt_soviet_hold_city.6
 		}
 	}
@@ -12528,7 +12591,7 @@ SOV_great_patriotic_war = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			base = 1
 
 			modifier = {
 				factor = 0
@@ -12618,7 +12681,7 @@ SOV_great_patriotic_war = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			base = 1
 		}
 	}
 
@@ -12668,7 +12731,7 @@ SOV_great_patriotic_war = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			base = 1
 		}
 	}
 
@@ -12716,7 +12779,7 @@ SOV_great_patriotic_war = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			base = 1
 		}
 	}
 
@@ -12787,7 +12850,7 @@ SOV_great_patriotic_war = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			base = 1
 		}
 	}
 
@@ -12851,7 +12914,7 @@ SOV_great_patriotic_war = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			base = 1
 		}
 	}
 
@@ -12917,7 +12980,7 @@ SOV_great_patriotic_war = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			base = 1
 		}
 	}
 }
@@ -17435,7 +17498,7 @@ operations = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			base = 1
 			modifier = {
 				MAN = {
 					is_ai = no
@@ -17500,7 +17563,7 @@ political_actions = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			base = 1
 		}
 	}
 }
@@ -17730,7 +17793,7 @@ political_actions = {
 		}
 
 		ai_will_do = {
-			factor = 0
+			base = 0
 		}
 	}
 
@@ -17747,6 +17810,7 @@ SOV_panslavic_nationalism = {
 		available = {
 			has_full_control_of_state = 9
 			has_full_control_of_state = 69
+			has_full_control_of_state = 972
 			has_full_control_of_state = 70
 			has_full_control_of_state = 71
 			has_full_control_of_state = 72
@@ -17764,12 +17828,13 @@ SOV_panslavic_nationalism = {
 		fire_only_once = yes
 		days_remove = 90
 		ai_will_do = {
-			factor = 1
+			base = 1
 		}
 
 		remove_effect = {
 			add_state_core = 9
 			add_state_core = 69
+			add_state_core = 972
 			add_state_core = 70
 			add_state_core = 71
 			add_state_core = 72
@@ -17803,7 +17868,7 @@ SOV_panslavic_nationalism = {
 		fire_only_once = yes
 		days_remove = 90
 		ai_will_do = {
-			factor = 1
+			base = 1
 		}
 
 		remove_effect = {
@@ -17850,7 +17915,7 @@ SOV_panslavic_nationalism = {
 		fire_only_once = yes
 		days_remove = 90
 		ai_will_do = {
-			factor = 1
+			base = 1
 		}
 
 		remove_effect = {
@@ -17889,6 +17954,7 @@ SOV_panslavic_nationalism = {
 			has_full_control_of_state = 804
 			has_full_control_of_state = 802
 			has_full_control_of_state = 106
+			has_full_control_of_state = 970
 			has_full_control_of_state = 105
 			has_full_control_of_state = 108
 			has_full_control_of_state = 107
@@ -17910,7 +17976,7 @@ SOV_panslavic_nationalism = {
 		fire_only_once = yes
 		days_remove = 90
 		ai_will_do = {
-			factor = 1
+			base = 1
 		}
 
 		remove_effect = {
@@ -17920,6 +17986,7 @@ SOV_panslavic_nationalism = {
 			add_state_core = 804
 			add_state_core = 802
 			add_state_core = 106
+			add_state_core = 970
 			add_state_core = 105
 			add_state_core = 108
 			add_state_core = 107
@@ -17949,6 +18016,7 @@ SOV_panslavic_nationalism = {
 			has_country_flag = SOV_integrated_yugoslavia_flag
 			has_full_control_of_state = 9
 			has_full_control_of_state = 69
+			has_full_control_of_state = 972
 			has_full_control_of_state = 70
 			has_full_control_of_state = 71
 			has_full_control_of_state = 72
@@ -17983,6 +18051,7 @@ SOV_panslavic_nationalism = {
 			has_full_control_of_state = 804
 			has_full_control_of_state = 802
 			has_full_control_of_state = 106
+			has_full_control_of_state = 970
 			has_full_control_of_state = 105
 			has_full_control_of_state = 108
 			has_full_control_of_state = 107
@@ -18000,7 +18069,7 @@ SOV_panslavic_nationalism = {
 		cost = 25
 		fire_only_once = yes
 		ai_will_do = {
-			factor = 1
+			base = 1
 		}
 
 		complete_effect = {
