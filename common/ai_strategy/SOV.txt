@@ -2023,16 +2023,19 @@ SOV_defense_in_depth = {
 SOV_dont_naval_invade_when_in_danger = {
 	reversed = yes
 	allowed = {
-		original_tag = SOV
+		tag = SOV
 	}
 	enable = {
+		NOT = { original_tag = FIN }
 		OR = {
 			AND = {
+				has_war_with = SOV
+				SOV = { surrender_progress > 0.2 }
+			}
+			AND = {
 				is_historical_focus_on = yes
-				GER = { going_war_with_SOV = yes }
 				date < 1943.1.1
 			}
-			surrender_progress > 0.2
 		}
 	}
 	abort_when_not_enabled = yes
@@ -2328,6 +2331,35 @@ SOV_convoys_are_needed_for_lendlease = {
 		type = equipment_production_min_factories
 		id = convoy
 		value = 4
+	}
+}
+
+SOV_ready_for_finland = {
+	allowed = {
+		original_tag = SOV
+	}
+	enable = {
+		FIN = {
+			focus_progress = {
+				focus = FIN_cooperation_with_germany
+				progress > 0.01
+			}
+		}
+		NOT = {
+			FIN = {
+				OR = {
+					is_puppet_of = ROOT
+					is_in_faction_with	= ROOT
+				}
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = FIN
+		value = 100
 	}
 }
 

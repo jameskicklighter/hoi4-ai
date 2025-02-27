@@ -2616,16 +2616,11 @@ SOV_propaganda_campaigns = {
 			# DAI --
 			base = 200
 			modifier = {
-				factor = 0.5
-				check_variable = { SOV_propaganda_high_yield_cost > 15 } # Second Time -- 30 pp
-			}
-			modifier = {
-				factor = 0.5
-				check_variable = { SOV_propaganda_high_yield_cost > 30 } # Third Time -- 60 pp
-			}
-			modifier = {
 				factor = 0
-				check_variable = { SOV_propaganda_high_yield_cost > 60 } # STOP
+				OR = {
+					date > 1941.1.1
+					check_variable = { SOV_propaganda_high_yield_cost > 60 } # STOP
+				}
 			}
 			# -- DAI
 		}
@@ -10919,7 +10914,8 @@ SOV_industry_relocation = {
 		icon = generic_construction
 
 		ai_will_do = {
-			base = 10
+			# DAI --
+			base = 0
 			modifier = {
 				add = 200 # oh shit they are getting close!
 				FROM = {
@@ -10936,18 +10932,23 @@ SOV_industry_relocation = {
 				}
 			}
 			modifier = {
-				factor = 10
-				GER = {
-					focus_progress = {
-						focus = GER_war_with_the_ussr
-						progress > 0
+				add = 25 # oh shit they are getting close!
+				FROM = {
+					NOT = {
+						OR = {
+							state = 219 #MOSCOW
+							state = 195 #LENINGRAD
+							state = 202 #KIEV
+							state = 206 #MINSK
+							state = 217 #STALINGRAD
+						}
+					}
+					any_neighbor_state = {
+						NOT = { is_fully_controlled_by = ROOT }
 					}
 				}
 			}
-			modifier = {
-				factor = 0
-				SOV_save_pp_for_manpower_trouble = yes
-			}
+			# -- DAI
 		}
 
 		state_target = yes

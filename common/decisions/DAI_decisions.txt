@@ -122,35 +122,30 @@ DAI_division_template_decisions = {
 	# 	}
 	# }
 
-	AI_Medium_Armor_Prototype_Major = {
+	AI_Medium_Armor_Prototype_Major_1 = {
 		icon = rifles
 		visible = {
 			is_ai = yes
 		}
 		available = {
-			always = yes
 			DAI_should_build_tanks = yes
 			OR = {
 				has_tech = basic_medium_tank_chassis
 				has_tech = basic_medium_tank
 			}
+			date > 1937.1.1
 		}
 		cost = 0
 
 		fire_only_once = yes
 
 		ai_will_do = {
-			base = 0
-			modifier = {
-				add = 100
-				# date > 1936.12.1
-				DAI_should_build_tanks = yes
-			}
+			base = 100
 		}
 
 		complete_effect = {
 			division_template = {
-				name = "Medium Armor Prototype Major"
+				name = "Medium Armor Prototype 1"
 				regiments = {
 					medium_armor = { x = 0 y = 0 }
 					medium_armor = { x = 0 y = 1 }
@@ -174,14 +169,12 @@ DAI_division_template_decisions = {
 		}
 	}
 
-	AI_Medium_Armor_Prototype_SOV = {
+	AI_Medium_Armor_Prototype_Major_2 = {
 		icon = rifles
 		visible = {
 			is_ai = yes
-			# original_tag = SOV
 		}
 		available = {
-			# original_tag = SOV
 			DAI_should_build_tanks = yes
 			OR = {
 				has_tech = basic_medium_tank_chassis
@@ -189,24 +182,19 @@ DAI_division_template_decisions = {
 			}
 			has_tech = interwar_antiair
 			has_tech = interwar_antitank
-			date > 1939.6.1
+			date > 1937.1.1
 		}
 		cost = 0
 
 		fire_only_once = yes
 
 		ai_will_do = {
-			base = 0
-			modifier = {
-				add = 100
-				# date > 1936.12.1
-				DAI_should_build_tanks = yes
-			}
+			base = 100
 		}
 
 		complete_effect = {
 			division_template = {
-				name = "Medium Armor Prototype SOV"
+				name = "Medium Armor Prototype 2"
 				regiments = {
 					medium_armor = { x = 0 y = 0 }
 					medium_armor = { x = 0 y = 1 }

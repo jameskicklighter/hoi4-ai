@@ -122,8 +122,8 @@ ARMOR_SOV = {
 				anti_air = 1
 			}
 			regiments = {
-				medium_armor = 8
-				motorized = 8
+				medium_armor = 6
+				motorized = 6
 				# medium_sp_anti_air_brigade = 1
 				# medium_tank_destroyer_brigade = 1
 			}
@@ -144,7 +144,7 @@ ARMOR_SOV = {
 	ARMOR_MEDIUM_SOV_2 = {
 		# Weights
 		upgrade_prio = { base = 20 }
-		enable = { date > 1939.1.1 }
+		enable = { date > 1938.1.1 }
 		# Design
 		target_template = {
 			support = {
