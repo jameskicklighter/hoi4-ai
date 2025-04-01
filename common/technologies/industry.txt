@@ -1498,52 +1498,51 @@ technologies = {
 				add = 20
 				is_major = no
 				OR = {
-					oil > 20
-					aluminium > 20
-					rubber > 20
-					tungsten > 20
-					steel > 20
-					chromium > 20
+					check_variable = { resource_produced@oil > 20 }
+					check_variable = { resource_produced@aluminium > 20 }
+					check_variable = { resource_produced@rubber > 20 }
+					check_variable = { resource_produced@tungsten > 20 }
+					check_variable = { resource_produced@steel > 20 }
+					check_variable = { resource_produced@chromium > 20 }
 				}
 			}
 			modifier = {
 				add = 30
 				is_major = yes
-				date > 1939.1.1
 				OR = {
 					AND = {
-						oil > 20
+						check_variable = { resource_produced@oil > 20 }
 						check_variable = { resource_imported@oil > 8 }
 					}
 					AND = {
-						aluminium > 20
+						check_variable = { resource_produced@aluminium > 20 }
 						check_variable = { resource_imported@aluminium > 8 }
 					}
 					AND = {
-						rubber > 20
+						check_variable = { resource_produced@rubber > 20 }
 						check_variable = { resource_imported@rubber > 8 }
 					}
 					AND = {
-						tungsten > 20
+						check_variable = { resource_produced@tungsten > 20 }
 						check_variable = { resource_imported@tungsten > 8 }
 					}
 					AND = {
-						steel > 20
+						check_variable = { resource_produced@steel > 20 }
 						check_variable = { resource_imported@steel > 8 }
 					}
 					AND = {
-						chromium > 20
+						check_variable = { resource_produced@chromium > 20 }
 						check_variable = { resource_imported@chromium > 8 }
 					}
 				}
 			}
 			modifier = {
 				add = 30
-				date > 1937.1.1
 				# Resources for overlords.
 				OR = {
-					original_tag = ROM
 					original_tag = MAN
+					original_tag = ROM
+					original_tag = SIA
 				}
 			}
 			# -- DAI
@@ -1621,52 +1620,51 @@ technologies = {
 				add = 20
 				is_major = no
 				OR = {
-					oil > 20
-					aluminium > 20
-					rubber > 20
-					tungsten > 20
-					steel > 20
-					chromium > 20
+					check_variable = { resource_produced@oil > 20 }
+					check_variable = { resource_produced@aluminium > 20 }
+					check_variable = { resource_produced@rubber > 20 }
+					check_variable = { resource_produced@tungsten > 20 }
+					check_variable = { resource_produced@steel > 20 }
+					check_variable = { resource_produced@chromium > 20 }
 				}
 			}
 			modifier = {
 				add = 30
 				is_major = yes
-				date > 1939.1.1
 				OR = {
 					AND = {
-						oil > 20
+						check_variable = { resource_produced@oil > 20 }
 						check_variable = { resource_imported@oil > 8 }
 					}
 					AND = {
-						aluminium > 20
+						check_variable = { resource_produced@aluminium > 20 }
 						check_variable = { resource_imported@aluminium > 8 }
 					}
 					AND = {
-						rubber > 20
+						check_variable = { resource_produced@rubber > 20 }
 						check_variable = { resource_imported@rubber > 8 }
 					}
 					AND = {
-						tungsten > 20
+						check_variable = { resource_produced@tungsten > 20 }
 						check_variable = { resource_imported@tungsten > 8 }
 					}
 					AND = {
-						steel > 20
+						check_variable = { resource_produced@steel > 20 }
 						check_variable = { resource_imported@steel > 8 }
 					}
 					AND = {
-						chromium > 20
+						check_variable = { resource_produced@chromium > 20 }
 						check_variable = { resource_imported@chromium > 8 }
 					}
 				}
 			}
 			modifier = {
 				add = 30
-				date > 1937.1.1
 				# Resources for overlords.
 				OR = {
-					original_tag = ROM
 					original_tag = MAN
+					original_tag = ROM
+					original_tag = SIA
 				}
 			}
 			# -- DAI
@@ -1745,12 +1743,12 @@ technologies = {
 				add = 20
 				is_major = no
 				OR = {
-					oil > 20
-					aluminium > 20
-					rubber > 20
-					tungsten > 20
-					steel > 20
-					chromium > 20
+					check_variable = { resource_produced@oil > 20 }
+					check_variable = { resource_produced@aluminium > 20 }
+					check_variable = { resource_produced@rubber > 20 }
+					check_variable = { resource_produced@tungsten > 20 }
+					check_variable = { resource_produced@steel > 20 }
+					check_variable = { resource_produced@chromium > 20 }
 				}
 			}
 			modifier = {
@@ -1758,27 +1756,27 @@ technologies = {
 				is_major = yes
 				OR = {
 					AND = {
-						oil > 20
+						check_variable = { resource_produced@oil > 20 }
 						check_variable = { resource_imported@oil > 8 }
 					}
 					AND = {
-						aluminium > 20
+						check_variable = { resource_produced@aluminium > 20 }
 						check_variable = { resource_imported@aluminium > 8 }
 					}
 					AND = {
-						rubber > 20
+						check_variable = { resource_produced@rubber > 20 }
 						check_variable = { resource_imported@rubber > 8 }
 					}
 					AND = {
-						tungsten > 20
+						check_variable = { resource_produced@tungsten > 20 }
 						check_variable = { resource_imported@tungsten > 8 }
 					}
 					AND = {
-						steel > 20
+						check_variable = { resource_produced@steel > 20 }
 						check_variable = { resource_imported@steel > 8 }
 					}
 					AND = {
-						chromium > 20
+						check_variable = { resource_produced@chromium > 20 }
 						check_variable = { resource_imported@chromium > 8 }
 					}
 				}
@@ -1787,8 +1785,9 @@ technologies = {
 				add = 30
 				# Resources for overlords.
 				OR = {
-					original_tag = ROM
 					original_tag = MAN
+					original_tag = ROM
+					original_tag = SIA
 				}
 			}
 			# -- DAI
@@ -1873,12 +1872,12 @@ technologies = {
 				add = 20
 				is_major = no
 				OR = {
-					oil > 20
-					aluminium > 20
-					rubber > 20
-					tungsten > 20
-					steel > 20
-					chromium > 20
+					check_variable = { resource_produced@oil > 20 }
+					check_variable = { resource_produced@aluminium > 20 }
+					check_variable = { resource_produced@rubber > 20 }
+					check_variable = { resource_produced@tungsten > 20 }
+					check_variable = { resource_produced@steel > 20 }
+					check_variable = { resource_produced@chromium > 20 }
 				}
 			}
 			modifier = {
@@ -1886,27 +1885,27 @@ technologies = {
 				is_major = yes
 				OR = {
 					AND = {
-						oil > 20
+						check_variable = { resource_produced@oil > 20 }
 						check_variable = { resource_imported@oil > 8 }
 					}
 					AND = {
-						aluminium > 20
+						check_variable = { resource_produced@aluminium > 20 }
 						check_variable = { resource_imported@aluminium > 8 }
 					}
 					AND = {
-						rubber > 20
+						check_variable = { resource_produced@rubber > 20 }
 						check_variable = { resource_imported@rubber > 8 }
 					}
 					AND = {
-						tungsten > 20
+						check_variable = { resource_produced@tungsten > 20 }
 						check_variable = { resource_imported@tungsten > 8 }
 					}
 					AND = {
-						steel > 20
+						check_variable = { resource_produced@steel > 20 }
 						check_variable = { resource_imported@steel > 8 }
 					}
 					AND = {
-						chromium > 20
+						check_variable = { resource_produced@chromium > 20 }
 						check_variable = { resource_imported@chromium > 8 }
 					}
 				}
@@ -1915,8 +1914,9 @@ technologies = {
 				add = 30
 				# Resources for overlords.
 				OR = {
-					original_tag = ROM
 					original_tag = MAN
+					original_tag = ROM
+					original_tag = SIA
 				}
 			}
 			# -- DAI
@@ -1990,12 +1990,12 @@ technologies = {
 				add = 20
 				is_major = no
 				OR = {
-					oil > 20
-					aluminium > 20
-					rubber > 20
-					tungsten > 20
-					steel > 20
-					chromium > 20
+					check_variable = { resource_produced@oil > 20 }
+					check_variable = { resource_produced@aluminium > 20 }
+					check_variable = { resource_produced@rubber > 20 }
+					check_variable = { resource_produced@tungsten > 20 }
+					check_variable = { resource_produced@steel > 20 }
+					check_variable = { resource_produced@chromium > 20 }
 				}
 			}
 			modifier = {
@@ -2003,27 +2003,27 @@ technologies = {
 				is_major = yes
 				OR = {
 					AND = {
-						oil > 20
+						check_variable = { resource_produced@oil > 20 }
 						check_variable = { resource_imported@oil > 8 }
 					}
 					AND = {
-						aluminium > 20
+						check_variable = { resource_produced@aluminium > 20 }
 						check_variable = { resource_imported@aluminium > 8 }
 					}
 					AND = {
-						rubber > 20
+						check_variable = { resource_produced@rubber > 20 }
 						check_variable = { resource_imported@rubber > 8 }
 					}
 					AND = {
-						tungsten > 20
+						check_variable = { resource_produced@tungsten > 20 }
 						check_variable = { resource_imported@tungsten > 8 }
 					}
 					AND = {
-						steel > 20
+						check_variable = { resource_produced@steel > 20 }
 						check_variable = { resource_imported@steel > 8 }
 					}
 					AND = {
-						chromium > 20
+						check_variable = { resource_produced@chromium > 20 }
 						check_variable = { resource_imported@chromium > 8 }
 					}
 				}
@@ -2032,8 +2032,9 @@ technologies = {
 				add = 30
 				# Resources for overlords.
 				OR = {
-					original_tag = ROM
 					original_tag = MAN
+					original_tag = ROM
+					original_tag = SIA
 				}
 			}
 			# -- DAI

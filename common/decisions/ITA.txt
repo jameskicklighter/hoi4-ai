@@ -770,7 +770,7 @@ ITA_missiolinis = {
 		}
 
 		available = { #GOAL
-			custom_trigger_tooltip = { #TODO_Manu: This should be replaced by the appropriate check once Red king merges stuff (Factories BUILD check)
+			custom_trigger_tooltip = {
 				tooltip = ITA_missiolini_strengthen_heavy_industry_trigger_tt
 				num_of_civilian_factories > ROOT.ITA_missiolinis_required_civs
 			}
@@ -818,24 +818,15 @@ ITA_missiolinis = {
 		}
 
 		available = { #GOAL
-			#has_army_manpower = { size > ROOT.ITA_missiolinis_fielded_manpower_goal } #1kk #TODO_Manu: Code support to use vars in has_army_manpower
-			#if = { #FIRST TIME - FIXED AMOUNT #TODO_Manu: NEED CODE SUPPORT (see line above)
-			#	limit = {
-			#		NOT = { has_country_flag = ITA_missiolini_strengthen_the_army_repeatable_flag } #First time it's a fixed amopunt. Then if the mission is repeated it will require +500k MP in the field (compare to current)
-			#	}
-				if = {
-					limit = {
-						ITA_has_missiolini_easier_goals = yes
-					}
-					has_army_manpower = { size > 650000 } #650k
+			if = {
+				limit = {
+					ITA_has_missiolini_easier_goals = yes
 				}
-				else = {
-					has_army_manpower = { size > 750000 } #750k
-				}
-			#}
-			#else = { #IF REPEATING
-			#	has_army_manpower = { size > 1000000 } #TODO_Manu: Current MP + 500 -> Code Support for this (has_army_manpower does not take vars)
-			#}
+				has_army_manpower = { size > 650000 } #650k
+			}
+			else = {
+				has_army_manpower = { size > 750000 } #750k
+			}
 		}
 
 		activation = {
@@ -880,7 +871,7 @@ ITA_missiolinis = {
 		}
 
 		available = { #GOAL
-			has_equipment = { #TODO_Manu: Code Support to also get the trucks in the field // Alternatively, check for trucks produced (Code support too!)
+			has_equipment = {
 				motorized_equipment_1 > ROOT.ITA_missiolinis_trucks_to_produce
 			}
 		}
@@ -1272,7 +1263,7 @@ ITA_missiolinis = {
 					}
 				}
 			}
-			934 = { #SHK�DER
+			934 = { #SHKÖDER
 				OR = {
 					is_fully_controlled_by = ROOT
 					controller = {
@@ -3667,7 +3658,7 @@ ETH_italian_occupation_category = {
 			}
 		}
 		target_root_trigger = { tag = ITA } # For now - change if making it generic
-		state_target = yes
+		state_target = africa
 		on_map_mode = map_only
 
 		cost = 75
@@ -3682,9 +3673,8 @@ ETH_italian_occupation_category = {
 			FROM = {
 				compliance > 60
 				any_neighbor_state = { is_owned_by = ROOT }
-				owner = {
-					#has_legitimacy < 60
-					faction_leader = { NOT = { has_war_with = ROOT } }
+				var:ETH.host_nation = {
+					NOT = { has_war_with = ROOT }
 				}
 			}
 		}
@@ -3771,11 +3761,11 @@ ETH_italian_occupation_category = {
 			}
 		}
 		target_root_trigger = { tag = ITA } # For now - change if making it generic
-		state_target = yes
+		state_target = any_controlled_state
 		on_map_mode = map_only
 		fire_only_once = yes # Only once per State
 		available = {
-			NOT = { has_country_flag = ETH_investments_in_progress_flag }
+			#NOT = { has_country_flag = ETH_investments_in_progress_flag }
 			has_completed_focus = ITA_develop_ethiopia
 		}
 
@@ -5828,6 +5818,7 @@ ITA_diplomacy_balkan_decision_category = {
 		target_trigger = {
 			ITA_basic_ultimatum_triggers = yes
 			FROM = {
+				is_subject = no #Subjects get dragged along in what their overlord says
 				NOT = {
 					is_subject_of = ITA
 				}
@@ -5836,7 +5827,7 @@ ITA_diplomacy_balkan_decision_category = {
 
 		target_root_trigger = {
 			has_completed_focus = ITA_balkan_ambition
-			is_Subject = no
+			is_subject = no
 		}
 
 		allowed = {
@@ -6461,6 +6452,7 @@ ITA_diplomacy_balkan_decision_category = {
 
 		target_trigger = {
 			FROM = {
+				is_subject = no
 				NOT = {
 					has_war_with = ROOT
 				}

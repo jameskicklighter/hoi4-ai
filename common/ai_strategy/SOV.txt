@@ -1816,12 +1816,31 @@ SOV_defend_blitzkrieg  = { # Only perform careful attacks, we want to defend whi
 # 	}
 # }
 
+# SOV_convert_to_civs = {
+# 	allowed = {
+# 		original_tag = SOV
+# 	}
+# 	enable = {
+# 		date < 1937.1.1
+# 		has_war = no
+# 		num_of_military_factories > 20
+# 	}
+# 	abort_when_not_enabled = yes
+
+# 	ai_strategy = {
+# 		type = build_building
+# 		id = arms_factory
+# 		value = 99999
+# 	}
+# }
+
 SOV_build_civs = {
 	allowed = {
 		original_tag = SOV
 	}
 	enable = {
 		date < 1939.1.1
+		has_war = no
 	}
 	abort_when_not_enabled = yes
 
@@ -1838,6 +1857,7 @@ SOV_build_mils = {
 	}
 	enable = {
 		date > 1939.1.1
+		num_of_civilian_factories > 120
 	}
 	abort_when_not_enabled = yes
 
@@ -2350,6 +2370,8 @@ SOV_ready_for_finland = {
 				OR = {
 					is_puppet_of = ROOT
 					is_in_faction_with	= ROOT
+					has_country_flag = FIN_already_attempted_an_armistice
+					has_country_flag = FIN_negotiating_switching_sides_flag
 				}
 			}
 		}

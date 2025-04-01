@@ -1520,11 +1520,11 @@ characters = {
 			}
 			ai_will_do = {
 				base = 3
-				modifier = {
-					add = 25
-					DAI_SOV_is_historical_ai = yes
-					has_idea_with_trait = air_chief_reform_3
-				}
+				# modifier = {
+				# 	add = 25
+				# 	DAI_SOV_is_historical_ai = yes
+				# 	has_idea_with_trait = air_chief_reform_3
+				# }
 			}
 		}
 	}

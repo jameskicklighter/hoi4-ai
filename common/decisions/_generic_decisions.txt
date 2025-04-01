@@ -603,6 +603,19 @@ propaganda_efforts = {
 				threat > 0.25
 				has_tech = radio
 			}
+
+			IF = {
+				limit = {
+					tag = AFG
+				}
+				threat > 0.25
+				#has_tech = radio
+				has_completed_focus = AFG_establish_radio_networks
+			}
+			ELSE = {
+				threat > 0.25
+				has_tech = radio
+			}
 		}
 
 		visible = {
@@ -1919,53 +1932,55 @@ war_measures = {
 				add_war_support = GER_war_bonds_war_support_var
 			}
 		}
-    }
-	
+	}
+
 	diversify_special_forces = {
 
 		icon = GFX_decision_generic_military
 
+		allowed = {
+			has_dlc = "Arms Against Tyranny"
+			NOT = {
+				OR = {
+					tag = ENG #has a focus
+					tag = USA #has a focus
+					tag = SOV #has a focus
+					tag = JAP #has a focus
+					tag = AST #has a focus
+					tag = FRA #has a focus
+					tag = GER #has a focus
+				}
+			}
+		}
+
 		available = {
-			date > 1940.1.1
 		}
 
 		visible = {
-			AND = {
-				is_major = yes
-				has_dlc = "Arms Against Tyranny"
+			is_major = yes
+			date > 1940.1.1
+			IF = {
+				limit = {
+					has_dlc = "Trial of Allegiance"
+				}
 				NOT = {
 					OR = {
-						tag = ENG #has a focus
-						tag = USA #has a focus
-						tag = SOV #has a focus
-						tag = JAP #has a focus
 						tag = CHL #has a focus
 						tag = BRA #has a focus
 						tag = ARG #has a focus
-						tag = AST #has a focus
-						tag = FRA #has a focus
-						tag = GER #has a focus
+						tag = URG #has a focus
+						tag = PAR #has a focus
 					}
 				}
-				AND = {
-					has_dlc = "Trial of Allegiance"
-					NOT = {
-						OR = {
-							tag = CHL #has a focus
-							tag = BRA #has a focus
-							tag = ARG #has a focus
-							tag = URG #has a focus
-							tag = PAR #has a focus
-						}
-					}
-				}
-				AND = {
+			}
+			IF = {
+				limit = {
 					has_dlc = "Gotterdammerung"
-					NOT = {
-						OR = {
-							tag = BEL #has a focus
-							tag = COG #has a focus
-						}
+				}
+				NOT = {
+					OR = {
+						tag = BEL #has a focus
+						tag = COG #has a focus
 					}
 				}
 			}

@@ -1,0 +1,9 @@
+
+DAI_monthly_update = {
+
+	if = { limit = { is_ai = yes }
+
+		DAI_set_desired_trade_law = yes
+
+	}
+}

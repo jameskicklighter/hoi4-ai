@@ -1,0 +1,68 @@
+# Trade Laws
+
+DAI_set_desired_trade_law = {
+
+	@free_trade = 0
+	@export_focus = 1
+	@limited_exports = 2
+	@closed_economy = 3
+
+	IF = { limit = { original_tag = JAP }
+		IF = { limit = { date > 1940.1.1 OR = { has_government = fascism has_government = communism } }
+			set_variable = { DAI_LAW_get_trade_law = @closed_economy }
+		}
+		ELSE = {
+			set_variable = { DAI_LAW_get_trade_law = @limited_exports }
+		}
+	}
+
+	# Handled separately.
+	ELSE_IF = { limit = { OR = { has_idea = autarkic_economy has_idea = autarkic_economy_improved } }
+		set_variable = { DAI_LAW_get_trade_law = -1 }
+	}
+
+	ELSE_IF = {
+		limit = {
+			OR = {
+				original_tag = BRA
+				original_tag = IRQ
+				original_tag = PER
+				original_tag = POR
+				original_tag = ROM
+				original_tag = SIA
+			}
+		}
+		set_variable = { DAI_LAW_get_trade_law = @free_trade }
+	}
+
+	ELSE_IF = { limit = { has_war = no }
+		IF = {
+			limit = {
+				OR = {
+					is_major = no
+					num_of_civilian_factories > 50
+				}
+			}
+
+			set_variable = { DAI_LAW_get_trade_law = @free_trade }
+		}
+		ELSE = {
+			set_variable = { DAI_LAW_get_trade_law = @export_focus }
+		}
+	}
+
+	ELSE_IF = { limit = { has_war = yes }
+		IF = { limit = { num_of_civilian_factories > 50 }
+			set_variable = { DAI_LAW_get_trade_law = @export_focus }
+		}
+		ELSE = {
+			set_variable = { DAI_LAW_get_trade_law = @limited_exports }
+		}
+	}
+
+	# Failsafe
+	ELSE = {
+		set_variable = { DAI_LAW_get_trade_law = -1 }
+	}
+
+}

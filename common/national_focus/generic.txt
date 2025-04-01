@@ -1964,6 +1964,19 @@ focus_tree = {
 		ai_will_do = {
 			factor = 95
 			modifier = {
+				factor = 0.05
+				is_historical_focus_on = yes
+				original_tag = SIA
+			}
+			modifier = {
+				factor = 0.05
+				is_in_array = {
+					array = RAJ.raj_releasables
+					value = THIS
+				}
+				is_subject_of = RAJ
+			}
+			modifier = {
 				factor = 0.1
 				any_neighbor_country = {
 					is_major = yes
@@ -2052,6 +2065,10 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				tag = AUS
+			}
+			modifier = {
+				factor = 0
+				original_tag = SIA
 			}
 			modifier = {
 				factor = 0
